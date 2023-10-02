@@ -38,7 +38,7 @@ function Topbar() {
         )
     }
     return (
-        <div className='Topbar_component'>
+        <div className='Topbar_component ColorTheme_1'>
             <Logo_Search/>
             <Main_Links/>
             <Left_Icons/>

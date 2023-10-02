@@ -4,7 +4,6 @@
   height: 40px;
   justify-content: space-between;
   padding: 0px 5px;
-  background-color: #1877f2;
   box-shadow: 1px 1px 16px -8px rgba(0, 0, 0, 0.68);
 }
 .Topbar_component .Logo_Search {
@@ -18,7 +17,6 @@
   flex-direction: row;
   align-items: center;
   gap: 10px;
-  color: #1877f2;
 }
 .Topbar_component .Logo_Search .brand p {
   display: none;
@@ -26,7 +24,6 @@
 .Topbar_component .Logo_Search .brand img {
   width: 1.875rem;
   height: 1.875rem;
-  color: white;
 }
 .Topbar_component .Main_Links {
   width: 500px;
@@ -42,32 +39,26 @@
   padding: 0px 0px 3px;
 }
 .Topbar_component .Main_Links div.icon.active {
-  border-bottom: 2px solid white;
-}
-.Topbar_component .Main_Links div.icon.active svg {
-  color: white;
-}
-.Topbar_component .Main_Links div.icon svg {
-  color: white;
+  border-bottom: 2px solid;
 }
 .Topbar_component .Left_Icons {
   display: flex;
   gap: 10px;
 }
-.Topbar_component .Left_Icons div {
+.Topbar_component .Left_Icons > div {
   width: 1.875rem;
   height: 1.875rem;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: white;
   border-radius: 3.125rem;
   -webkit-border-radius: 3.125rem;
   -moz-border-radius: 3.125rem;
   -ms-border-radius: 3.125rem;
   -o-border-radius: 3.125rem;
 }
-.Topbar_component .Left_Icons div svg {
+.Topbar_component .Left_Icons > div svg {
   font-size: 17px;
 }
 .Topbar_component .Left_Icons div.profile img {
@@ -129,4 +120,22 @@
   .Topbar_component .Main_Links svg {
     font-size: 15px;
   }
+}
+.Topbar_component.ColorTheme_1 {
+  background-color: #1877f2;
+}
+.Topbar_component.ColorTheme_1 .Logo_Search .brand p {
+  color: white;
+}
+.Topbar_component.ColorTheme_1 .Left_Icons > div {
+  background-color: white;
+}
+.Topbar_component.ColorTheme_1 .Left_Icons > div svg {
+  color: black;
+}
+.Topbar_component.ColorTheme_1 .Main_Links .icon.active {
+  border-color: white;
+}
+.Topbar_component.ColorTheme_1 .Main_Links .icon svg {
+  color: white;
 }/*# sourceMappingURL=Topbar.css.map */

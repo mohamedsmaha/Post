@@ -8,14 +8,8 @@
             @include flex_row();
             align-items: center;
             gap: 10px;
-            color: $first_color;
-            p{
-                display: none;
-            }
-            img{
-                @include square(30px);
-                color: white;
-            }
+            p{display: none;}
+            img{@include square(30px);}
         }
     }
 }
@@ -23,12 +17,11 @@
     .Left_Icons{
         display: flex;
         gap: 10px;
-        div {
+        > div {
             @include square(30px);
-            display: flex;
+            @include flex_row();
             align-items: center;
             justify-content: center;
-            background-color: $secound_color;
             @include border(50px);
             svg{font-size: 17px;}
         }
@@ -54,14 +47,7 @@
             align-items: center;
             padding: 0px 0px 3px;
             &.active{
-                border-bottom: 2px solid $secound_color;
-                svg{
-                    color: $secound_color;
-                }
-            }
-            svg{
-                color: $secound_color;
-                
+                border-bottom: 2px solid;
             }
         }
     }
@@ -73,7 +59,6 @@
     height: 40px;
     justify-content: space-between;
     padding: 0px 5px;
-    background-color: $first_color;
     @include shadow(1px , 1px);
     @include Logo_Search();
     @include Main_Links();
@@ -112,5 +97,20 @@
             svg {font-size: 15px;}
             max-width: 500px;
         }
+    }
+}
+
+.Topbar_component.ColorTheme_1{
+    background-color: $first_color;
+    .Logo_Search .brand p {
+        color: $secound_color;
+    }
+    .Left_Icons >div{
+        background-color: $secound_color;
+        svg{color:$fifth_color;}
+    }
+    .Main_Links .icon {
+        &.active{border-color: $secound_color;}
+        svg{color: $secound_color;}
     }
 }
