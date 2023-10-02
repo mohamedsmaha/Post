@@ -8,6 +8,10 @@
     display: flex;
     flex-direction: column;
 }
+@mixin flex_center{
+    align-items: center;
+    justify-content: center;
+}
 @mixin border($value){
     border-radius: pxtorem($value);
     -webkit-border-radius: pxtorem($value);

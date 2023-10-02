@@ -26,20 +26,29 @@
   height: 1.875rem;
 }
 .Topbar_component .Main_Links {
-  width: 500px;
   display: flex;
+  flex-direction: row;
+  width: 500px;
   height: 100%;
+  justify-content: center;
 }
-.Topbar_component .Main_Links div.icon {
+.Topbar_component .Main_Links .icon {
   flex: 0 0 20%;
   min-width: 50px;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
   padding: 0px 0px 3px;
 }
-.Topbar_component .Main_Links div.icon.active {
+.Topbar_component .Main_Links .icon.active {
   border-bottom: 2px solid;
+}
+.Topbar_component .Main_Links .icon.small_screen {
+  display: none;
+}
+.Topbar_component .Main_Links .icon.big_screen {
+  display: flex;
 }
 .Topbar_component .Left_Icons {
   display: flex;
@@ -104,6 +113,12 @@
   }
   .Topbar_component .Main_Links svg {
     font-size: 20px;
+  }
+  .Topbar_component .Main_Links .icon.big_screen {
+    display: none !important;
+  }
+  .Topbar_component .Main_Links .icon.small_screen {
+    display: flex !important;
   }
 }
 @media (max-width: 500px) {

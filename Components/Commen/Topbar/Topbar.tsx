@@ -2,49 +2,67 @@
 import {useState , useEffect} from 'react'
 import "@/Scss/Commen/Topbar/Topbar.css"
 import Main_Search_Box from '../Main_Search_Box/Main_Search_Box'
-import {Home , Apps , Chat , Notifications} from "@mui/icons-material"
+import {Home , Apps , Chat , Notifications, Search, NoFlash} from "@mui/icons-material"
+import { TopbarStaticdata  } from './Topbar_types'
+import Link from 'next/link'
+import { App_links }     from '@/Static_Data/Links'
+import { Static_images } from '@/Static_Data/Images'
+import { Static_words }  from '@/Static_Data/Static_words'
+    function Topbar() {
+        const Static_data :TopbarStaticdata= {
+            main_icons : [
+                {id : 1 , icon : <Home/> , find : "both" , link :App_links.Home}
+            ],
+            left_icons:[
+                {id:1 , name : "App"                 , icon : <Apps/>          },
+                {id:2 , name : "Chat"                , icon : <Chat/>          },
+                {id:3 , name : "Notifications"       , icon : <Notifications/> },
+            ]
+        }
+        const helper_functions = {
+            Left_icon_click: (name: string) => {
+                console.log(name);
+            }
+        };
 
-function Topbar() {
-    function Logo_Search(){
-        return(
-            <div className='Logo_Search'>
-                <div className="brand">
-                    <img src="./assets/Static_images/logo1.png" alt="" />
-                    <p>Post</p>
+        function Logo_Search(){
+            return(
+                <div className='Logo_Search'>
+                    <div className="brand">
+                        <img src={`${Static_images.main_logo}`} alt="" />
+                        <p>{Static_words.App_name}</p>
+                    </div>
+                    <Main_Search_Box/>
                 </div>
-                <Main_Search_Box/>
+            )
+        }
+        function Main_Links(){
+            return(
+                <div className="Main_Links">
+                    {Static_data.main_icons.map(item => (
+                        <Link href={`${item.link}`} className={`icon ${item.find}`} key = {item.id}>{item.icon}</Link>
+                    ))}
+                </div>
+            )
+        }
+        function Left_Icons(){
+            return(
+                <div className="Left_Icons">
+                    {Static_data.left_icons.map(item => (
+                        <div className="icon" key={item.id} onClick={() => {helper_functions.Left_icon_click(item.name)}}>{item.icon}</div>
+                    ))}
+                    <div className="profile"><img src="/assets/persons/1.jpeg" alt="" /></div>
+                </div>
+            )
+        }
+        return (
+            <div className='Topbar_component ColorTheme_1'>
+                <Logo_Search/>
+                <Main_Links/>
+                <Left_Icons/>
             </div>
         )
-    }
-    function Main_Links(){
-        return(
-            <div className="Main_Links">
-                <div className="Home icon"><Home/></div>
-                <div className="Home icon active"><Home/></div>
-                <div className="Home icon"><Home/></div>
-                <div className="Home icon"><Home/></div>
-                <div className="Home icon"><Home/></div>
-            </div>
-        )
-    }
-    function Left_Icons(){
-        return(
-            <div className="Left_Icons">
-                <div className="Menu"><Apps/></div>
-                <div className="Chat"><Chat/></div>
-                <div className="Notifitcation"><Notifications/> </div>
-                <div className="profile"><img src="/assets/persons/1.jpeg" alt="" /></div>
-            </div>
-        )
-    }
-    return (
-        <div className='Topbar_component ColorTheme_1'>
-            <Logo_Search/>
-            <Main_Links/>
-            <Left_Icons/>
-        </div>
-    )
 }
 
 
-export default Topbar
+    export default Topbar
