@@ -1,0 +1,33 @@
+@import "../Variable/Variable.scss";
+@import "../Functions/Functions.scss";
+@mixin flex_row{
+    display: flex;
+    flex-direction: row;
+}
+@mixin flex_column{
+    display: flex;
+    flex-direction: column;
+}
+@mixin border($value){
+    border-radius: pxtorem($value);
+    -webkit-border-radius: pxtorem($value);
+    -moz-border-radius: pxtorem($value);
+    -ms-border-radius: pxtorem($value);
+    -o-border-radius: pxtorem($value);
+}
+@mixin square($value){
+    width: pxtorem($value);
+    height: pxtorem($value);
+}
+@mixin shadow($x , $y){
+    box-shadow: $x $y $blur_radius $spread_radius $shadow_color;
+}
+// compontens 
+@mixin person_pic($value: 0px)
+{
+    width : pxtorem(($value + 35px));
+    height: pxtorem(($value + 35px));
+    object-fit: cover;
+    @include border(50px)
+}
+

@@ -1,0 +1,34 @@
+@import "./../../Helper/all.scss";
+.Main_Search_Box_Component{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: $secound_color;
+    padding: 2px 4px;
+    svg{
+        font-size: 20px;
+    }
+    input{
+        outline: none;
+        border: none;
+        background-color:rgba(255, 255, 255, 0);
+        &::placeholder{
+            color: gray ;
+        }
+    }
+    @include border(10px);
+}
+@media (max-width : 900px) {
+    .Main_Search_Box_Component {
+        padding: 2px 4px;
+        svg{font-size: 15px;}
+        input{font-size: 13px;}
+    }
+}
+@media (max-width : 400px) {
+    .Main_Search_Box_Component{
+        padding: 2px 2px;
+        input{display: none;}
+        svg{font-size: 18px; color: goldenrod;}
+    }
+}

@@ -1,0 +1,4 @@
+@import "../Variable/Variable.scss";
+@function pxtorem($value, $baseFontSize : $baseFontSize) {
+    @return #{$value / $baseFontSize}rem;
+}
