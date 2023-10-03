@@ -13,11 +13,11 @@
     justify-content: center;
 }
 @mixin border($value){
-    border-radius: pxtorem($value);
-    -webkit-border-radius: pxtorem($value);
-    -moz-border-radius: pxtorem($value);
-    -ms-border-radius: pxtorem($value);
-    -o-border-radius: pxtorem($value);
+    border-radius: $value;
+    -webkit-border-radius: $value;
+    -moz-border-radius: $value;
+    -ms-border-radius: $value;
+    -o-border-radius: $value;
 }
 @mixin square($value){
     width: pxtorem($value);

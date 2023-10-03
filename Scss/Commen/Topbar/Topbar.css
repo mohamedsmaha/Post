@@ -7,6 +7,7 @@
   box-shadow: 1px 1px 16px -8px rgba(0, 0, 0, 0.68);
 }
 .Topbar_component .Logo_Search {
+  min-width: 250px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -39,7 +40,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 0px 0px 3px;
+  padding: 10px 0px 10px;
 }
 .Topbar_component .Main_Links .icon.active {
   border-bottom: 2px solid;
@@ -51,7 +52,9 @@
   display: flex;
 }
 .Topbar_component .Left_Icons {
+  min-width: 250px;
   display: flex;
+  justify-content: flex-end;
   gap: 10px;
 }
 .Topbar_component .Left_Icons > div {
@@ -61,11 +64,11 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  border-radius: 3.125rem;
-  -webkit-border-radius: 3.125rem;
-  -moz-border-radius: 3.125rem;
-  -ms-border-radius: 3.125rem;
-  -o-border-radius: 3.125rem;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
 }
 .Topbar_component .Left_Icons > div svg {
   font-size: 17px;
@@ -75,11 +78,11 @@
   height: 1.875rem;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 3.125rem;
-  -webkit-border-radius: 3.125rem;
-  -moz-border-radius: 3.125rem;
-  -ms-border-radius: 3.125rem;
-  -o-border-radius: 3.125rem;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
 }
 
 @media (max-width: 900px) {
@@ -113,6 +116,9 @@
   }
   .Topbar_component .Main_Links svg {
     font-size: 20px;
+  }
+  .Topbar_component .Main_Links .icon {
+    padding: 0px 0px 3px;
   }
   .Topbar_component .Main_Links .icon.big_screen {
     display: none !important;

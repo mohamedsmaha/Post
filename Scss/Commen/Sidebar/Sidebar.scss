@@ -1,0 +1,106 @@
+@import "../../Helper/all.scss";
+@mixin button() {
+    width: calc($sidebarwidth / 2);
+    border: none;
+    padding: pxtorem(10px);
+    text-transform: capitalize;
+    @include border(10px);
+    font-weight: 700;
+    opacity: 90%;
+    cursor: pointer;
+}
+@mixin Links_list() {
+    >.LinksList {
+        padding: pxtorem(10px);
+        height: fit-content;
+
+        >.item {
+            margin-bottom: pxtorem(20px);
+            cursor: pointer;
+            position: relative;
+
+            >a {
+                color: black;
+                @include flex_row();
+                align-items: center;
+
+                >svg {
+                    margin-right: pxtorem(14px);
+                }
+
+                >.label {
+                    font-size: pxtorem(14px);
+                }
+            }
+        }
+    }
+}
+@mixin Frined_List() {
+    >.FriendsList {
+        @include flex_column();
+        padding-bottom: 10px;
+
+        >.item {
+            @include flex_row();
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 15px;
+
+            >img {
+                @include person_pic();
+            }
+
+            >.name {
+                font-weight: bold;
+                font-size: pxtorem(14px);
+            }
+        }
+
+        >button {
+            @include button();
+        }
+    }
+}
+
+.Sidebar_Container {
+    width: $sidebarwidth;
+    position: sticky;
+    top: 0px;
+    max-height: 100%;
+    padding-left: pxtorem(20px);
+    overflow-y: scroll;
+    @include Links_list();
+
+    >button {
+        @include button();
+    }
+
+    >.line {
+        margin-bottom: 20px;
+    }
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+    @include Frined_List();
+}
+
+@media (max-width : 900px) {
+    .Sidebar_Container{display: none;}
+}
+
+.Sidebar_Container.ColorTheme_1 {
+    background-color: $secound_color;
+
+    >button {
+        background-color: $fourth_color;
+        color: $fifth_color;
+    }
+
+    >.LinksList .item a {
+        color: $fifth_color;
+    }
+
+    >.FriendsList .item .name {
+        color: $fifth_color;
+    }
+}

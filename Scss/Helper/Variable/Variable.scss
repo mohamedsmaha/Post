@@ -9,12 +9,15 @@ $seventh_color:goldenrod;
 // meaning colors
 $first_online : limegreen;
 // Variables
-$baseFontSize : 16px;
+$baseFontSize : 16px ;
+@media (max-width : 900px) {
+    $baseFontSize : 8px ;
+}
 //css
 $spread_radius: -8px;
 $blur_radius : 16px;
 $shadow_color :rgba(0, 0, 0, 0.68);
 // components
 $Topbar_height : 50px;
-$sidebarwidth : 300px;
+$sidebarwidth : 250px;
 $maxPostwidth : 550px;

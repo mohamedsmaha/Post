@@ -1,0 +1,88 @@
+.post {
+  width: calc(550px - 2 * 0.625em);
+  margin: 0.625em 0px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  box-shadow: 2px 2px 16px -8px rgba(0, 0, 0, 0.68);
+  background-color: white;
+  padding: 0.625em;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.post .top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.post .top .info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.post .top .info img {
+  width: 2.5rem;
+  height: 2.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+.post .top .info .username {
+  font-size: 0.875em;
+  font-weight: 500;
+  margin: 0px 0.625em;
+}
+.post .top .info .time {
+  font-size: 0.75em;
+}
+.post .content .text {
+  margin: 0px 10px;
+}
+.post .content img {
+  margin-top: 0.625em;
+  width: 100%;
+  max-height: 500px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.post .reactions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.post .reactions .likes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.post .reactions .likes .likeicon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.3125em;
+  cursor: pointer;
+}
+.post .reactions .likes .reacts {
+  font-size: 0.875em;
+}
+.post .reactions .comments {
+  cursor: pointer;
+  font-size: 0.875em;
+}
+.post .actions {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+}
+.post .actions .item {
+  flex-basis: 33%;
+  text-align: center;
+}/*# sourceMappingURL=Post.css.map */

@@ -1,0 +1,38 @@
+
+User {
+	id integer pk increments unique
+	Email text unique
+	PhoneNumber integer unique
+	UserName text
+	Password text
+	BirthDay integer
+	Img text > Imges.id
+	Lang integer > Languagh.id
+	ColorTheme integer
+	Api_Token text
+	Secound_Api_token text
+	session integer
+}
+
+Friends {
+	id integer pk increments
+	User integer *>* User.id
+	Friend integer *>* User.id
+}
+
+Languagh {
+	id integer pk increments
+	Text text
+}
+
+Imges {
+	id integer pk increments
+	Text text
+}
+
+Sponser {
+	id integer pk increments
+	Name text
+	img text > Imges.id
+	Description integer
+}

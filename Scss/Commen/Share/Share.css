@@ -1,0 +1,59 @@
+.share {
+  margin-top: 10px;
+  width: 530px;
+  height: -moz-fit-content;
+  height: fit-content;
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  background-color: white;
+  padding: 0.625em;
+}
+.share .sharetop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.3125em;
+}
+.share .sharetop .shareprofileimg {
+  width: 2.5rem;
+  height: 2.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+.share .sharetop .shareInput {
+  border: none;
+  width: 80%;
+  outline: none;
+}
+.share .sharehr {
+  margin: 0.625em 0px;
+}
+.share .shareoptions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.share .shareoptions > .item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0.3125em 0.9375em;
+  cursor: pointer;
+}
+.share .shareoptions > .item svg {
+  font-size: 1.125em;
+  margin-right: 0.1875em;
+}
+.share .shareoptions > .item .text {
+  font-size: 0.875em;
+  font-weight: 500;
+}/*# sourceMappingURL=Share.css.map */

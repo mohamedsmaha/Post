@@ -1,6 +1,7 @@
 @import "./../../Helper/all.scss";
 @mixin Logo_Search(){
     .Logo_Search{
+        min-width: $sidebarwidth;
         @include flex_row();
         align-items: center;
         gap: 10px;
@@ -15,7 +16,9 @@
 }
 @mixin Left_Icons(){
     .Left_Icons{
+        min-width: $sidebarwidth;
         display: flex;
+        justify-content: flex-end;
         gap: 10px;
         > div {
             @include square(30px);
@@ -45,7 +48,7 @@
             min-width: 50px;
             @include flex_row();
             @include flex_center();
-            padding: 0px 0px 3px;
+            padding: 10px 0px 10px;
             &.active{
                 border-bottom: 2px solid;
             }
@@ -86,6 +89,7 @@
             svg {font-size: 20px;}
             max-width: 500px;
             width: 100vw;
+            .icon{padding: 0px 0px 3px;}
             .icon.big_screen{display:  none !important;}
             .icon.small_screen{display: flex !important;}
         }

@@ -1,0 +1,180 @@
+@import "../../Helper/all.scss";
+//components
+@mixin onlineFriendsList() {
+    .Online {
+        .OnlineFriendsList {
+            .item {
+                @include flex_row();
+                align-items: center;
+                margin-bottom: pxtoem(15px);
+
+                .Left {
+                    margin-right: pxtoem(10px);
+                    position: relative;
+
+                    img {
+                        @include square(40px);
+                        object-fit: cover;
+                        @include border(50%);
+                    }
+
+                    .Icon {
+                        @include square(12px);
+                        position: absolute;
+                        top: -2;
+                        right: 0;
+                        border: 2px solid;
+                        @include border(50%);
+                    }
+
+                }
+
+                .Right {
+                    .name {
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}
+@mixin birthday() {
+    .birthday {
+        display: flex;
+        align-items: center;
+
+        .birthdayimg {
+            width: pxtoem(40px);
+            height: pxtoem(40px);
+            margin-right: pxtoem(10px);
+        }
+
+        .birthdaytext {
+            font-weight: 300;
+            font-size: pxtoem(15px);
+
+            b {}
+        }
+    }
+}
+@mixin sponsers() {
+    $imgwidth : 120px;
+    .sponsers {
+        .box {
+            @include flex_row();
+            align-items: center;
+            gap: pxtoem(10px);
+            img {
+                @include square($imgwidth);
+                object-fit: contain;
+                @include border(10px);
+            }
+            .discreption {
+                overflow: hidden;
+                @include flex_column();
+                gap: pxtoem(5px);
+
+                span.title {
+                    font-size: pxtoem(18px);
+                }
+
+                span.Description {
+                    font-size: pxtoem(14px);
+                    opacity: 90%;
+                }
+            }
+        }
+    }
+}
+
+// options
+@mixin Profile() {
+    .rightbartitle {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    .rightbarinfo {
+        margin-bottom: 30px;
+
+        .rightbarinfoitem {
+            margin-bottom: 10px;
+
+            .rightbarinfokey {
+                // Styles for the information key
+                font-weight: 500;
+                margin-right: 15px;
+                color: #555;
+            }
+
+            .rightbarinfovalue {
+                font-weight: 300;
+            }
+        }
+    }
+
+    .rightbarfollowings {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        // Styles for the following list container
+        .rightbarfollowing {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+
+            // Styles for each following item
+            .rightbarfollowingimg {
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+                border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                -ms-border-radius: 5px;
+                -o-border-radius: 5px;
+            }
+
+            .rightbarfollowingname {
+                // Styles for the following name
+            }
+        }
+    }
+}
+@mixin Home() {
+    .Home {
+        padding-top: 10px;
+        @include birthday();
+        @include onlineFriendsList();
+        @include sponsers();
+    }
+
+    .Home.color_theme1 {
+        .Online .OnlineFriendsList .item .Left .Icon {
+            background-color: $first_online;
+            border-color: $secound_color;
+        }
+    }
+}
+
+//main
+.Rightbar {
+    width: $sidebarwidth;
+    overflow: hidden;
+    @include Home();
+    @include Profile();
+}
+
+// media
+@media (max-width : 1150px) {
+    .Home{
+        display: none;
+    }
+}
+@media (max-width : 900px){
+    .Home{display: block;}
+}

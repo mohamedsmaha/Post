@@ -5,11 +5,11 @@
   gap: 5px;
   background-color: white;
   padding: 2px 4px;
-  border-radius: 0.625rem;
-  -webkit-border-radius: 0.625rem;
-  -moz-border-radius: 0.625rem;
-  -ms-border-radius: 0.625rem;
-  -o-border-radius: 0.625rem;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 .Main_Search_Box_Component svg {
   font-size: 20px;

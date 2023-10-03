@@ -2,3 +2,6 @@
 @function pxtorem($value, $baseFontSize : $baseFontSize) {
     @return #{$value / $baseFontSize}rem;
 }
+@function pxtoem($value, $baseFontSize : $baseFontSize) {
+    @return #{$value / $baseFontSize}em;
+}

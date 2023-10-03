@@ -1,0 +1,143 @@
+.Rightbar {
+  width: 250px;
+  overflow: hidden;
+}
+.Rightbar .Home {
+  padding-top: 10px;
+}
+.Rightbar .Home .birthday {
+  display: flex;
+  align-items: center;
+}
+.Rightbar .Home .birthday .birthdayimg {
+  width: 2.5em;
+  height: 2.5em;
+  margin-right: 0.625em;
+}
+.Rightbar .Home .birthday .birthdaytext {
+  font-weight: 300;
+  font-size: 0.9375em;
+}
+.Rightbar .Home .Online .OnlineFriendsList .item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 0.9375em;
+}
+.Rightbar .Home .Online .OnlineFriendsList .item .Left {
+  margin-right: 0.625em;
+  position: relative;
+}
+.Rightbar .Home .Online .OnlineFriendsList .item .Left img {
+  width: 2.5rem;
+  height: 2.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.Rightbar .Home .Online .OnlineFriendsList .item .Left .Icon {
+  width: 0.75rem;
+  height: 0.75rem;
+  position: absolute;
+  top: -2;
+  right: 0;
+  border: 2px solid;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.Rightbar .Home .Online .OnlineFriendsList .item .Right .name {
+  font-weight: 500;
+}
+.Rightbar .Home .sponsers .box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.625em;
+}
+.Rightbar .Home .sponsers .box img {
+  width: 7.5rem;
+  height: 7.5rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.Rightbar .Home .sponsers .box .discreption {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3125em;
+}
+.Rightbar .Home .sponsers .box .discreption span.title {
+  font-size: 1.125em;
+}
+.Rightbar .Home .sponsers .box .discreption span.Description {
+  font-size: 0.875em;
+  opacity: 90%;
+}
+.Rightbar .Home.color_theme1 .Online .OnlineFriendsList .item .Left .Icon {
+  background-color: limegreen;
+  border-color: white;
+}
+.Rightbar .rightbartitle {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.Rightbar .rightbarinfo {
+  margin-bottom: 30px;
+}
+.Rightbar .rightbarinfo .rightbarinfoitem {
+  margin-bottom: 10px;
+}
+.Rightbar .rightbarinfo .rightbarinfoitem .rightbarinfokey {
+  font-weight: 500;
+  margin-right: 15px;
+  color: #555;
+}
+.Rightbar .rightbarinfo .rightbarinfoitem .rightbarinfovalue {
+  font-weight: 300;
+}
+.Rightbar .rightbarfollowings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.Rightbar .rightbarfollowings .rightbarfollowing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.Rightbar .rightbarfollowings .rightbarfollowing .rightbarfollowingimg {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+@media (max-width: 1150px) {
+  .Home {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .Home {
+    display: block;
+  }
+}/*# sourceMappingURL=Rightbar.css.map */

@@ -1,0 +1,110 @@
+.Sidebar_Container {
+  width: 250px;
+  position: sticky;
+  top: 0px;
+  max-height: 100%;
+  padding-left: 1.25rem;
+  overflow-y: scroll;
+}
+.Sidebar_Container > .LinksList {
+  padding: 0.625rem;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.Sidebar_Container > .LinksList > .item {
+  margin-bottom: 1.25rem;
+  cursor: pointer;
+  position: relative;
+}
+.Sidebar_Container > .LinksList > .item > a {
+  color: black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.Sidebar_Container > .LinksList > .item > a > svg {
+  margin-right: 0.875rem;
+}
+.Sidebar_Container > .LinksList > .item > a > .label {
+  font-size: 0.875rem;
+}
+.Sidebar_Container > button {
+  width: 125px;
+  border: none;
+  padding: 0.625rem;
+  text-transform: capitalize;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  font-weight: 700;
+  opacity: 90%;
+  cursor: pointer;
+}
+.Sidebar_Container > .line {
+  margin-bottom: 20px;
+}
+.Sidebar_Container::-webkit-scrollbar {
+  width: 3px;
+}
+.Sidebar_Container > .FriendsList {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+.Sidebar_Container > .FriendsList > .item {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.Sidebar_Container > .FriendsList > .item > img {
+  width: 2.1875rem;
+  height: 2.1875rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+.Sidebar_Container > .FriendsList > .item > .name {
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+.Sidebar_Container > .FriendsList > button {
+  width: 125px;
+  border: none;
+  padding: 0.625rem;
+  text-transform: capitalize;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  font-weight: 700;
+  opacity: 90%;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .Sidebar_Container {
+    display: none;
+  }
+}
+.Sidebar_Container.ColorTheme_1 {
+  background-color: white;
+}
+.Sidebar_Container.ColorTheme_1 > button {
+  background-color: rgba(128, 128, 128, 0.16);
+  color: black;
+}
+.Sidebar_Container.ColorTheme_1 > .LinksList .item a {
+  color: black;
+}
+.Sidebar_Container.ColorTheme_1 > .FriendsList .item .name {
+  color: black;
+}/*# sourceMappingURL=Sidebar.css.map */
