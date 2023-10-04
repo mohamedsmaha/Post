@@ -2,6 +2,7 @@
 import { Languagh } from "@/Lang/Main_file";
 import { useAppSelector , useAppDispatch } from "@/Redux/Hooks";
 import "@/Scss/Commen/Rightbar/Rightbar.css"
+import { Static_images } from "@/Static_Data/Images";
 type RightbarType = {
     kind : "profile" | "Home"
 }
@@ -63,7 +64,7 @@ function Rightbar(props : RightbarType) {
         }
         function Birthday(){
             return (<div className="birthday">
-                    <img src="./assets/gift.png" alt="" className="birthdayimg" />
+                    <img src={`${Static_images.Gift}`} alt="" className="birthdayimg" />
                     <span className="birthdaytext">
                         <b>Pola Foster </b> and <b>3 other friends</b> have a birthday today
                     </span>

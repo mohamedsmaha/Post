@@ -1,0 +1,12 @@
+@import "../../../Helper/all.scss";
+
+.FeedPosts{
+    $padding : 10px;
+    max-width: $maxPostwidth;
+    width: calc(100%);
+}
+@media (max-width : 400px) {
+    .FeedPosts {
+        font-size: 12px;
+    }
+}

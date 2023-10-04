@@ -164,17 +164,24 @@
 //main
 .Rightbar {
     width: $sidebarwidth;
-    overflow: hidden;
     @include Home();
     @include Profile();
 }
 
 // media
 @media (max-width : 1150px) {
-    .Home{
+    .Rightbar{
         display: none;
     }
 }
 @media (max-width : 900px){
-    .Home{display: block;}
+    .Rightbar{
+        display: block;
+        font-size: 14px;
+    }
+}
+@media (max-width : 700px) {
+    .Rightbar {
+        display: none;
+    }
 }

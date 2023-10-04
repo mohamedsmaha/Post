@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import Post from '@/Components/Commen/Post/Post'
-
+import "@/Scss/Pages/Home/FeedPost/FeedPost.css"
 const arr= [
     {
     id:1 ,
@@ -37,7 +37,7 @@ const arr= [
 
 function FeedPosts() {
     return (
-        <div>
+        <div className='FeedPosts'>
             
             {arr.map(item=>(
                 <Post key={item.id} post={item}/>

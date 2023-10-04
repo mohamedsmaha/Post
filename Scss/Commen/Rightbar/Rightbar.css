@@ -1,6 +1,5 @@
 .Rightbar {
   width: 250px;
-  overflow: hidden;
 }
 .Rightbar .Home {
   padding-top: 10px;
@@ -29,8 +28,8 @@
   position: relative;
 }
 .Rightbar .Home .Online .OnlineFriendsList .item .Left img {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.5em;
+  height: 2.5em;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 50%;
@@ -40,8 +39,8 @@
   -o-border-radius: 50%;
 }
 .Rightbar .Home .Online .OnlineFriendsList .item .Left .Icon {
-  width: 0.75rem;
-  height: 0.75rem;
+  width: 0.75em;
+  height: 0.75em;
   position: absolute;
   top: -2;
   right: 0;
@@ -62,8 +61,8 @@
   gap: 0.625em;
 }
 .Rightbar .Home .sponsers .box img {
-  width: 7.5rem;
-  height: 7.5rem;
+  width: 7.5em;
+  height: 7.5em;
   -o-object-fit: contain;
      object-fit: contain;
   border-radius: 10px;
@@ -132,12 +131,18 @@
   -o-border-radius: 5px;
 }
 @media (max-width: 1150px) {
-  .Home {
+  .Rightbar {
     display: none;
   }
 }
 @media (max-width: 900px) {
-  .Home {
+  .Rightbar {
     display: block;
+    font-size: 14px;
+  }
+}
+@media (max-width: 700px) {
+  .Rightbar {
+    display: none;
   }
 }/*# sourceMappingURL=Rightbar.css.map */

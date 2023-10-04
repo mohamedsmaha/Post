@@ -1,4 +1,21 @@
+import { APP_Folders } from "./APP_Folders"
+
+const Static_path = APP_Folders.AppImges()
 export const Static_images = {
-    main_logo    : "./assets/Static_images/logo1.png" ,
-    secound_logo : "./assets/Static_images/logo.png"
+    main_logo    : `${Static_path}/logo1.png` ,
+    secound_logo : `${Static_path}/logo.png`  ,
+    Gift         : `${Static_path}/gift.png`  ,
+    Reactions    : {"love" : `${Static_path}/heart.png`,
+                    "like" : `${Static_path}/like.png `}
+
+}
+type Static_images = {
+    "main_logo"     : string ,
+    "secound_logo"  : string ,
+    "Gift"          : string ,
+    Reactions       :
+    {
+        "love"      : string ,
+        "like"      : string
+    }
 }

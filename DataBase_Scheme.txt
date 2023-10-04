@@ -12,6 +12,7 @@ User {
 	Api_Token text
 	Secound_Api_token text
 	session integer
+	Last_Seen integer
 }
 
 Friends {
@@ -27,7 +28,7 @@ Languagh {
 
 Imges {
 	id integer pk increments
-	Text text
+	path text
 }
 
 Sponser {
@@ -35,4 +36,20 @@ Sponser {
 	Name text
 	img text > Imges.id
 	Description integer
+}
+
+Post {
+	id integer pk increments
+	type integer > Post_Type.id
+	user integer null > User.id
+}
+
+Video {
+	id integer pk increments unique
+	path text pk increments
+}
+
+Post_Type {
+	id integer pk increments
+	type text
 }

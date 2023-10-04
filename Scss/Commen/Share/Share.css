@@ -10,7 +10,7 @@
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
   background-color: white;
-  padding: 0.625em;
+  padding: 10px;
 }
 .share .sharetop {
   display: flex;
@@ -19,8 +19,8 @@
   gap: 0.3125em;
 }
 .share .sharetop .shareprofileimg {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.5em;
+  height: 2.5em;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 50px;
@@ -56,4 +56,28 @@
 .share .shareoptions > .item .text {
   font-size: 0.875em;
   font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .share {
+    max-width: 530px;
+    width: calc(100% - 20px);
+  }
+}
+@media (max-width: 400px) {
+  .share {
+    font-size: 12px;
+  }
+}
+.share.ColorTheme_1 {
+  background-color: white;
+}
+.share.ColorTheme_1 .sharetop input {
+  background-color: white;
+}
+.share.ColorTheme_1 .sharetop input ::-moz-placeholder {
+  color: gray;
+}
+.share.ColorTheme_1 .sharetop input ::placeholder {
+  color: gray;
 }/*# sourceMappingURL=Share.css.map */

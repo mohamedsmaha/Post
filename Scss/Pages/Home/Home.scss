@@ -7,5 +7,20 @@
         flex-grow: 1;
         overflow-y: scroll;
         justify-content: space-between;
+        .Feed{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+@media (max-width : 1150px) {
+    .HomePage{
+        .bottom{
+            .Feed{
+                flex: 1;
+                align-items: center;
+                padding: 0px 10px;
+            }
+        }
     }
 }

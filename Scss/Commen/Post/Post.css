@@ -1,5 +1,6 @@
 .post {
-  width: calc(550px - 2 * 0.625em);
+  max-width: calc(550px - 2 * 0.625em);
+  width: calc(100% - 2 * 0.625em);
   margin: 0.625em 0px;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -9,7 +10,7 @@
   box-shadow: 2px 2px 16px -8px rgba(0, 0, 0, 0.68);
   background-color: white;
   padding: 0.625em;
-  gap: 10px;
+  gap: 0.625em;
   display: flex;
   flex-direction: column;
 }
@@ -25,8 +26,8 @@
   align-items: center;
 }
 .post .top .info img {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.5em;
+  height: 2.5em;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 50px;
@@ -38,18 +39,18 @@
 .post .top .info .username {
   font-size: 0.875em;
   font-weight: 500;
-  margin: 0px 0.625em;
+  margin: 0em 0.625em;
 }
 .post .top .info .time {
   font-size: 0.75em;
 }
 .post .content .text {
-  margin: 0px 10px;
+  margin: 0em 0.625em;
 }
 .post .content img {
   margin-top: 0.625em;
   width: 100%;
-  max-height: 500px;
+  max-height: 31.25em;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -65,8 +66,8 @@
   align-items: center;
 }
 .post .reactions .likes .likeicon {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.25em;
+  height: 1.25em;
   margin-right: 0.3125em;
   cursor: pointer;
 }
@@ -80,9 +81,34 @@
 .post .actions {
   display: flex;
   flex-direction: row;
-  margin-top: 5px;
+  margin-top: 0.3125em;
 }
 .post .actions .item {
   flex-basis: 33%;
   text-align: center;
+}
+
+.post.ColorTheme_1 {
+  background-color: white;
+}
+.post.ColorTheme_1 .top .username {
+  color: black;
+}
+.post.ColorTheme_1 .top .time {
+  color: black;
+}
+.post.ColorTheme_1 .top .posttopright svg {
+  color: black;
+}
+.post.ColorTheme_1 .content .text {
+  color: black;
+}
+.post.ColorTheme_1 .reactions .likes .reacts {
+  color: black;
+}
+.post.ColorTheme_1 .reactions .comments {
+  color: black;
+}
+.post.ColorTheme_1 .actions .item {
+  color: black;
 }/*# sourceMappingURL=Post.css.map */

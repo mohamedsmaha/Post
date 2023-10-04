@@ -20,8 +20,8 @@
     -o-border-radius: $value;
 }
 @mixin square($value){
-    width: pxtorem($value);
-    height: pxtorem($value);
+    width: pxtoem($value);
+    height: pxtoem($value);
 }
 @mixin shadow($x , $y){
     box-shadow: $x $y $blur_radius $spread_radius $shadow_color;
@@ -29,8 +29,8 @@
 // compontens 
 @mixin person_pic($value: 0px)
 {
-    width : pxtorem(($value + 35px));
-    height: pxtorem(($value + 35px));
+    width : pxtoem(($value + 35px));
+    height: pxtoem(($value + 35px));
     object-fit: cover;
     @include border(50px)
 }

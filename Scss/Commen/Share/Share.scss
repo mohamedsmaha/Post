@@ -33,7 +33,7 @@
     box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
     @include border(10px);
     background-color: white;
-    padding: pxtoem($padding);
+    padding:$padding;
 
     .sharetop {
         @include flex_row();
@@ -56,4 +56,27 @@
     }
 
     @include shareoptions();
+}
+
+@media (max-width : 900px) {
+    .share{
+        $padding : 10px;
+        max-width: calc($maxPostwidth - (2 * $padding));
+        width    : calc(100% - (2 * $padding));
+    }
+}
+@media (max-width : 400px) {
+    .share {
+        font-size: 12px;
+    }
+}
+
+.share.ColorTheme_1{
+    background-color: $secound_color  ;
+    .sharetop input{
+        background-color: $secound_color;
+        ::placeholder{
+            color: $sixth_color;
+        }
+    }
 }

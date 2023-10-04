@@ -28,7 +28,7 @@ function Share() {
     }
 
     return (    
-        <div className="share">
+        <div className={`share ColorTheme_${Redux.DefaultData.ColorTheme}`}>
                 <div className="sharetop">
                     <img src="./assets/persons/1.jpeg" alt="" className="shareprofileimg" />
                     <input type="text" className="shareInput"  placeholder={`${Languagh[Redux.DefaultData.Lang].Sharecomponent.InputFiled("mohamed")}`}/>

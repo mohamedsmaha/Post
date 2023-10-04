@@ -23,8 +23,8 @@
   display: none;
 }
 .Topbar_component .Logo_Search .brand img {
-  width: 1.875rem;
-  height: 1.875rem;
+  width: 1.875em;
+  height: 1.875em;
 }
 .Topbar_component .Main_Links {
   display: flex;
@@ -58,8 +58,8 @@
   gap: 10px;
 }
 .Topbar_component .Left_Icons > div {
-  width: 1.875rem;
-  height: 1.875rem;
+  width: 1.875em;
+  height: 1.875em;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -74,8 +74,8 @@
   font-size: 17px;
 }
 .Topbar_component .Left_Icons div.profile img {
-  width: 1.875rem;
-  height: 1.875rem;
+  width: 1.875em;
+  height: 1.875em;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 50px;
@@ -104,8 +104,8 @@
     font-family: cursive;
   }
   .Topbar_component .Logo_Search .brand img {
-    width: 1.5625rem;
-    height: 1.5625rem;
+    width: 1.5625em;
+    height: 1.5625em;
   }
   .Topbar_component .Left_Icons {
     display: none;
@@ -132,8 +132,8 @@
     font-size: 17px;
   }
   .Topbar_component .Logo_Search .brand img {
-    width: 1.4375rem;
-    height: 1.4375rem;
+    width: 1.4375em;
+    height: 1.4375em;
   }
   .Topbar_component .Main_Links {
     max-width: 500px;

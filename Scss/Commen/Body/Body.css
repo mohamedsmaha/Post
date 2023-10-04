@@ -27,4 +27,10 @@ ul {
 
 ::-webkit-scrollbar-thumb {
   background-color: rgb(179, 179, 179);
+}
+
+@media (max-width: 500px) {
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
 }/*# sourceMappingURL=Body.css.map */
