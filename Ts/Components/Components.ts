@@ -1,1 +1,0 @@
-type components = "Topbar" | "Main_Search_Box"

@@ -1,10 +1,18 @@
 export const APP_Folders : APP_Folders = {
     "ImgesFolders" : "./assets" ,
-    Users(Num){return `${APP_Folders.ImgesFolders}/Persons/${Num}`},
-    AppImges(){return `${APP_Folders.ImgesFolders}/Static_images`}
+    Users(){return `${APP_Folders.ImgesFolders}/Persons`},
+    AppImges(){return `${APP_Folders.ImgesFolders}/Static_images`},
+    Posts(kind){
+        const path = `${APP_Folders.ImgesFolders}/Posts`
+        if(kind == "images"){
+            return `${path}/images`
+        }
+        return `${path}/videos`
+    }
 }
 type APP_Folders = {
     "ImgesFolders" : string ,
     AppImges:() => string,
-    Users: (Num : number) => string
+    Users: () => string,
+    Posts:(kind : "images" | "videos") => string
 }

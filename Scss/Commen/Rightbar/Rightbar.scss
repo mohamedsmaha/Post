@@ -153,12 +153,13 @@
         @include sponsers();
     }
 
-    .Home.color_theme1 {
+    .Home.ColorTheme_1 {
         .Online .OnlineFriendsList .item .Left .Icon {
             background-color: $first_online;
             border-color: $secound_color;
         }
     }
+    .Home.Ar .birthday .birthdaytext {direction: rtl; padding: 0px pxtoem(10px) 0px 0px;}
 }
 
 //main
@@ -178,6 +179,8 @@
     .Rightbar{
         display: block;
         font-size: 14px;
+        position: sticky;
+        top: 0px;
     }
 }
 @media (max-width : 700px) {

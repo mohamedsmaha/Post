@@ -1,31 +1,38 @@
 .post {
-  max-width: calc(550px - 2 * 0.625em);
-  width: calc(100% - 2 * 0.625em);
   margin: 0.625em 0px;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+  max-width: 550px;
+  width: 100%;
+}
+.post .New {
   box-shadow: 2px 2px 16px -8px rgba(0, 0, 0, 0.68);
   background-color: white;
   padding: 0.625em;
   gap: 0.625em;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
   display: flex;
   flex-direction: column;
 }
-.post .top {
+.post .New .top {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.post .top .info {
+.post .New .top .info {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.post .top .info img {
+.post .New .top .info img {
   width: 2.5em;
   height: 2.5em;
   -o-object-fit: cover;
@@ -36,56 +43,229 @@
   -ms-border-radius: 50px;
   -o-border-radius: 50px;
 }
-.post .top .info .username {
+.post .New .top .info .username {
   font-size: 0.875em;
   font-weight: 500;
   margin: 0em 0.625em;
 }
-.post .top .info .time {
+.post .New .top .info .time {
   font-size: 0.75em;
 }
-.post .content .text {
+.post .New .content .text {
   margin: 0em 0.625em;
 }
-.post .content img {
+.post .New .content img {
   margin-top: 0.625em;
   width: 100%;
   max-height: 31.25em;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.post .reactions {
+.post .New .reactions {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.post .reactions .likes {
+.post .New .reactions .likes {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.post .reactions .likes .likeicon {
+.post .New .reactions .likes .likeicon {
   width: 1.25em;
   height: 1.25em;
   margin-right: 0.3125em;
   cursor: pointer;
 }
-.post .reactions .likes .reacts {
+.post .New .reactions .likes .reacts {
   font-size: 0.875em;
 }
-.post .reactions .comments {
+.post .New .reactions .comments {
   cursor: pointer;
   font-size: 0.875em;
 }
-.post .actions {
+.post .New .actions {
   display: flex;
   flex-direction: row;
   margin-top: 0.3125em;
 }
-.post .actions .item {
+.post .New .actions .item {
   flex-basis: 33%;
   text-align: center;
+}
+.post .Share {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 2px 16px -8px rgba(0, 0, 0, 0.68);
+  gap: 10px;
+  padding: 0.625em;
+}
+.post .Share .top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.post .Share .top .info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.post .Share .top .info img {
+  width: 2.5em;
+  height: 2.5em;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+.post .Share .top .info .username {
+  font-size: 0.875em;
+  font-weight: 500;
+  margin: 0em 0.625em;
+}
+.post .Share .top .info .time {
+  font-size: 0.75em;
+}
+.post .Share .New {
+  box-shadow: 2px 2px 16px -8px rgba(0, 0, 0, 0.68);
+  background-color: white;
+  padding: 0.625em;
+  gap: 0.625em;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.post .Share .New .top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.post .Share .New .top .info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.post .Share .New .top .info img {
+  width: 2.5em;
+  height: 2.5em;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+.post .Share .New .top .info .username {
+  font-size: 0.875em;
+  font-weight: 500;
+  margin: 0em 0.625em;
+}
+.post .Share .New .top .info .time {
+  font-size: 0.75em;
+}
+.post .Share .New .content .text {
+  margin: 0em 0.625em;
+}
+.post .Share .New .content img {
+  margin-top: 0.625em;
+  width: 100%;
+  max-height: 31.25em;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.post .Share .New .reactions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.post .Share .New .reactions .likes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.post .Share .New .reactions .likes .likeicon {
+  width: 1.25em;
+  height: 1.25em;
+  margin-right: 0.3125em;
+  cursor: pointer;
+}
+.post .Share .New .reactions .likes .reacts {
+  font-size: 0.875em;
+}
+.post .Share .New .reactions .comments {
+  cursor: pointer;
+  font-size: 0.875em;
+}
+.post .Share .New .actions {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.3125em;
+}
+.post .Share .New .actions .item {
+  flex-basis: 33%;
+  text-align: center;
+}
+.post .Share .reactions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.post .Share .reactions .likes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.post .Share .reactions .likes .likeicon {
+  width: 1.25em;
+  height: 1.25em;
+  margin-right: 0.3125em;
+  cursor: pointer;
+}
+.post .Share .reactions .likes .reacts {
+  font-size: 0.875em;
+}
+.post .Share .reactions .comments {
+  cursor: pointer;
+  font-size: 0.875em;
+}
+.post .Share .actions {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.3125em;
+}
+.post .Share .actions .item {
+  flex-basis: 33%;
+  text-align: center;
+}
+.post .Share .content .text {
+  margin: 0em 0.625em;
+}
+.post .Share .content img {
+  margin-top: 0.625em;
+  width: 100%;
+  max-height: 31.25em;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.post .Share .New {
+  border: 1px solid rgba(0, 0, 0, 0.408);
+  margin: 0px auto;
+  box-shadow: none;
+  font-size: 13px;
+  width: calc(97% - 20px);
 }
 
 .post.ColorTheme_1 {

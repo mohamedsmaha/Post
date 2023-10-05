@@ -70,22 +70,46 @@
         }
     }
 }
-
+@mixin Newtype(){
+    .New {
+        $padding : pxtoem(10px);
+        @include shadow(2px, 2px);
+        background-color: white;
+        padding: $padding;
+        gap: pxtoem(10px);
+        @include border(10px);
+        @include flex_column();
+        @include Userinfo();
+        @include content();
+        @include reactions();
+        @include actions();
+    }
+}
 .post {
-    $padding : pxtoem(10px);
-    max-width: calc($maxPostwidth - (2 * $padding));
-    width: calc(100% - (2 * $padding));
     margin: pxtoem(10px) 0px;
     @include border(10px);
-    @include shadow(2px, 2px);
-    background-color: white;
-    padding: $padding;
-    gap: pxtoem(10px);
-    @include flex_column();
-    @include Userinfo();
-    @include content();
-    @include reactions();
-    @include actions();
+    @include Newtype();
+    max-width:$maxPostwidth;
+    width: 100%;
+    .Share{
+
+        @include Userinfo();
+        @include Newtype();
+        @include reactions();
+        @include actions();
+        @include flex_column();
+        @include shadow(2px, 2px);
+        @include content();
+        gap:10px;
+        padding: pxtoem(10px);
+        .New{
+            border: 1px solid rgba(0, 0, 0, 0.408);
+            margin: 0px auto;
+            box-shadow: none;
+            font-size: 13px;
+            width: calc(97% - (2 *10px));
+        }
+    }
 }
 
 .post.ColorTheme_1{

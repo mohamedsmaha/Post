@@ -84,9 +84,13 @@
   font-size: 0.875em;
   opacity: 90%;
 }
-.Rightbar .Home.color_theme1 .Online .OnlineFriendsList .item .Left .Icon {
+.Rightbar .Home.ColorTheme_1 .Online .OnlineFriendsList .item .Left .Icon {
   background-color: limegreen;
   border-color: white;
+}
+.Rightbar .Home.Ar .birthday .birthdaytext {
+  direction: rtl;
+  padding: 0px 0.625em 0px 0px;
 }
 .Rightbar .rightbartitle {
   font-size: 18px;
@@ -139,6 +143,8 @@
   .Rightbar {
     display: block;
     font-size: 14px;
+    position: sticky;
+    top: 0px;
   }
 }
 @media (max-width: 700px) {

@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 import DefaultData from './UnFetched_data/Deafult_data/Default_data'
+import Posts       from './Modules/Post/PostRedux'
 const store = configureStore({
     reducer: {
-        DefaultData
+        DefaultData,
+        Posts
     },
 })
 export default store

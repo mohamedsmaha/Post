@@ -2,37 +2,50 @@
 import React from 'react'
 import Post from '@/Components/Commen/Post/Post'
 import "@/Scss/Pages/Home/FeedPost/FeedPost.css"
-const arr= [
+import { PostData } from '@/Redux/Modules/Post/PostTypes'
+const arr : PostData[]= [
+    { 
+        "main_post" :{
+            "id"    : 3,
+            "Data" : {"number" : 10 , "unite" : "Days"} ,
+            "Reactions":{"Details" : [] , "numbers" : {"order" : {"first" : "Like" , "Third" : null , "secound" : null} , "total" : 1200}},
+            "User" : {"Username" : "mohamed" , "id" : 1 , "img" : "2.jpeg"},
+            "info" : {"text" : "hey my name is mohamed"},
+            "kind" : "Content" ,
+            "type" : "New"
+        } 
+    },
     {
-    id:1 ,
-    user:{id : 2 , Name:"Mohamed sabry" , img :"/assets/persons/6.jpeg" },
-    time:{"number":1 , "unite" : "Day"},
-    "info":{
-        "text":"hey" ,
-        "interaction":{"likes" : 12 , comments : 13},
-        "content":{"img" : "/assets/Posts/1.jpeg"}
-    }
-},
+        "main_post" :{
+            "id"   : 2,
+            "Data" : {"number" : 10 , "unite" : "Days"} ,
+            "Reactions":{"Details" : [] , "numbers" : {"order" : {"first" : "Like" , "Third" : null , "secound" : null} , "total" : 1200}},
+            "User" : {"Username" : "mohamed" , "id" : 1 , "img" : "1.jpeg"},
+            "info" : {"text" : "i love this man"},
+            "kind" : "Content" ,
+            "type" : "Share"
+        } ,
+        "Share_post" :{
+            id : 1,
+            "Data" : {"number" : 10 , "unite" : "Days"} ,
+            "Reactions":{"Details" : [] , "numbers" : {"order" : {"first" : "Like" , "Third" : null , "secound" : null} , "total" : 1200}},
+            "User"     : {"Username" : "Ali Ahemd" , "id" : 1 , "img" : "6.jpeg"},
+            "info"     : {"text" : "What a wonderfull world" , "img" : "1.jpeg"},
+            "kind"     : "Content" ,
+            "type"     : "New"
+        } 
+    },
     {
-    id:2 ,
-    user:{id : 2 , Name:"Mohamed sabry" , img :"/assets/persons/6.jpeg" },
-    time:{"number":1 , "unite" : "Day"},
-    "info":{
-        "text":"hey" ,
-        "interaction":{"likes" : 12 , comments : 13},
-        "content":{"img" : "/assets/Posts/1.jpeg"}
-    }
-},
-    {
-    id:3 ,
-    user:{id : 2 , Name:"Mohamed sabry" , img :"/assets/persons/6.jpeg" },
-    time:{"number":1 , "unite" : "Day"},
-    "info":{
-        "text":"hey" ,
-        "interaction":{"likes" : 12 , comments : 13},
-        "content":{"img" : "/assets/Posts/1.jpeg"}
-    }
-}
+        "main_post" :{
+            "id"   : 1,
+            "Data" : {"number" : 10 , "unite" : "Days"} ,
+            "Reactions":{"Details" : [] , "numbers" : {"order" : {"first" : "Like" , "Third" : null , "secound" : null} , "total" : 1200}},
+            "User"     : {"Username" : "Ali Ahemd" , "id" : 1 , "img" : "6.jpeg"},
+            "info"     : {"text" : "What a wonderfull world" , "img" : "1.jpeg"},
+            "kind"     : "Content",
+            "type"     : "New" 
+        } 
+    },
 ]
 
 function FeedPosts() {
@@ -40,7 +53,7 @@ function FeedPosts() {
         <div className='FeedPosts'>
             
             {arr.map(item=>(
-                <Post key={item.id} post={item}/>
+                <Post key={item.main_post.id} post={item}/>
             ))}
         </div>
     )

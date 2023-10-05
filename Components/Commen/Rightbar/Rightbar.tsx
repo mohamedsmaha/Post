@@ -66,7 +66,7 @@ function Rightbar(props : RightbarType) {
             return (<div className="birthday">
                     <img src={`${Static_images.Gift}`} alt="" className="birthdayimg" />
                     <span className="birthdaytext">
-                        <b>Pola Foster </b> and <b>3 other friends</b> have a birthday today
+                        {Languagh[main_redux.DefaultData.Lang].Rightbarcomponent.birthday("mohamed" , 4)}
                     </span>
             </div>
             )
@@ -79,7 +79,7 @@ function Rightbar(props : RightbarType) {
             )
         }
         return (
-            <div className={`Home color_theme1`}>
+            <div className={`Home ColorTheme_${main_redux.DefaultData.ColorTheme} ${main_redux.DefaultData.Lang}`}>
                     <Birthday/>
                     <Sponsers/>
                     <OnlineFriendList/>
