@@ -1,9 +1,9 @@
 .Topbar_component {
   display: flex;
   align-items: center;
-  height: 40px;
+  height: 2.5em;
   justify-content: space-between;
-  padding: 0px 5px;
+  padding: 0px 0.3125em;
   box-shadow: 1px 1px 16px -8px rgba(0, 0, 0, 0.68);
 }
 .Topbar_component .Logo_Search {
@@ -11,13 +11,13 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
+  gap: 0.625em;
 }
 .Topbar_component .Logo_Search .brand {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
+  gap: 0.625em;
 }
 .Topbar_component .Logo_Search .brand p {
   display: none;
@@ -40,10 +40,10 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 10px 0px 10px;
+  padding: 0.625em 0px 0.625em;
 }
 .Topbar_component .Main_Links .icon.active {
-  border-bottom: 2px solid;
+  border-bottom: 0.125em solid;
 }
 .Topbar_component .Main_Links .icon.small_screen {
   display: none;
@@ -55,7 +55,7 @@
   min-width: 250px;
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 0.625em;
 }
 .Topbar_component .Left_Icons > div {
   width: 1.875em;
@@ -64,25 +64,25 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  border-radius: 50px;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -o-border-radius: 50px;
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
 }
 .Topbar_component .Left_Icons > div svg {
-  font-size: 17px;
+  font-size: 1.0625em;
 }
 .Topbar_component .Left_Icons div.profile img {
   width: 1.875em;
   height: 1.875em;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 50px;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -o-border-radius: 50px;
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
 }
 
 @media (max-width: 900px) {
@@ -90,17 +90,17 @@
     flex-direction: column;
     height: -moz-fit-content;
     height: fit-content;
-    gap: 2px;
+    gap: 0.125em;
   }
   .Topbar_component .Logo_Search {
     width: 100%;
     justify-content: space-between;
-    padding: 5px 0px 0px;
+    padding: 0.3125em 0px 0px;
   }
   .Topbar_component .Logo_Search .brand p {
     display: block;
     color: white;
-    font-size: 20px;
+    font-size: 1.25em;
     font-family: cursive;
   }
   .Topbar_component .Logo_Search .brand img {
@@ -115,10 +115,10 @@
     width: 100vw;
   }
   .Topbar_component .Main_Links svg {
-    font-size: 20px;
+    font-size: 1.25em;
   }
   .Topbar_component .Main_Links .icon {
-    padding: 0px 0px 3px;
+    padding: 0px 0px 0.1875em;
   }
   .Topbar_component .Main_Links .icon.big_screen {
     display: none !important;
@@ -128,8 +128,11 @@
   }
 }
 @media (max-width: 500px) {
+  .Topbar_component {
+    font-size: 13px;
+  }
   .Topbar_component .Logo_Search .brand p {
-    font-size: 17px;
+    font-size: 1.0625em;
   }
   .Topbar_component .Logo_Search .brand img {
     width: 1.4375em;
@@ -137,9 +140,6 @@
   }
   .Topbar_component .Main_Links {
     max-width: 500px;
-  }
-  .Topbar_component .Main_Links svg {
-    font-size: 15px;
   }
 }
 .Topbar_component.ColorTheme_1 {

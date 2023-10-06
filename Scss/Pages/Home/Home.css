@@ -20,4 +20,19 @@
     align-items: center;
     padding: 0px 10px;
   }
+}
+@media (max-width: 900px) {
+  .HomePage .bottom .Feed {
+    font-size: 13px;
+  }
+}
+@media (max-width: 700px) {
+  .HomePage .bottom .Feed {
+    font-size: 16px;
+  }
+}
+@media (max-width: 450px) {
+  .HomePage .bottom .Feed {
+    font-size: 12px;
+  }
 }/*# sourceMappingURL=Home.css.map */

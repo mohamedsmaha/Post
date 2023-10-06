@@ -19,7 +19,7 @@ const arr : PostData[]= [
         "main_post" :{
             "id"   : 2,
             "Data" : {"number" : 10 , "unite" : "Days"} ,
-            "Reactions":{"Details" : [] , "numbers" : {"order" : {"first" : "Like" , "Third" : null , "secound" : null} , "total" : 1200}},
+            "Reactions":{"Details" : [] , "numbers" : {"order" : {"first" : "Like" , "Third" : null , "secound" : "Love"} , "total" : 1200}},
             "User" : {"Username" : "mohamed" , "id" : 1 , "img" : "1.jpeg"},
             "info" : {"text" : "i love this man"},
             "kind" : "Content" ,
@@ -27,7 +27,7 @@ const arr : PostData[]= [
         } ,
         "Share_post" :{
             id : 1,
-            "Data" : {"number" : 10 , "unite" : "Days"} ,
+            "Data" : {"number" : 3 , "unite" : "Weeks"} ,
             "Reactions":{"Details" : [] , "numbers" : {"order" : {"first" : "Like" , "Third" : null , "secound" : null} , "total" : 1200}},
             "User"     : {"Username" : "Ali Ahemd" , "id" : 1 , "img" : "6.jpeg"},
             "info"     : {"text" : "What a wonderfull world" , "img" : "1.jpeg"},
@@ -38,7 +38,7 @@ const arr : PostData[]= [
     {
         "main_post" :{
             "id"   : 1,
-            "Data" : {"number" : 10 , "unite" : "Days"} ,
+            "Data" : {"number" : 3 , "unite" : "Weeks"} ,
             "Reactions":{"Details" : [] , "numbers" : {"order" : {"first" : "Like" , "Third" : null , "secound" : null} , "total" : 1200}},
             "User"     : {"Username" : "Ali Ahemd" , "id" : 1 , "img" : "6.jpeg"},
             "info"     : {"text" : "What a wonderfull world" , "img" : "1.jpeg"},

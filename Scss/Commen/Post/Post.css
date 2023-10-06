@@ -1,23 +1,23 @@
 .post {
   margin: 0.625em 0px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
   max-width: 550px;
   width: 100%;
 }
 .post .New {
-  box-shadow: 2px 2px 16px -8px rgba(0, 0, 0, 0.68);
   background-color: white;
   padding: 0.625em;
   gap: 0.625em;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+  box-shadow: 2px 2px 16px -8px rgba(0, 0, 0, 0.68);
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
   display: flex;
   flex-direction: column;
 }
@@ -31,17 +31,18 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  cursor: pointer;
 }
 .post .New .top .info img {
   width: 2.5em;
   height: 2.5em;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 50px;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -o-border-radius: 50px;
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
 }
 .post .New .top .info .username {
   font-size: 0.875em;
@@ -49,10 +50,14 @@
   margin: 0em 0.625em;
 }
 .post .New .top .info .time {
-  font-size: 0.75em;
+  font-size: 0.6875em;
+}
+.post .New .top .posttopright {
+  cursor: pointer;
 }
 .post .New .content .text {
   margin: 0em 0.625em;
+  font-size: 0.9375em;
 }
 .post .New .content img {
   margin-top: 0.625em;
@@ -73,17 +78,17 @@
   align-items: center;
 }
 .post .New .reactions .likes .likeicon {
-  width: 1.25em;
-  height: 1.25em;
+  width: 1.0625em;
+  height: 1.0625em;
   margin-right: 0.3125em;
   cursor: pointer;
 }
 .post .New .reactions .likes .reacts {
-  font-size: 0.875em;
+  font-size: 0.8125em;
 }
 .post .New .reactions .comments {
   cursor: pointer;
-  font-size: 0.875em;
+  font-size: 0.8125em;
 }
 .post .New .actions {
   display: flex;
@@ -93,12 +98,15 @@
 .post .New .actions .item {
   flex-basis: 33%;
   text-align: center;
+  font-size: 0.875em;
+  border-right: 0.03125em solid;
+  cursor: pointer;
 }
 .post .Share {
+  box-shadow: 2px 2px 16px -8px rgba(0, 0, 0, 0.68);
   display: flex;
   flex-direction: column;
-  box-shadow: 2px 2px 16px -8px rgba(0, 0, 0, 0.68);
-  gap: 10px;
+  gap: 0.625em;
   padding: 0.625em;
 }
 .post .Share .top {
@@ -111,17 +119,18 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  cursor: pointer;
 }
 .post .Share .top .info img {
   width: 2.5em;
   height: 2.5em;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 50px;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -o-border-radius: 50px;
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
 }
 .post .Share .top .info .username {
   font-size: 0.875em;
@@ -129,18 +138,68 @@
   margin: 0em 0.625em;
 }
 .post .Share .top .info .time {
-  font-size: 0.75em;
+  font-size: 0.6875em;
+}
+.post .Share .top .posttopright {
+  cursor: pointer;
+}
+.post .Share .content .text {
+  margin: 0em 0.625em;
+  font-size: 0.9375em;
+}
+.post .Share .content img {
+  margin-top: 0.625em;
+  width: 100%;
+  max-height: 31.25em;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.post .Share .reactions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.post .Share .reactions .likes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.post .Share .reactions .likes .likeicon {
+  width: 1.0625em;
+  height: 1.0625em;
+  margin-right: 0.3125em;
+  cursor: pointer;
+}
+.post .Share .reactions .likes .reacts {
+  font-size: 0.8125em;
+}
+.post .Share .reactions .comments {
+  cursor: pointer;
+  font-size: 0.8125em;
+}
+.post .Share .actions {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.3125em;
+}
+.post .Share .actions .item {
+  flex-basis: 33%;
+  text-align: center;
+  font-size: 0.875em;
+  border-right: 0.03125em solid;
+  cursor: pointer;
 }
 .post .Share .New {
-  box-shadow: 2px 2px 16px -8px rgba(0, 0, 0, 0.68);
   background-color: white;
   padding: 0.625em;
   gap: 0.625em;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+  box-shadow: 2px 2px 16px -8px rgba(0, 0, 0, 0.68);
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
   display: flex;
   flex-direction: column;
 }
@@ -154,17 +213,18 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  cursor: pointer;
 }
 .post .Share .New .top .info img {
   width: 2.5em;
   height: 2.5em;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 50px;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -o-border-radius: 50px;
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
 }
 .post .Share .New .top .info .username {
   font-size: 0.875em;
@@ -172,10 +232,14 @@
   margin: 0em 0.625em;
 }
 .post .Share .New .top .info .time {
-  font-size: 0.75em;
+  font-size: 0.6875em;
+}
+.post .Share .New .top .posttopright {
+  cursor: pointer;
 }
 .post .Share .New .content .text {
   margin: 0em 0.625em;
+  font-size: 0.9375em;
 }
 .post .Share .New .content img {
   margin-top: 0.625em;
@@ -196,17 +260,17 @@
   align-items: center;
 }
 .post .Share .New .reactions .likes .likeicon {
-  width: 1.25em;
-  height: 1.25em;
+  width: 1.0625em;
+  height: 1.0625em;
   margin-right: 0.3125em;
   cursor: pointer;
 }
 .post .Share .New .reactions .likes .reacts {
-  font-size: 0.875em;
+  font-size: 0.8125em;
 }
 .post .Share .New .reactions .comments {
   cursor: pointer;
-  font-size: 0.875em;
+  font-size: 0.8125em;
 }
 .post .Share .New .actions {
   display: flex;
@@ -216,56 +280,27 @@
 .post .Share .New .actions .item {
   flex-basis: 33%;
   text-align: center;
-}
-.post .Share .reactions {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-.post .Share .reactions .likes {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.post .Share .reactions .likes .likeicon {
-  width: 1.25em;
-  height: 1.25em;
-  margin-right: 0.3125em;
-  cursor: pointer;
-}
-.post .Share .reactions .likes .reacts {
   font-size: 0.875em;
-}
-.post .Share .reactions .comments {
+  border-right: 0.03125em solid;
   cursor: pointer;
-  font-size: 0.875em;
-}
-.post .Share .actions {
-  display: flex;
-  flex-direction: row;
-  margin-top: 0.3125em;
-}
-.post .Share .actions .item {
-  flex-basis: 33%;
-  text-align: center;
-}
-.post .Share .content .text {
-  margin: 0em 0.625em;
-}
-.post .Share .content img {
-  margin-top: 0.625em;
-  width: 100%;
-  max-height: 31.25em;
-  -o-object-fit: contain;
-     object-fit: contain;
 }
 .post .Share .New {
-  border: 1px solid rgba(0, 0, 0, 0.408);
+  border: 0.0625em solid;
   margin: 0px auto;
   box-shadow: none;
-  font-size: 13px;
-  width: calc(97% - 20px);
+  font-size: 0.75em;
+  width: calc(95% - 2 * 0.625em);
+}
+.post .Share .New .top .info img {
+  width: 2.1875em;
+  height: 2.1875em;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
 }
 
 .post.ColorTheme_1 {
@@ -291,4 +326,8 @@
 }
 .post.ColorTheme_1 .actions .item {
   color: black;
+  border-color: rgba(0, 0, 0, 0.408);
+}
+.post.ColorTheme_1 .Share .New {
+  border-color: rgba(0, 0, 0, 0.408);
 }/*# sourceMappingURL=Post.css.map */

@@ -8,7 +8,7 @@ export type PostRedux = {
 }
 export type Post_Type    = "Share" | "New"
 export type Post_kind    = "Content"
-export type ReactsIcons  = "Like" | "Love" | "Care"
+export type ReactsIcons  = "Like" | "Love" 
 export type time_unite   = "Day" | "Year" | "Month" | "Week"
 export type sum          = 's'|''
 export type time         = {"number" : number , "unite" : TimeUnites }

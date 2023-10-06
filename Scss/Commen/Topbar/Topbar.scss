@@ -4,11 +4,11 @@
         min-width: $sidebarwidth;
         @include flex_row();
         align-items: center;
-        gap: 10px;
+        gap: pxtoem(10px);
         .brand{
             @include flex_row();
             align-items: center;
-            gap: 10px;
+            gap: pxtoem(10px);
             p{display: none;}
             img{@include square(30px);}
         }
@@ -19,14 +19,14 @@
         min-width: $sidebarwidth;
         display: flex;
         justify-content: flex-end;
-        gap: 10px;
+        gap: pxtoem(10px);
         > div {
             @include square(30px);
             @include flex_row();
             align-items: center;
             justify-content: center;
             @include border(50px);
-            svg{font-size: 17px;}
+            svg{font-size: pxtoem(17px);}
         }
         div.profile{
             img{
@@ -48,9 +48,9 @@
             min-width: 50px;
             @include flex_row();
             @include flex_center();
-            padding: 10px 0px 10px;
+            padding: pxtoem(10px) 0px pxtoem(10px);
             &.active{
-                border-bottom: 2px solid;
+                border-bottom: pxtoem(2px) solid;
             }
             &.small_screen{display: none;}
             &.big_screen{display: flex;}
@@ -61,9 +61,9 @@
 .Topbar_component{
     display: flex;
     align-items: center;
-    height: 40px;
+    height: pxtoem(40px);
     justify-content: space-between;
-    padding: 0px 5px;
+    padding: 0px pxtoem(5px);
     @include shadow(1px , 1px);
     @include Logo_Search();
     @include Main_Links();
@@ -73,23 +73,23 @@
     .Topbar_component{
         flex-direction: column;
         height: fit-content;
-        gap: 2px;
+        gap: pxtoem(2px);
         .Logo_Search{
             width: 100%;
             justify-content: space-between;
-            padding: 5px 0px 0px;
+            padding: pxtoem(5px) 0px 0px;
             .brand {
                 p{display: block;
-                color: white;font-size: 20px;
+                color: white;font-size: pxtoem(20px);
                 font-family: cursive;}
                 img{@include square(25px);}
             }}
         .Left_Icons{display: none;}
         .Main_Links{
-            svg {font-size: 20px;}
+            svg {font-size: pxtoem(20px);}
             max-width: 500px;
             width: 100vw;
-            .icon{padding: 0px 0px 3px;}
+            .icon{padding: 0px 0px pxtoem(3px);}
             .icon.big_screen{display:  none !important;}
             .icon.small_screen{display: flex !important;}
         }
@@ -97,12 +97,12 @@
 }
 @media (max-width :500px) {
     .Topbar_component {
+        font-size: 13px;
         .Logo_Search .brand {
-            p {font-size: 17px;}
+            p {font-size: pxtoem(17px);}
             img{@include square(23px);}
         }
         .Main_Links {
-            svg {font-size: 15px;}
             max-width: 500px;
         }
     }

@@ -2,9 +2,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 5px;
-  background-color: white;
-  padding: 2px 4px;
+  gap: 0.3125em;
+  padding: 0.125em 0.25em;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -21,27 +20,30 @@
 
 @media (max-width: 900px) {
   .Main_Search_Box_Component {
-    padding: 2px 4px;
+    padding: 0.125em 0.25em;
   }
   .Main_Search_Box_Component svg {
-    font-size: 15px;
+    font-size: 0.9375em;
   }
   .Main_Search_Box_Component input {
-    font-size: 13px;
+    font-size: 0.8125em;
   }
 }
 @media (max-width: 400px) {
   .Main_Search_Box_Component {
-    padding: 2px 2px;
+    padding: 0.125em 0.125em;
   }
   .Main_Search_Box_Component input {
     display: none;
   }
   .Main_Search_Box_Component svg {
-    font-size: 18px;
+    font-size: 1.125em;
   }
 }
 .Main_Search_Box_Component.ColorTheme_1 {
+  background-color: white;
+}
+.Main_Search_Box_Component.ColorTheme_1 input {
   background-color: white;
 }
 .Main_Search_Box_Component.ColorTheme_1 input::-moz-placeholder {

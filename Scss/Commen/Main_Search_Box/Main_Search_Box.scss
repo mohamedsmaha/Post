@@ -2,29 +2,29 @@
 .Main_Search_Box_Component{
     @include flex_row();
     align-items: center;
-    gap: 5px;
-    background-color: $secound_color;
-    padding: 2px 4px;
+    gap: pxtoem(5px);
+    padding: pxtoem(2px) pxtoem(4px);
     svg{font-size: 20px;}
     input{outline: none;border: none;}
     @include border(10px);
 }
 @media (max-width : 900px) {
     .Main_Search_Box_Component {
-        padding: 2px 4px;
-        svg{font-size: 15px;}
-        input{font-size: 13px;}
+        padding: pxtoem(2px) pxtoem(4px);
+        svg{font-size: pxtoem(15px);}
+        input{font-size: pxtoem(13px);}
     }
 }
 @media (max-width : 400px) {
     .Main_Search_Box_Component{
-        padding: 2px 2px;
+        padding: pxtoem(2px) pxtoem(2px);
         input{display: none;}
-        svg{font-size: 18px;}
+        svg{font-size: pxtoem(18px);}
     }
 }
 .Main_Search_Box_Component.ColorTheme_1{
     background-color: $secound_color;
+    input{background-color: $secound_color;}
     input::placeholder {color: $sixth_color;}
     svg{color:$fifth_color;}
     @media (max-width : 400px) {

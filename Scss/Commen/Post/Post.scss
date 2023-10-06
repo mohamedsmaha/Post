@@ -1,5 +1,5 @@
 @import "../../Helper/all.scss";
-
+$padding : pxtoem(10px);
 @mixin Userinfo() {
     .top {
         @include flex_row();
@@ -8,23 +8,25 @@
         .info {
             @include flex_row();
             align-items: center;
-            img {@include person_pic(5px)}
+            cursor: pointer;
+            img {@include person_pic(5px) }
             .username {
                 font-size: pxtoem(14px);
                 font-weight: 500;
                 margin: pxtoem(0px) pxtoem(10px);
             }
             .time {
-                font-size: pxtoem(12px);
+                font-size: pxtoem(11px);
             }
         }
-        .posttopright {}
+        .posttopright {cursor: pointer;}
     }
 }
 @mixin content() {
     .content {
         .text {
             margin: pxtoem(0px) pxtoem(10px);
+            font-size: pxtoem(15px);
         }
 
         img {
@@ -45,17 +47,17 @@
             @include flex_row();
             align-items: center;
             .likeicon {
-                @include square(20px);
+                @include square(17px);
                 margin-right: pxtoem(5px);
                 cursor: pointer;
             }
             .reacts {
-                font-size: pxtoem(14px);
+                font-size: pxtoem(13px);
             }
         }
         .comments {
             cursor: pointer;
-            font-size: pxtoem(14px);
+            font-size: pxtoem(13px);
         }
     }
 }
@@ -67,16 +69,18 @@
         .item {
             flex-basis: 33%;
             text-align: center;
+            font-size: pxtoem(14px);
+            border-right: pxtoem(0.5px) solid ;
+            cursor: pointer;
         }
     }
 }
 @mixin Newtype(){
     .New {
-        $padding : pxtoem(10px);
-        @include shadow(2px, 2px);
         background-color: white;
         padding: $padding;
         gap: pxtoem(10px);
+        @include shadow(2px, 2px);
         @include border(10px);
         @include flex_column();
         @include Userinfo();
@@ -85,31 +89,36 @@
         @include actions();
     }
 }
+@mixin Share(){
+    .Share {
+            @include Userinfo();
+            @include content();
+            @include reactions();
+            @include actions();
+
+            @include Newtype();
+
+            @include shadow(2px, 2px);
+            @include flex_column();
+            gap: pxtoem(10px);
+            padding : $padding;
+            .New {
+                border: pxtoem(1px) solid ;
+                margin: 0px auto;
+                box-shadow: none;
+                font-size: pxtoem(12px);
+                width: calc(95% - (2 *$padding));
+                .top .info img{@include person_pic()}
+            }
+        }
+}
 .post {
     margin: pxtoem(10px) 0px;
     @include border(10px);
     @include Newtype();
+    @include Share();
     max-width:$maxPostwidth;
     width: 100%;
-    .Share{
-
-        @include Userinfo();
-        @include Newtype();
-        @include reactions();
-        @include actions();
-        @include flex_column();
-        @include shadow(2px, 2px);
-        @include content();
-        gap:10px;
-        padding: pxtoem(10px);
-        .New{
-            border: 1px solid rgba(0, 0, 0, 0.408);
-            margin: 0px auto;
-            box-shadow: none;
-            font-size: 13px;
-            width: calc(97% - (2 *10px));
-        }
-    }
 }
 
 .post.ColorTheme_1{
@@ -124,5 +133,6 @@
         .likes .reacts{color: $fifth_color;}
         .comments {color: $fifth_color;}
     }
-    .actions .item{color: $fifth_color;}
+    .actions .item{color: $fifth_color; border-color: $eight_color;}
+    .Share .New {border-color: $eight_color;}
 }

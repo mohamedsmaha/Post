@@ -25,10 +25,11 @@
     }
 }
 
+$padding : 10px;
 .share {
-    $padding : 10px;
     margin-top: 10px;
-    width: calc($maxPostwidth - (2 * $padding));
+    max-width: calc($maxPostwidth - (2 * $padding));
+    width    : calc($maxPostwidth - (2 * $padding));
     height: fit-content;
     box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
     @include border(10px);
@@ -39,12 +40,11 @@
         @include flex_row();
         align-items: center;
         gap: pxtoem(5px);
-
         .shareprofileimg {
             @include person_pic(5px);
         }
-
         .shareInput {
+            font-size: pxtoem(16px);
             border: none;
             width: 80%;
             outline: none;
@@ -59,16 +59,7 @@
 }
 
 @media (max-width : 900px) {
-    .share{
-        $padding : 10px;
-        max-width: calc($maxPostwidth - (2 * $padding));
-        width    : calc(100% - (2 * $padding));
-    }
-}
-@media (max-width : 400px) {
-    .share {
-        font-size: 12px;
-    }
+    .share{width    : calc(100% - (2 * $padding));}
 }
 
 .share.ColorTheme_1{

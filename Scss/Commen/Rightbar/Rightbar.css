@@ -2,7 +2,7 @@
   width: 250px;
 }
 .Rightbar .Home {
-  padding-top: 10px;
+  padding-top: 0.625em;
 }
 .Rightbar .Home .birthday {
   display: flex;
@@ -15,6 +15,9 @@
 }
 .Rightbar .Home .birthday .birthdaytext {
   font-weight: 300;
+  font-size: 0.9375em;
+}
+.Rightbar .Home .birthday .birthdaytext b {
   font-size: 0.9375em;
 }
 .Rightbar .Home .Online .OnlineFriendsList .item {
@@ -32,24 +35,24 @@
   height: 2.5em;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
 }
 .Rightbar .Home .Online .OnlineFriendsList .item .Left .Icon {
   width: 0.75em;
   height: 0.75em;
   position: absolute;
-  top: -2;
+  top: -0.125em;
   right: 0;
-  border: 2px solid;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
+  border: 0.125em solid;
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
 }
 .Rightbar .Home .Online .OnlineFriendsList .item .Right .name {
   font-weight: 500;
@@ -65,11 +68,11 @@
   height: 7.5em;
   -o-object-fit: contain;
      object-fit: contain;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
 }
 .Rightbar .Home .sponsers .box .discreption {
   overflow: hidden;
@@ -90,22 +93,22 @@
 }
 .Rightbar .Home.Ar .birthday .birthdaytext {
   direction: rtl;
-  padding: 0px 0.625em 0px 0px;
+  padding-right: 0.625em;
 }
 .Rightbar .rightbartitle {
-  font-size: 18px;
+  font-size: 1.125em;
   font-weight: 500;
-  margin-bottom: 10px;
+  margin-bottom: 0.625em;
 }
 .Rightbar .rightbarinfo {
-  margin-bottom: 30px;
+  margin-bottom: 1.875em;
 }
 .Rightbar .rightbarinfo .rightbarinfoitem {
-  margin-bottom: 10px;
+  margin-bottom: 0.625em;
 }
 .Rightbar .rightbarinfo .rightbarinfoitem .rightbarinfokey {
   font-weight: 500;
-  margin-right: 15px;
+  margin-right: 0.9375em;
   color: #555;
 }
 .Rightbar .rightbarinfo .rightbarinfoitem .rightbarinfovalue {
@@ -142,7 +145,7 @@
 @media (max-width: 900px) {
   .Rightbar {
     display: block;
-    font-size: 14px;
+    font-size: 0.875em;
     position: sticky;
     top: 0px;
   }
