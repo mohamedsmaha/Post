@@ -1,0 +1,46 @@
+.Login {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: white;
+  max-width: 1000px;
+  max-height: 1000px;
+  height: 500px;
+  width: 90vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
+  box-shadow: 5px 5px 16px -8px rgba(0, 0, 0, 0.68);
+}
+.Login div.Appcontent {
+  flex: 48%;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Login div.Appcontent img {
+  width: 50%;
+}
+.Login form {
+  flex: 48%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.Login form .inputbox {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}/*# sourceMappingURL=Login.css.map */

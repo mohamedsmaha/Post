@@ -33,11 +33,11 @@
   border: none;
   padding: 0.625rem;
   text-transform: capitalize;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
   font-weight: 700;
   opacity: 90%;
   cursor: pointer;
@@ -65,11 +65,11 @@
   height: 2.1875em;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 50px;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -o-border-radius: 50px;
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
 }
 .Sidebar_Container > .FriendsList > .item > .name {
   font-weight: bold;
@@ -80,11 +80,11 @@
   border: none;
   padding: 0.625rem;
   text-transform: capitalize;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
   font-weight: 700;
   opacity: 90%;
   cursor: pointer;

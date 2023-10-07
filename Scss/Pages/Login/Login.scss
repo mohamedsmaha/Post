@@ -1,0 +1,42 @@
+@import "../../Helper/all.scss";
+@mixin translate_center() {
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+.Login{
+    @include flex_row();
+    align-items: center;
+    background-color: white;
+    max-width: 1000px;
+    max-height:1000px;
+    height: 500px;
+    width: 90vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include translate_center();
+    @include border(50px);
+    @include shadow(5px ,5px);
+    div.Appcontent{
+        flex:48%;
+        gap: 10px;
+        @include flex_column();
+        justify-content: center;
+        align-items: center;
+        img{width: 50%;}
+    }
+    form{
+        flex: 48%;
+        @include flex_column();
+        gap: 10px;
+        .inputbox{
+            @include flex_row();
+            gap: 20px;
+
+        }
+    }
+}
+

@@ -19,7 +19,10 @@ $padding : pxtoem(10px);
                 font-size: pxtoem(11px);
             }
         }
-        .posttopright {cursor: pointer;}
+        .posttopright {
+            cursor: pointer; 
+            svg{font-size: pxtoem(18px);}
+        }
     }
 }
 @mixin content() {

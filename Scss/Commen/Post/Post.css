@@ -55,6 +55,9 @@
 .post .New .top .posttopright {
   cursor: pointer;
 }
+.post .New .top .posttopright svg {
+  font-size: 1.125em;
+}
 .post .New .content .text {
   margin: 0em 0.625em;
   font-size: 0.9375em;
@@ -142,6 +145,9 @@
 }
 .post .Share .top .posttopright {
   cursor: pointer;
+}
+.post .Share .top .posttopright svg {
+  font-size: 1.125em;
 }
 .post .Share .content .text {
   margin: 0em 0.625em;
@@ -236,6 +242,9 @@
 }
 .post .Share .New .top .posttopright {
   cursor: pointer;
+}
+.post .Share .New .top .posttopright svg {
+  font-size: 1.125em;
 }
 .post .Share .New .content .text {
   margin: 0em 0.625em;

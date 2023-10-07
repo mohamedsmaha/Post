@@ -17,12 +17,14 @@ import { useAppSelector } from '@/Redux/Hooks'
         }
         const Static_data :TopbarStaticdata= {
             main_icons : [
-                {id : 1 , icon : <Home/>          , find : "both" , link :App_links.Home},
+                {id : 1 , icon : <Home/>          , find : "both"         , link :App_links.Home},
                 {id : 2 , icon : <Notifications/> , find : "small_screen" , link :App_links.Home},
-                {id : 3 , icon : <Home/>          , find : "both" , link :App_links.Home},
+                {id : 7 , icon : <Chat/>          , find : "small_screen" , link :App_links.Home},
+                {id : 3 , icon : <Home/>          , find : "both"         , link :App_links.Home},
                 {id : 4 , icon : <Home/>          , find : "both" , link :App_links.Home},
-                {id : 5 , icon : <Home/>          , find : "both" , link :App_links.Home},
+                {id : 5 , icon : <Home/>          , find : "big_screen" , link :App_links.Home},
                 {id : 6 , icon : <Home/>          , find : "big_screen" , link :App_links.Home},
+
 
             ],
             left_icons:[
