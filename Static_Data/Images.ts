@@ -2,9 +2,10 @@ import { APP_Folders } from "./APP_Folders"
 
 const Static_path = APP_Folders.AppImges()
 export const Static_images = {
-    main_logo    : `${Static_path}/logo1.png` ,
+    main_logo    : `${Static_path}/logo.png` ,
     secound_logo : `${Static_path}/logo.png`  ,
     Gift         : `${Static_path}/gift.png`  ,
+    Wave         : `${Static_path}/wave.png`  ,
     Reactions    : {"love" : `${Static_path}/heart.png`,
                     "like" : `${Static_path}/like.png `}
 
