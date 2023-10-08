@@ -1,0 +1,86 @@
+.LoginComponent {
+  overflow-y: scroll;
+  font-size: 17px;
+  max-height: 70%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.875em;
+  align-items: center;
+  justify-content: start;
+}
+.LoginComponent::-webkit-scrollbar {
+  width: 0px;
+}
+.LoginComponent form {
+  width: -moz-fit-content;
+  width: fit-content;
+  align-items: center;
+  gap: 1.25em;
+  display: flex;
+  flex-direction: column;
+}
+.LoginComponent form .inputbox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625em;
+  width: 90%;
+  align-items: center;
+}
+.LoginComponent form .inputbox .label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.875em;
+}
+.LoginComponent form .inputbox .label input {
+  width: 0.875em;
+}
+.LoginComponent form .inputbox input {
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  width: 15.625em;
+  padding: 0.375em 0px;
+  border: none;
+  text-indent: 0.625em;
+  outline: none;
+  color: black;
+  border: 0.0625em solid #1877f2;
+  font-size: 0.625em;
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
+}
+.LoginComponent form .inputbox input::-moz-placeholder {
+  color: #1877f2;
+}
+.LoginComponent form .inputbox input::placeholder {
+  color: #1877f2;
+}
+.LoginComponent .header {
+  color: goldenrod;
+  font-weight: 500;
+  font-size: 1.5625em;
+}
+.LoginComponent button {
+  padding: 0.3125em 0.625em;
+  border: none;
+  background-color: rgba(194, 194, 194, 0.232);
+  color: black;
+  font-weight: 500;
+  width: 9.375em;
+  text-transform: capitalize;
+  margin: 0px 0.3125em;
+  font-size: 0.8125em;
+  background-color: #1877f2;
+  color: white;
+  cursor: pointer;
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
+}/*# sourceMappingURL=Login.css.map */
