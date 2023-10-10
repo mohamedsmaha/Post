@@ -7,14 +7,14 @@ import { Component, useState } from "react";
 import Forget from "@/Components/Pages/assuntocation/Forget/Forget";
 export default function login() {
   const [Appcontent, setAppcontent] = useState<null | "right" | "left">(null); 
-  const [leftboxcomponent , setleftboxcomponent] = useState<React.ReactNode>(<Register/>)
+  const [leftboxcomponent , setleftboxcomponent] = useState<React.ReactNode | null>(null)
 
   const helper_functions = {
     Handel_appcontent(value : "right" | "left"){
         setAppcontent(value)
     } ,
     Handel_leftbox_component(componentName:"Register" | "Forget"){
-      if(componentName == "Register"){setleftboxcomponent(<Register/>)}
+      if(componentName == "Register"){setleftboxcomponent(<Register state_functions={{ Appcontent: helper_functions.Handel_appcontent }}/>)}
       else{setleftboxcomponent(<Forget/>)}
     }
   }

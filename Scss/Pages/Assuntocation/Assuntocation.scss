@@ -66,7 +66,7 @@ $wave_height: 15%;
     justify-content: space-between;
     height: 100vh;
     @include Waves();
-    .Box {
+    >.Box {
             z-index: 1000;
             @include flex_row();
             align-items: center;
@@ -81,7 +81,7 @@ $wave_height: 15%;
             @include translate_center();
             @include border(50px);
             @include shadow(5px, 5px);
-            .container{
+            >.container{
                 @include flex_row();
                 align-items: center;
                 position: relative;

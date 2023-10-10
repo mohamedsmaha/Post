@@ -1,0 +1,100 @@
+@import "../../../Helper/all.scss";
+@import "../Commen/Commen.scss";
+
+@mixin timer(){
+    div.timer{
+        $border : 50px;
+        $diff   :10px;
+        @include border(50px);
+        @include square(40px);
+        div.Bigcircle {
+            height: 100%;
+            @include border(50px);
+            background-color: green;
+            @include flex_row();
+            @include flex_center();
+            div.Smallcircle{
+                background-color: white;
+                height: calc(100% - $diff);
+                width: calc(100% - $diff);
+                @include flex_row();
+                @include flex_center();
+                @include border($border);
+                p{
+                    font-size: 18px;
+                    font-weight: 500px;
+                }
+            }
+        }
+    }
+}
+
+@mixin firstShap(){
+    .FirstShap{
+        width: 100%;
+        height: 100%;
+        gap: pxtoem(30px);
+        overflow-y: scroll;
+        @include form();
+        @include header();
+        @include button();
+        @include flex_column();
+        @include flex_center();
+        &::-webkit-scrollbar {
+                width: 0px;
+            }
+    }
+}
+@mixin SecoundShap(){
+    .SecoundShap{
+
+                height: 100%;
+                width: 100%;
+                background-color: white;
+                @include header();
+                @include flex_column();
+                @include timer();
+                @include button();
+                gap: pxtoem(20px);
+                align-items: center;
+                button{font-size: 12px;}
+                .buttons{@include flex_column(); @include flex_center(); gap: 10px;margin-top: 10px}
+                .firstlevelbuttons{
+                    @include flex_row();
+                }
+                .header{font-size: pxtoem(16px);}
+                form .inputbox {
+                    @include flex_column();
+                    @include flex_center();
+                    gap: 10px;
+                    .inputs{
+                        @include flex_row();
+                        gap: 10px;
+                        input{
+                            &::-webkit-outer-spin-button,
+                            &::-webkit-inner-spin-button {
+                                    -webkit-appearance: none;
+                                    margin: 0;}
+                            @include square(30px);
+                            text-align: center;
+                            border: 1px solid $first_color;
+                            outline: none;
+                        }
+                    }
+                    .label{font-size: pxtoem(15px);}
+                }
+    }
+}
+.RegisterComponent  {
+    max-height: 80%;
+    min-width :50%;
+    width: fit-content;
+    >.container{
+            overflow: hidden;
+            font-size: 17px;
+            width: 100%;
+            position: relative;
+            @include firstShap();
+            @include SecoundShap();
+    }
+}

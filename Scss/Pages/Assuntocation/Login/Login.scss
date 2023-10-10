@@ -1,0 +1,19 @@
+@import "../../../Helper/all.scss";
+@import "../Commen/Commen.scss";
+
+.LoginComponent {
+    overflow-y: scroll;
+    &::-webkit-scrollbar{width: 0px;}
+    font-size: 17px;
+    max-height: 70%;
+    width: 100%;
+    @include flex_column();
+    gap: pxtoem(30px);
+    align-items: center;
+    justify-content: start;
+    @include form();
+    @include header();
+    @include button();
+}
+
+

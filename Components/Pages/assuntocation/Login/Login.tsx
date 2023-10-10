@@ -1,5 +1,5 @@
 import React from 'react'
-import "@/Scss/Commen/Login/Login.css"
+import "@/Scss/Pages/Assuntocation/Login/Login.css"
 import { App_links } from '@/Static_Data/Links'
 import Link from 'next/link'
 import { Dispatch } from 'react'

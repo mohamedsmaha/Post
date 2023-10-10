@@ -1,0 +1,70 @@
+@mixin input_box {
+    .inputbox {
+        @include flex_column();
+        gap: pxtoem(5px);
+        width: 90%;
+        align-items: center;
+
+        .label {
+            @include flex_row();
+            justify-content: space-between;
+            width: 100%;
+            font-size: pxtoem(14px);
+
+            input {
+                width: pxtoem(14px);
+            }
+        }
+
+        input {
+            min-width: fit-content;
+            width: pxtoem(250px);
+            padding: pxtoem(6px) 0px;
+            border: none;
+            text-indent: pxtoem(10px);
+            outline: none;
+            color: black;
+            border: pxtoem(1px) solid $first_color;
+            font-size: pxtoem(10px);
+            @include border(50px);
+
+            &::placeholder {
+                color: $first_color;
+            }
+        }
+    }
+}
+@mixin button() {
+    button {
+        padding: pxtoem(5px) pxtoem(10px);
+        border: none;
+        background-color: rgba(194, 194, 194, 0.232);
+        color: black;
+        font-weight: 500;
+        width: pxtoem(150px);
+        text-transform: capitalize;
+        margin: 0px pxtoem(5px);
+        font-size: pxtoem(13px);
+        background-color: $first_color;
+        color: white;
+        cursor: pointer;
+        @include border(50px);
+    }
+}
+@mixin header(){
+        .header {
+            color: goldenrod;
+            font-weight: 500;
+            font-size: pxtoem(25px);
+            text-transform: capitalize;
+    }
+}
+@mixin form(){
+    form {
+            width: fit-content;
+            align-items: center;
+            gap: pxtoem(20px);
+            @include flex_column();
+            @include input_box();
+        }
+}
