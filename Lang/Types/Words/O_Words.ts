@@ -1,5 +1,1 @@
-type Words = "Online Friends"
-export type O_Words = 
-{
-    [key in Words] : string
-}
+export type O_Words = "Online Friends"

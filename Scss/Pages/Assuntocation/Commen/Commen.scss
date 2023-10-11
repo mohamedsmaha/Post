@@ -10,7 +10,7 @@
             justify-content: space-between;
             width: 100%;
             font-size: pxtoem(14px);
-
+            align-items: center;
             input {
                 width: pxtoem(14px);
             }
@@ -18,7 +18,7 @@
 
         input {
             min-width: fit-content;
-            width: pxtoem(250px);
+            width: pxtoem(300px);
             padding: pxtoem(6px) 0px;
             border: none;
             text-indent: pxtoem(10px);
@@ -27,10 +27,14 @@
             border: pxtoem(1px) solid $first_color;
             font-size: pxtoem(10px);
             @include border(50px);
-
             &::placeholder {
                 color: $first_color;
             }
+        }
+        input[type='checkbox'] {
+            min-width: 10px;
+            min-height: 10px;
+            @include square(20px);
         }
     }
 }
@@ -67,4 +71,22 @@
             @include flex_column();
             @include input_box();
         }
+}
+@mixin FinishProcess() {
+    .FinishProcess {
+        @include flex_column();
+        @include flex_center();
+        gap: pxtoem(10px);
+        svg {
+            font-size: pxtoem(100px);
+            color: green
+        }
+
+        p {
+            color: black;
+            font-size: pxtoem(14px)
+        }
+
+        @include button();
+    }
 }

@@ -1,0 +1,1 @@
+export type Shaps = "First" | "Secound" | "Third" | "Fourth"

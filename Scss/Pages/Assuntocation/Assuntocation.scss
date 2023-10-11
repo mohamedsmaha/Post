@@ -48,16 +48,6 @@ $wave_height: 15%;
             font-family: cursive;
         }
         img {width: 40%;}
-        &.right {
-            @include shadow(-3px, 0px);
-                animation: Appcontent_positionto_right 0.5s ease-in-out forwards;
-                -webkit-animation: Appcontent_positionto_right 0.5s ease-in-out forwards;
-        }
-        &.left {
-            @include shadow(3px, 3px);
-                animation: Appcontent_positionto_left 0.5s ease-in-out forwards;
-                -webkit-animation: Appcontent_positionto_left 0.5s ease-in-out forwards;
-}
     }
 
 }
@@ -94,9 +84,65 @@ $wave_height: 15%;
                     @include flex_column();
                     @include flex_center();
                 }
+                &.Ar .rightbox , &.Ar .leftbox{direction: rtl;}
             }
         }
 
+}
+@media (min-width:700px) {
+    .Appcontent{
+        &.right {
+            @include shadow(-3px, 0px);
+            animation: Appcontent_positionto_right 0.5s ease-in-out forwards;
+            -webkit-animation: Appcontent_positionto_right 0.5s ease-in-out forwards;
+        }
+
+        &.left {
+            @include shadow(3px, 3px);
+            animation: Appcontent_positionto_left 0.5s ease-in-out forwards;
+            -webkit-animation: Appcontent_positionto_left 0.5s ease-in-out forwards;
+        }
+    }
+}
+@media (max-width : 750px) {
+    .LoginPage{font-size: pxtoem(13px);}
+}
+@media (max-width : 650px) {
+    .LoginPage{overflow: hidden}
+    .LoginPage >.Box >.container {
+        @include flex_column();
+        padding: 10px;
+        height: calc(100% - 20px);
+        font-size: 14px;
+        .Appcontent{
+            font-size: pxtoem(14px);
+            position: relative;
+            width: fit-content;
+            @include flex_row();
+            height: fit-content;
+            img{@include square(30px); object-fit: cover;}
+            box-shadow: none !important ;            
+        }
+        .rightbox,
+        .leftbox {
+            min-width: 50%;
+            width: fit-content;
+            height: 100%;
+            @include flex_column();
+            @include flex_center();
+            display: none;
+        }
+        .rightbox.active ,
+        .leftbox.active {
+            display: flex;
+        }
+    }
+}
+@media (max-width:400px) {
+    .LoginPage .Box .container
+    {
+        font-size: 12px;
+    }
 }
 
 @keyframes Appcontent_positionto_right {

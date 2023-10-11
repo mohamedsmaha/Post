@@ -1,5 +1,1 @@
-type Words = "More" | "Month" | "Months"
-export type M_Words = 
-{
-    [key in Words] : string
-}
+export type M_Words = "More" | "Month" | "Months"

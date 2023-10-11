@@ -1,5 +1,1 @@
-type Words = "Groups"
-export type G_Words = 
-{
-    [key in Words] : string
-}
+export type G_Words = "Groups"

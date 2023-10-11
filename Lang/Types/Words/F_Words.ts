@@ -1,5 +1,1 @@
-type Words = "Feelings"
-export type F_Words = 
-{
-    [key in Words] : string
-}
+export type F_Words = "Feelings" | "Forget_Password"

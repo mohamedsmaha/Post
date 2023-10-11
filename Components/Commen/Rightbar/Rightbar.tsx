@@ -66,7 +66,7 @@ function Rightbar(props : RightbarType) {
             return (<div className="birthday">
                     <img src={`${Static_images.Gift}`} alt="" className="birthdayimg" />
                     <span className="birthdaytext">
-                        {Languagh[main_redux.DefaultData.Lang].Rightbarcomponent.birthday("mohamed" , 4)}
+                        {Languagh[main_redux.DefaultData.Lang].Rightbarcomponent.Birthday("mohamed" , 4)}
                     </span>
             </div>
             )

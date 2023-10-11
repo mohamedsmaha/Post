@@ -4,52 +4,64 @@ import React from "react";
 export const Arbic : Languagh_model = {
     "Activity"         : "النشاط",
     "Bookmarks"        : "المفضلة",
+    "BirthDay"         : "عيد الميلاد",
     "Calendar"         : "النتيجة",
     "Chats"            : "المحادثات",
     "Comment"          : "تعليق",
     "Courses"          : "الكورسات",
+    "Confirm"          : "تاكيد",
+    "Create"           : "انشاء",
+    "Change"           : "تغيير",
     "Day"              : "يوم",
     "Days"             : "ايام",
+    "Email"            : "البريد الالكتروني",
     "Feelings"         : "المشاعر",
+    "Forget_Password"  : "نسيت كلمه المرور",
     "Groups"           : "المجموعات",
     "Hour"             : "ساعه",
     "Hours"            : "ساعات",
     "Jobs"             : "الوظائف",
     "Like"             : "اعجبني",
+    "Login"            : "تسجيل الدخول",
     "More"             : "المزيد",
     "Month"            : "شهر",
     "Months"           : "Months",
     "Online Friends"  : "الأصدقاء المتصلين",
+    "Password"         :"كلمه السر",
     "Pages"            : "الصفحات",
     "Photo"            : "الصور",
+    "Phone"            : "الهاتف",
     "Questions"        : "الأسئلة",
+    "Register"         : "انشاء حساب",
+    "Resend"           : "اعادة ارسال",
     "Share"            : "مشاركة",
     "Search"           : "ابحث",
     "Settings"         : "الإعدادات",
     "Shop"             : "متجر",
+    "UserName"         : "اسم المستخدم",
     "Videos"           : "فيديوهات",
     "Week"             : "اسبوع",
     "Weeks"            : "اسابيع",
     "Year"             : "سنة",
     "Years"            : "سنوات",
     Sharecomponent :{
-        InputFiled(name : string){
+        InputFiled:(name : string)=>{
             return `؟ ${name} ماذا في بالك يا `
         }
     },
     Postcomponent : {
-        Likes(likes : number){
+        Likes: (likes : number)=>{
             return ` ${convertToArabicNumber(likes)} من المعجبين `
         },
-        comments(comments : number){
+        Comments: (comments : number)=>{
             return `${convertToArabicNumber(comments)} تعليق `
         },
-        Time(number , unite){
+        Time:(number , unite)=>{
             return `منذ ${convertToArabicNumber(number)} ${Arbic[unite]}`
         }
     },
     Rightbarcomponent:{
-        birthday(name , number){
+        Birthday:(name , number)=>{
             return <> 
                 <b> {name} </b>
                 و

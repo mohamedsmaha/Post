@@ -95,7 +95,7 @@ function Post(props:{post : PostData}) {
                     <span className="reacts">{Languagh[Redux.DefaultData.Lang].Postcomponent.Likes(post.main_post.Reactions.numbers.total)}</span>
                 </div>
                 <span className="comments">
-                    {Languagh[Redux.DefaultData.Lang].Postcomponent.comments(1200)}
+                    {Languagh[Redux.DefaultData.Lang].Postcomponent.Comments(1200)}
                 </span>
             </div>
         )

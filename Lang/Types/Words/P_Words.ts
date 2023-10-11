@@ -1,5 +1,1 @@
-type Words = "Pages" | "Photo"
-export type P_Words = 
-{
-    [key in Words] : string
-}
+export type P_Words = "Pages" | "Photo"|"Password"|"Phone"

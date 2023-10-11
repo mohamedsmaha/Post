@@ -1,0 +1,36 @@
+@import "../../../Helper/all.scss";
+@import "../Commen/Commen.scss";
+@mixin FirstShap(){
+    .FirstShap{
+        @include flex_column();
+        align-items: center;
+        justify-content: start;
+        @include form();
+        @include button();
+        @include header();
+        gap: 20px;
+    }
+}
+@mixin ThiredShap(){
+    .ThirdShap{
+        width: 100%;
+        height: 100%;
+        gap: pxtoem(30px);
+        overflow-y: scroll;
+        @include form();
+        @include header();
+        @include button();
+        @include flex_column();
+        @include flex_center();
+        &::-webkit-scrollbar {
+        width: 0px;
+        }
+    }
+}
+.ForgetComponent {
+    max-height: 80%;
+    min-width: 50%;
+    @include FirstShap();
+    @include FinishProcess();
+    @include ThiredShap();
+}

@@ -79,16 +79,6 @@
 .LoginPage > .Box > .container .Appcontent img {
   width: 40%;
 }
-.LoginPage > .Box > .container .Appcontent.right {
-  box-shadow: -3px 0px 16px -8px rgba(0, 0, 0, 0.68);
-  animation: Appcontent_positionto_right 0.5s ease-in-out forwards;
-  -webkit-animation: Appcontent_positionto_right 0.5s ease-in-out forwards;
-}
-.LoginPage > .Box > .container .Appcontent.left {
-  box-shadow: 3px 3px 16px -8px rgba(0, 0, 0, 0.68);
-  animation: Appcontent_positionto_left 0.5s ease-in-out forwards;
-  -webkit-animation: Appcontent_positionto_left 0.5s ease-in-out forwards;
-}
 .LoginPage > .Box > .container .rightbox, .LoginPage > .Box > .container .leftbox {
   width: 50%;
   height: 100%;
@@ -97,7 +87,77 @@
   align-items: center;
   justify-content: center;
 }
+.LoginPage > .Box > .container.Ar .rightbox, .LoginPage > .Box > .container.Ar .leftbox {
+  direction: rtl;
+}
 
+@media (min-width: 700px) {
+  .Appcontent.right {
+    box-shadow: -3px 0px 16px -8px rgba(0, 0, 0, 0.68);
+    animation: Appcontent_positionto_right 0.5s ease-in-out forwards;
+    -webkit-animation: Appcontent_positionto_right 0.5s ease-in-out forwards;
+  }
+  .Appcontent.left {
+    box-shadow: 3px 3px 16px -8px rgba(0, 0, 0, 0.68);
+    animation: Appcontent_positionto_left 0.5s ease-in-out forwards;
+    -webkit-animation: Appcontent_positionto_left 0.5s ease-in-out forwards;
+  }
+}
+@media (max-width: 750px) {
+  .LoginPage {
+    font-size: 0.8125em;
+  }
+}
+@media (max-width: 650px) {
+  .LoginPage {
+    overflow: hidden;
+  }
+  .LoginPage > .Box > .container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    height: calc(100% - 20px);
+    font-size: 14px;
+  }
+  .LoginPage > .Box > .container .Appcontent {
+    font-size: 0.875em;
+    position: relative;
+    width: -moz-fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    height: -moz-fit-content;
+    height: fit-content;
+    box-shadow: none !important;
+  }
+  .LoginPage > .Box > .container .Appcontent img {
+    width: 1.875em;
+    height: 1.875em;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .LoginPage > .Box > .container .rightbox,
+  .LoginPage > .Box > .container .leftbox {
+    min-width: 50%;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+  }
+  .LoginPage > .Box > .container .rightbox.active,
+  .LoginPage > .Box > .container .leftbox.active {
+    display: flex;
+  }
+}
+@media (max-width: 400px) {
+  .LoginPage .Box .container {
+    font-size: 12px;
+  }
+}
 @keyframes Appcontent_positionto_right {
   0% {
     left: 0%;

@@ -6,7 +6,7 @@
 }
 .RegisterComponent > .container {
   overflow: hidden;
-  font-size: 17px;
+  font-size: 1.0625em;
   width: 100%;
   position: relative;
 }
@@ -41,6 +41,7 @@
   justify-content: space-between;
   width: 100%;
   font-size: 0.875em;
+  align-items: center;
 }
 .RegisterComponent > .container .FirstShap form .inputbox .label input {
   width: 0.875em;
@@ -48,7 +49,7 @@
 .RegisterComponent > .container .FirstShap form .inputbox input {
   min-width: -moz-fit-content;
   min-width: fit-content;
-  width: 15.625em;
+  width: 18.75em;
   padding: 0.375em 0px;
   border: none;
   text-indent: 0.625em;
@@ -67,6 +68,12 @@
 }
 .RegisterComponent > .container .FirstShap form .inputbox input::placeholder {
   color: #1877f2;
+}
+.RegisterComponent > .container .FirstShap form .inputbox input[type=checkbox] {
+  min-width: 10px;
+  min-height: 10px;
+  width: 1.25em;
+  height: 1.25em;
 }
 .RegisterComponent > .container .FirstShap .header {
   color: goldenrod;
@@ -96,62 +103,22 @@
 .RegisterComponent > .container .FirstShap::-webkit-scrollbar {
   width: 0px;
 }
-.RegisterComponent > .container .SecoundShap {
-  height: 100%;
-  width: 100%;
-  background-color: white;
+.RegisterComponent > .container .FinishProcess {
   display: flex;
   flex-direction: column;
-  gap: 1.25em;
-  align-items: center;
-}
-.RegisterComponent > .container .SecoundShap .header {
-  color: goldenrod;
-  font-weight: 500;
-  font-size: 1.5625em;
-  text-transform: capitalize;
-}
-.RegisterComponent > .container .SecoundShap div.timer {
-  border-radius: 3.125em;
-  -webkit-border-radius: 3.125em;
-  -moz-border-radius: 3.125em;
-  -ms-border-radius: 3.125em;
-  -o-border-radius: 3.125em;
-  width: 2.5em;
-  height: 2.5em;
-}
-.RegisterComponent > .container .SecoundShap div.timer div.Bigcircle {
-  height: 100%;
-  border-radius: 3.125em;
-  -webkit-border-radius: 3.125em;
-  -moz-border-radius: 3.125em;
-  -ms-border-radius: 3.125em;
-  -o-border-radius: 3.125em;
-  background-color: green;
-  display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 0.625em;
 }
-.RegisterComponent > .container .SecoundShap div.timer div.Bigcircle div.Smallcircle {
-  background-color: white;
-  height: calc(100% - 10px);
-  width: calc(100% - 10px);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  border-radius: 3.125em;
-  -webkit-border-radius: 3.125em;
-  -moz-border-radius: 3.125em;
-  -ms-border-radius: 3.125em;
-  -o-border-radius: 3.125em;
+.RegisterComponent > .container .FinishProcess svg {
+  font-size: 6.25em;
+  color: green;
 }
-.RegisterComponent > .container .SecoundShap div.timer div.Bigcircle div.Smallcircle p {
-  font-size: 18px;
-  font-weight: 500px;
+.RegisterComponent > .container .FinishProcess p {
+  color: black;
+  font-size: 0.875em;
 }
-.RegisterComponent > .container .SecoundShap button {
+.RegisterComponent > .container .FinishProcess button {
   padding: 0.3125em 0.625em;
   border: none;
   background-color: rgba(194, 194, 194, 0.232);
@@ -169,48 +136,4 @@
   -moz-border-radius: 3.125em;
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
-}
-.RegisterComponent > .container .SecoundShap button {
-  font-size: 12px;
-}
-.RegisterComponent > .container .SecoundShap .buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 10px;
-}
-.RegisterComponent > .container .SecoundShap .firstlevelbuttons {
-  display: flex;
-  flex-direction: row;
-}
-.RegisterComponent > .container .SecoundShap .header {
-  font-size: 1em;
-}
-.RegisterComponent > .container .SecoundShap form .inputbox {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-.RegisterComponent > .container .SecoundShap form .inputbox .inputs {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-}
-.RegisterComponent > .container .SecoundShap form .inputbox .inputs input {
-  width: 1.875em;
-  height: 1.875em;
-  text-align: center;
-  border: 1px solid #1877f2;
-  outline: none;
-}
-.RegisterComponent > .container .SecoundShap form .inputbox .inputs input::-webkit-outer-spin-button, .RegisterComponent > .container .SecoundShap form .inputbox .inputs input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-.RegisterComponent > .container .SecoundShap form .inputbox .label {
-  font-size: 0.9375em;
 }/*# sourceMappingURL=Register.css.map */

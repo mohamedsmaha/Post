@@ -1,5 +1,1 @@
-type Words = "Day" | "Days"
-export type D_Words = 
-{
-    [key in Words] : string
-}
+export type D_Words = "Day" | "Days"

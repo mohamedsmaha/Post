@@ -5,7 +5,12 @@ import Login from "@/Components/Pages/assuntocation/Login/Login";
 import Register from "@/Components/Pages/assuntocation/Register/Register";
 import { Component, useState } from "react";
 import Forget from "@/Components/Pages/assuntocation/Forget/Forget";
+import { useAppSelector } from "@/Redux/Hooks";
 export default function login() {
+    let Redux = {
+        DefaultData : useAppSelector((state) => state.DefaultData)
+    }
+    
   const [Appcontent, setAppcontent] = useState<null | "right" | "left">(null); 
   const [leftboxcomponent , setleftboxcomponent] = useState<React.ReactNode | null>(null)
 
@@ -15,22 +20,22 @@ export default function login() {
     } ,
     Handel_leftbox_component(componentName:"Register" | "Forget"){
       if(componentName == "Register"){setleftboxcomponent(<Register state_functions={{ Appcontent: helper_functions.Handel_appcontent }}/>)}
-      else{setleftboxcomponent(<Forget/>)}
+      else{setleftboxcomponent(<Forget state_functions={{ Appcontent: helper_functions.Handel_appcontent }}/>)}
     }
   }
   return (
     <div className="LoginPage">
       <img src={Static_images.Wave} alt=""  className="Wave"/>
       <div className="Box">
-        <div className="container">
+        <div className={`container ${Redux.DefaultData.Lang}`}>
           <div className={`Appcontent  ${Appcontent}`}>
             <img src={Static_images.secound_logo} alt="" />
             <p className="slogan">What a better society should be like </p>
           </div>
-          <div className="leftbox">
+          <div className={`leftbox ${Appcontent == "right" ? "active" :  ''} `}>
             {leftboxcomponent}
           </div>
-          <div className="rightbox">
+          <div className={`rightbox ${Appcontent == null  || Appcontent == "left" ? "active" :  ''}`}>
             <Login state_functions={{ Appcontent: helper_functions.Handel_appcontent, leftboxcomponent: helper_functions.Handel_leftbox_component }} />
           </div>
         </div>

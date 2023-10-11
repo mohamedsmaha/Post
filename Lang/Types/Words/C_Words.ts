@@ -1,5 +1,1 @@
-type Words = "Chats" | "Calendar" | "Courses" | "Comment" 
-export type C_Words = 
-{
-    [key in Words] : string
-}
+export type C_Words = "Chats" | "Calendar" | "Courses" | "Comment" | "Confirm" | "Create"|"Change"
