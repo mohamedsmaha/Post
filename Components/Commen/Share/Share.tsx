@@ -4,6 +4,8 @@ import "@/Scss/Commen/Share/Share.css"
 import React from "react"
 import { useAppSelector } from "@/Redux/Hooks"
 import { Languagh } from "@/Lang/Main_file"
+import { Translate_Object } from "@/Helpers/Translate"
+import { ShareElementsLangType } from "@/Lang/Types/Components/Share"
 
 function Share() {
     let Redux = {
@@ -26,12 +28,12 @@ function Share() {
                 </ul>
         )
     }
-
+    const ShareLangObj= Translate_Object("Share") as ShareElementsLangType;
     return (    
         <div className={`share ColorTheme_${Redux.DefaultData.ColorTheme}`}>
                 <div className="sharetop">
                     <img src="./assets/persons/1.jpeg" alt="" className="shareprofileimg" />
-                    <input type="text" className="shareInput"  placeholder={`${Languagh[Redux.DefaultData.Lang].Sharecomponent.InputFiled("mohamed")}`}/>
+                    <input type="text" className="shareInput"  placeholder={`${ShareLangObj.InputFiled("mohamed")}`}/>
                 </div>
                 <hr className="sharehr" />
                 {<Shareoptions/>}

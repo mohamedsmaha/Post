@@ -44,12 +44,12 @@ export const Arbic : Languagh_model = {
     "Weeks"            : "اسابيع",
     "Year"             : "سنة",
     "Years"            : "سنوات",
-    Sharecomponent :{
+    ShareObject :{
         InputFiled:(name : string)=>{
             return `؟ ${name} ماذا في بالك يا `
         }
     },
-    Postcomponent : {
+    PostObject : {
         Likes: (likes : number)=>{
             return ` ${convertToArabicNumber(likes)} من المعجبين `
         },
@@ -60,7 +60,7 @@ export const Arbic : Languagh_model = {
             return `منذ ${convertToArabicNumber(number)} ${Arbic[unite]}`
         }
     },
-    Rightbarcomponent:{
+    RightbarObject:{
         Birthday:(name , number)=>{
             return <> 
                 <b> {name} </b>
@@ -69,6 +69,19 @@ export const Arbic : Languagh_model = {
                 <b> من اصدقائك </b>
                 يحتفلون ب اعياد ميلادهم
             </>
+        }
+    },
+    AssuntocationObject:{
+        "Sentence" : {
+            "Your account has been successfully created"  : "تم إنشاء حسابك بنجاح",
+            "Email verification code"                     : "كود التحقق من البريد الإلكتروني" ,
+            "Confirm Your Email"                          : "قم بتأكيد بريدك الإلكتروني"
+        }
+    },
+    StaticWordsObject:{
+        sentence : {
+            "App_name"   : "Post" ,
+            "App_slogan" : "كيف يجب ان يكون المجتمع افضل"
         }
     }
 }

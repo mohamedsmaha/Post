@@ -1,7 +1,4 @@
 
-import { Post_Lang } from "./Components/Post";
-import { Rightbar_Lang } from "./Components/Rightbar";
-import { Share_Lang } from "./Components/Share";
 import { A_Words } from "./Words/A_Words";
 import { B_Words } from "./Words/B_Words";
 import { C_Words } from "./Words/C_Words";
@@ -22,11 +19,28 @@ import { H_Words } from "./Words/H_Words";
 import { U_Words } from "./Words/U_Words";
 import { E_Words } from "./Words/E_Words";
 import { R_Words } from "./Words/R_Words";
+import { PostElementsLangType, Post_Lang } from "./Components/Post";
+import { ShareElementsLangType, Share_Lang } from "./Components/Share";
+import { RightbarElementsLangType, Rightbar_Lang } from "./Components/Rightbar";
+import { AssuntocationElementsLangType, Assuntocation_Lang } from "./Components/Assuntocation";
+import { StaticWordsElementsLangType, StaticWords_lang } from "./Static_Words";
 
-type components = Share_Lang & Post_Lang & Rightbar_Lang
+
+
+// Components Name
+export type  Translate_components     = `${"Share" | "Post" | "Rightbar" | "Assuntocation" | "StaticWords"}` 
+export type Merge_With_Component_Name = "Object"
+
+// Components Elements
+export type Components_Elements  = PostElementsLangType |
+    ShareElementsLangType | RightbarElementsLangType | AssuntocationElementsLangType | StaticWordsElementsLangType
+
+// Words
 
 export type Words = A_Words | B_Words | C_Words | D_Words | E_Words | F_Words | G_Words | H_Words | J_Words | L_Words |
-M_Words | W_Words| O_Words | P_Words | Q_Words | R_Words | S_Words | U_Words | V_Words | Y_Words
+                    M_Words | W_Words | O_Words | P_Words | Q_Words | R_Words | S_Words | U_Words | V_Words | Y_Words
 type Words_Object = {[key in Words] : string}
 
+//Merge Types
 export type Languagh_model = components & Words_Object
+type components            = Share_Lang & Post_Lang & Rightbar_Lang & Assuntocation_Lang & StaticWords_lang

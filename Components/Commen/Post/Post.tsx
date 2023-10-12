@@ -3,16 +3,20 @@ import React, { useState } from "react";
 import { MoreVert } from "@mui/icons-material";
 import "@/Scss/Commen/Post/Post.css"
 import { useAppSelector } from "@/Redux/Hooks";
-import { Languagh } from "@/Lang/Main_file";
 import { Static_images } from "@/Static_Data/Images";
 import { PostData, Post_info } from "@/Redux/Modules/Post/PostTypes";
 import { APP_Folders } from "@/Static_Data/APP_Folders";
 import { ReactsIcons } from "@/Redux/Modules/Post/PostTypes";
+import { Translate, Translate_Object } from "@/Helpers/Translate";
+import { PostElementsLangType , Post_Lang } from "@/Lang/Types/Components/Post";
 function Post(props:{post : PostData}) {
     const {post} = props
     let Redux = {
         DefaultData : useAppSelector((state) => state.DefaultData)
     }
+    const PostLangObj= Translate_Object("Post") as PostElementsLangType;
+
+
     const helper_functions = {
         TopReactions(item : ReactsIcons | null){
             switch(item){
@@ -62,7 +66,7 @@ function Post(props:{post : PostData}) {
                 <img src={`${APP_Folders.Users()}/${Post_data.User.img}`} alt="" />
                 <span className="username">{Post_data.User.Username}</span>
                 <span className="time">
-                    {Languagh[Redux.DefaultData.Lang].Postcomponent.Time(Post_data.Data.number , Post_data.Data.unite)}
+                    {  PostLangObj.Time(Post_data.Data.number , Post_data.Data.unite)}
                 </span>
                 </div>
                 { post.main_post == Post_data? 
@@ -92,10 +96,10 @@ function Post(props:{post : PostData}) {
                         {helper_functions.TopReactions(post.main_post.Reactions.numbers.order.Third)}
 
                     </div>
-                    <span className="reacts">{Languagh[Redux.DefaultData.Lang].Postcomponent.Likes(post.main_post.Reactions.numbers.total)}</span>
+                    <span className="reacts">{PostLangObj.Likes(post.main_post.Reactions.numbers.total)}</span>
                 </div>
                 <span className="comments">
-                    {Languagh[Redux.DefaultData.Lang].Postcomponent.Comments(1200)}
+                    {PostLangObj.Comments(1200)}
                 </span>
             </div>
         )
@@ -103,9 +107,9 @@ function Post(props:{post : PostData}) {
     function Actions(){
         return(
             <div className="actions">
-                <div className="item">{Languagh[Redux.DefaultData.Lang].Like}</div>
-                <div className="item">{Languagh[Redux.DefaultData.Lang].Comment}</div>
-                <div className="item">{Languagh[Redux.DefaultData.Lang].Share}</div>
+                <div className="item">{Translate("Like")}</div>
+                <div className="item">{Translate("Comment")}</div>
+                <div className="item">{Translate("Share")}</div>
             </div>
         )
     }

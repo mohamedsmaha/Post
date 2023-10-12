@@ -7,7 +7,7 @@ function FinishProcess(props : Props) {
     return(
     <div className="FinishProcess">
         <CheckCircle/>
-        <p>Your account has been successfully created</p>
+        <p>{props.Text}</p>
         <button  onClick={() => props.Sumbit()}>{Translate("Login")}</button>
     </div>
     )

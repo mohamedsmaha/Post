@@ -6,6 +6,7 @@ import Register from "@/Components/Pages/assuntocation/Register/Register";
 import { Component, useState } from "react";
 import Forget from "@/Components/Pages/assuntocation/Forget/Forget";
 import { useAppSelector } from "@/Redux/Hooks";
+import { Static_Words } from "@/Static_Data/Static_words";
 export default function login() {
     let Redux = {
         DefaultData : useAppSelector((state) => state.DefaultData)
@@ -23,14 +24,15 @@ export default function login() {
       else{setleftboxcomponent(<Forget state_functions={{ Appcontent: helper_functions.Handel_appcontent }}/>)}
     }
   }
+
   return (
-    <div className="LoginPage">
+    <div className="AssuntocationPage">
       <img src={Static_images.Wave} alt=""  className="Wave"/>
       <div className="Box">
         <div className={`container ${Redux.DefaultData.Lang}`}>
           <div className={`Appcontent  ${Appcontent}`}>
             <img src={Static_images.secound_logo} alt="" />
-            <p className="slogan">What a better society should be like </p>
+            <p className="slogan">{Static_Words().App_slogan}</p>
           </div>
           <div className={`leftbox ${Appcontent == "right" ? "active" :  ''} `}>
             {leftboxcomponent}

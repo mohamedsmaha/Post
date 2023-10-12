@@ -4,7 +4,8 @@ import { CheckCircle, RampRight } from "@mui/icons-material"
 import { useState } from "react"
 import Confirm from "../HelperComponents/Confirem/Confirm"
 import FinishProcess from "../HelperComponents/FinishProcess/FinishProcess"
-import { Translate } from "@/Helpers/Translate"
+import { Translate, Translate_Object } from "@/Helpers/Translate"
+import { AssuntocationElementsLangType } from "@/Lang/Types/Components/Assuntocation"
 type testtype = { state_functions: { Appcontent: (value : "left" | "right") => void  }}
 function Register(props : testtype) {
   const [shap , setshap] = useState<"First" | "Secound" | "Third">("First")
@@ -18,6 +19,7 @@ function Register(props : testtype) {
   
   
   ]
+  const RegisterLangObj = Translate_Object("Assuntocation") as AssuntocationElementsLangType
   const Helper_Functions = {
       Handel_Shap(shap:"First" | "Secound" | "Third"){
         setshap(shap)
@@ -68,7 +70,8 @@ function Register(props : testtype) {
       )
     }
     function Thirdshap(){
-        return(<FinishProcess Sumbit={Helper_Functions.ThiredShapButtonSubmit}/>)
+        return(<FinishProcess Text  ={RegisterLangObj.Sentence["Your account has been successfully created"]} 
+                              Sumbit={Helper_Functions.ThiredShapButtonSubmit}/>)
     }
     return (
         <div className="RegisterComponent active">

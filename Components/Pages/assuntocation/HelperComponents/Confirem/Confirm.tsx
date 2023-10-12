@@ -1,10 +1,14 @@
-import { Translate } from "@/Helpers/Translate"
+import { Translate, Translate_Object } from "@/Helpers/Translate"
 import { Props } from "./ConfirmTypes"
 import "@/Scss/Pages/Assuntocation/Confirm/Confirm.css"
+import { AssuntocationElementsLangType } from "@/Lang/Types/Components/Assuntocation"
 function Confirm(props:Props){
+    const ConfirmLangObj = Translate_Object("Assuntocation") as AssuntocationElementsLangType
     return(
         <div className="ConfirmComponent">
-            <p className="header">confirm your email</p>
+            <p className="header">
+                {ConfirmLangObj.Sentence["Confirm Your Email"]}
+            </p>
             <div className="timer">
             <div className="Bigcircle">
                 <div className="Smallcircle">
@@ -15,7 +19,7 @@ function Confirm(props:Props){
             <form action="">
                 <div className="inputbox">
                     <div className="label">
-                    Email verification code
+                        {ConfirmLangObj.Sentence["Email verification code"]}
                     </div>
                     <div className="inputs">
                     <input type="number"  />

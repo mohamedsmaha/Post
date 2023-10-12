@@ -51,7 +51,7 @@ $wave_height: 15%;
     }
 
 }
-.LoginPage{
+.AssuntocationPage{
     @include flex_column();
     justify-content: space-between;
     height: 100vh;
@@ -105,11 +105,11 @@ $wave_height: 15%;
     }
 }
 @media (max-width : 750px) {
-    .LoginPage{font-size: pxtoem(13px);}
+    .AssuntocationPage{font-size: pxtoem(13px);}
 }
 @media (max-width : 650px) {
-    .LoginPage{overflow: hidden}
-    .LoginPage >.Box >.container {
+    .AssuntocationPage{overflow: hidden}
+    .AssuntocationPage >.Box >.container {
         @include flex_column();
         padding: 10px;
         height: calc(100% - 20px);
@@ -139,7 +139,7 @@ $wave_height: 15%;
     }
 }
 @media (max-width:400px) {
-    .LoginPage .Box .container
+    .AssuntocationPage .Box .container
     {
         font-size: 12px;
     }

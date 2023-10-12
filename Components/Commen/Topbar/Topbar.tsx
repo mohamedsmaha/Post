@@ -7,7 +7,7 @@ import { Redux, TopbarStaticdata  } from './Topbar_types'
 import Link from 'next/link'
 import { App_links }     from '@/Static_Data/Links'
 import { Static_images } from '@/Static_Data/Images'
-import { Static_words }  from '@/Static_Data/Static_words'
+import { Static_Words }  from '@/Static_Data/Static_words'
 import { useAppSelector } from '@/Redux/Hooks'
     function Topbar() {
         
@@ -44,7 +44,7 @@ import { useAppSelector } from '@/Redux/Hooks'
                 <div className='Logo_Search'>
                     <div className="brand">
                         <img src={`${Static_images.main_logo}`} alt="" />
-                        <p>{Static_words.App_name}</p>
+                        <p>{Static_Words().App_name}</p>
                     </div>
                     <Main_Search_Box/>
                 </div>

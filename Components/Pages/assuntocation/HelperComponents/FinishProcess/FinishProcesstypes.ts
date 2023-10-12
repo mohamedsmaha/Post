@@ -1,3 +1,4 @@
 export type Props = {
-    Sumbit:() => void
+    Sumbit:() => void ,
+    Text  : string
 }

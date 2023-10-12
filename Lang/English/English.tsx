@@ -43,12 +43,12 @@ export const English : Languagh_model={
     "Weeks": "Weeks",
     "Year": "Year",
     "Years": "Years",
-    Sharecomponent :{
+    ShareObject :{
         InputFiled:(name : string)=>{
             return `What is your mind , ${name} ? `
         }
     },
-    Postcomponent : {
+    PostObject : {
         Likes:(likes : number)=>{
             return `${likes} People liked it `
         },
@@ -59,9 +59,22 @@ export const English : Languagh_model={
             return `${number} ${English[unite]} ago`
         }
     },
-    Rightbarcomponent:{
+    RightbarObject:{
         Birthday:(name , number)=>{
             return <><b> {name} </b> and <b>{number} other friends</b> have a birthday today</>
+        }
+    },
+    AssuntocationObject:{
+        "Sentence" : {
+            "Your account has been successfully created" : "Your account has been successfully created" ,
+            "Email verification code"                    : "Email verification code" ,
+            "Confirm Your Email"                         : "Confirm Your Email"
+        }
+    },
+    StaticWordsObject : {
+        sentence : {
+            "App_name"  : "Post" ,
+            "App_slogan": "What A Better Society Should Be Like"
         }
     }
 }

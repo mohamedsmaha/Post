@@ -1,22 +1,22 @@
-.LoginPage {
+.AssuntocationPage {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
 }
-.LoginPage .Wave {
+.AssuntocationPage .Wave {
   width: 100vw;
   max-height: 15%;
   filter: drop-shadow(1px 2px 2px gray);
 }
-.LoginPage .Wave.Bottom {
+.AssuntocationPage .Wave.Bottom {
   transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   -o-transform: rotate(180deg);
 }
-.LoginPage > .Box {
+.AssuntocationPage > .Box {
   z-index: 1000;
   display: flex;
   flex-direction: row;
@@ -41,7 +41,7 @@
   -o-border-radius: 3.125em;
   box-shadow: 5px 5px 16px -8px rgba(0, 0, 0, 0.68);
 }
-.LoginPage > .Box > .container {
+.AssuntocationPage > .Box > .container {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -50,7 +50,7 @@
   width: 100%;
   height: 100%;
 }
-.LoginPage > .Box > .container .Appcontent {
+.AssuntocationPage > .Box > .container .Appcontent {
   border-radius: 3.125em;
   -webkit-border-radius: 3.125em;
   -moz-border-radius: 3.125em;
@@ -69,17 +69,17 @@
   left: 0%;
   gap: 0.625em;
 }
-.LoginPage > .Box > .container .Appcontent .slogan {
+.AssuntocationPage > .Box > .container .Appcontent .slogan {
   font-size: 1.125em;
   color: goldenrod;
   font-weight: 500;
   text-transform: capitalize;
   font-family: cursive;
 }
-.LoginPage > .Box > .container .Appcontent img {
+.AssuntocationPage > .Box > .container .Appcontent img {
   width: 40%;
 }
-.LoginPage > .Box > .container .rightbox, .LoginPage > .Box > .container .leftbox {
+.AssuntocationPage > .Box > .container .rightbox, .AssuntocationPage > .Box > .container .leftbox {
   width: 50%;
   height: 100%;
   display: flex;
@@ -87,7 +87,7 @@
   align-items: center;
   justify-content: center;
 }
-.LoginPage > .Box > .container.Ar .rightbox, .LoginPage > .Box > .container.Ar .leftbox {
+.AssuntocationPage > .Box > .container.Ar .rightbox, .AssuntocationPage > .Box > .container.Ar .leftbox {
   direction: rtl;
 }
 
@@ -104,22 +104,22 @@
   }
 }
 @media (max-width: 750px) {
-  .LoginPage {
+  .AssuntocationPage {
     font-size: 0.8125em;
   }
 }
 @media (max-width: 650px) {
-  .LoginPage {
+  .AssuntocationPage {
     overflow: hidden;
   }
-  .LoginPage > .Box > .container {
+  .AssuntocationPage > .Box > .container {
     display: flex;
     flex-direction: column;
     padding: 10px;
     height: calc(100% - 20px);
     font-size: 14px;
   }
-  .LoginPage > .Box > .container .Appcontent {
+  .AssuntocationPage > .Box > .container .Appcontent {
     font-size: 0.875em;
     position: relative;
     width: -moz-fit-content;
@@ -130,14 +130,14 @@
     height: fit-content;
     box-shadow: none !important;
   }
-  .LoginPage > .Box > .container .Appcontent img {
+  .AssuntocationPage > .Box > .container .Appcontent img {
     width: 1.875em;
     height: 1.875em;
     -o-object-fit: cover;
        object-fit: cover;
   }
-  .LoginPage > .Box > .container .rightbox,
-  .LoginPage > .Box > .container .leftbox {
+  .AssuntocationPage > .Box > .container .rightbox,
+  .AssuntocationPage > .Box > .container .leftbox {
     min-width: 50%;
     width: -moz-fit-content;
     width: fit-content;
@@ -148,13 +148,13 @@
     justify-content: center;
     display: none;
   }
-  .LoginPage > .Box > .container .rightbox.active,
-  .LoginPage > .Box > .container .leftbox.active {
+  .AssuntocationPage > .Box > .container .rightbox.active,
+  .AssuntocationPage > .Box > .container .leftbox.active {
     display: flex;
   }
 }
 @media (max-width: 400px) {
-  .LoginPage .Box .container {
+  .AssuntocationPage .Box .container {
     font-size: 12px;
   }
 }

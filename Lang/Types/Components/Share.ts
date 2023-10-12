@@ -1,6 +1,6 @@
-
+export type ShareElementsLangType = {
+    InputFiled:(name :string) => string;
+}
 export type Share_Lang = {
-    Sharecomponent : {
-        InputFiled:(name :string) => string;
-    }
+    ShareObject : ShareElementsLangType
 }

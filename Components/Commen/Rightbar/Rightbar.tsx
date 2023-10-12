@@ -1,6 +1,8 @@
 "use client";
+import { Translate_Object } from "@/Helpers/Translate";
 import { Languagh } from "@/Lang/Main_file";
-import { useAppSelector , useAppDispatch } from "@/Redux/Hooks";
+import { RightbarElementsLangType } from "@/Lang/Types/Components/Rightbar";
+import { useAppSelector  } from "@/Redux/Hooks";
 import "@/Scss/Commen/Rightbar/Rightbar.css"
 import { Static_images } from "@/Static_Data/Images";
 type RightbarType = {
@@ -21,6 +23,7 @@ function Rightbar(props : RightbarType) {
         { id: 1, Name: 'Alice Smith', img: './assets/persons/2.jpeg' },
         { id: 2, Name: 'Bob Johnson', img: './assets/persons/3.jpeg' }
     ]
+    const RightbarLangObj= Translate_Object("Rightbar") as RightbarElementsLangType;
     let main_redux = {
         DefaultData : useAppSelector((state) => state.DefaultData)
     }
@@ -66,7 +69,7 @@ function Rightbar(props : RightbarType) {
             return (<div className="birthday">
                     <img src={`${Static_images.Gift}`} alt="" className="birthdayimg" />
                     <span className="birthdaytext">
-                        {Languagh[main_redux.DefaultData.Lang].Rightbarcomponent.Birthday("mohamed" , 4)}
+                        {RightbarLangObj.Birthday("mohamed" , 4)}
                     </span>
             </div>
             )
