@@ -24,6 +24,7 @@ import { ShareElementsLangType, Share_Lang } from "./Components/Share";
 import { RightbarElementsLangType, Rightbar_Lang } from "./Components/Rightbar";
 import { AssuntocationElementsLangType, Assuntocation_Lang } from "./Components/Assuntocation";
 import { StaticWordsElementsLangType, StaticWords_lang } from "./Static_Words";
+import { N_Words } from "./Words/N_Words";
 
 
 
@@ -38,7 +39,7 @@ export type Components_Elements  = PostElementsLangType |
 // Words
 
 export type Words = A_Words | B_Words | C_Words | D_Words | E_Words | F_Words | G_Words | H_Words | J_Words | L_Words |
-                    M_Words | W_Words | O_Words | P_Words | Q_Words | R_Words | S_Words | U_Words | V_Words | Y_Words
+                    M_Words | N_Words | W_Words | O_Words | P_Words | Q_Words | R_Words | S_Words | U_Words | V_Words | Y_Words
 type Words_Object = {[key in Words] : string}
 
 //Merge Types

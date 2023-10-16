@@ -88,7 +88,7 @@
     .Sidebar_Container{display: none;}
 }
 
-.Sidebar_Container.ColorTheme_1 {
+body.ColorTheme_1 .Sidebar_Container {
     background-color: $secound_color;
 
     >button {

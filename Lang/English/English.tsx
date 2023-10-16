@@ -25,6 +25,7 @@ export const English : Languagh_model={
     "More": "More",
     "Month": "Month",
     "Months": "Months",
+    "New"   : "New",
     "Online Friends": "Online Friends",
     "Password" : "Password",
     "Pages": "Pages",
@@ -68,7 +69,12 @@ export const English : Languagh_model={
         "Sentence" : {
             "Your account has been successfully created" : "Your account has been successfully created" ,
             "Email verification code"                    : "Email verification code" ,
-            "Confirm Your Email"                         : "Confirm Your Email"
+            "Confirm Your Email"                         : "Confirm Your Email",
+            "Create New Password"                        : "Create New password",
+            "New Password"                               : "New Password" ,
+            "Confirm New Password"                       : "Confirm New Password",
+            "Change Password"                            : "Change Password",
+            "Password successfully changed"              : "Password successfully changed"
         }
     },
     StaticWordsObject : {

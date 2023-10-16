@@ -142,21 +142,21 @@
     max-width: 500px;
   }
 }
-.Topbar_component.ColorTheme_1 {
+body.ColorTheme_1 .Topbar_component {
   background-color: #1877f2;
 }
-.Topbar_component.ColorTheme_1 .Logo_Search .brand p {
+body.ColorTheme_1 .Topbar_component .Logo_Search .brand p {
   color: white;
 }
-.Topbar_component.ColorTheme_1 .Left_Icons > div {
+body.ColorTheme_1 .Topbar_component .Left_Icons > div {
   background-color: white;
 }
-.Topbar_component.ColorTheme_1 .Left_Icons > div svg {
+body.ColorTheme_1 .Topbar_component .Left_Icons > div svg {
   color: black;
 }
-.Topbar_component.ColorTheme_1 .Main_Links .icon.active {
+body.ColorTheme_1 .Topbar_component .Main_Links .icon.active {
   border-color: white;
 }
-.Topbar_component.ColorTheme_1 .Main_Links .icon svg {
+body.ColorTheme_1 .Topbar_component .Main_Links .icon svg {
   color: white;
 }/*# sourceMappingURL=Topbar.css.map */

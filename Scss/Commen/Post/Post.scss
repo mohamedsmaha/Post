@@ -124,7 +124,7 @@ $padding : pxtoem(10px);
     width: 100%;
 }
 
-.post.ColorTheme_1{
+body.ColorTheme_1 .post{
     background-color: $secound_color;
     .top{
         .username{color: $fifth_color;}

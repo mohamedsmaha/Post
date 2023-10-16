@@ -151,14 +151,6 @@
         @include onlineFriendsList();
         @include sponsers();
     }
-
-    .Home.ColorTheme_1 {
-        .Online .OnlineFriendsList .item .Left .Icon {
-            background-color: $first_online;
-            border-color: $secound_color;
-        }
-    }
-    .Home.Ar .birthday .birthdaytext {direction: rtl; padding-right: pxtoem(10px);}
 }
 
 //main
@@ -167,7 +159,17 @@
     @include Home();
     @include Profile();
 }
-
+body.ColorTheme_1 .Rightbar{
+    .Home {
+            .Online .OnlineFriendsList .item .Left .Icon {
+                background-color: $first_online;
+                border-color: $secound_color;
+            }
+        }
+}
+body.Ar .Rightbar{
+    .Home .birthday .birthdaytext {direction: rtl; padding-right: pxtoem(10px);}
+}
 // media
 @media (max-width : 1150px) {
     .Rightbar{

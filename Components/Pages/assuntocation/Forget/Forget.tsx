@@ -4,44 +4,46 @@ import Confirm from '../HelperComponents/Confirem/Confirm'
 import { CheckCircle } from '@mui/icons-material'
 import FinishProcess from '../HelperComponents/FinishProcess/FinishProcess'
 import { Shaps } from './ForgetTypes'
-import { Translate } from '@/Helpers/Translate'
+import { Translate, Translate_Object } from '@/Helpers/Translate'
+import { AssuntocationElementsLangType } from '@/Lang/Types/Components/Assuntocation'
 type testtype = { state_functions: { Appcontent: (value : "left" | "right") => void  }}
 function Forget(props : testtype) {
+  const AssuntocationLang = Translate_Object("Assuntocation") as AssuntocationElementsLangType
   const data = [
-    {id : 3 , label : "New password :" , "placeholder" : "New password" , type : "password" , check : true},
-    {id : 4 , label : "Confirm password :" , "placeholder" : "Confirm password" , type : "password" , check : true},
+    {id : 3 , label : AssuntocationLang.Sentence['Create New Password']     , "placeholder" : `${AssuntocationLang.Sentence[`New Password`]}`, type : "password" , check : true},
+    {id : 4 , label : AssuntocationLang.Sentence['Confirm New Password']    , "placeholder" : `${AssuntocationLang.Sentence['Confirm New Password']}` , type : "password" , check : true},
   
   ]
   const [shap , setshap] = useState<Shaps>("First")
   const Helper_Functions = {
-    Handel_Shap(shap:Shaps){
-      setshap(shap)
-      
-    },
-    Shap(shap : Shaps){
-      switch(shap){
-        case "First" :
-          return <FirstShap/>
-        case "Secound":
-          return <SecoundShap/>
-        case "Third":
-          return <ThirdShap/>
-        case "Fourth":
-          return <FourthShap/>
+      Handel_Shap(shap:Shaps){
+        setshap(shap)
+        
+      },
+      Shap(shap : Shaps){
+        switch(shap){
+          case "First" :
+            return <FirstShap/>
+          case "Secound":
+            return <SecoundShap/>
+          case "Third":
+            return <ThirdShap/>
+          case "Fourth":
+            return <FourthShap/>
 
+        }
+      },
+      Back(){
+          props.state_functions.Appcontent("left")
+          setTimeout(() => {
+            Helper_Functions.Handel_Shap("First")
+          }, 800);
       }
-    },
-    Back(){
-        props.state_functions.Appcontent("left")
-        setTimeout(() => {
-          Helper_Functions.Handel_Shap("First")
-        }, 800);
-    }
   }
   function FirstShap(){
     return(
       <div className="FirstShap">
-        <p className='header'>Create New Password</p>
+        <p className='header'>{AssuntocationLang.Sentence['Create New Password']}</p>
         <form action="">
           <div className="inputbox">
             <div className="label">
@@ -65,7 +67,7 @@ function Forget(props : testtype) {
   function ThirdShap(){
     return(
         <div className="ThirdShap active">
-          <p className='header'>Change Password</p>
+          <p className='header'>{AssuntocationLang.Sentence['Change Password']}</p>
           <form action="">
                 {data.map(item => (
                   <div className="inputbox" key = {item.id}>
@@ -77,15 +79,15 @@ function Forget(props : testtype) {
                   </div>
                 ))}
               <div className="buttons">
-                <button onClick={() => Helper_Functions.Handel_Shap("Fourth")}>Change</button>
-                <button type="button" onClick={() => Helper_Functions.Back()}>Login</button>
+                <button onClick={() => Helper_Functions.Handel_Shap("Fourth")}>{Translate("Change")}</button>
+                <button type="button" onClick={() => Helper_Functions.Back()}>{Translate("Login")}</button>
               </div>
           </form>
         </div>
     )
   }
   function FourthShap(){
-      return(<FinishProcess Sumbit={Helper_Functions.Back}/>)
+      return(<FinishProcess Text={AssuntocationLang.Sentence['Password successfully changed']} Sumbit={Helper_Functions.Back}/>)
   }
   return (
     <div className='ForgetComponent'>

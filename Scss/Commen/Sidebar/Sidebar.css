@@ -95,16 +95,16 @@
     display: none;
   }
 }
-.Sidebar_Container.ColorTheme_1 {
+body.ColorTheme_1 .Sidebar_Container {
   background-color: white;
 }
-.Sidebar_Container.ColorTheme_1 > button {
+body.ColorTheme_1 .Sidebar_Container > button {
   background-color: rgba(128, 128, 128, 0.16);
   color: black;
 }
-.Sidebar_Container.ColorTheme_1 > .LinksList .item a {
+body.ColorTheme_1 .Sidebar_Container > .LinksList .item a {
   color: black;
 }
-.Sidebar_Container.ColorTheme_1 > .FriendsList .item .name {
+body.ColorTheme_1 .Sidebar_Container > .FriendsList .item .name {
   color: black;
 }/*# sourceMappingURL=Sidebar.css.map */

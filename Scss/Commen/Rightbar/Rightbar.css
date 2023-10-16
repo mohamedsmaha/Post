@@ -87,14 +87,6 @@
   font-size: 0.875em;
   opacity: 90%;
 }
-.Rightbar .Home.ColorTheme_1 .Online .OnlineFriendsList .item .Left .Icon {
-  background-color: limegreen;
-  border-color: white;
-}
-.Rightbar .Home.Ar .birthday .birthdaytext {
-  direction: rtl;
-  padding-right: 0.625em;
-}
 .Rightbar .rightbartitle {
   font-size: 1.125em;
   font-weight: 500;
@@ -137,6 +129,16 @@
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
+body.ColorTheme_1 .Rightbar .Home .Online .OnlineFriendsList .item .Left .Icon {
+  background-color: limegreen;
+  border-color: white;
+}
+
+body.Ar .Rightbar .Home .birthday .birthdaytext {
+  direction: rtl;
+  padding-right: 0.625em;
+}
+
 @media (max-width: 1150px) {
   .Rightbar {
     display: none;

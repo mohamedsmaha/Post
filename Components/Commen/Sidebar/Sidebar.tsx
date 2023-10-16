@@ -62,7 +62,7 @@ function Sidebar() {
         );
     }
     return (
-      <div className={`Sidebar_Container ColorTheme_1 `}>
+      <div className={`Sidebar_Container `}>
 
       <SidebarIcons/>
       <button>{Languagh[Redux.DefaultData.Lang].More}</button>

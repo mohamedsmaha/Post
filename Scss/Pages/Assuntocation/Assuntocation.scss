@@ -84,11 +84,12 @@ $wave_height: 15%;
                     @include flex_column();
                     @include flex_center();
                 }
-                &.Ar .rightbox , &.Ar .leftbox{direction: rtl;}
+                
             }
         }
 
 }
+
 @media (min-width:700px) {
     .Appcontent{
         &.right {
@@ -160,4 +161,12 @@ $wave_height: 15%;
     100% {
         left: 0%;
     }
+}
+
+body.Ar .AssuntocationPage {
+    > .Box > .container{
+        .rightbox, .leftbox {
+            direction: rtl;
+        }
+}
 }

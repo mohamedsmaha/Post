@@ -9,7 +9,7 @@ function Main_Search_Box() {
       DefaultData : useAppSelector((state) => state.DefaultData)
     }
     return (
-      <div className={`Main_Search_Box_Component ColorTheme_${Redux.DefaultData.ColorTheme}`}>
+      <div className={`Main_Search_Box_Component`}>
           <Search/>
           <input type="text" placeholder={`${Languagh[Redux.DefaultData.Lang].Search}`}/>
       </div>

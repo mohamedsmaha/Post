@@ -26,6 +26,7 @@ export const Arbic : Languagh_model = {
     "More"             : "المزيد",
     "Month"            : "شهر",
     "Months"           : "Months",
+    "New"              : "جديدة",
     "Online Friends"  : "الأصدقاء المتصلين",
     "Password"         :"كلمه السر",
     "Pages"            : "الصفحات",
@@ -75,7 +76,12 @@ export const Arbic : Languagh_model = {
         "Sentence" : {
             "Your account has been successfully created"  : "تم إنشاء حسابك بنجاح",
             "Email verification code"                     : "كود التحقق من البريد الإلكتروني" ,
-            "Confirm Your Email"                          : "قم بتأكيد بريدك الإلكتروني"
+            "Confirm Your Email"                          : "قم بتأكيد بريدك الإلكتروني",
+            "Create New Password"                         : "انشاء كلمه المرور " ,
+            "New Password"                                : "كلمه المرور" ,
+            "Confirm New Password"                        : "تاكيد كلمه المرور ",
+            "Change Password"                             : "تغير كلمه المرور" ,
+            "Password successfully changed"               : "تم تغير كلمه المرور بنجاح"
         }
     },
     StaticWordsObject:{

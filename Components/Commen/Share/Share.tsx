@@ -30,7 +30,7 @@ function Share() {
     }
     const ShareLangObj= Translate_Object("Share") as ShareElementsLangType;
     return (    
-        <div className={`share ColorTheme_${Redux.DefaultData.ColorTheme}`}>
+        <div className={`share`}>
                 <div className="sharetop">
                     <img src="./assets/persons/1.jpeg" alt="" className="shareprofileimg" />
                     <input type="text" className="shareInput"  placeholder={`${ShareLangObj.InputFiled("mohamed")}`}/>

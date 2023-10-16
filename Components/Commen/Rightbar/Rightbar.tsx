@@ -82,7 +82,7 @@ function Rightbar(props : RightbarType) {
             )
         }
         return (
-            <div className={`Home ColorTheme_${main_redux.DefaultData.ColorTheme} ${main_redux.DefaultData.Lang}`}>
+            <div className={`Home`}>
                     <Birthday/>
                     <Sponsers/>
                     <OnlineFriendList/>

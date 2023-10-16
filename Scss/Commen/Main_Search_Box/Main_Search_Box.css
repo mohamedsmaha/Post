@@ -40,23 +40,23 @@
     font-size: 1.125em;
   }
 }
-.Main_Search_Box_Component.ColorTheme_1 {
+body.ColorTheme_1 .Main_Search_Box_Component {
   background-color: white;
 }
-.Main_Search_Box_Component.ColorTheme_1 input {
+body.ColorTheme_1 .Main_Search_Box_Component input {
   background-color: white;
 }
-.Main_Search_Box_Component.ColorTheme_1 input::-moz-placeholder {
+body.ColorTheme_1 .Main_Search_Box_Component input::-moz-placeholder {
   color: gray;
 }
-.Main_Search_Box_Component.ColorTheme_1 input::placeholder {
+body.ColorTheme_1 .Main_Search_Box_Component input::placeholder {
   color: gray;
 }
-.Main_Search_Box_Component.ColorTheme_1 svg {
+body.ColorTheme_1 .Main_Search_Box_Component svg {
   color: black;
 }
 @media (max-width: 400px) {
-  .Main_Search_Box_Component.ColorTheme_1 svg {
+  body.ColorTheme_1 .Main_Search_Box_Component svg {
     color: goldenrod;
   }
 }/*# sourceMappingURL=Main_Search_Box.css.map */

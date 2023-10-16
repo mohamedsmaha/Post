@@ -312,31 +312,31 @@
   -o-border-radius: 3.125em;
 }
 
-.post.ColorTheme_1 {
+body.ColorTheme_1 .post {
   background-color: white;
 }
-.post.ColorTheme_1 .top .username {
+body.ColorTheme_1 .post .top .username {
   color: black;
 }
-.post.ColorTheme_1 .top .time {
+body.ColorTheme_1 .post .top .time {
   color: black;
 }
-.post.ColorTheme_1 .top .posttopright svg {
+body.ColorTheme_1 .post .top .posttopright svg {
   color: black;
 }
-.post.ColorTheme_1 .content .text {
+body.ColorTheme_1 .post .content .text {
   color: black;
 }
-.post.ColorTheme_1 .reactions .likes .reacts {
+body.ColorTheme_1 .post .reactions .likes .reacts {
   color: black;
 }
-.post.ColorTheme_1 .reactions .comments {
+body.ColorTheme_1 .post .reactions .comments {
   color: black;
 }
-.post.ColorTheme_1 .actions .item {
+body.ColorTheme_1 .post .actions .item {
   color: black;
   border-color: rgba(0, 0, 0, 0.408);
 }
-.post.ColorTheme_1 .Share .New {
+body.ColorTheme_1 .post .Share .New {
   border-color: rgba(0, 0, 0, 0.408);
 }/*# sourceMappingURL=Post.css.map */

@@ -114,7 +114,7 @@ function Post(props:{post : PostData}) {
         )
     }
     return (
-        <div className={`post ColorTheme_${Redux.DefaultData.ColorTheme}`}>
+        <div className={`post`}>
             {post.main_post.type == "New"  ? <New_type/> : <Share_type/>}
         </div>
     );

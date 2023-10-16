@@ -71,7 +71,7 @@ import { useAppSelector } from '@/Redux/Hooks'
         }
 
         return (
-            <div className={`Topbar_component ColorTheme_${Redux.DefaultData.ColorTheme}`}>
+            <div className={`Topbar_component`}>
                 <Logo_Search/>
                 <Main_Links/>
                 <Left_Icons/>

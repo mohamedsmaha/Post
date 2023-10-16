@@ -22,7 +22,7 @@
         svg{font-size: pxtoem(18px);}
     }
 }
-.Main_Search_Box_Component.ColorTheme_1{
+body.ColorTheme_1 .Main_Search_Box_Component{
     background-color: $secound_color;
     input{background-color: $secound_color;}
     input::placeholder {color: $sixth_color;}

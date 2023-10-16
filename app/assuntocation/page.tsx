@@ -29,7 +29,7 @@ export default function login() {
     <div className="AssuntocationPage">
       <img src={Static_images.Wave} alt=""  className="Wave"/>
       <div className="Box">
-        <div className={`container ${Redux.DefaultData.Lang}`}>
+        <div className={`container `}>
           <div className={`Appcontent  ${Appcontent}`}>
             <img src={Static_images.secound_logo} alt="" />
             <p className="slogan">{Static_Words().App_slogan}</p>

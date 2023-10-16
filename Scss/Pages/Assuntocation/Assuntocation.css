@@ -87,9 +87,6 @@
   align-items: center;
   justify-content: center;
 }
-.AssuntocationPage > .Box > .container.Ar .rightbox, .AssuntocationPage > .Box > .container.Ar .leftbox {
-  direction: rtl;
-}
 
 @media (min-width: 700px) {
   .Appcontent.right {
@@ -173,4 +170,7 @@
   100% {
     left: 0%;
   }
+}
+body.Ar .AssuntocationPage > .Box > .container .rightbox, body.Ar .AssuntocationPage > .Box > .container .leftbox {
+  direction: rtl;
 }/*# sourceMappingURL=Assuntocation.css.map */
