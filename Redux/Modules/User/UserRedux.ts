@@ -1,27 +1,28 @@
 
 import { createAsyncThunk, createSlice  } from "@reduxjs/toolkit"
-import { PostRedux } from "./PostTypes"
+import { UserRedux } from "./UserTypes"
 
 
 
-const initialState : PostRedux= {
+
+const initialState : UserRedux = {
     loading : false ,
     error   : null  ,
     data    : []
 }
-export const FetchPosts= createAsyncThunk("FetchPosts" , async () => {
+export const FetchUser = createAsyncThunk("FetchUser" , async () => {
     const results = await fetch('')
     const data    = await results.json()
     return data
 })
 
 
-const PostSlice = createSlice({
-    name : "Posts" ,
+const UserSlice = createSlice({
+    name : "MainUser" ,
     initialState     ,
     reducers : {
     }    ,
     extraReducers: builder => {
     }
 })
-export default PostSlice.reducer
+export default UserSlice.reducer

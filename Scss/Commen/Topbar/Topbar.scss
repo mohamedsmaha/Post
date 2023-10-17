@@ -58,7 +58,7 @@
     }
 }
 
-.Topbar_component{
+.Topbar_Component{
     display: flex;
     align-items: center;
     height: pxtoem(40px);
@@ -70,7 +70,7 @@
     @include Left_Icons();
 }
 @media (max-width : 900px) {
-    .Topbar_component{
+    .Topbar_Component{
         flex-direction: column;
         height: fit-content;
         gap: pxtoem(2px);
@@ -96,7 +96,7 @@
     }
 }
 @media (max-width :500px) {
-    .Topbar_component {
+    .Topbar_Component {
         font-size: 13px;
         .Logo_Search .brand {
             p {font-size: pxtoem(17px);}
@@ -108,7 +108,7 @@
     }
 }
 
-body.ColorTheme_1 .Topbar_component{
+body.ColorTheme_1 .Topbar_Component{
     background-color: $first_color;
     .Logo_Search .brand p {
         color: $secound_color;

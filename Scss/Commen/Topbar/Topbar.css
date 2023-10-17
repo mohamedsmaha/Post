@@ -1,4 +1,4 @@
-.Topbar_component {
+.Topbar_Component {
   display: flex;
   align-items: center;
   height: 2.5em;
@@ -6,34 +6,34 @@
   padding: 0px 0.3125em;
   box-shadow: 1px 1px 16px -8px rgba(0, 0, 0, 0.68);
 }
-.Topbar_component .Logo_Search {
+.Topbar_Component .Logo_Search {
   min-width: 250px;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 0.625em;
 }
-.Topbar_component .Logo_Search .brand {
+.Topbar_Component .Logo_Search .brand {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 0.625em;
 }
-.Topbar_component .Logo_Search .brand p {
+.Topbar_Component .Logo_Search .brand p {
   display: none;
 }
-.Topbar_component .Logo_Search .brand img {
+.Topbar_Component .Logo_Search .brand img {
   width: 1.875em;
   height: 1.875em;
 }
-.Topbar_component .Main_Links {
+.Topbar_Component .Main_Links {
   display: flex;
   flex-direction: row;
   width: 500px;
   height: 100%;
   justify-content: center;
 }
-.Topbar_component .Main_Links .icon {
+.Topbar_Component .Main_Links .icon {
   flex: 0 0 20%;
   min-width: 50px;
   display: flex;
@@ -42,22 +42,22 @@
   justify-content: center;
   padding: 0.625em 0px 0.625em;
 }
-.Topbar_component .Main_Links .icon.active {
+.Topbar_Component .Main_Links .icon.active {
   border-bottom: 0.125em solid;
 }
-.Topbar_component .Main_Links .icon.small_screen {
+.Topbar_Component .Main_Links .icon.small_screen {
   display: none;
 }
-.Topbar_component .Main_Links .icon.big_screen {
+.Topbar_Component .Main_Links .icon.big_screen {
   display: flex;
 }
-.Topbar_component .Left_Icons {
+.Topbar_Component .Left_Icons {
   min-width: 250px;
   display: flex;
   justify-content: flex-end;
   gap: 0.625em;
 }
-.Topbar_component .Left_Icons > div {
+.Topbar_Component .Left_Icons > div {
   width: 1.875em;
   height: 1.875em;
   display: flex;
@@ -70,10 +70,10 @@
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
 }
-.Topbar_component .Left_Icons > div svg {
+.Topbar_Component .Left_Icons > div svg {
   font-size: 1.0625em;
 }
-.Topbar_component .Left_Icons div.profile img {
+.Topbar_Component .Left_Icons div.profile img {
   width: 1.875em;
   height: 1.875em;
   -o-object-fit: cover;
@@ -86,77 +86,77 @@
 }
 
 @media (max-width: 900px) {
-  .Topbar_component {
+  .Topbar_Component {
     flex-direction: column;
     height: -moz-fit-content;
     height: fit-content;
     gap: 0.125em;
   }
-  .Topbar_component .Logo_Search {
+  .Topbar_Component .Logo_Search {
     width: 100%;
     justify-content: space-between;
     padding: 0.3125em 0px 0px;
   }
-  .Topbar_component .Logo_Search .brand p {
+  .Topbar_Component .Logo_Search .brand p {
     display: block;
     color: white;
     font-size: 1.25em;
     font-family: cursive;
   }
-  .Topbar_component .Logo_Search .brand img {
+  .Topbar_Component .Logo_Search .brand img {
     width: 1.5625em;
     height: 1.5625em;
   }
-  .Topbar_component .Left_Icons {
+  .Topbar_Component .Left_Icons {
     display: none;
   }
-  .Topbar_component .Main_Links {
+  .Topbar_Component .Main_Links {
     max-width: 500px;
     width: 100vw;
   }
-  .Topbar_component .Main_Links svg {
+  .Topbar_Component .Main_Links svg {
     font-size: 1.25em;
   }
-  .Topbar_component .Main_Links .icon {
+  .Topbar_Component .Main_Links .icon {
     padding: 0px 0px 0.1875em;
   }
-  .Topbar_component .Main_Links .icon.big_screen {
+  .Topbar_Component .Main_Links .icon.big_screen {
     display: none !important;
   }
-  .Topbar_component .Main_Links .icon.small_screen {
+  .Topbar_Component .Main_Links .icon.small_screen {
     display: flex !important;
   }
 }
 @media (max-width: 500px) {
-  .Topbar_component {
+  .Topbar_Component {
     font-size: 13px;
   }
-  .Topbar_component .Logo_Search .brand p {
+  .Topbar_Component .Logo_Search .brand p {
     font-size: 1.0625em;
   }
-  .Topbar_component .Logo_Search .brand img {
+  .Topbar_Component .Logo_Search .brand img {
     width: 1.4375em;
     height: 1.4375em;
   }
-  .Topbar_component .Main_Links {
+  .Topbar_Component .Main_Links {
     max-width: 500px;
   }
 }
-body.ColorTheme_1 .Topbar_component {
+body.ColorTheme_1 .Topbar_Component {
   background-color: #1877f2;
 }
-body.ColorTheme_1 .Topbar_component .Logo_Search .brand p {
+body.ColorTheme_1 .Topbar_Component .Logo_Search .brand p {
   color: white;
 }
-body.ColorTheme_1 .Topbar_component .Left_Icons > div {
+body.ColorTheme_1 .Topbar_Component .Left_Icons > div {
   background-color: white;
 }
-body.ColorTheme_1 .Topbar_component .Left_Icons > div svg {
+body.ColorTheme_1 .Topbar_Component .Left_Icons > div svg {
   color: black;
 }
-body.ColorTheme_1 .Topbar_component .Main_Links .icon.active {
+body.ColorTheme_1 .Topbar_Component .Main_Links .icon.active {
   border-color: white;
 }
-body.ColorTheme_1 .Topbar_component .Main_Links .icon svg {
+body.ColorTheme_1 .Topbar_Component .Main_Links .icon svg {
   color: white;
 }/*# sourceMappingURL=Topbar.css.map */

@@ -1,8 +1,8 @@
 import { avaliable_lang } from "@/Lang/Main_file";
 
 export type User = {
-    id   :number ,
-    Email:string ,
+    id         :number ,
+    Email      :string ,
     Phonenumber:number,
     Username   :string,
     password   :string,
@@ -12,9 +12,13 @@ export type User = {
     colortheme :number,
     ApiToken   :number,
 }
-
 export type User_for_Post = {
     id       : number ,
     Username : string ,
     img      : string 
+}
+export type UserRedux = {
+    loading : boolean ,
+    error   : Error | string | null
+    data    : User[]
 }

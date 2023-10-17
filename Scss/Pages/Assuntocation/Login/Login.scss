@@ -1,7 +1,7 @@
 @import "../../../Helper/all.scss";
 @import "../Commen/Commen.scss";
 
-.LoginComponent {
+.Login_Component {
     overflow-y: scroll;
     &::-webkit-scrollbar{width: 0px;}
     font-size: pxtoem(17px);

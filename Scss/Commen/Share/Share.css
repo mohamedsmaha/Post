@@ -1,4 +1,4 @@
-.share {
+.Share_Component {
   margin-top: 10px;
   max-width: 530px;
   width: 530px;
@@ -13,13 +13,13 @@
   background-color: white;
   padding: 10px;
 }
-.share .sharetop {
+.Share_Component .sharetop {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 0.3125em;
 }
-.share .sharetop .shareprofileimg {
+.Share_Component .sharetop .shareprofileimg {
   width: 2.5em;
   height: 2.5em;
   -o-object-fit: cover;
@@ -30,50 +30,50 @@
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
 }
-.share .sharetop .shareInput {
+.Share_Component .sharetop .shareInput {
   font-size: 1em;
   border: none;
   width: 80%;
   outline: none;
 }
-.share .sharehr {
+.Share_Component .sharehr {
   margin: 0.625em 0px;
 }
-.share .shareoptions {
+.Share_Component .shareoptions {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
-.share .shareoptions > .item {
+.Share_Component .shareoptions > .item {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin: 0.3125em 0.9375em;
   cursor: pointer;
 }
-.share .shareoptions > .item svg {
+.Share_Component .shareoptions > .item svg {
   font-size: 1.125em;
   margin-right: 0.1875em;
 }
-.share .shareoptions > .item .text {
+.Share_Component .shareoptions > .item .text {
   font-size: 0.875em;
   font-weight: 500;
 }
 
 @media (max-width: 900px) {
-  .share {
+  .Share_Component {
     width: calc(100% - 20px);
   }
 }
-.share.ColorTheme_1 {
+body.ColorTheme_1 .Share_Component {
   background-color: white;
 }
-.share.ColorTheme_1 .sharetop input {
+body.ColorTheme_1 .Share_Component .sharetop input {
   background-color: white;
 }
-.share.ColorTheme_1 .sharetop input ::-moz-placeholder {
+body.ColorTheme_1 .Share_Component .sharetop input ::-moz-placeholder {
   color: gray;
 }
-.share.ColorTheme_1 .sharetop input ::placeholder {
+body.ColorTheme_1 .Share_Component .sharetop input ::placeholder {
   color: gray;
 }/*# sourceMappingURL=Share.css.map */

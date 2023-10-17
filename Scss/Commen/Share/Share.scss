@@ -26,7 +26,7 @@
 }
 
 $padding : 10px;
-.share {
+.Share_Component {
     margin-top: 10px;
     max-width: calc($maxPostwidth - (2 * $padding));
     width    : calc($maxPostwidth - (2 * $padding));
@@ -59,10 +59,10 @@ $padding : 10px;
 }
 
 @media (max-width : 900px) {
-    .share{width    : calc(100% - (2 * $padding));}
+    .Share_Component{width    : calc(100% - (2 * $padding));}
 }
 
-.share.ColorTheme_1{
+body.ColorTheme_1 .Share_Component{
     background-color: $secound_color  ;
     .sharetop input{
         background-color: $secound_color;

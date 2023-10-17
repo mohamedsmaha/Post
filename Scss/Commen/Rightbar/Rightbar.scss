@@ -154,12 +154,12 @@
 }
 
 //main
-.Rightbar {
+.Rightbar_Component {
     width: $sidebarwidth;
     @include Home();
     @include Profile();
 }
-body.ColorTheme_1 .Rightbar{
+body.ColorTheme_1 .Rightbar_Component{
     .Home {
             .Online .OnlineFriendsList .item .Left .Icon {
                 background-color: $first_online;
@@ -167,17 +167,17 @@ body.ColorTheme_1 .Rightbar{
             }
         }
 }
-body.Ar .Rightbar{
+body.Ar .Rightbar_Component{
     .Home .birthday .birthdaytext {direction: rtl; padding-right: pxtoem(10px);}
 }
 // media
 @media (max-width : 1150px) {
-    .Rightbar{
+    .Rightbar_Component{
         display: none;
     }
 }
 @media (max-width : 900px){
-    .Rightbar{
+    .Rightbar_Component{
         display: block;
         font-size: pxtoem(14px);
         position: sticky;
@@ -185,7 +185,7 @@ body.Ar .Rightbar{
     }
 }
 @media (max-width : 700px) {
-    .Rightbar {
+    .Rightbar_Component {
         display: none;
     }
 }

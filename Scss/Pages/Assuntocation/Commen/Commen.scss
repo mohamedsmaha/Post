@@ -73,7 +73,7 @@
         }
 }
 @mixin FinishProcess() {
-    .FinishProcess {
+    .FinishProcess_Component{
         @include flex_column();
         @include flex_center();
         gap: pxtoem(10px);

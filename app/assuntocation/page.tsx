@@ -8,22 +8,20 @@ import Forget from "@/Components/Pages/assuntocation/Forget/Forget";
 import { useAppSelector } from "@/Redux/Hooks";
 import { Static_Words } from "@/Static_Data/Static_words";
 export default function login() {
-    let Redux = {
-        DefaultData : useAppSelector((state) => state.DefaultData)
+// Hoooks
+    const [Appcontent, setAppcontent] = useState<null | "right" | "left">(null); 
+    const [leftboxcomponent , setleftboxcomponent] = useState<React.ReactNode | null>(null)
+// Helper_Functions
+    const Helper_Functions = {
+      Handel_appcontent(value : "right" | "left"){
+          setAppcontent(value)
+      } ,
+      Handel_component(componentName:"Register" | "Forget" | "Login"){
+        if(componentName == "Register"){setleftboxcomponent(<Register state_functions={{ Appcontent: Helper_Functions.Handel_appcontent }}/>)}
+        else if (componentName == "Login"){return <Login state_functions={{ Appcontent: Helper_Functions.Handel_appcontent, leftboxcomponent: Helper_Functions.Handel_component }} /> }
+        else{setleftboxcomponent(<Forget state_functions={{ Appcontent: Helper_Functions.Handel_appcontent }}/>)}
+      }
     }
-    
-  const [Appcontent, setAppcontent] = useState<null | "right" | "left">(null); 
-  const [leftboxcomponent , setleftboxcomponent] = useState<React.ReactNode | null>(null)
-
-  const helper_functions = {
-    Handel_appcontent(value : "right" | "left"){
-        setAppcontent(value)
-    } ,
-    Handel_leftbox_component(componentName:"Register" | "Forget"){
-      if(componentName == "Register"){setleftboxcomponent(<Register state_functions={{ Appcontent: helper_functions.Handel_appcontent }}/>)}
-      else{setleftboxcomponent(<Forget state_functions={{ Appcontent: helper_functions.Handel_appcontent }}/>)}
-    }
-  }
 
   return (
     <div className="AssuntocationPage">
@@ -38,7 +36,7 @@ export default function login() {
             {leftboxcomponent}
           </div>
           <div className={`rightbox ${Appcontent == null  || Appcontent == "left" ? "active" :  ''}`}>
-            <Login state_functions={{ Appcontent: helper_functions.Handel_appcontent, leftboxcomponent: helper_functions.Handel_leftbox_component }} />
+            {Helper_Functions.Handel_component("Login")}
           </div>
         </div>
       </div>

@@ -1,36 +1,36 @@
-.Rightbar {
+.Rightbar_Component {
   width: 250px;
 }
-.Rightbar .Home {
+.Rightbar_Component .Home {
   padding-top: 0.625em;
 }
-.Rightbar .Home .birthday {
+.Rightbar_Component .Home .birthday {
   display: flex;
   align-items: center;
 }
-.Rightbar .Home .birthday .birthdayimg {
+.Rightbar_Component .Home .birthday .birthdayimg {
   width: 2.5em;
   height: 2.5em;
   margin-right: 0.625em;
 }
-.Rightbar .Home .birthday .birthdaytext {
+.Rightbar_Component .Home .birthday .birthdaytext {
   font-weight: 300;
   font-size: 0.9375em;
 }
-.Rightbar .Home .birthday .birthdaytext b {
+.Rightbar_Component .Home .birthday .birthdaytext b {
   font-size: 0.9375em;
 }
-.Rightbar .Home .Online .OnlineFriendsList .item {
+.Rightbar_Component .Home .Online .OnlineFriendsList .item {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-bottom: 0.9375em;
 }
-.Rightbar .Home .Online .OnlineFriendsList .item .Left {
+.Rightbar_Component .Home .Online .OnlineFriendsList .item .Left {
   margin-right: 0.625em;
   position: relative;
 }
-.Rightbar .Home .Online .OnlineFriendsList .item .Left img {
+.Rightbar_Component .Home .Online .OnlineFriendsList .item .Left img {
   width: 2.5em;
   height: 2.5em;
   -o-object-fit: cover;
@@ -41,7 +41,7 @@
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
 }
-.Rightbar .Home .Online .OnlineFriendsList .item .Left .Icon {
+.Rightbar_Component .Home .Online .OnlineFriendsList .item .Left .Icon {
   width: 0.75em;
   height: 0.75em;
   position: absolute;
@@ -54,16 +54,16 @@
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
 }
-.Rightbar .Home .Online .OnlineFriendsList .item .Right .name {
+.Rightbar_Component .Home .Online .OnlineFriendsList .item .Right .name {
   font-weight: 500;
 }
-.Rightbar .Home .sponsers .box {
+.Rightbar_Component .Home .sponsers .box {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 0.625em;
 }
-.Rightbar .Home .sponsers .box img {
+.Rightbar_Component .Home .sponsers .box img {
   width: 7.5em;
   height: 7.5em;
   -o-object-fit: contain;
@@ -74,51 +74,51 @@
   -ms-border-radius: 0.625em;
   -o-border-radius: 0.625em;
 }
-.Rightbar .Home .sponsers .box .discreption {
+.Rightbar_Component .Home .sponsers .box .discreption {
   overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 0.3125em;
 }
-.Rightbar .Home .sponsers .box .discreption span.title {
+.Rightbar_Component .Home .sponsers .box .discreption span.title {
   font-size: 1.125em;
 }
-.Rightbar .Home .sponsers .box .discreption span.Description {
+.Rightbar_Component .Home .sponsers .box .discreption span.Description {
   font-size: 0.875em;
   opacity: 90%;
 }
-.Rightbar .rightbartitle {
+.Rightbar_Component .rightbartitle {
   font-size: 1.125em;
   font-weight: 500;
   margin-bottom: 0.625em;
 }
-.Rightbar .rightbarinfo {
+.Rightbar_Component .rightbarinfo {
   margin-bottom: 1.875em;
 }
-.Rightbar .rightbarinfo .rightbarinfoitem {
+.Rightbar_Component .rightbarinfo .rightbarinfoitem {
   margin-bottom: 0.625em;
 }
-.Rightbar .rightbarinfo .rightbarinfoitem .rightbarinfokey {
+.Rightbar_Component .rightbarinfo .rightbarinfoitem .rightbarinfokey {
   font-weight: 500;
   margin-right: 0.9375em;
   color: #555;
 }
-.Rightbar .rightbarinfo .rightbarinfoitem .rightbarinfovalue {
+.Rightbar_Component .rightbarinfo .rightbarinfoitem .rightbarinfovalue {
   font-weight: 300;
 }
-.Rightbar .rightbarfollowings {
+.Rightbar_Component .rightbarfollowings {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.Rightbar .rightbarfollowings .rightbarfollowing {
+.Rightbar_Component .rightbarfollowings .rightbarfollowing {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
   cursor: pointer;
 }
-.Rightbar .rightbarfollowings .rightbarfollowing .rightbarfollowingimg {
+.Rightbar_Component .rightbarfollowings .rightbarfollowing .rightbarfollowingimg {
   width: 100px;
   height: 100px;
   -o-object-fit: cover;
@@ -129,23 +129,23 @@
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
-body.ColorTheme_1 .Rightbar .Home .Online .OnlineFriendsList .item .Left .Icon {
+body.ColorTheme_1 .Rightbar_Component .Home .Online .OnlineFriendsList .item .Left .Icon {
   background-color: limegreen;
   border-color: white;
 }
 
-body.Ar .Rightbar .Home .birthday .birthdaytext {
+body.Ar .Rightbar_Component .Home .birthday .birthdaytext {
   direction: rtl;
   padding-right: 0.625em;
 }
 
 @media (max-width: 1150px) {
-  .Rightbar {
+  .Rightbar_Component {
     display: none;
   }
 }
 @media (max-width: 900px) {
-  .Rightbar {
+  .Rightbar_Component {
     display: block;
     font-size: 0.875em;
     position: sticky;
@@ -153,7 +153,7 @@ body.Ar .Rightbar .Home .birthday .birthdaytext {
   }
 }
 @media (max-width: 700px) {
-  .Rightbar {
+  .Rightbar_Component {
     display: none;
   }
 }/*# sourceMappingURL=Rightbar.css.map */

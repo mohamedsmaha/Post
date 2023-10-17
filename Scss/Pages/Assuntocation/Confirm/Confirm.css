@@ -1,4 +1,4 @@
-.ConfirmComponent {
+.Confirm_Component {
   height: 100%;
   width: 100%;
   background-color: white;
@@ -7,13 +7,13 @@
   gap: 1.25em;
   align-items: center;
 }
-.ConfirmComponent .header {
+.Confirm_Component .header {
   color: goldenrod;
   font-weight: 500;
   font-size: 1.5625em;
   text-transform: capitalize;
 }
-.ConfirmComponent div.timer {
+.Confirm_Component div.timer {
   border-radius: 3.125em;
   -webkit-border-radius: 3.125em;
   -moz-border-radius: 3.125em;
@@ -22,7 +22,7 @@
   width: 2.5em;
   height: 2.5em;
 }
-.ConfirmComponent div.timer div.Bigcircle {
+.Confirm_Component div.timer div.Bigcircle {
   height: 100%;
   border-radius: 3.125em;
   -webkit-border-radius: 3.125em;
@@ -35,7 +35,7 @@
   align-items: center;
   justify-content: center;
 }
-.ConfirmComponent div.timer div.Bigcircle div.Smallcircle {
+.Confirm_Component div.timer div.Bigcircle div.Smallcircle {
   background-color: white;
   height: calc(100% - 0.625em);
   width: calc(100% - 0.625em);
@@ -49,10 +49,10 @@
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
 }
-.ConfirmComponent div.timer div.Bigcircle div.Smallcircle p {
+.Confirm_Component div.timer div.Bigcircle div.Smallcircle p {
   font-size: 1.125em;
 }
-.ConfirmComponent button {
+.Confirm_Component button {
   padding: 0.3125em 0.625em;
   border: none;
   background-color: rgba(194, 194, 194, 0.232);
@@ -71,7 +71,7 @@
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
 }
-.ConfirmComponent .buttons {
+.Confirm_Component .buttons {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,39 +79,39 @@
   gap: 0.625em;
   margin-top: 0.625em;
 }
-.ConfirmComponent .buttons button {
+.Confirm_Component .buttons button {
   font-size: 0.75em;
 }
-.ConfirmComponent .firstlevelbuttons {
+.Confirm_Component .firstlevelbuttons {
   display: flex;
   flex-direction: row;
 }
-.ConfirmComponent .header {
+.Confirm_Component .header {
   font-size: 1em;
 }
-.ConfirmComponent form .inputbox {
+.Confirm_Component form .inputbox {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.625em;
 }
-.ConfirmComponent form .inputbox .inputs {
+.Confirm_Component form .inputbox .inputs {
   display: flex;
   flex-direction: row;
   gap: 0.625em;
 }
-.ConfirmComponent form .inputbox .inputs input {
+.Confirm_Component form .inputbox .inputs input {
   width: 1.875em;
   height: 1.875em;
   text-align: center;
   border: 0.0625em solid #1877f2;
   outline: none;
 }
-.ConfirmComponent form .inputbox .inputs input::-webkit-outer-spin-button, .ConfirmComponent form .inputbox .inputs input::-webkit-inner-spin-button {
+.Confirm_Component form .inputbox .inputs input::-webkit-outer-spin-button, .Confirm_Component form .inputbox .inputs input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-.ConfirmComponent form .inputbox .label {
+.Confirm_Component form .inputbox .label {
   font-size: 0.9375em;
 }/*# sourceMappingURL=Confirm.css.map */

@@ -1,4 +1,4 @@
-.LoginComponent {
+.Login_Component {
   overflow-y: scroll;
   font-size: 1.0625em;
   max-height: 70%;
@@ -9,10 +9,10 @@
   align-items: center;
   justify-content: start;
 }
-.LoginComponent::-webkit-scrollbar {
+.Login_Component::-webkit-scrollbar {
   width: 0px;
 }
-.LoginComponent form {
+.Login_Component form {
   width: -moz-fit-content;
   width: fit-content;
   align-items: center;
@@ -20,14 +20,14 @@
   display: flex;
   flex-direction: column;
 }
-.LoginComponent form .inputbox {
+.Login_Component form .inputbox {
   display: flex;
   flex-direction: column;
   gap: 0.3125em;
   width: 90%;
   align-items: center;
 }
-.LoginComponent form .inputbox .label {
+.Login_Component form .inputbox .label {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -35,10 +35,10 @@
   font-size: 0.875em;
   align-items: center;
 }
-.LoginComponent form .inputbox .label input {
+.Login_Component form .inputbox .label input {
   width: 0.875em;
 }
-.LoginComponent form .inputbox input {
+.Login_Component form .inputbox input {
   min-width: -moz-fit-content;
   min-width: fit-content;
   width: 18.75em;
@@ -55,25 +55,25 @@
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
 }
-.LoginComponent form .inputbox input::-moz-placeholder {
+.Login_Component form .inputbox input::-moz-placeholder {
   color: #1877f2;
 }
-.LoginComponent form .inputbox input::placeholder {
+.Login_Component form .inputbox input::placeholder {
   color: #1877f2;
 }
-.LoginComponent form .inputbox input[type=checkbox] {
+.Login_Component form .inputbox input[type=checkbox] {
   min-width: 10px;
   min-height: 10px;
   width: 1.25em;
   height: 1.25em;
 }
-.LoginComponent .header {
+.Login_Component .header {
   color: goldenrod;
   font-weight: 500;
   font-size: 1.5625em;
   text-transform: capitalize;
 }
-.LoginComponent button {
+.Login_Component button {
   padding: 0.3125em 0.625em;
   border: none;
   background-color: rgba(194, 194, 194, 0.232);

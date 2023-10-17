@@ -1,24 +1,19 @@
 "use client"
-import React, { useState } from "react";
 import { MoreVert } from "@mui/icons-material";
 import "@/Scss/Commen/Post/Post.css"
-import { useAppSelector } from "@/Redux/Hooks";
 import { Static_images } from "@/Static_Data/Images";
-import { PostData, Post_info } from "@/Redux/Modules/Post/PostTypes";
 import { APP_Folders } from "@/Static_Data/APP_Folders";
-import { ReactsIcons } from "@/Redux/Modules/Post/PostTypes";
 import { Translate, Translate_Object } from "@/Helpers/Translate";
-import { PostElementsLangType , Post_Lang } from "@/Lang/Types/Components/Post";
-function Post(props:{post : PostData}) {
-    const {post} = props
-    let Redux = {
-        DefaultData : useAppSelector((state) => state.DefaultData)
-    }
+import { PostElementsLangType } from "@/Lang/Types/Components/Post";
+import { Content, Helper_Functions, PropsType, UserInfo } from "./PostTypes";
+function Post(props: PropsType) {
+// constants From props
+    const {Post} = props
+// Languagh
     const PostLangObj= Translate_Object("Post") as PostElementsLangType;
-
-
-    const helper_functions = {
-        TopReactions(item : ReactsIcons | null){
+// Helper Funcion
+    const Helper_Functions : Helper_Functions= {
+        Reactions_images(item){
             switch(item){
                 case "Like" : 
                     return <img src={`${Static_images.Reactions.like}`} alt="" className="likeicon" />
@@ -27,19 +22,35 @@ function Post(props:{post : PostData}) {
                 default :
                     null
             }
+        },
+        SelectShap(type){
+            switch(type){
+                case "New" : 
+                    return <New_type/>
+                case "Share":
+                    return <Share_type/>
+            }
+        },
+        TopReactions(){
+            return <>
+                {Helper_Functions.Reactions_images(Post.main_post.Reactions.numbers.order.first)}
+                {Helper_Functions.Reactions_images(Post.main_post.Reactions.numbers.order.secound)}
+                {Helper_Functions.Reactions_images(Post.main_post.Reactions.numbers.order.Third)}
+            </>
         }
     }
+// Small Component
     function Share_type(){
         return(
             <div className="Share">
-                <UserInfo Post_data={post.main_post}/>
-                <Content  Post_data={post.main_post}/>
+                <UserInfo Post_data={Post.main_post}/>
+                <Content  Post_data={Post.main_post}/>
                 <div className="New">
                     {
-                        post.Share_post ?
+                        Post.Share_post ?
                         <>
-                        <UserInfo Post_data={post.Share_post}/>
-                        <Content  Post_data={post.Share_post}/>
+                        <UserInfo Post_data={Post.Share_post}/>
+                        <Content  Post_data={Post.Share_post}/>
                         </> : null
                     }
                 </div>
@@ -51,14 +62,14 @@ function Post(props:{post : PostData}) {
     function New_type(){
         return(
         <div className="New">
-            <UserInfo Post_data={post.main_post}/>
-            <Content  Post_data={post.main_post}/>
+            <UserInfo Post_data={Post.main_post}/>
+            <Content  Post_data={Post.main_post}/>
             <Reactions/>
             <Actions/>
         </div>
         )
     }
-    function UserInfo(props : {Post_data : Post_info}){
+    function UserInfo(props : UserInfo){
         const {Post_data} = props
         return(
             <div className="top">
@@ -69,7 +80,7 @@ function Post(props:{post : PostData}) {
                     {  PostLangObj.Time(Post_data.Data.number , Post_data.Data.unite)}
                 </span>
                 </div>
-                { post.main_post == Post_data? 
+                { Post.main_post == Post_data? 
                     <div className="posttopright">
                         <MoreVert />
                     </div> : null
@@ -77,7 +88,7 @@ function Post(props:{post : PostData}) {
             </div>
         )
     }
-    function Content(props : {Post_data : Post_info}){
+    function Content (props : Content){
         const {Post_data} = props
         return(
             <div className="content">
@@ -91,12 +102,9 @@ function Post(props:{post : PostData}) {
             <div className="reactions">
                 <div className="likes">
                     <div className="reactions">
-                        {helper_functions.TopReactions(post.main_post.Reactions.numbers.order.first)}
-                        {helper_functions.TopReactions(post.main_post.Reactions.numbers.order.secound)}
-                        {helper_functions.TopReactions(post.main_post.Reactions.numbers.order.Third)}
-
+                        {Helper_Functions.TopReactions()}
                     </div>
-                    <span className="reacts">{PostLangObj.Likes(post.main_post.Reactions.numbers.total)}</span>
+                    <span className="reacts">{PostLangObj.Likes(Post.main_post.Reactions.numbers.total)}</span>
                 </div>
                 <span className="comments">
                     {PostLangObj.Comments(1200)}
@@ -114,8 +122,8 @@ function Post(props:{post : PostData}) {
         )
     }
     return (
-        <div className={`post`}>
-            {post.main_post.type == "New"  ? <New_type/> : <Share_type/>}
+        <div className={`Post_Component`}>
+            {Helper_Functions.SelectShap(Post.main_post.type)}
         </div>
     );
 }

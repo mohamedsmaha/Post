@@ -1,14 +1,14 @@
 "use client"
-import { useAppSelector } from '@/Redux/Hooks'
-import { Providers } from '@/Redux/Provider'
+import { default_data_model } from '@/Helpers/Redux_models/Deafult_data/Class'
+import { redirect } from 'next/navigation'
 import React from 'react'
 
 function Body( {children}: {children: React.ReactNode}) {
     let redux = {
-        defaultData : useAppSelector((state) => state.DefaultData)
+        defaultData : default_data_model
     }
     return (
-        <body className={`${redux.defaultData.Lang} ColorTheme_${redux.defaultData.ColorTheme}`}>
+        <body className={`${redux.defaultData.GetLang()} ColorTheme_${redux.defaultData.GetColorTheme()}`}>
             {children}
         </body>
     )

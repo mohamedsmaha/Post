@@ -1,4 +1,4 @@
-.post {
+.Post_Component {
   margin: 0.625em 0px;
   border-radius: 0.625em;
   -webkit-border-radius: 0.625em;
@@ -8,7 +8,7 @@
   max-width: 550px;
   width: 100%;
 }
-.post .New {
+.Post_Component .New {
   background-color: white;
   padding: 0.625em;
   gap: 0.625em;
@@ -21,19 +21,19 @@
   display: flex;
   flex-direction: column;
 }
-.post .New .top {
+.Post_Component .New .top {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.post .New .top .info {
+.Post_Component .New .top .info {
   display: flex;
   flex-direction: row;
   align-items: center;
   cursor: pointer;
 }
-.post .New .top .info img {
+.Post_Component .New .top .info img {
   width: 2.5em;
   height: 2.5em;
   -o-object-fit: cover;
@@ -44,87 +44,87 @@
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
 }
-.post .New .top .info .username {
+.Post_Component .New .top .info .username {
   font-size: 0.875em;
   font-weight: 500;
   margin: 0em 0.625em;
 }
-.post .New .top .info .time {
+.Post_Component .New .top .info .time {
   font-size: 0.6875em;
 }
-.post .New .top .posttopright {
+.Post_Component .New .top .posttopright {
   cursor: pointer;
 }
-.post .New .top .posttopright svg {
+.Post_Component .New .top .posttopright svg {
   font-size: 1.125em;
 }
-.post .New .content .text {
+.Post_Component .New .content .text {
   margin: 0em 0.625em;
   font-size: 0.9375em;
 }
-.post .New .content img {
+.Post_Component .New .content img {
   margin-top: 0.625em;
   width: 100%;
   max-height: 31.25em;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.post .New .reactions {
+.Post_Component .New .reactions {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.post .New .reactions .likes {
+.Post_Component .New .reactions .likes {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.post .New .reactions .likes .likeicon {
+.Post_Component .New .reactions .likes .likeicon {
   width: 1.0625em;
   height: 1.0625em;
   margin-right: 0.3125em;
   cursor: pointer;
 }
-.post .New .reactions .likes .reacts {
+.Post_Component .New .reactions .likes .reacts {
   font-size: 0.8125em;
 }
-.post .New .reactions .comments {
+.Post_Component .New .reactions .comments {
   cursor: pointer;
   font-size: 0.8125em;
 }
-.post .New .actions {
+.Post_Component .New .actions {
   display: flex;
   flex-direction: row;
   margin-top: 0.3125em;
 }
-.post .New .actions .item {
+.Post_Component .New .actions .item {
   flex-basis: 33%;
   text-align: center;
   font-size: 0.875em;
   border-right: 0.03125em solid;
   cursor: pointer;
 }
-.post .Share {
+.Post_Component .Share {
   box-shadow: 2px 2px 16px -8px rgba(0, 0, 0, 0.68);
   display: flex;
   flex-direction: column;
   gap: 0.625em;
   padding: 0.625em;
 }
-.post .Share .top {
+.Post_Component .Share .top {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.post .Share .top .info {
+.Post_Component .Share .top .info {
   display: flex;
   flex-direction: row;
   align-items: center;
   cursor: pointer;
 }
-.post .Share .top .info img {
+.Post_Component .Share .top .info img {
   width: 2.5em;
   height: 2.5em;
   -o-object-fit: cover;
@@ -135,68 +135,68 @@
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
 }
-.post .Share .top .info .username {
+.Post_Component .Share .top .info .username {
   font-size: 0.875em;
   font-weight: 500;
   margin: 0em 0.625em;
 }
-.post .Share .top .info .time {
+.Post_Component .Share .top .info .time {
   font-size: 0.6875em;
 }
-.post .Share .top .posttopright {
+.Post_Component .Share .top .posttopright {
   cursor: pointer;
 }
-.post .Share .top .posttopright svg {
+.Post_Component .Share .top .posttopright svg {
   font-size: 1.125em;
 }
-.post .Share .content .text {
+.Post_Component .Share .content .text {
   margin: 0em 0.625em;
   font-size: 0.9375em;
 }
-.post .Share .content img {
+.Post_Component .Share .content img {
   margin-top: 0.625em;
   width: 100%;
   max-height: 31.25em;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.post .Share .reactions {
+.Post_Component .Share .reactions {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.post .Share .reactions .likes {
+.Post_Component .Share .reactions .likes {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.post .Share .reactions .likes .likeicon {
+.Post_Component .Share .reactions .likes .likeicon {
   width: 1.0625em;
   height: 1.0625em;
   margin-right: 0.3125em;
   cursor: pointer;
 }
-.post .Share .reactions .likes .reacts {
+.Post_Component .Share .reactions .likes .reacts {
   font-size: 0.8125em;
 }
-.post .Share .reactions .comments {
+.Post_Component .Share .reactions .comments {
   cursor: pointer;
   font-size: 0.8125em;
 }
-.post .Share .actions {
+.Post_Component .Share .actions {
   display: flex;
   flex-direction: row;
   margin-top: 0.3125em;
 }
-.post .Share .actions .item {
+.Post_Component .Share .actions .item {
   flex-basis: 33%;
   text-align: center;
   font-size: 0.875em;
   border-right: 0.03125em solid;
   cursor: pointer;
 }
-.post .Share .New {
+.Post_Component .Share .New {
   background-color: white;
   padding: 0.625em;
   gap: 0.625em;
@@ -209,19 +209,19 @@
   display: flex;
   flex-direction: column;
 }
-.post .Share .New .top {
+.Post_Component .Share .New .top {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.post .Share .New .top .info {
+.Post_Component .Share .New .top .info {
   display: flex;
   flex-direction: row;
   align-items: center;
   cursor: pointer;
 }
-.post .Share .New .top .info img {
+.Post_Component .Share .New .top .info img {
   width: 2.5em;
   height: 2.5em;
   -o-object-fit: cover;
@@ -232,75 +232,75 @@
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
 }
-.post .Share .New .top .info .username {
+.Post_Component .Share .New .top .info .username {
   font-size: 0.875em;
   font-weight: 500;
   margin: 0em 0.625em;
 }
-.post .Share .New .top .info .time {
+.Post_Component .Share .New .top .info .time {
   font-size: 0.6875em;
 }
-.post .Share .New .top .posttopright {
+.Post_Component .Share .New .top .posttopright {
   cursor: pointer;
 }
-.post .Share .New .top .posttopright svg {
+.Post_Component .Share .New .top .posttopright svg {
   font-size: 1.125em;
 }
-.post .Share .New .content .text {
+.Post_Component .Share .New .content .text {
   margin: 0em 0.625em;
   font-size: 0.9375em;
 }
-.post .Share .New .content img {
+.Post_Component .Share .New .content img {
   margin-top: 0.625em;
   width: 100%;
   max-height: 31.25em;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.post .Share .New .reactions {
+.Post_Component .Share .New .reactions {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.post .Share .New .reactions .likes {
+.Post_Component .Share .New .reactions .likes {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.post .Share .New .reactions .likes .likeicon {
+.Post_Component .Share .New .reactions .likes .likeicon {
   width: 1.0625em;
   height: 1.0625em;
   margin-right: 0.3125em;
   cursor: pointer;
 }
-.post .Share .New .reactions .likes .reacts {
+.Post_Component .Share .New .reactions .likes .reacts {
   font-size: 0.8125em;
 }
-.post .Share .New .reactions .comments {
+.Post_Component .Share .New .reactions .comments {
   cursor: pointer;
   font-size: 0.8125em;
 }
-.post .Share .New .actions {
+.Post_Component .Share .New .actions {
   display: flex;
   flex-direction: row;
   margin-top: 0.3125em;
 }
-.post .Share .New .actions .item {
+.Post_Component .Share .New .actions .item {
   flex-basis: 33%;
   text-align: center;
   font-size: 0.875em;
   border-right: 0.03125em solid;
   cursor: pointer;
 }
-.post .Share .New {
+.Post_Component .Share .New {
   border: 0.0625em solid;
   margin: 0px auto;
   box-shadow: none;
   font-size: 0.75em;
   width: calc(95% - 2 * 0.625em);
 }
-.post .Share .New .top .info img {
+.Post_Component .Share .New .top .info img {
   width: 2.1875em;
   height: 2.1875em;
   -o-object-fit: cover;
@@ -312,31 +312,31 @@
   -o-border-radius: 3.125em;
 }
 
-body.ColorTheme_1 .post {
+body.ColorTheme_1 .Post_Component {
   background-color: white;
 }
-body.ColorTheme_1 .post .top .username {
+body.ColorTheme_1 .Post_Component .top .username {
   color: black;
 }
-body.ColorTheme_1 .post .top .time {
+body.ColorTheme_1 .Post_Component .top .time {
   color: black;
 }
-body.ColorTheme_1 .post .top .posttopright svg {
+body.ColorTheme_1 .Post_Component .top .posttopright svg {
   color: black;
 }
-body.ColorTheme_1 .post .content .text {
+body.ColorTheme_1 .Post_Component .content .text {
   color: black;
 }
-body.ColorTheme_1 .post .reactions .likes .reacts {
+body.ColorTheme_1 .Post_Component .reactions .likes .reacts {
   color: black;
 }
-body.ColorTheme_1 .post .reactions .comments {
+body.ColorTheme_1 .Post_Component .reactions .comments {
   color: black;
 }
-body.ColorTheme_1 .post .actions .item {
+body.ColorTheme_1 .Post_Component .actions .item {
   color: black;
   border-color: rgba(0, 0, 0, 0.408);
 }
-body.ColorTheme_1 .post .Share .New {
+body.ColorTheme_1 .Post_Component .Share .New {
   border-color: rgba(0, 0, 0, 0.408);
 }/*# sourceMappingURL=Post.css.map */

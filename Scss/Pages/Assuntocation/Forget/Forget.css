@@ -1,15 +1,15 @@
-.ForgetComponent {
+.Forget_Component {
   max-height: 80%;
   min-width: 50%;
 }
-.ForgetComponent .FirstShap {
+.Forget_Component .FirstShap {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: start;
   gap: 20px;
 }
-.ForgetComponent .FirstShap form {
+.Forget_Component .FirstShap form {
   width: -moz-fit-content;
   width: fit-content;
   align-items: center;
@@ -17,14 +17,14 @@
   display: flex;
   flex-direction: column;
 }
-.ForgetComponent .FirstShap form .inputbox {
+.Forget_Component .FirstShap form .inputbox {
   display: flex;
   flex-direction: column;
   gap: 0.3125em;
   width: 90%;
   align-items: center;
 }
-.ForgetComponent .FirstShap form .inputbox .label {
+.Forget_Component .FirstShap form .inputbox .label {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -32,10 +32,10 @@
   font-size: 0.875em;
   align-items: center;
 }
-.ForgetComponent .FirstShap form .inputbox .label input {
+.Forget_Component .FirstShap form .inputbox .label input {
   width: 0.875em;
 }
-.ForgetComponent .FirstShap form .inputbox input {
+.Forget_Component .FirstShap form .inputbox input {
   min-width: -moz-fit-content;
   min-width: fit-content;
   width: 18.75em;
@@ -52,19 +52,19 @@
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
 }
-.ForgetComponent .FirstShap form .inputbox input::-moz-placeholder {
+.Forget_Component .FirstShap form .inputbox input::-moz-placeholder {
   color: #1877f2;
 }
-.ForgetComponent .FirstShap form .inputbox input::placeholder {
+.Forget_Component .FirstShap form .inputbox input::placeholder {
   color: #1877f2;
 }
-.ForgetComponent .FirstShap form .inputbox input[type=checkbox] {
+.Forget_Component .FirstShap form .inputbox input[type=checkbox] {
   min-width: 10px;
   min-height: 10px;
   width: 1.25em;
   height: 1.25em;
 }
-.ForgetComponent .FirstShap button {
+.Forget_Component .FirstShap button {
   padding: 0.3125em 0.625em;
   border: none;
   background-color: rgba(194, 194, 194, 0.232);
@@ -83,28 +83,28 @@
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
 }
-.ForgetComponent .FirstShap .header {
+.Forget_Component .FirstShap .header {
   color: goldenrod;
   font-weight: 500;
   font-size: 1.5625em;
   text-transform: capitalize;
 }
-.ForgetComponent .FinishProcess {
+.Forget_Component .FinishProcess_Component {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.625em;
 }
-.ForgetComponent .FinishProcess svg {
+.Forget_Component .FinishProcess_Component svg {
   font-size: 6.25em;
   color: green;
 }
-.ForgetComponent .FinishProcess p {
+.Forget_Component .FinishProcess_Component p {
   color: black;
   font-size: 0.875em;
 }
-.ForgetComponent .FinishProcess button {
+.Forget_Component .FinishProcess_Component button {
   padding: 0.3125em 0.625em;
   border: none;
   background-color: rgba(194, 194, 194, 0.232);
@@ -123,7 +123,7 @@
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
 }
-.ForgetComponent .ThirdShap {
+.Forget_Component .ThirdShap {
   width: 100%;
   height: 100%;
   gap: 1.875em;
@@ -133,7 +133,7 @@
   align-items: center;
   justify-content: center;
 }
-.ForgetComponent .ThirdShap form {
+.Forget_Component .ThirdShap form {
   width: -moz-fit-content;
   width: fit-content;
   align-items: center;
@@ -141,14 +141,14 @@
   display: flex;
   flex-direction: column;
 }
-.ForgetComponent .ThirdShap form .inputbox {
+.Forget_Component .ThirdShap form .inputbox {
   display: flex;
   flex-direction: column;
   gap: 0.3125em;
   width: 90%;
   align-items: center;
 }
-.ForgetComponent .ThirdShap form .inputbox .label {
+.Forget_Component .ThirdShap form .inputbox .label {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -156,10 +156,10 @@
   font-size: 0.875em;
   align-items: center;
 }
-.ForgetComponent .ThirdShap form .inputbox .label input {
+.Forget_Component .ThirdShap form .inputbox .label input {
   width: 0.875em;
 }
-.ForgetComponent .ThirdShap form .inputbox input {
+.Forget_Component .ThirdShap form .inputbox input {
   min-width: -moz-fit-content;
   min-width: fit-content;
   width: 18.75em;
@@ -176,25 +176,25 @@
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
 }
-.ForgetComponent .ThirdShap form .inputbox input::-moz-placeholder {
+.Forget_Component .ThirdShap form .inputbox input::-moz-placeholder {
   color: #1877f2;
 }
-.ForgetComponent .ThirdShap form .inputbox input::placeholder {
+.Forget_Component .ThirdShap form .inputbox input::placeholder {
   color: #1877f2;
 }
-.ForgetComponent .ThirdShap form .inputbox input[type=checkbox] {
+.Forget_Component .ThirdShap form .inputbox input[type=checkbox] {
   min-width: 10px;
   min-height: 10px;
   width: 1.25em;
   height: 1.25em;
 }
-.ForgetComponent .ThirdShap .header {
+.Forget_Component .ThirdShap .header {
   color: goldenrod;
   font-weight: 500;
   font-size: 1.5625em;
   text-transform: capitalize;
 }
-.ForgetComponent .ThirdShap button {
+.Forget_Component .ThirdShap button {
   padding: 0.3125em 0.625em;
   border: none;
   background-color: rgba(194, 194, 194, 0.232);
@@ -213,6 +213,6 @@
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
 }
-.ForgetComponent .ThirdShap::-webkit-scrollbar {
+.Forget_Component .ThirdShap::-webkit-scrollbar {
   width: 0px;
 }/*# sourceMappingURL=Forget.css.map */

@@ -6,7 +6,7 @@ import { AssuntocationElementsLangType } from '@/Lang/Types/Components/Assuntoca
 
 function FinishProcess(props : Props) {
     return(
-    <div className="FinishProcess">
+    <div className="FinishProcess_Component">
         <CheckCircle/>
         <p>{props.Text}</p>
         <button  onClick={() => props.Sumbit()}>{Translate("Login")}</button>

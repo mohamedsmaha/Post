@@ -51,9 +51,8 @@ const arr : PostData[]= [
 function FeedPosts() {
     return (
         <div className='FeedPosts'>
-            
             {arr.map(item=>(
-                <Post key={item.main_post.id} post={item}/>
+                <Post key={item.main_post.id} Post={item}/>
             ))}
         </div>
     )

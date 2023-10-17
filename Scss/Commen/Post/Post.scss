@@ -115,7 +115,7 @@ $padding : pxtoem(10px);
             }
         }
 }
-.post {
+.Post_Component {
     margin: pxtoem(10px) 0px;
     @include border(10px);
     @include Newtype();
@@ -124,7 +124,7 @@ $padding : pxtoem(10px);
     width: 100%;
 }
 
-body.ColorTheme_1 .post{
+body.ColorTheme_1 .Post_Component{
     background-color: $secound_color;
     .top{
         .username{color: $fifth_color;}
