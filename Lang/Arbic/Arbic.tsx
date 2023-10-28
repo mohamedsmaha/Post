@@ -23,6 +23,7 @@ export const Arbic : Languagh_model = {
     "Jobs"             : "الوظائف",
     "Like"             : "اعجبني",
     "Login"            : "تسجيل الدخول",
+    "Love"             : "احببته",
     "More"             : "المزيد",
     "Month"            : "شهر",
     "Months"           : "Months",

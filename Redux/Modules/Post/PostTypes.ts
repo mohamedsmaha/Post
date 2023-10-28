@@ -36,6 +36,7 @@ export type Post_info = {
     type        : Post_Type
 }
 export type PostData = {    
-    main_post   : Post_info  ,
-    Share_post  ?: Post_info 
+    main_post        : Post_info  ,
+    Share_post      ?: Post_info ,
+    user_interaction : {React : ReactsIcons | null}
 }

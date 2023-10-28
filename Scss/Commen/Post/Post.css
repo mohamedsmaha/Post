@@ -97,6 +97,7 @@
   display: flex;
   flex-direction: row;
   margin-top: 0.3125em;
+  position: relative;
 }
 .Post_Component .New .actions .item {
   flex-basis: 33%;
@@ -104,6 +105,39 @@
   font-size: 0.875em;
   border-right: 0.03125em solid;
   cursor: pointer;
+  padding: 0.1875em 0px;
+}
+.Post_Component .New .actions .item.Reacts .icons {
+  position: absolute;
+  bottom: calc(100% + 5px);
+  padding: 2px 2px;
+  display: flex;
+  flex-direction: row;
+  gap: 0.625em;
+  box-shadow: 1px 1px 16px -8px rgba(0, 0, 0, 0.68);
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
+  padding: 0.25em;
+  align-items: center;
+}
+.Post_Component .New .actions .item.Reacts .icons img {
+  width: 1.6875em;
+  height: 1.6875em;
+}
+.Post_Component .New .actions .item.Reacts .icons img:hover {
+  width: 2.1875em;
+  height: 2.1875em;
+}
+.Post_Component .New .actions .item.Reacts.Like, .Post_Component .New .actions .item.Reacts.Love {
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+  border-color: none;
 }
 .Post_Component .Share {
   box-shadow: 2px 2px 16px -8px rgba(0, 0, 0, 0.68);
@@ -188,6 +222,7 @@
   display: flex;
   flex-direction: row;
   margin-top: 0.3125em;
+  position: relative;
 }
 .Post_Component .Share .actions .item {
   flex-basis: 33%;
@@ -195,6 +230,39 @@
   font-size: 0.875em;
   border-right: 0.03125em solid;
   cursor: pointer;
+  padding: 0.1875em 0px;
+}
+.Post_Component .Share .actions .item.Reacts .icons {
+  position: absolute;
+  bottom: calc(100% + 5px);
+  padding: 2px 2px;
+  display: flex;
+  flex-direction: row;
+  gap: 0.625em;
+  box-shadow: 1px 1px 16px -8px rgba(0, 0, 0, 0.68);
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
+  padding: 0.25em;
+  align-items: center;
+}
+.Post_Component .Share .actions .item.Reacts .icons img {
+  width: 1.6875em;
+  height: 1.6875em;
+}
+.Post_Component .Share .actions .item.Reacts .icons img:hover {
+  width: 2.1875em;
+  height: 2.1875em;
+}
+.Post_Component .Share .actions .item.Reacts.Like, .Post_Component .Share .actions .item.Reacts.Love {
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+  border-color: none;
 }
 .Post_Component .Share .New {
   background-color: white;
@@ -285,6 +353,7 @@
   display: flex;
   flex-direction: row;
   margin-top: 0.3125em;
+  position: relative;
 }
 .Post_Component .Share .New .actions .item {
   flex-basis: 33%;
@@ -292,6 +361,39 @@
   font-size: 0.875em;
   border-right: 0.03125em solid;
   cursor: pointer;
+  padding: 0.1875em 0px;
+}
+.Post_Component .Share .New .actions .item.Reacts .icons {
+  position: absolute;
+  bottom: calc(100% + 5px);
+  padding: 2px 2px;
+  display: flex;
+  flex-direction: row;
+  gap: 0.625em;
+  box-shadow: 1px 1px 16px -8px rgba(0, 0, 0, 0.68);
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
+  padding: 0.25em;
+  align-items: center;
+}
+.Post_Component .Share .New .actions .item.Reacts .icons img {
+  width: 1.6875em;
+  height: 1.6875em;
+}
+.Post_Component .Share .New .actions .item.Reacts .icons img:hover {
+  width: 2.1875em;
+  height: 2.1875em;
+}
+.Post_Component .Share .New .actions .item.Reacts.Like, .Post_Component .Share .New .actions .item.Reacts.Love {
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+  border-color: none;
 }
 .Post_Component .Share .New {
   border: 0.0625em solid;
@@ -336,6 +438,17 @@ body.ColorTheme_1 .Post_Component .reactions .comments {
 body.ColorTheme_1 .Post_Component .actions .item {
   color: black;
   border-color: rgba(0, 0, 0, 0.408);
+}
+body.ColorTheme_1 .Post_Component .actions .item.Reacts .icons {
+  background-color: white;
+}
+body.ColorTheme_1 .Post_Component .actions .item.Reacts.Like {
+  color: white;
+  background-color: #1877f2;
+}
+body.ColorTheme_1 .Post_Component .actions .item.Reacts.Love {
+  color: white;
+  background-color: #d42828;
 }
 body.ColorTheme_1 .Post_Component .Share .New {
   border-color: rgba(0, 0, 0, 0.408);

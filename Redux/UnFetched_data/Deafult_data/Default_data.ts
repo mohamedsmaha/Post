@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { DefaultDataReduxType } from "./Default_data_type";
-import { Cookie_model } from "@/Helpers/Cookies/Class";
+
 
 const initialState : DefaultDataReduxType = 
 {
     ColorTheme : 1 ,
-    Lang       : "Ar",
-    Login      : Cookie_model.login()
+    Lang       : "En",
+    Login      : true
 }
 
 const DefaultData = createSlice({

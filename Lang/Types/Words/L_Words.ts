@@ -1,1 +1,1 @@
-export type L_Words = "Like" | "Login"
+export type L_Words = "Like" | "Login" | "Love"

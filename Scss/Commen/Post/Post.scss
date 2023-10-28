@@ -64,18 +64,44 @@ $padding : pxtoem(10px);
         }
     }
 }
-
+    ///actions
+    @mixin Reacts(){
+        .item.Reacts{
+            .icons{
+                    position: absolute;
+                    img {@include square(27px)};
+                    bottom: calc(100% + 5px);
+                    padding: 2px 2px;
+                    @include flex_row();
+                    gap: pxtoem(10px);
+                    @include shadow(1px, 1px);
+                    @include border(50px);
+                    padding: pxtoem(4px);
+                    align-items: center;
+                    img:hover {
+                        @include square(35px)
+                    }
+                }
+            &.Like , &.Love{
+                @include border(10px);
+                border-color: none;
+            }
+        }
+    }
 @mixin actions() {
     .actions {
         @include flex_row();
         margin-top: pxtoem(5px);
+        position: relative;
         .item {
             flex-basis: 33%;
             text-align: center;
             font-size: pxtoem(14px);
             border-right: pxtoem(0.5px) solid ;
             cursor: pointer;
+            padding: pxtoem(3px) 0px;
         }
+        @include Reacts();
     }
 }
 @mixin Newtype(){
@@ -136,6 +162,12 @@ body.ColorTheme_1 .Post_Component{
         .likes .reacts{color: $fifth_color;}
         .comments {color: $fifth_color;}
     }
-    .actions .item{color: $fifth_color; border-color: $eight_color;}
+    .actions .item{
+        &.Reacts{
+            .icons{background-color: $secound_color;}
+            &.Like{color:$secound_color; background-color: $first_color;}
+            &.Love{color:$secound_color; background-color: #d42828   ;}
+        }
+        color: $fifth_color; border-color: $eight_color;}
     .Share .New {border-color: $eight_color;}
 }

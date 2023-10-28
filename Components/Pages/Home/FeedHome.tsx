@@ -13,7 +13,8 @@ const arr : PostData[]= [
             "info" : {"text" : "hey my name is mohamed"},
             "kind" : "Content" ,
             "type" : "New"
-        } 
+        } ,
+        "user_interaction" : {"React" : "Like"}
     },
     {
         "main_post" :{
@@ -33,7 +34,8 @@ const arr : PostData[]= [
             "info"     : {"text" : "What a wonderfull world" , "img" : "1.jpeg"},
             "kind"     : "Content" ,
             "type"     : "New"
-        } 
+        } ,
+        "user_interaction" : {"React" : null}
     },
     {
         "main_post" :{
@@ -44,7 +46,8 @@ const arr : PostData[]= [
             "info"     : {"text" : "What a wonderfull world" , "img" : "1.jpeg"},
             "kind"     : "Content",
             "type"     : "New" 
-        } 
+        } ,
+        "user_interaction" : {"React" : "Love"}
     },
 ]
 

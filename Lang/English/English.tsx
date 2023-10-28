@@ -22,6 +22,7 @@ export const English : Languagh_model={
     "Jobs": "Jobs",
     "Like": "Like",
     "Login":"Login",
+    "Love" :"Love",
     "More": "More",
     "Month": "Month",
     "Months": "Months",
