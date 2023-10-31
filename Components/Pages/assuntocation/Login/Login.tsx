@@ -7,7 +7,7 @@ import { Translate } from '@/Helpers/Translate'
 import { propstype } from './Logintypes'
 import { redirect } from 'next/navigation'
 import { useAppDispatch, useAppSelector } from '@/Redux/Hooks'
-import { default_data_model } from '@/Helpers/Redux_models/Deafult_data/Class'
+import { default_data_model } from '@/Helpers/Redux_models/Deafult_data/Deafult_data_class'
 import { Login_change } from '@/Redux/UnFetched_data/Deafult_data/Default_data'
 function Login(props : propstype) {
 // Props

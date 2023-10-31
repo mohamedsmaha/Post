@@ -8,7 +8,18 @@ import { UserRedux } from "./UserTypes"
 const initialState : UserRedux = {
     loading : false ,
     error   : null  ,
-    data    : []
+    data    : { // initial data for testing
+        "ApiToken"    : 12 ,
+        "Email"       : "mohamedsabrymohamedahmed@gmail.com",
+        "Phonenumber" : 0o10121 , 
+        "Username"    : "mohamed sabry" ,
+        "birthday"    : "30/10/2002" ,
+        "colortheme"  : 1    ,
+        "id"          : 4    ,
+        "img"         : ""   ,
+        "lang"        : "En" ,
+        "password"    : "lol"
+    }
 }
 export const FetchUser = createAsyncThunk("FetchUser" , async () => {
     const results = await fetch('')

@@ -1,4 +1,5 @@
 @import "./../../Helper/all.scss";
+$Topbar_Height : pxtoem(40px);
 @mixin Logo_Search(){
     .Logo_Search{
         min-width: $sidebarwidth;
@@ -57,17 +58,35 @@
         }
     }
 }
-
+@mixin Notification_Container(){
+    .Notification_Container{
+        position: absolute;
+        top: calc($Topbar_Height + pxtoem(5px));
+        right: 30px;
+        width: 300px;
+        background-color: white;
+        height: 80vh;
+        z-index: 1000;
+        border: 4px solid $seventh_color;
+        border-top: none;
+        border-right: none;
+        @include border(10px);
+        padding: 5px;
+        @include shadow(-2px, 3px);
+    }
+}
 .Topbar_Component{
+    position: relative;
     display: flex;
     align-items: center;
-    height: pxtoem(40px);
+    height: $Topbar_Height;
     justify-content: space-between;
     padding: 0px pxtoem(5px);
     @include shadow(1px , 1px);
     @include Logo_Search();
     @include Main_Links();
     @include Left_Icons();
+    @include Notification_Container();
 }
 @media (max-width : 900px) {
     .Topbar_Component{

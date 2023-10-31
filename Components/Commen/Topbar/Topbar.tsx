@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { App_links }     from '@/Static_Data/Links'
 import { Static_images } from '@/Static_Data/Images'
 import { Static_Words }  from '@/Static_Data/Static_words'
+import Notification from "../Notification/Notification"
 
 function Topbar() {
 // Static Data
@@ -63,11 +64,19 @@ function Topbar() {
             </div>
         )
     }
+    function Notification_Box(){
+        return (
+            <div className="Notification_Container">
+                <Notification/>
+            </div>
+        )
+    }
     return (
         <div className={`Topbar_Component`}>
             <Logo_Search/>
             <Main_Links/>
             <Left_Icons/>
+            <Notification_Box/>
         </div>
     )
 }

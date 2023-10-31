@@ -1,1 +1,1 @@
-export type N_Words = "New"
+export type N_Words = "New" | "Notifications"

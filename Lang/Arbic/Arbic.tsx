@@ -3,6 +3,7 @@ import React from "react";
 
 export const Arbic : Languagh_model = {
     "Activity"         : "النشاط",
+    "Accept"           : "قبول",
     "Bookmarks"        : "المفضلة",
     "BirthDay"         : "عيد الميلاد",
     "Calendar"         : "النتيجة",
@@ -28,6 +29,7 @@ export const Arbic : Languagh_model = {
     "Month"            : "شهر",
     "Months"           : "Months",
     "New"              : "جديدة",
+    "Notifications"    : "الاشعارات",
     "Online Friends"  : "الأصدقاء المتصلين",
     "Password"         :"كلمه السر",
     "Pages"            : "الصفحات",
@@ -36,6 +38,7 @@ export const Arbic : Languagh_model = {
     "Questions"        : "الأسئلة",
     "Register"         : "انشاء حساب",
     "Resend"           : "اعادة ارسال",
+    "Refuse"           : "رفض",
     "Share"            : "مشاركة",
     "Search"           : "ابحث",
     "Settings"         : "الإعدادات",
@@ -57,9 +60,6 @@ export const Arbic : Languagh_model = {
         },
         Comments: (comments : number)=>{
             return `${convertToArabicNumber(comments)} تعليق `
-        },
-        Time:(number , unite)=>{
-            return `منذ ${convertToArabicNumber(number)} ${Arbic[unite]}`
         }
     },
     RightbarObject:{
@@ -89,7 +89,15 @@ export const Arbic : Languagh_model = {
         sentence : {
             "App_name"   : "Post" ,
             "App_slogan" : "كيف يجب ان يكون المجتمع افضل"
+        },
+        Time:(number , unite)=>{
+            return `منذ ${convertToArabicNumber(number)} ${Arbic[unite]}`
         }
+    },
+    NotificationObject:{
+        AddSendToUser(username){return <><b>{username}</b> قد أرسل لك طلب صداقة</>},
+        AddAcppeted(username)  {return <><b>{username}</b> قد قبل طلب الصداقة الخاص بك</>},
+        AddRefused(username)   {return <><b>{username}</b> رفض طلب الصداقة الخاص بك</>}
     }
 }
 function convertToArabicNumber(englishNumber : number) {

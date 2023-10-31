@@ -9,10 +9,11 @@ import { Content, HTMLDivElementRef, Helper_Functions, PropsType, UserInfo } fro
 import { useRef, useState } from "react";
 import { ReactsIcons } from "@/Redux/Modules/Post/PostTypes";
 import React from "react";
+import { StaticWordsElementsLangType } from "@/Lang/Types/Static_Words";
 function Post(props: PropsType) {
 // constants 
     const {Post}    = props
-    const Avaliable_Reacts: ReactsIcons[] = ["Like", "Love","Like","Love"];
+    const Avaliable_Reacts: ReactsIcons[] = ["Like", "Love"];
     const Default_React   : ReactsIcons   = "Like"
 // Hooks
     const [Like_action_Box_Text    , SetReactsBoxText] = useState<ReactsIcons>(Post.user_interaction.React ? Post.user_interaction.React : Default_React)
@@ -22,7 +23,8 @@ function Post(props: PropsType) {
     const Like_Action_Box_Ref:HTMLDivElementRef        = useRef(null)
     const Post_div_Ref       :HTMLDivElementRef        = useRef(null)
 // Languagh
-    const PostLangObj= Translate_Object("Post") as PostElementsLangType;
+    const PostLangObj   = Translate_Object("Post") as PostElementsLangType;
+    const Static_Words  = Translate_Object("StaticWords") as StaticWordsElementsLangType;
 // Helper Funcion
 const Helper_Functions : Helper_Functions= {
         Handel_Reacts_box_State(value){
@@ -142,7 +144,7 @@ const Helper_Functions : Helper_Functions= {
                 <img src={`${APP_Folders.Users()}/${Post_data.User.img}`} alt="" />
                 <span className="username">{Post_data.User.Username}</span>
                 <span className="time">
-                    {  PostLangObj.Time(Post_data.Data.number , Post_data.Data.unite)}
+                    {  Static_Words.Time(Post_data.Data.number , Post_data.Data.unite)}
                 </span>
                 </div>
                 { Post.main_post == Post_data? 

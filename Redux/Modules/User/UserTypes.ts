@@ -12,7 +12,7 @@ export type User = {
     colortheme :number,
     ApiToken   :number,
 }
-export type User_for_Post = {
+export type anyUser= {
     id       : number ,
     Username : string ,
     img      : string 
@@ -20,5 +20,5 @@ export type User_for_Post = {
 export type UserRedux = {
     loading : boolean ,
     error   : Error | string | null
-    data    : User[]
+    data    : User
 }

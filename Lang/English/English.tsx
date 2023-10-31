@@ -2,6 +2,7 @@ import { Languagh_model } from "../Types/Languagh_model";
 
 export const English : Languagh_model={
     "Activity": "Activity",
+    "Accept"  : "Accept",
     "Bookmarks": "Bookmarks",
     "BirthDay" : "BirthDay",
     "Calendar": "Calendar",
@@ -27,6 +28,7 @@ export const English : Languagh_model={
     "Month": "Month",
     "Months": "Months",
     "New"   : "New",
+    "Notifications" : "Notifications",
     "Online Friends": "Online Friends",
     "Password" : "Password",
     "Pages": "Pages",
@@ -35,6 +37,7 @@ export const English : Languagh_model={
     "Questions": "Questions",
     "Register" :"Register",
     "Resend"   : "Resend",
+    "Refuse"   : "Refuse",
     "Share": "Share",
     "Search": "Search",
     "Settings": "Settings",
@@ -56,9 +59,6 @@ export const English : Languagh_model={
         },
         Comments:(comment : number)=>{
             return `${comment} comment`
-        },
-        Time:(number , unite)=>{
-            return `${number} ${English[unite]} ago`
         }
     },
     RightbarObject:{
@@ -82,6 +82,14 @@ export const English : Languagh_model={
         sentence : {
             "App_name"  : "Post" ,
             "App_slogan": "What A Better Society Should Be Like"
+        },
+        Time:(number , unite)=>{
+            return `${number} ${English[unite]} ago`
         }
+    },
+    NotificationObject:{
+        AddSendToUser(username ){return <><b>{username}</b> has sent you a Friend Request</>},
+        AddAcppeted(username){return<><b>{username}</b> has accepted your Friend Request</>},
+        AddRefused(username){return <><b>{username}</b> has refused your Friend Request</>}
     }
 }

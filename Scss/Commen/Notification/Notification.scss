@@ -1,0 +1,57 @@
+@import "../../Helper/all.scss";
+
+@mixin Friend_Request(){
+    .Box.Friend_Request{
+        @include flex_row();
+        align-items: center;
+        gap: pxtoem(5px);
+        div.left{
+            img{
+                @include square(40px);
+                @include border(50px);
+                object-fit: cover;
+            }
+        }
+        div.right{
+            @include flex_column();
+            font-size: pxtoem(13px);
+            gap: pxtoem(5px);
+            .buttons{
+                @include flex_row();
+                gap : 3px;
+                button{
+                    padding: 2px 5px;
+                    @include border(50px);
+                    border: none;
+                    background-color: $secound_color;
+                    color: $first_color;
+                    cursor: pointer;
+                }
+            }
+            .time{
+                font-size: pxtoem(13px);
+            }
+        }
+    }
+}
+.Notification_Component{
+    height: 100%;
+    .Header{
+        font-size: pxtoem(20px);
+        font-weight: 500;
+        height: 30px;
+        padding: 0px 5px;
+    }
+    .Container{
+        padding: pxtoem(12px) pxtoem(4px) pxtoem(12px) pxtoem(0px);
+        @include flex_column();
+        gap: pxtoem(10px);
+        @include Friend_Request();
+        overflow-y: scroll;
+        height: calc(100% - 55px)
+    }
+    & ::-webkit-scrollbar{
+        width: 3px;
+    }
+}  
+body.Ar .Notification_Component{direction: rtl;}
