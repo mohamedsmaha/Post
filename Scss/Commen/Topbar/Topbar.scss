@@ -28,13 +28,15 @@ $Topbar_Height : pxtoem(40px);
             justify-content: center;
             @include border(50px);
             svg{font-size: pxtoem(17px);}
+            cursor: pointer;
         }
         div.profile{
+            a{height: 30px;}
             img{
                 @include square(30px);
                 object-fit: cover;
                 @include border(50px);
-}
+            }
         }
     }
 }

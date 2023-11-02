@@ -1,0 +1,76 @@
+.ProfileShap_Component {
+  width: 70%;
+}
+.ProfileShap_Component > .Top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+.ProfileShap_Component > .Top img.SecoundImg {
+  width: 100%;
+  height: 250px;
+  border-radius: 0em;
+  -webkit-border-radius: 0em;
+  -moz-border-radius: 0em;
+  -ms-border-radius: 0em;
+  -o-border-radius: 0em;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.ProfileShap_Component > .Top .smallinfo {
+  background-color: white;
+  min-height: 4.375em;
+  padding-left: 9.375em;
+  position: relative;
+  border-radius: 0.3125em;
+  -webkit-border-radius: 0.3125em;
+  -moz-border-radius: 0.3125em;
+  -ms-border-radius: 0.3125em;
+  -o-border-radius: 0.3125em;
+}
+.ProfileShap_Component > .Top .smallinfo img.MainImg {
+  width: 8.125em;
+  height: 8.125em;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: -4.375em;
+  left: 0px;
+  padding: 0.3125em 0.625em;
+}
+.ProfileShap_Component > .Top .smallinfo .Box {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+.ProfileShap_Component > .Top .smallinfo .Box p.username {
+  font-size: 1.1875em;
+}
+.ProfileShap_Component > .Top .smallinfo .Box .actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+.ProfileShap_Component > .Top .smallinfo .Box .actions button {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  font-size: 14px;
+  border: none;
+  background-color: white;
+  color: #1877f2;
+  cursor: pointer;
+}
+.ProfileShap_Component > .Top .smallinfo .Box .actions button svg {
+  font-size: 16px;
+}/*# sourceMappingURL=ProfileShap.css.map */

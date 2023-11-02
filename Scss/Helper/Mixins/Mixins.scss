@@ -19,6 +19,13 @@
     -ms-border-radius: pxtoem($value);
     -o-border-radius: pxtoem($value);
 }
+@mixin border_pre($value){
+    border-radius: $value;
+    -webkit-border-radius: $value;
+    -moz-border-radius: $value;
+    -ms-border-radius: $value;
+    -o-border-radius: $value;
+}
 @mixin square($value){
     width: pxtoem($value);
     height: pxtoem($value);

@@ -34,7 +34,7 @@ function Share() {
     return (    
         <div className={`Share_Component`}>
                 <div className="sharetop">
-                    <img src="./assets/persons/1.jpeg" alt="" className="shareprofileimg" />
+                    <img src="/assets/persons/1.jpeg" alt="" className="shareprofileimg" />
                     <input type="text" className="shareInput"  placeholder={`${ShareLangObj.InputFiled("mohamed")}`}/>
                 </div>
                 <hr className="sharehr" />

@@ -1,0 +1,64 @@
+@import "../../../Helper/all.scss";
+
+$img_dimantions : 130px; // user img in the top note i don`t mean the secound one
+$img_padding_top_bottom: 5px; // .... padding 
+$img_padding_left_right: 10px ;
+$img_all_height : calc($img_padding_top_bottom * 2 + $img_dimantions);
+$img_all_width  : calc($img_padding_left_right * 2 + $img_dimantions);
+@mixin Top_Profile_part() {
+    >.Top {
+        width: 100%;
+        @include flex_column();
+        gap:0px;
+        img.SecoundImg{
+            width: 100%;
+            height: 250px;
+            @include border(0px);
+            object-fit: cover
+        }
+        .smallinfo{
+            background-color: white;
+            min-height: pxtoem(calc($img_all_height / 2));
+            padding-left:pxtoem($img_all_width);
+            position: relative;
+            @include border(5px);
+            img.MainImg {
+                    @include square($img_dimantions);
+                    @include border_pre(50%);
+                    object-fit: cover;
+                    position: absolute;
+                    top: - pxtoem(calc($img_all_height / 2));
+                    left: 0px;
+                    padding: pxtoem($img_padding_top_bottom) pxtoem($img_padding_left_right);
+                }
+            .Box{
+                margin-top: 20px;
+                @include flex_row();
+                align-items: center; 
+                justify-content: space-between; 
+                padding-right:10px ;  
+                p.username{font-size: pxtoem(19px); }
+                .actions{
+                    @include flex_row();
+                    align-items: center;
+                    gap: 5px;
+                    button{
+                        @include flex_row();
+                        gap: 3px;
+                        font-size: 14px;
+                        svg{font-size: 16px;}
+                        border: none;
+                        background-color: $secound_color;
+                        color: $first_color;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ProfileShap_Component {
+    width: 70%;
+    @include Top_Profile_part();
+}

@@ -1,5 +1,6 @@
 import { DefaultDataReduxType } from "@/Redux/UnFetched_data/Deafult_data/Default_data_type"
 export type icon_screen = 'big_screen' | "small_screen" | "both"
+export type HTMLDivElementRef = React.RefObject<HTMLDivElement>;
 type main_icon = {
     id :number , 
     icon : React.ReactNode ,

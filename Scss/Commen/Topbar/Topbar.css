@@ -70,9 +70,13 @@
   -moz-border-radius: 3.125em;
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
+  cursor: pointer;
 }
 .Topbar_Component .Left_Icons > div svg {
   font-size: 1.0625em;
+}
+.Topbar_Component .Left_Icons div.profile a {
+  height: 30px;
 }
 .Topbar_Component .Left_Icons div.profile img {
   width: 1.875em;

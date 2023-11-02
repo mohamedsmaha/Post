@@ -8,7 +8,7 @@ import { propstype } from './Logintypes'
 import { redirect } from 'next/navigation'
 import { useAppDispatch, useAppSelector } from '@/Redux/Hooks'
 import { default_data_model } from '@/Helpers/Redux_models/Deafult_data/Deafult_data_class'
-import { Login_change } from '@/Redux/UnFetched_data/Deafult_data/Default_data'
+import { Login_change } from '@/Redux/UnFetched_data/Deafult_data/Default_dataRedux'
 function Login(props : propstype) {
 // Props
     const {state_functions} = props
