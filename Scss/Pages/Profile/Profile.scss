@@ -1,6 +1,12 @@
 .ProfilePage{
-    .bottom{
-        display: flex;
-        justify-content: center;
-    }
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+        >.bottom {
+            display: flex;
+            flex-grow: 1;
+            overflow-y: scroll;
+            justify-content: center;
+
+        }
 }

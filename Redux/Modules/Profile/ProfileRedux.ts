@@ -12,7 +12,7 @@ const initialState : ProfileRedux= {
         user : {
             "ApiToken"    : 12 ,
             "Email"       : "mohamedsabrymohamedahmed@gmail.com",
-            "Phonenumber" : 0o10121 , 
+            "Phonenumber" : "01015556737" , 
             "Username"    : "mohamed sabry" ,
             "birthday"    : "30/10/2002" ,
             "colortheme"  : 1    ,
@@ -20,8 +20,11 @@ const initialState : ProfileRedux= {
             "img"         : "1.jpeg"   ,
             "secound_img" : "1.jpeg"   , 
             "lang"        : "En" ,
-            "password"    : "lol"
-        }
+            "password"    : "lol",
+            "Status"      : "Married",
+            "From"        : "Egypt"
+        },
+
     } 
 }
 export const FetchProfile = createAsyncThunk("FetchProfile" , async () => {

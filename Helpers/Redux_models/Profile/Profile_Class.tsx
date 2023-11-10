@@ -22,6 +22,9 @@ class Profile {
     GetUser(){
         return this.User_Model
     }
+    Getinfo(){
+        return this.User_Model.GetBoxinfo()
+    }
 
 }
 export  const Profile_Model = new Profile

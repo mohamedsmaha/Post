@@ -6,13 +6,14 @@ export type ProfileRedux = {
     error   : Error | string | null
     data    : profile_data 
 }
+export type info_keys = "Status" | "From" | "Born" | "Phone"
 export type info = {
-    "Status"    : "Married" | "Single" ,
-    "from"      : string ,
-    "born"      : string ,
+    "Status"    ?: "Married" | "Single" ,
+    "From"      ?: string ,
+    "Born"      ?: string ,
+    "Phone"     ?: string
 }
 export type profile_data = {
-    "info"    ?: info       ,
     "Friends" ?: anyUser_Type [] ,
     "Posts"   ?: PostData[] ,
     "user"    ?: User_Type 

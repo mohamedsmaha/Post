@@ -11,7 +11,7 @@ const initialState : UserRedux = {
     data    : { // initial data for testing
         "ApiToken"    : 12 ,
         "Email"       : "mohamedsabrymohamedahmed@gmail.com",
-        "Phonenumber" : 0o10121 , 
+        "Phonenumber" : "01015556737" , 
         "Username"    : "mohamed sabry" ,
         "birthday"    : "30/10/2002" ,
         "colortheme"  : 1    ,
@@ -19,7 +19,8 @@ const initialState : UserRedux = {
         "img"         : "1.jpeg"   ,
         "secound_img" : ""   , 
         "lang"        : "En" ,
-        "password"    : "lol"
+        "password"    : "lol",
+        
     }
 }
 export const FetchUser = createAsyncThunk("FetchUser" , async () => {

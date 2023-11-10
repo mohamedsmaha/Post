@@ -1,4 +1,7 @@
 .ProfileShap_Component {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625em;
   width: 70%;
 }
 .ProfileShap_Component > .Top {
@@ -9,7 +12,7 @@
 }
 .ProfileShap_Component > .Top img.SecoundImg {
   width: 100%;
-  height: 250px;
+  height: 15.625em;
   border-radius: 0em;
   -webkit-border-radius: 0em;
   -moz-border-radius: 0em;
@@ -45,12 +48,12 @@
   padding: 0.3125em 0.625em;
 }
 .ProfileShap_Component > .Top .smallinfo .Box {
-  margin-top: 20px;
+  margin-top: 1.25em;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding-right: 10px;
+  padding-right: 0.625em;
 }
 .ProfileShap_Component > .Top .smallinfo .Box p.username {
   font-size: 1.1875em;
@@ -59,18 +62,181 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 5px;
+  gap: 0.3125em;
 }
 .ProfileShap_Component > .Top .smallinfo .Box .actions button {
   display: flex;
   flex-direction: row;
-  gap: 3px;
-  font-size: 14px;
+  gap: 0.1875em;
+  font-size: 0.875em;
   border: none;
   background-color: white;
   color: #1877f2;
   cursor: pointer;
 }
 .ProfileShap_Component > .Top .smallinfo .Box .actions button svg {
-  font-size: 16px;
+  font-size: 1.0625em;
+}
+.ProfileShap_Component .middel {
+  display: flex;
+  flex-direction: row;
+  padding: 0.625em 0.9375em 0px;
+  background-color: white;
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+  gap: 0.9375em;
+}
+.ProfileShap_Component .middel button {
+  text-transform: capitalize;
+  font-size: 1.0625em;
+  border: none;
+  background-color: white;
+  padding: 0px 0.625em 0.625em;
+}
+.ProfileShap_Component .middel button.active {
+  color: #1877f2;
+  font-weight: 500;
+  border-bottom: 0.125em solid #1877f2;
+}
+.ProfileShap_Component > .bottom {
+  width: 100%;
+}
+.ProfileShap_Component > .bottom .Main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+.ProfileShap_Component > .bottom .Main .right {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ProfileShap_Component > .bottom .Main .left {
+  position: sticky;
+  top: 0px;
+  width: 42%;
+}
+.ProfileShap_Component > .bottom .Main .left .info_box {
+  background-color: white;
+  box-shadow: 1px 1px 16px -8px rgba(0, 0, 0, 0.68);
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+  display: flex;
+  flex-direction: column;
+  margin: 0.625em 0em;
+  gap: 0.625em;
+  padding: 15px;
+}
+.ProfileShap_Component > .bottom .Main .left .info_box .header {
+  text-transform: capitalize;
+}
+.ProfileShap_Component > .bottom .Main .left .info_box .infobox_Content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.ProfileShap_Component > .bottom .Main .left .info_box .infobox_Content .info_item {
+  color: goldenrod;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-size: 15px;
+}
+.ProfileShap_Component > .bottom .Main .left .info_box .infobox_Content .info_item p.sparate {
+  color: black;
+  font-weight: 500;
+}
+.ProfileShap_Component > .bottom .Main .left .info_box .infobox_Content .info_item p.title {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  width: 60px;
+  font-size: 15px;
+  color: #1877f2;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.ProfileShap_Component > .bottom .Main .left .info_box .infobox_Content .info_item p.title svg {
+  font-size: 14px;
+}
+.ProfileShap_Component > .bottom .Main .left .friends {
+  background-color: white;
+  box-shadow: 1px 1px 16px -8px rgba(0, 0, 0, 0.68);
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+  display: flex;
+  flex-direction: column;
+  margin: 0.625em 0em;
+  gap: 0.625em;
+}
+.ProfileShap_Component > .bottom .Main .left .friends .header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1875em;
+  padding: 0.3125em;
+}
+.ProfileShap_Component > .bottom .Main .left .friends .header .levelone {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.ProfileShap_Component > .bottom .Main .left .friends .header .levelone button {
+  border: none;
+  color: #1877f2;
+  background-color: white;
+  cursor: pointer;
+}
+.ProfileShap_Component > .bottom .Main .left .friends .header .leveltwo {
+  color: gray;
+  font-size: 0.875em;
+}
+.ProfileShap_Component > .bottom .Main .left .friends .content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -ms-border-radius: 0.5em;
+  -o-border-radius: 0.5em;
+}
+.ProfileShap_Component > .bottom .Main .left .friends .content .friend {
+  cursor: pointer;
+  margin-bottom: 0.3125em;
+  flex-basis: 33%;
+  border-radius: 0.3125em;
+  -webkit-border-radius: 0.3125em;
+  -moz-border-radius: 0.3125em;
+  -ms-border-radius: 0.3125em;
+  -o-border-radius: 0.3125em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3125em;
+}
+.ProfileShap_Component > .bottom .Main .left .friends .content .friend p {
+  font-size: 0.75em;
+}
+.ProfileShap_Component > .bottom .Main .left .friends .content .friend img {
+  width: 6.25em;
+  height: 6.25em;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
 }/*# sourceMappingURL=ProfileShap.css.map */

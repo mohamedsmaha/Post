@@ -3,7 +3,7 @@ import { avaliable_lang } from "@/Lang/Main_file";
 export type User_Type = {
     id         :number ,
     Email      :string ,
-    Phonenumber:number,
+    Phonenumber:string,
     Username   :string,
     password   :string,
     birthday   :string,
@@ -12,6 +12,8 @@ export type User_Type = {
     lang       :avaliable_lang,
     colortheme :number,
     ApiToken   :number,
+    Status     ?:"Married" | "Single" 
+    From       ?: string
 }
 export type anyUser_Type= {
     id       : number ,

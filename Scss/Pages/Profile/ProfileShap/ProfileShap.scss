@@ -5,6 +5,8 @@ $img_padding_top_bottom: 5px; // .... padding
 $img_padding_left_right: 10px ;
 $img_all_height : calc($img_padding_top_bottom * 2 + $img_dimantions);
 $img_all_width  : calc($img_padding_left_right * 2 + $img_dimantions);
+
+
 @mixin Top_Profile_part() {
     >.Top {
         width: 100%;
@@ -12,7 +14,7 @@ $img_all_width  : calc($img_padding_left_right * 2 + $img_dimantions);
         gap:0px;
         img.SecoundImg{
             width: 100%;
-            height: 250px;
+            height: pxtoem(250px);
             @include border(0px);
             object-fit: cover
         }
@@ -32,21 +34,21 @@ $img_all_width  : calc($img_padding_left_right * 2 + $img_dimantions);
                     padding: pxtoem($img_padding_top_bottom) pxtoem($img_padding_left_right);
                 }
             .Box{
-                margin-top: 20px;
+                margin-top: pxtoem(20px);
                 @include flex_row();
                 align-items: center; 
                 justify-content: space-between; 
-                padding-right:10px ;  
+                padding-right:pxtoem(10px) ;  
                 p.username{font-size: pxtoem(19px); }
                 .actions{
                     @include flex_row();
                     align-items: center;
-                    gap: 5px;
+                    gap: pxtoem(5px);
                     button{
                         @include flex_row();
-                        gap: 3px;
-                        font-size: 14px;
-                        svg{font-size: 16px;}
+                        gap: pxtoem(3px);
+                        font-size: pxtoem(14px);
+                        svg{font-size: pxtoem(17px);}
                         border: none;
                         background-color: $secound_color;
                         color: $first_color;
@@ -57,8 +59,154 @@ $img_all_width  : calc($img_padding_left_right * 2 + $img_dimantions);
         }
     }
 }
+@mixin middel_profile_part() {
+    .middel {
+        @include flex_row();
+        padding: pxtoem(10px) pxtoem(15px) 0px;
+        background-color: white;
+        @include border(10px);
+        gap: pxtoem(15px);
 
+        button {
+            text-transform: capitalize;
+            font-size: pxtoem(17px);
+            border: none;
+            background-color: white;
+            padding: 0px pxtoem(10px) pxtoem(10px);
+
+            &.active {
+                color: $first_color;
+                font-weight: 500;
+                border-bottom:pxtoem(2px) solid $first_color;
+            }
+        }
+    }
+}
+// Bottoms Options
+@mixin Main(){
+    .Main{
+        @include flex_row();
+        width: 100%;
+        justify-content: space-between;
+        .right {
+            width: 55%;
+            @include flex_column();
+            align-items: center;
+        }
+        .left {
+            // font-size: 15px;
+            position: sticky;
+            top: 0px;
+            width: 42%;
+
+            .info_box {
+                background-color: white;
+                @include shadow(1px, 1px);
+                @include border(10px);
+                @include flex_column();
+                margin: pxtoem(10px) pxtoem(0px);
+                gap: pxtoem(10px);
+                padding: 15px;
+
+                .header{text-transform: capitalize}
+                .infobox_Content {
+                    @include flex_column();
+                    gap: 5px;
+                    .info_item {
+                        p.sparate {
+                            color: black;
+                            font-weight: 500;
+                        }
+                        color: $seventh_color;
+                        @include flex_row();
+                        gap: 10px;
+                        font-size: 15px;
+                        p.title {
+                            @include flex_row();
+                            gap: 5px;
+                            align-items: center;
+                            svg{font-size: 14px;}
+                            width: 60px;
+                            font-size: 15px;
+                            color: $first_color;
+                            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                        }
+                    }
+                }
+            }
+
+            .friends {
+                background-color: white;
+                @include shadow(1px, 1px);
+                @include border(10px);
+                @include flex_column();
+                margin: pxtoem(10px) pxtoem(0px);
+                gap: pxtoem(10px);
+
+                .header {
+                    @include flex_column();
+                    gap: pxtoem(3px);
+                    padding: pxtoem(5px);
+
+                    .levelone {
+                        @include flex_row();
+                        justify-content: space-between;
+
+                        button {
+                            border: none;
+                            color: $first_color;
+                            background-color: white;
+                            cursor: pointer;
+                        }
+                    }
+
+                    .leveltwo {
+                        color: gray;
+                        font-size: pxtoem(14px);
+                    }
+                }
+
+                .content {
+                    @include flex_row();
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    @include border(8px);
+
+                    .friend {
+                        cursor: pointer;
+                        margin-bottom: pxtoem(5px);
+                        flex-basis: 33%;
+                        @include border(5px);
+                        @include flex_column();
+                        align-items: center;
+                        gap: pxtoem(5px);
+
+                        p {
+                            font-size: pxtoem(12px)
+                        }
+
+                        img {
+                            @include square(100px);
+                            object-fit: cover;
+                            @include border(10px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@mixin bottom_profile_part(){
+    > .bottom{ 
+        width: 100%;
+        @include Main();
+    }
+}
 .ProfileShap_Component {
+    @include flex_column();
+    gap: pxtoem(10px);
     width: 70%;
     @include Top_Profile_part();
+    @include middel_profile_part();
+    @include bottom_profile_part();
 }

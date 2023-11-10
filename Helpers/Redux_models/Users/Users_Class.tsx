@@ -1,4 +1,5 @@
 import { useAppSelector } from "@/Redux/Hooks"
+import { info } from "@/Redux/Modules/Profile/ProfileTypes"
 import { User_Type } from "@/Redux/Modules/User/UserTypes"
 type options = "default_Redux" | "profile"
 export class User{
@@ -28,6 +29,16 @@ export class User{
     }
     GetName(){
         return this.find().Username
+    }
+    GetBoxinfo(){
+        let info : info = {
+            "Status" : this.find().Status ,
+            "Born"   : this.find().birthday,
+            "From"   : this.find().From ,
+            "Phone"  : this.find().Phonenumber
+        }
+        info = Object.fromEntries(Object.entries(info).filter(([_, v]) => v !== undefined));
+        return info
     }
 }
 export const User_Model = new User

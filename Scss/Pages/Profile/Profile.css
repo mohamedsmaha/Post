@@ -1,4 +1,11 @@
-.ProfilePage .bottom {
+.ProfilePage {
+  height: 100vh;
   display: flex;
+  flex-direction: column;
+}
+.ProfilePage > .bottom {
+  display: flex;
+  flex-grow: 1;
+  overflow-y: scroll;
   justify-content: center;
 }/*# sourceMappingURL=Profile.css.map */

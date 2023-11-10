@@ -6,12 +6,12 @@ import "@/scss/Commen/Sidebar/Sidebar.css"
 import Link from 'next/link';
 import { Translate } from '@/Helpers/Translate';
 const Friends =[
-    {id: 1, Name: 'Alice Smith'     , img: './assets/persons/2.jpeg'},
-    {id: 2, Name: 'Bob Johnson'     , img: './assets/persons/3.jpeg'},
-    {id: 6, Name: 'Fiona Davis'     , img: './assets/persons/7.jpeg'},
-    {id: 7, Name: 'George Miller'   , img: './assets/persons/8.jpeg'},
-    {id: 8, Name: 'Hannah Wilson'   , img: './assets/persons/9.jpeg'},
-    {id: 9, Name: 'Isaac Moore'     , img: './assets/persons/10.jpeg'}
+    {id: 1, Name: 'Alice Smith'     , img: '/assets/persons/2.jpeg'},
+    {id: 2, Name: 'Bob Johnson'     , img: '/assets/persons/3.jpeg'},
+    {id: 6, Name: 'Fiona Davis'     , img: '/assets/persons/7.jpeg'},
+    {id: 7, Name: 'George Miller'   , img: '/assets/persons/8.jpeg'},
+    {id: 8, Name: 'Hannah Wilson'   , img: '/assets/persons/9.jpeg'},
+    {id: 9, Name: 'Isaac Moore'     , img: '/assets/persons/10.jpeg'}
 ]
 function Sidebar() {
 // Static_data
