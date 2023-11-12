@@ -16,7 +16,7 @@ export default function Home() {
       <div className="bottom">
         <Sidebar/>
         <div className="Feed">
-          <Share/>
+          <Share Page="Home" />
           <FeedPosts/>
         </div>
         <Rightbar/>

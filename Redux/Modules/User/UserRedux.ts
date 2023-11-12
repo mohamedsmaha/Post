@@ -12,7 +12,7 @@ const initialState : UserRedux = {
         "ApiToken"    : 12 ,
         "Email"       : "mohamedsabrymohamedahmed@gmail.com",
         "Phonenumber" : "01015556737" , 
-        "Username"    : "mohamed sabry" ,
+        "Username"    : "mohamed" ,
         "birthday"    : "30/10/2002" ,
         "colortheme"  : 1    ,
         "id"          : 4    ,

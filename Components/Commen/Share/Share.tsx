@@ -6,8 +6,17 @@ import { useAppSelector } from "@/Redux/Hooks"
 import { Languagh } from "@/Lang/Main_file"
 import { Translate, Translate_Object } from "@/Helpers/Translate"
 import { ShareElementsLangType } from "@/Lang/Types/Components/Share"
+import { Props_type } from "./ShareTypes"
+import { User, User_Model } from "@/Helpers/Redux_models/Users/Users_Class"
+import { Profile_Model } from "@/Helpers/Redux_models/Profile/Profile_Class"
+import { APP_Folders } from "@/Static_Data/APP_Folders"
 
-function Share() {
+function Share(props : Props_type) {
+// Models
+    const UserModel :() => User  = ()=>{
+        if(props.Page == "Profile"){return Profile_Model.GetUser()}
+        return User_Model
+    }
 // Lang
     const ShareLangObj= Translate_Object("Share") as ShareElementsLangType;
 // Static Data in App
@@ -34,8 +43,8 @@ function Share() {
     return (    
         <div className={`Share_Component`}>
                 <div className="sharetop">
-                    <img src="/assets/persons/1.jpeg" alt="" className="shareprofileimg" />
-                    <input type="text" className="shareInput"  placeholder={`${ShareLangObj.InputFiled("mohamed")}`}/>
+                    <img src={`${APP_Folders.Users()}/${UserModel().GetMainImg()}`} alt="" className="shareprofileimg" />
+                    <input type="text" className="shareInput"  placeholder={`${ShareLangObj.InputFiled(UserModel().GetName())}`}/>
                 </div>
                 <hr className="sharehr" />
                 {<Shareoptions/>}

@@ -1,3 +1,6 @@
+export type Props_type = {
+    Page : "Home" | "Profile"
+}
 export type Static_Data = {
     Options : option[]
 }

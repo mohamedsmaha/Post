@@ -73,7 +73,7 @@ $img_all_width  : calc($img_padding_left_right * 2 + $img_dimantions);
             border: none;
             background-color: white;
             padding: 0px pxtoem(10px) pxtoem(10px);
-
+            cursor: pointer;
             &.active {
                 color: $first_color;
                 font-weight: 500;
@@ -84,7 +84,7 @@ $img_all_width  : calc($img_padding_left_right * 2 + $img_dimantions);
 }
 // Bottoms Options
 @mixin Main(){
-    .Main{
+    >.Main{
         @include flex_row();
         width: 100%;
         justify-content: space-between;
@@ -92,26 +92,24 @@ $img_all_width  : calc($img_padding_left_right * 2 + $img_dimantions);
             width: 55%;
             @include flex_column();
             align-items: center;
+
         }
         .left {
-            // font-size: 15px;
-            position: sticky;
-            top: 0px;
             width: 42%;
-
             .info_box {
+                height: fit-content;
                 background-color: white;
                 @include shadow(1px, 1px);
                 @include border(10px);
                 @include flex_column();
                 margin: pxtoem(10px) pxtoem(0px);
                 gap: pxtoem(10px);
-                padding: 15px;
+                padding: pxtoem(15px);
 
                 .header{text-transform: capitalize}
                 .infobox_Content {
                     @include flex_column();
-                    gap: 5px;
+                    gap: pxtoem(5px);
                     .info_item {
                         p.sparate {
                             color: black;
@@ -119,15 +117,15 @@ $img_all_width  : calc($img_padding_left_right * 2 + $img_dimantions);
                         }
                         color: $seventh_color;
                         @include flex_row();
-                        gap: 10px;
-                        font-size: 15px;
+                        gap: pxtoem(10px);
+                        font-size: pxtoem(15px);
                         p.title {
                             @include flex_row();
-                            gap: 5px;
+                            gap: pxotem(5px);
                             align-items: center;
-                            svg{font-size: 14px;}
-                            width: 60px;
-                            font-size: 15px;
+                            svg{font-size:pxtoem(14px);}
+                            width: pxtoem(60px);
+                            font-size: pxtoem(15px);
                             color: $first_color;
                             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
                         }
@@ -196,10 +194,35 @@ $img_all_width  : calc($img_padding_left_right * 2 + $img_dimantions);
         }
     }
 }
+@mixin Friends(){
+    .Friends{
+        @include flex_row();
+        flex-wrap: wrap;
+        gap: pxtoem(10px);
+        justify-content: center;
+        .Friend{
+            @include flex_row();
+            background-color: white;
+            padding: pxtoem(10px);
+            width: pxtoem(300px);
+            gap: pxtoem(5px);
+            .text{
+                @include flex_row();
+                align-items: center;
+            }
+            img{
+                @include square(50px);
+                @include border(15px);
+                object-fit: cover;
+            }
+        }
+    }
+}
 @mixin bottom_profile_part(){
     > .bottom{ 
         width: 100%;
         @include Main();
+        @include Friends()
     }
 }
 .ProfileShap_Component {
@@ -209,4 +232,27 @@ $img_all_width  : calc($img_padding_left_right * 2 + $img_dimantions);
     @include Top_Profile_part();
     @include middel_profile_part();
     @include bottom_profile_part();
+}
+// Responsoive
+@media (max-width : 1080px) {
+    .ProfileShap_Component>.bottom>.Main {
+        @include flex_column();
+        >.left , >.right{width: 100%;}
+        >.left{
+            font-size: 14px;
+            gap: 20px;
+        }
+    }
+}
+@media (max-width : 650px) {
+    .ProfileShap_Component{
+        width: 85%;
+        font-size: 14px;
+    }
+}
+@media (max-width : 500px) {
+    .ProfileShap_Component {
+        width: 95%;
+        font-size: 12px;
+    }
 }

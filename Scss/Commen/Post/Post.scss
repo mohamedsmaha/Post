@@ -146,7 +146,6 @@ $padding : pxtoem(10px);
     @include border(10px);
     @include Newtype();
     @include Share();
-    max-width:$maxPostwidth;
     width: 100%;
 }
 

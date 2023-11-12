@@ -28,8 +28,7 @@
 $padding : 10px;
 .Share_Component {
     margin-top: 10px;
-    max-width: calc($maxPostwidth - (2 * $padding));
-    width    : calc($maxPostwidth - (2 * $padding));
+    width    : calc(100% - (2 * $padding));
     height: fit-content;
     box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
     @include border(10px);

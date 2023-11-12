@@ -25,4 +25,10 @@ export type UserRedux = {
     error   : Error | string | null
     data    : User_Type
 }
-
+export type Box_info_keys = "Status" | "From" | "Born" | "Phone"
+export type Box_info_type = {
+    "Status"    ?: "Married" | "Single" ,
+    "From"      ?: string ,
+    "Born"      ?: string ,
+    "Phone"     ?: string
+}

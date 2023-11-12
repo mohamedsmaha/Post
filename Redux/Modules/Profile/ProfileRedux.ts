@@ -17,7 +17,7 @@ const initialState : ProfileRedux= {
             "birthday"    : "30/10/2002" ,
             "colortheme"  : 1    ,
             "id"          : 4    ,
-            "img"         : "1.jpeg"   ,
+            "img"         : "2.jpeg"   ,
             "secound_img" : "1.jpeg"   , 
             "lang"        : "En" ,
             "password"    : "lol",

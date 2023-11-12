@@ -1,7 +1,6 @@
 .Share_Component {
   margin-top: 10px;
-  max-width: 530px;
-  width: 530px;
+  width: calc(100% - 20px);
   height: -moz-fit-content;
   height: fit-content;
   box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
