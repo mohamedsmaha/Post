@@ -26,6 +26,7 @@ import { AssuntocationElementsLangType, Assuntocation_Lang } from "./Components/
 import { StaticWordsElementsLangType, StaticWords_lang } from "./Static_Words";
 import { N_Words } from "./Words/N_Words";
 import { NotificationElementsLangType, Notification_Lang } from "./Components/Notification";
+import { I_Words } from "./Words/I_Words";
 
 
 
@@ -39,7 +40,7 @@ export type Components_Elements  = PostElementsLangType |
 
 // Words
 
-export type Words = A_Words | B_Words | C_Words | D_Words | E_Words | F_Words | G_Words | H_Words | J_Words | L_Words |
+export type Words = A_Words | B_Words | C_Words | D_Words | E_Words | F_Words | G_Words | H_Words | I_Words | J_Words | L_Words |
                     M_Words | N_Words | W_Words | O_Words | P_Words | Q_Words | R_Words | S_Words | U_Words | V_Words | Y_Words
 type Words_Object = {[key in Words] : string}
 

@@ -1,25 +1,22 @@
 @import "../../../Helper/all.scss";
 
-$img_dimantions : 130px; // user img in the top note i don`t mean the secound one
-$img_padding_top_bottom: 5px; // .... padding 
-$img_padding_left_right: 10px ;
-$img_all_height : calc($img_padding_top_bottom * 2 + $img_dimantions);
-$img_all_width  : calc($img_padding_left_right * 2 + $img_dimantions);
 
 
 @mixin Top_Profile_part() {
+    $img_dimantions : 100px; // user img in the top note i don`t mean the secound one
+    $img_padding_top_bottom: 10px; // .... padding 
+    $img_padding_left_right: 10px;
+    $img_all_height : calc($img_padding_top_bottom * 2 + $img_dimantions);
+    $img_all_width : calc($img_padding_left_right * 2 + $img_dimantions);
     >.Top {
         width: 100%;
         @include flex_column();
-        gap:0px;
         img.SecoundImg{
             width: 100%;
             height: pxtoem(250px);
-            @include border(0px);
             object-fit: cover
         }
         .smallinfo{
-            background-color: white;
             min-height: pxtoem(calc($img_all_height / 2));
             padding-left:pxtoem($img_all_width);
             position: relative;
@@ -34,12 +31,12 @@ $img_all_width  : calc($img_padding_left_right * 2 + $img_dimantions);
                     padding: pxtoem($img_padding_top_bottom) pxtoem($img_padding_left_right);
                 }
             .Box{
-                margin-top: pxtoem(20px);
                 @include flex_row();
+                height: 100%;
                 align-items: center; 
                 justify-content: space-between; 
                 padding-right:pxtoem(10px) ;  
-                p.username{font-size: pxtoem(19px); }
+                p.username{font-size: pxtoem(19px);}
                 .actions{
                     @include flex_row();
                     align-items: center;
@@ -47,11 +44,9 @@ $img_all_width  : calc($img_padding_left_right * 2 + $img_dimantions);
                     button{
                         @include flex_row();
                         gap: pxtoem(3px);
-                        font-size: pxtoem(14px);
+                        font-size: pxtoem(16px);
                         svg{font-size: pxtoem(17px);}
                         border: none;
-                        background-color: $secound_color;
-                        color: $first_color;
                         cursor: pointer;
                     }
                 }
@@ -63,21 +58,17 @@ $img_all_width  : calc($img_padding_left_right * 2 + $img_dimantions);
     .middel {
         @include flex_row();
         padding: pxtoem(10px) pxtoem(15px) 0px;
-        background-color: white;
         @include border(10px);
         gap: pxtoem(15px);
-
         button {
             text-transform: capitalize;
             font-size: pxtoem(17px);
             border: none;
-            background-color: white;
             padding: 0px pxtoem(10px) pxtoem(10px);
             cursor: pointer;
             &.active {
-                color: $first_color;
                 font-weight: 500;
-                border-bottom:pxtoem(2px) solid $first_color;
+                border-bottom:pxtoem(2px) solid;
             }
         }
     }
@@ -92,30 +83,23 @@ $img_all_width  : calc($img_padding_left_right * 2 + $img_dimantions);
             width: 55%;
             @include flex_column();
             align-items: center;
-
         }
         .left {
             width: 42%;
             .info_box {
                 height: fit-content;
-                background-color: white;
                 @include shadow(1px, 1px);
                 @include border(10px);
                 @include flex_column();
                 margin: pxtoem(10px) pxtoem(0px);
                 gap: pxtoem(10px);
                 padding: pxtoem(15px);
-
                 .header{text-transform: capitalize}
                 .infobox_Content {
                     @include flex_column();
                     gap: pxtoem(5px);
                     .info_item {
-                        p.sparate {
-                            color: black;
-                            font-weight: 500;
-                        }
-                        color: $seventh_color;
+                        p.sparate {font-weight: 500;}
                         @include flex_row();
                         gap: pxtoem(10px);
                         font-size: pxtoem(15px);
@@ -126,50 +110,40 @@ $img_all_width  : calc($img_padding_left_right * 2 + $img_dimantions);
                             svg{font-size:pxtoem(14px);}
                             width: pxtoem(60px);
                             font-size: pxtoem(15px);
-                            color: $first_color;
                             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
                         }
                     }
                 }
             }
-
             .friends {
-                background-color: white;
                 @include shadow(1px, 1px);
                 @include border(10px);
                 @include flex_column();
                 margin: pxtoem(10px) pxtoem(0px);
                 gap: pxtoem(10px);
-
                 .header {
                     @include flex_column();
                     gap: pxtoem(3px);
                     padding: pxtoem(5px);
-
                     .levelone {
                         @include flex_row();
                         justify-content: space-between;
-
                         button {
+                            font-size: pxtoem(16px);
                             border: none;
                             color: $first_color;
-                            background-color: white;
                             cursor: pointer;
                         }
                     }
-
                     .leveltwo {
-                        color: gray;
                         font-size: pxtoem(14px);
                     }
                 }
-
                 .content {
                     @include flex_row();
                     flex-wrap: wrap;
                     justify-content: center;
                     @include border(8px);
-
                     .friend {
                         cursor: pointer;
                         margin-bottom: pxtoem(5px);
@@ -178,11 +152,7 @@ $img_all_width  : calc($img_padding_left_right * 2 + $img_dimantions);
                         @include flex_column();
                         align-items: center;
                         gap: pxtoem(5px);
-
-                        p {
-                            font-size: pxtoem(12px)
-                        }
-
+                        p {font-size: pxtoem(12px)}
                         img {
                             @include square(100px);
                             object-fit: cover;
@@ -197,18 +167,30 @@ $img_all_width  : calc($img_padding_left_right * 2 + $img_dimantions);
 @mixin Friends(){
     .Friends{
         @include flex_row();
+        margin-bottom: pxtoem(10px);
         flex-wrap: wrap;
         gap: pxtoem(10px);
         justify-content: center;
         .Friend{
             @include flex_row();
-            background-color: white;
             padding: pxtoem(10px);
-            width: pxtoem(300px);
+            min-width: pxtoem(300px);
             gap: pxtoem(5px);
+            flex-basis: 30%;
+            @include border(10px);
             .text{
+                
                 @include flex_row();
                 align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                .icons{
+                    svg{
+                        font-size: pxtoem(19px);
+                        &:hover{color: $first_color}
+                        cursor: pointer;
+                    }
+                }
             }
             img{
                 @include square(50px);
@@ -254,5 +236,59 @@ $img_all_width  : calc($img_padding_left_right * 2 + $img_dimantions);
     .ProfileShap_Component {
         width: 95%;
         font-size: 12px;
+        .Top{font-size: 10px;}
+        .Friends .Friend{flex-basis: 100% !important;}
     }
 }
+@media (max-width : 400px) {
+    .ProfileShap_Component {
+        font-size: 9px;
+        >.bottom>.Main>.left {font-size: 10px;}
+    }
+}
+// Color
+body.ColorTheme_1 .ProfileShap_Component{
+        >.Top{
+            .smallinfo{
+                background-color: $secound_color;
+                .Box .actions {
+                    >svg{color : $fifth_color;}
+                    button{color: $first_color; background-color:$secound_color;}
+            }
+            }
+        }
+        >.middel{
+            background-color: $secound_color;
+            >button{
+                    background-color: $secound_color;
+                    color: $fifth_color;
+                    &.active{color: $first_color;} 
+                    border-bottom-color: $first_color; 
+                }
+        }
+        >.bottom{
+            >.Main >.left {
+                    .info_box{
+                        .infobox_Content .info_item{
+                            color: $seventh_color;
+                            p.sparate{color: $fifth_color;}
+                            p.title{color: $first_color;}
+                        }
+                        background-color: white;
+                    }
+                    .friends{
+                        background-color: $secound_color;
+                        >   .header{
+                            .levelone{button{background-color: $secound_color;}}
+                            .leveltwo{color: $sixth_color;}
+                        }
+                    }
+            }
+            >.Friends .Friend{
+                background-color: $secound_color;
+                .text .icons svg{color: $fifth_color; &:hover{color: $first_color;}}
+            }
+        }
+    
+} 
+//Lang

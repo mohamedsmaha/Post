@@ -3,10 +3,11 @@ import { Bottom_Components_type, Helper_Functions, Props, Static_data } from './
 import { Profile_Model } from '@/Helpers/Redux_models/Profile/Profile_Class'
 import { APP_Folders } from '@/Static_Data/APP_Folders'
 import "@/Scss/Pages/Profile/ProfileShap/ProfileShap.css"
-import { Cake, Favorite, Home, MoreHoriz, PersonAdd, Phone } from '@mui/icons-material'
+import { Cake, Favorite, Home, MoreHoriz, PersonAdd, PersonRemove, Phone } from '@mui/icons-material'
 import Share from '@/Components/Commen/Share/Share'
 import FeedPosts from '../../Home/FeedHome'
 import { Box_info_keys, anyUser_Type } from '@/Redux/Modules/User/UserTypes'
+import { Translate } from '@/Helpers/Translate'
 const arr = [
     { id: 5, Username: 'Emily Brown', img: '6.jpeg' },
     { id: 9, Username: 'Isaac Moore', img: '10.jpeg' },
@@ -78,7 +79,7 @@ function ProfileShap(props : Props) {
                             {Profile_Model.GetUser().GetName()}
                         </p>
                         <div className="actions">
-                            <button><PersonAdd/> Add Friend</button>
+                            <button><PersonAdd/>{Translate("Add Friend")}</button>
                             <MoreHoriz/>
                         </div>
                     </div>  
@@ -92,8 +93,8 @@ function ProfileShap(props : Props) {
             <div className="middel">
                 {Static_Data.middel.map(item => (
                     <button className={`${Bottom_component == item.text ? "active" : ""}`} 
-                            onClick={() => Helper_functions.Handel_Bottom_component(item.text)}
-                            key={item.id}>{item.text}</button>
+                            onClick={() => Helper_functions.Handel_Bottom_component(item.text )}
+                            key={item.id}>{Translate(item.text)}</button>
                 ))}
             </div>            
         )
@@ -105,7 +106,7 @@ function ProfileShap(props : Props) {
             </div>
         )
     }
-    // buttoms options
+    // bottoms options
         function Main(){
             function InfoBox(){
                 let info_box = Profile_Model.Getinfo()
@@ -113,7 +114,7 @@ function ProfileShap(props : Props) {
                 return (
                     <div className="info_box">
                         <div className="header">
-                            Info
+                            {Translate("Info")}
                         </div>
                         <div className="box">
                             <div className='infobox_Content'>
@@ -166,6 +167,9 @@ function ProfileShap(props : Props) {
                     <img src={`${APP_Folders.Users()}/${User.img}`} alt="" />
                     <div className="text">
                         <p>{User.Username}</p>
+                        <div className="icons">
+                            <PersonRemove/>
+                        </div>
                     </div>
                 </div>)
             }

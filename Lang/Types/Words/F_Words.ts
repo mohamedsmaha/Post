@@ -1,1 +1,1 @@
-export type F_Words = "Feelings" | "Forget_Password"
+export type F_Words = "Feelings" | "Forget_Password"|"Friends"

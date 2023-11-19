@@ -1,1 +1,1 @@
-export type A_Words = "Activity" | "Accept"
+export type A_Words = "Activity" | "Accept" |"Add Friend"

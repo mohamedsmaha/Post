@@ -5,7 +5,7 @@ export type Props = {
     id : number
 }
 export type Static_data={
-    middel : {id : number , text : Bottom_Components_type}[],
+    middel : {id : number , text :Bottom_Components_type}[],
     info_box:{[key in Box_info_keys] : {text : string , icon : React.ReactNode}}
 }
 export type Helper_Functions = {
