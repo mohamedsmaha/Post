@@ -52,7 +52,7 @@ export const English : Languagh_model={
     "Weeks": "Weeks",
     "Year": "Year",
     "Years": "Years",
-    ShareObject :{
+    CreatePostObject :{
         InputFiled:(name : string)=>{
             return `What is your mind , ${name} ? `
         }

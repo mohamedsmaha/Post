@@ -1,5 +1,5 @@
 import { TimeUnites } from "@/Ts/Time"
-import { User, anyUser } from "../User/UserTypes"
+import { anyUser_Type } from "../User/UserTypes"
 
 export type PostRedux = {
     loading : Boolean ,
@@ -24,19 +24,19 @@ export type Top_Three_Reacts = {
 }
 export type Reactions    ={
     numbers : {order : Top_Three_Reacts , total : number } ,
-    Details : {user : anyUser   , React : ReactsIcons}[]
+    Details : {user : anyUser_Type   , React : ReactsIcons}[]
 }
 export type Post_info = {
     id          : number,
     kind        : Post_kind,
     info        : Content_info  ,
     Reactions   : Reactions     ,
-    User        : anyUser ,
+    User        : anyUser_Type ,
     Data        : time,
     type        : Post_Type
 }
 export type PostData = {    
     main_post        : Post_info  ,
-    Share_post      ?: Post_info ,
+    Share_post      ?: Post_info  , 
     user_interaction : {React : ReactsIcons | null}
 }

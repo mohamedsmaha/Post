@@ -20,7 +20,7 @@ import { U_Words } from "./Words/U_Words";
 import { E_Words } from "./Words/E_Words";
 import { R_Words } from "./Words/R_Words";
 import { PostElementsLangType, Post_Lang } from "./Components/Post";
-import { ShareElementsLangType, Share_Lang } from "./Components/Share";
+import { CreatePostElementsLangType, CreatePost_Lang } from "./Components/CreatePost";
 import { RightbarElementsLangType, Rightbar_Lang } from "./Components/Rightbar";
 import { AssuntocationElementsLangType, Assuntocation_Lang } from "./Components/Assuntocation";
 import { StaticWordsElementsLangType, StaticWords_lang } from "./Static_Words";
@@ -31,12 +31,12 @@ import { I_Words } from "./Words/I_Words";
 
 
 // Components Name
-export type  Translate_components     = `${"Share" | "Post" | "Rightbar" | "Assuntocation" | "StaticWords" | "Notification"}` 
+export type  Translate_components     = `${"CreatePost" | "Post" | "Rightbar" | "Assuntocation" | "StaticWords" | "Notification"}` 
 export type Merge_With_Component_Name = "Object"
 
 // Components Elements
 export type Components_Elements  = PostElementsLangType |
-    ShareElementsLangType | RightbarElementsLangType | AssuntocationElementsLangType | StaticWordsElementsLangType | NotificationElementsLangType
+    CreatePostElementsLangType | RightbarElementsLangType | AssuntocationElementsLangType | StaticWordsElementsLangType | NotificationElementsLangType
 
 // Words
 
@@ -46,4 +46,4 @@ type Words_Object = {[key in Words] : string}
 
 //Merge Types
 export type Languagh_model = components & Words_Object
-type components            = Share_Lang & Post_Lang & Rightbar_Lang & Assuntocation_Lang & StaticWords_lang & Notification_Lang
+type components            = CreatePost_Lang & Post_Lang & Rightbar_Lang & Assuntocation_Lang & StaticWords_lang & Notification_Lang

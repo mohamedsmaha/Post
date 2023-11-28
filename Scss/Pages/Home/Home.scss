@@ -2,7 +2,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    .bottom{
+    >.bottom{
         display: flex;
         flex-grow: 1;
         overflow-y: scroll;

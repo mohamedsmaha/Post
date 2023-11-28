@@ -105,6 +105,9 @@
   flex-direction: column;
   align-items: center;
 }
+.ProfileShap_Component > .bottom > .Main .right .FeedPosts {
+  width: 100%;
+}
 .ProfileShap_Component > .bottom > .Main .left {
   width: 42%;
 }

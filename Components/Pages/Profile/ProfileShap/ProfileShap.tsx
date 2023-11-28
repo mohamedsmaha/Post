@@ -4,10 +4,10 @@ import { Profile_Model } from '@/Helpers/Redux_models/Profile/Profile_Class'
 import { APP_Folders } from '@/Static_Data/APP_Folders'
 import "@/Scss/Pages/Profile/ProfileShap/ProfileShap.css"
 import { Cake, Favorite, Home, MoreHoriz, PersonAdd, PersonRemove, Phone } from '@mui/icons-material'
-import Share from '@/Components/Commen/Share/Share'
 import FeedPosts from '../../Home/FeedHome'
 import { Box_info_keys, anyUser_Type } from '@/Redux/Modules/User/UserTypes'
 import { Translate } from '@/Helpers/Translate'
+import CreatePost from '@/Components/Commen/Post/Create_Post/Create_Post'
 const arr = [
     { id: 5, Username: 'Emily Brown', img: '6.jpeg' },
     { id: 9, Username: 'Isaac Moore', img: '10.jpeg' },
@@ -154,7 +154,7 @@ function ProfileShap(props : Props) {
                         <FriendsBox/>
                     </div>
                     <div className="right">
-                        <Share Page="Profile" />
+                        <CreatePost Page="Profile" />
                         <FeedPosts/>
                     </div>
                 </div>

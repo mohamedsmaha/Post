@@ -1,6 +1,6 @@
-.Share_Component {
+.Create_Component {
   margin-top: 10px;
-  width: calc(100% - 20px);
+  width: 100%;
   height: -moz-fit-content;
   height: fit-content;
   box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
@@ -12,13 +12,13 @@
   background-color: white;
   padding: 10px;
 }
-.Share_Component .sharetop {
+.Create_Component .Create_top {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 0.3125em;
 }
-.Share_Component .sharetop .shareprofileimg {
+.Create_Component .Create_top .Createprofileimg {
   width: 2.5em;
   height: 2.5em;
   -o-object-fit: cover;
@@ -29,50 +29,39 @@
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
 }
-.Share_Component .sharetop .shareInput {
+.Create_Component .Create_top .text {
   font-size: 1em;
   border: none;
   width: 80%;
   outline: none;
 }
-.Share_Component .sharehr {
+.Create_Component .Createhr {
   margin: 0.625em 0px;
 }
-.Share_Component .shareoptions {
+.Create_Component .Createoptions {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
-.Share_Component .shareoptions > .item {
+.Create_Component .Createoptions > .item {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin: 0.3125em 0.9375em;
   cursor: pointer;
 }
-.Share_Component .shareoptions > .item svg {
+.Create_Component .Createoptions > .item svg {
   font-size: 1.125em;
   margin-right: 0.1875em;
 }
-.Share_Component .shareoptions > .item .text {
+.Create_Component .Createoptions > .item .text {
   font-size: 0.875em;
   font-weight: 500;
 }
 
-@media (max-width: 900px) {
-  .Share_Component {
-    width: calc(100% - 20px);
-  }
-}
-body.ColorTheme_1 .Share_Component {
+body.ColorTheme_1 .Create_Component {
   background-color: white;
 }
-body.ColorTheme_1 .Share_Component .sharetop input {
-  background-color: white;
-}
-body.ColorTheme_1 .Share_Component .sharetop input ::-moz-placeholder {
+body.ColorTheme_1 .Create_Component .Create_top p {
   color: gray;
-}
-body.ColorTheme_1 .Share_Component .sharetop input ::placeholder {
-  color: gray;
-}/*# sourceMappingURL=Share.css.map */
+}/*# sourceMappingURL=CreatePost.css.map */

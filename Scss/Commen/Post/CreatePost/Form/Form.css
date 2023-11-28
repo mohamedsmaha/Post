@@ -1,0 +1,126 @@
+.PostForm_Component {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background-color: rgba(128, 128, 128, 0.1098039216);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.PostForm_Component .container {
+  width: 50vw;
+  height: 80vh;
+  padding: 15px 20px;
+  background-color: white;
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
+}
+.PostForm_Component .container .Main_Form {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+.PostForm_Component .container .Main_Form::-webkit-scrollbar {
+  width: 0px;
+}
+.PostForm_Component .container .Main_Form .top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.625em;
+}
+.PostForm_Component .container .Main_Form .top img {
+  width: 2.1875em;
+  height: 2.1875em;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
+}
+.PostForm_Component .container .Main_Form .top p {
+  font-size: 1em;
+}
+.PostForm_Component .container .Main_Form > .bottom {
+  display: flex;
+  flex-grow: 1;
+  padding: 10px;
+  width: 100%;
+}
+.PostForm_Component .container .Main_Form > .bottom form.Content_info_Post {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+.PostForm_Component .container .Main_Form > .bottom form.Content_info_Post .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.PostForm_Component .container .Main_Form > .bottom form.Content_info_Post .info textarea {
+  min-height: 80px;
+  width: 99%;
+  padding: 5px;
+  border: none;
+  outline: none;
+  resize: none;
+  max-height: 18.75em;
+  box-shadow: 1px 1px 16px -8px rgba(0, 0, 0, 0.68);
+}
+.PostForm_Component .container .Main_Form > .bottom form.Content_info_Post .info textarea::-webkit-scrollbar {
+  width: 4px;
+}
+.PostForm_Component .container .Main_Form > .bottom form.Content_info_Post .info .media {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.PostForm_Component .container .Main_Form > .bottom form.Content_info_Post .info .media .box input {
+  display: none;
+}
+.PostForm_Component .container .Main_Form > .bottom form.Content_info_Post .info .media .box label {
+  cursor: pointer;
+}
+.PostForm_Component .container .Main_Form > .bottom form.Content_info_Post .info .ShowMedia {
+  width: 100%;
+  font-size: 9px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.PostForm_Component .container .Main_Form > .bottom form.Content_info_Post .info .ShowMedia img {
+  width: 31.25em;
+  height: 31.25em;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.PostForm_Component .container .Main_Form > .bottom form.Content_info_Post > button {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  background-color: #1877f2;
+  font-size: 16px;
+  color: white;
+  font-weight: 500;
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+}/*# sourceMappingURL=Form.css.map */

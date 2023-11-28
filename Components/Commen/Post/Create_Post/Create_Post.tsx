@@ -1,24 +1,25 @@
 "use client"
 import { EmojiEmotions ,More, PermMedia} from "@mui/icons-material"
-import "@/Scss/Commen/Share/Share.css"
-import React from "react"
-import { useAppSelector } from "@/Redux/Hooks"
-import { Languagh } from "@/Lang/Main_file"
+import "@/Scss/Commen/Post/CreatePost/CreatePost.css"
+import React, { useEffect, useState } from "react"
 import { Translate, Translate_Object } from "@/Helpers/Translate"
-import { ShareElementsLangType } from "@/Lang/Types/Components/Share"
-import { Props_type } from "./ShareTypes"
+import { CreatePostElementsLangType } from "@/Lang/Types/Components/CreatePost"
+import { Props_type } from "./CreateTypes"
 import { User, User_Model } from "@/Helpers/Redux_models/Users/Users_Class"
 import { Profile_Model } from "@/Helpers/Redux_models/Profile/Profile_Class"
 import { APP_Folders } from "@/Static_Data/APP_Folders"
+import Form from "./Form/Form"
 
-function Share(props : Props_type) {
+function CreatePost(props : Props_type) {
 // Models
     const UserModel :() => User  = ()=>{
         if(props.Page == "Profile"){return Profile_Model.GetUser()}
         return User_Model
     }
 // Lang
-    const ShareLangObj= Translate_Object("Share") as ShareElementsLangType;
+    const CreatePostObj= Translate_Object("CreatePost") as CreatePostElementsLangType;
+// Hooks 
+    const [Form_Status , SetForm_Status] = useState<Boolean>(false)
 // Static Data in App
     const Static_Data = {
         Options : [
@@ -28,9 +29,9 @@ function Share(props : Props_type) {
         ] 
     }
 // Small Components
-    function Shareoptions () {
+    function Createoptions () {
         return(
-                <ul className="shareoptions">
+                <ul className="Createoptions">
                     {Static_Data.Options.map(item => (
                         <li  className="item" key={item.id}>
                             {item.icon}
@@ -40,16 +41,22 @@ function Share(props : Props_type) {
                 </ul>
         )
     }
-    return (    
-        <div className={`Share_Component`}>
-                <div className="sharetop">
-                    <img src={`${APP_Folders.Users()}/${UserModel().GetMainImg()}`} alt="" className="shareprofileimg" />
-                    <input type="text" className="shareInput"  placeholder={`${ShareLangObj.InputFiled(UserModel().GetName())}`}/>
+// Main Create Form
+
+    return (  
+        <>
+        
+        <div className={`Create_Component`} onClick={() => SetForm_Status(true)}>
+                <div className="Create_top">
+                    <img src={`${APP_Folders.Users()}/${UserModel().GetMainImg()}`} alt="" className="Createprofileimg" />
+                    <p className="text">{CreatePostObj.InputFiled(UserModel().GetName())}</p>
                 </div>
-                <hr className="sharehr" />
-                {<Shareoptions/>}
+                <hr className="Createhr" />
+                {<Createoptions/>}
         </div>
+                {Form_Status ? <Form Close={() => SetForm_Status(false)}/> : null}
+        </>  
     )
 }
 
-export default Share
+export default CreatePost

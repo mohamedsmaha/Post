@@ -1,8 +1,8 @@
-@import "../../Helper/all.scss";
+@import "../../../Helper/all.scss";
 @mixin shareoptions() {
 
     // Styles for the sharebottom div
-    .shareoptions {
+    .Createoptions {
         @include flex_row();
         justify-content: space-evenly;
 
@@ -26,23 +26,23 @@
 }
 
 $padding : 10px;
-.Share_Component {
+.Create_Component {
     margin-top: 10px;
-    width    : calc(100% - (2 * $padding));
+    width    : 100%;
     height: fit-content;
-    box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+    @include box_shadow(0px , 0px );
     @include border(10px);
     background-color: white;
     padding:$padding;
 
-    .sharetop {
+    .Create_top {
         @include flex_row();
         align-items: center;
         gap: pxtoem(5px);
-        .shareprofileimg {
+        .Createprofileimg {
             @include person_pic(5px);
         }
-        .shareInput {
+        .text {
             font-size: pxtoem(16px);
             border: none;
             width: 80%;
@@ -50,23 +50,15 @@ $padding : 10px;
         }
     }
 
-    .sharehr {
+    .Createhr {
         margin: pxtoem(10px) 0px;
     }
 
     @include shareoptions();
 }
 
-@media (max-width : 900px) {
-    .Share_Component{width    : calc(100% - (2 * $padding));}
-}
 
-body.ColorTheme_1 .Share_Component{
+body.ColorTheme_1 .Create_Component{
     background-color: $secound_color  ;
-    .sharetop input{
-        background-color: $secound_color;
-        ::placeholder{
-            color: $sixth_color;
-        }
-    }
+    .Create_top p{ color: $sixth_color;}
 }

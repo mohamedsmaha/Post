@@ -53,7 +53,7 @@ export const Arbic : Languagh_model = {
     "Weeks"            : "اسابيع",
     "Year"             : "سنة",
     "Years"            : "سنوات",
-    ShareObject :{
+    CreatePostObject :{
         InputFiled:(name : string)=>{
             return `؟ ${name} ماذا في بالك يا `
         }
