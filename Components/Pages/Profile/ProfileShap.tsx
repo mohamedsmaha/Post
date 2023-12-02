@@ -4,7 +4,7 @@ import { Profile_Model } from '@/Helpers/Redux_models/Profile/Profile_Class'
 import { APP_Folders } from '@/Static_Data/APP_Folders'
 import "@/Scss/Pages/Profile/ProfileShap/ProfileShap.css"
 import { Cake, Favorite, Home, MoreHoriz, PersonAdd, PersonRemove, Phone } from '@mui/icons-material'
-import FeedPosts from '../../Home/FeedHome'
+import FeedPosts from '../Home/FeedPosts'
 import { Box_info_keys, anyUser_Type } from '@/Redux/Modules/User/UserTypes'
 import { Translate } from '@/Helpers/Translate'
 import CreatePost from '@/Components/Commen/Post/Create_Post/Create_Post'

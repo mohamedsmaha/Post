@@ -3,9 +3,8 @@ import { Static_images } from "@/Static_Data/Images";
 import "@/Scss/Pages/Assuntocation/Assuntocation.css"
 import Login from "@/Components/Pages/assuntocation/Login/Login";
 import Register from "@/Components/Pages/assuntocation/Register/Register";
-import { Component, useState } from "react";
-import Forget from "@/Components/Pages/assuntocation/Forget/Forget";
-import { useAppSelector } from "@/Redux/Hooks";
+import {useState } from "react";
+import ForgetPassword from "@/Components/Pages/assuntocation/ForgetPassword/ForgetPassword";
 import { Static_Words } from "@/Static_Data/Static_words";
 export default function login() {
 // Hoooks
@@ -19,7 +18,7 @@ export default function login() {
       Handel_component(componentName:"Register" | "Forget" | "Login"){
         if(componentName == "Register"){setleftboxcomponent(<Register state_functions={{ Appcontent: Helper_Functions.Handel_appcontent }}/>)}
         else if (componentName == "Login"){return <Login state_functions={{ Appcontent: Helper_Functions.Handel_appcontent, leftboxcomponent: Helper_Functions.Handel_component }} /> }
-        else{setleftboxcomponent(<Forget state_functions={{ Appcontent: Helper_Functions.Handel_appcontent }}/>)}
+        else{setleftboxcomponent(<ForgetPassword state_functions={{ Appcontent: Helper_Functions.Handel_appcontent }}/>)}
       }
     }
 

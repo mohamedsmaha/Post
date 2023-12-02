@@ -10,6 +10,18 @@ import { useRef, useState } from "react";
 import { ReactsIcons } from "@/Redux/Modules/Post/PostTypes";
 import React from "react";
 import { StaticWordsElementsLangType } from "@/Lang/Types/Static_Words";
+import { User_Model } from "@/Helpers/Redux_models/Users/Users_Class";
+import { App_links } from "@/Static_Data/Links";
+import Link from "next/link";
+
+// Description 
+    // This component manages and handles the interactions related to posting.
+    // deal with Post Data Redux
+// Missing
+    // Need to deal with every scenario in the post data if it exist or not 
+    // Deleting or updating 
+    // when Clicking on the image must be show the post in big screen
+    // Comment and Share
 function Post(props: PropsType) {
 // constants 
     const {Post}    = props
@@ -26,16 +38,7 @@ function Post(props: PropsType) {
     const PostLangObj   = Translate_Object("Post") as PostElementsLangType;
     const Static_Words  = Translate_Object("StaticWords") as StaticWordsElementsLangType;
 // Helper Funcion
-const Helper_Functions : Helper_Functions= {
-        Handel_Reacts_box_State(value){
-            SetReactsBox(value)
-        },
-        Handel_ReactBoxText_State(value){
-            SetReactsBoxText(value)
-        },
-        Handel_UserReact_State(value){
-            SetUserReact(value)
-        },
+    const Helper_Functions : Helper_Functions= {
         Reactions_images(item , funn){
             switch(item){
                 case "Like" : 
@@ -64,10 +67,10 @@ const Helper_Functions : Helper_Functions= {
         Handel_React_onclick(React){
             let TextBox            = React ;
             let UserBoxReact  : ReactsIcons | null     = React ;
-            if(React == User_React){TextBox = Default_React ; UserBoxReact = null}
-            Helper_Functions.Handel_ReactBoxText_State(TextBox)
-            Helper_Functions.Handel_UserReact_State   (UserBoxReact)
-            Helper_Functions.Handel_Reacts_box_State(false)
+            if(React == User_React){TextBox = Default_React ; UserBoxReact = null} //   
+            SetReactsBoxText(TextBox)
+            SetUserReact(UserBoxReact)
+            SetReactsBox(false)
         },
         Post_Mouse_Move(event){
             Like_Action_move()
@@ -141,13 +144,15 @@ const Helper_Functions : Helper_Functions= {
         return(
             <div className="top">
                 <div className="info">
-                <img src={`${APP_Folders.Users()}/${Post_data.User.img}`} alt="" />
-                <span className="username">{Post_data.User.Username}</span>
-                <span className="time">
-                    {  Static_Words.Time(Post_data.Data.number , Post_data.Data.unite)}
-                </span>
+                    <Link href={`${App_links.Profile(Post_data.User.id)}`}>
+                        <img src={`${APP_Folders.Users()}/${Post_data.User.img}`} alt="" />
+                    </Link>
+                    <span className="username">{Post_data.User.Username}</span>
+                    <span className="time">
+                        {  Static_Words.Time(Post_data.Data.number , Post_data.Data.unite)}
+                    </span>
                 </div>
-                { Post.main_post == Post_data? 
+                { Post.main_post.User.id == User_Model.GetId() ? // Check if this user own the post 
                     <div className="posttopright">
                         <MoreVert />
                     </div> : null
@@ -160,7 +165,8 @@ const Helper_Functions : Helper_Functions= {
         return(
             <div className="content">
                 <span className="text">{Post_data.info.text}</span>
-                {Post_data.info.img ? <img src={`${APP_Folders.Posts("images")}/${Post_data.info.img}`} alt="" /> : null }
+                {Post_data.info.img   ? <img src={`${APP_Folders.Posts("images")}/${Post_data.info.img}`} alt="" /> : null }
+                {Post_data.info.vidoe ? <video src = {`${APP_Folders.Posts("videos")}/${Post_data.info.vidoe}`} /> : null}
             </div>
         )
     }

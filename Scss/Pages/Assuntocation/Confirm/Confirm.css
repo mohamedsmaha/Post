@@ -1,11 +1,10 @@
 .Confirm_Component {
   height: 100%;
   width: 100%;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
   gap: 1.25em;
   align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 .Confirm_Component .header {
   color: goldenrod;
@@ -13,7 +12,7 @@
   font-size: 1.5625em;
   text-transform: capitalize;
 }
-.Confirm_Component div.timer {
+.Confirm_Component .Timer {
   border-radius: 3.125em;
   -webkit-border-radius: 3.125em;
   -moz-border-radius: 3.125em;
@@ -22,21 +21,19 @@
   width: 2.5em;
   height: 2.5em;
 }
-.Confirm_Component div.timer div.Bigcircle {
+.Confirm_Component .Timer .Bigcircle {
   height: 100%;
   border-radius: 3.125em;
   -webkit-border-radius: 3.125em;
   -moz-border-radius: 3.125em;
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
-  background-color: green;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
-.Confirm_Component div.timer div.Bigcircle div.Smallcircle {
-  background-color: white;
+.Confirm_Component .Timer .Bigcircle .Smallcircle {
   height: calc(100% - 0.625em);
   width: calc(100% - 0.625em);
   display: flex;
@@ -49,10 +46,18 @@
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
 }
-.Confirm_Component div.timer div.Bigcircle div.Smallcircle p {
+.Confirm_Component .Timer .Bigcircle .Smallcircle p {
   font-size: 1.125em;
 }
-.Confirm_Component button {
+.Confirm_Component .Buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625em;
+  margin-top: 0.625em;
+}
+.Confirm_Component .Buttons button {
   padding: 0.3125em 0.625em;
   border: none;
   background-color: rgba(194, 194, 194, 0.232);
@@ -71,47 +76,55 @@
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
 }
-.Confirm_Component .buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.625em;
-  margin-top: 0.625em;
-}
-.Confirm_Component .buttons button {
+.Confirm_Component .Buttons button {
   font-size: 0.75em;
 }
-.Confirm_Component .firstlevelbuttons {
+.Confirm_Component .Buttons .Firstlevelbuttons {
   display: flex;
   flex-direction: row;
 }
-.Confirm_Component .header {
-  font-size: 1em;
-}
-.Confirm_Component form .inputbox {
+.Confirm_Component .Inputbox {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.625em;
 }
-.Confirm_Component form .inputbox .inputs {
+.Confirm_Component .Inputbox .Inputs {
   display: flex;
   flex-direction: row;
   gap: 0.625em;
 }
-.Confirm_Component form .inputbox .inputs input {
+.Confirm_Component .Inputbox .Inputs input {
   width: 1.875em;
   height: 1.875em;
   text-align: center;
-  border: 0.0625em solid #1877f2;
+  border: 0.0625em solid;
   outline: none;
 }
-.Confirm_Component form .inputbox .inputs input::-webkit-outer-spin-button, .Confirm_Component form .inputbox .inputs input::-webkit-inner-spin-button {
+.Confirm_Component .Inputbox .Inputs input::-webkit-outer-spin-button, .Confirm_Component .Inputbox .Inputs input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-.Confirm_Component form .inputbox .label {
+.Confirm_Component .Inputbox .Label {
   font-size: 0.9375em;
+}
+.Confirm_Component .Header {
+  font-size: 1em;
+}
+
+body.ColorTheme_1 .Confirm_Component {
+  background-color: white;
+}
+body.ColorTheme_1 .Confirm_Component .Header {
+  color: goldenrod;
+}
+body.ColorTheme_1 .Confirm_Component .Timer .Bigcircle {
+  background-color: green;
+}
+body.ColorTheme_1 .Confirm_Component .Timer .Smallcircle {
+  background-color: white;
+}
+body.ColorTheme_1 .Confirm_Component .Inputbox .Inputs input {
+  border-color: #1877f2;
 }/*# sourceMappingURL=Confirm.css.map */

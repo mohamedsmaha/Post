@@ -4,8 +4,8 @@ import { APP_Folders } from '@/Static_Data/APP_Folders'
 import { User_Model } from '@/Helpers/Redux_models/Users/Users_Class'
 import { CreatePostElementsLangType } from '@/Lang/Types/Components/CreatePost';
 import { Translate_Object } from '@/Helpers/Translate';
-import { Helper_Functions, Props_type } from './FormTypes';
-function Form(props : Props_type) {
+import { Helper_Functions, Props_type } from './PostFormTypes';
+function PostForm(props : Props_type) {
 // Lang
     const CreatePostObj= Translate_Object("CreatePost") as CreatePostElementsLangType;
 // Hooks 
@@ -87,4 +87,4 @@ function Form(props : Props_type) {
   )
 }
 
-export default Form
+export default PostForm

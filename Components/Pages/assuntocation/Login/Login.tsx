@@ -1,12 +1,10 @@
 "use client"
 import React, { useState } from 'react'
 import "@/Scss/Pages/Assuntocation/Login/Login.css"
-import { App_links } from '@/Static_Data/Links'
-import Link from 'next/link'
 import { Translate } from '@/Helpers/Translate'
 import { propstype } from './Logintypes'
 import { redirect } from 'next/navigation'
-import { useAppDispatch, useAppSelector } from '@/Redux/Hooks'
+import { useAppDispatch} from '@/Redux/Hooks'
 import { default_data_model } from '@/Helpers/Redux_models/Deafult_data/Deafult_data_class'
 import { Login_change } from '@/Redux/UnFetched_data/Deafult_data/Default_dataRedux'
 function Login(props : propstype) {

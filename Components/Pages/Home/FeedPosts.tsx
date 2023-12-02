@@ -21,7 +21,7 @@ const arr : PostData[]= [
             "id"   : 2,
             "Data" : {"number" : 10 , "unite" : "Days"} ,
             "Reactions":{"Details" : [] , "numbers" : {"order" : {"first" : "Like" , "Third" : null , "secound" : "Love"} , "total" : 1200}},
-            "User" : {"Username" : "mohamed" , "id" : 1 , "img" : "1.jpeg"},
+            "User" : {"Username" : "mohamed" , "id" : 2 , "img" : "1.jpeg"},
             "info" : {"text" : "i love this man"},
             "kind" : "Content" ,
             "type" : "Share"

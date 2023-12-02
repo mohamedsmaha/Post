@@ -1,14 +1,14 @@
 "use client"
 import { EmojiEmotions ,More, PermMedia} from "@mui/icons-material"
 import "@/Scss/Commen/Post/CreatePost/CreatePost.css"
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { Translate, Translate_Object } from "@/Helpers/Translate"
 import { CreatePostElementsLangType } from "@/Lang/Types/Components/CreatePost"
 import { Props_type } from "./CreateTypes"
 import { User, User_Model } from "@/Helpers/Redux_models/Users/Users_Class"
 import { Profile_Model } from "@/Helpers/Redux_models/Profile/Profile_Class"
 import { APP_Folders } from "@/Static_Data/APP_Folders"
-import Form from "./Form/Form"
+import PostForm from "./PostForm/PostForm"
 
 function CreatePost(props : Props_type) {
 // Models
@@ -54,7 +54,7 @@ function CreatePost(props : Props_type) {
                 <hr className="Createhr" />
                 {<Createoptions/>}
         </div>
-                {Form_Status ? <Form Close={() => SetForm_Status(false)}/> : null}
+                {Form_Status ? <PostForm Close={() => SetForm_Status(false)}/> : null}
         </>  
     )
 }

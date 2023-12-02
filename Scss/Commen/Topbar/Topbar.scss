@@ -1,12 +1,12 @@
 @import "./../../Helper/all.scss";
 $Topbar_Height : pxtoem(40px);
-@mixin Logo_Search(){
-    .Logo_Search{
+@mixin Logo_And_Search(){
+    .Logo_And_Search{
         min-width: $sidebarwidth;
         @include flex_row();
         align-items: center;
         gap: pxtoem(10px);
-        .brand{
+        .Logo{
             @include flex_row();
             align-items: center;
             gap: pxtoem(10px);
@@ -21,7 +21,7 @@ $Topbar_Height : pxtoem(40px);
         display: flex;
         justify-content: flex-end;
         gap: pxtoem(10px);
-        > div {
+        >.Icon {
             @include square(30px);
             @include flex_row();
             align-items: center;
@@ -30,8 +30,8 @@ $Topbar_Height : pxtoem(40px);
             svg{font-size: pxtoem(17px);}
             cursor: pointer;
         }
-        div.profile{
-            a{height: 30px;}
+        .Profileicon{
+            a{height:pxtoem(30px)}
             img{
                 @include square(30px);
                 object-fit: cover;
@@ -43,20 +43,20 @@ $Topbar_Height : pxtoem(40px);
 @mixin Main_Links(){
     .Main_Links{
         @include flex_row();
-        width: 500px;
+        width: pxtoem(500px);
         height: 100%;
         justify-content: center;
-        .icon{
+        .Icon{
             flex: 0 0 calc(20%);
-            min-width: 50px;
+            min-width: pxtoem(50px);
             @include flex_row();
             @include flex_center();
             padding: pxtoem(10px) 0px pxtoem(10px);
-            &.active{
+            &.Active{
                 border-bottom: pxtoem(2px) solid;
             }
-            &.small_screen{display: none;}
-            &.big_screen{display: flex;}
+            &.Small_screen{display: none;}
+            &.Big_screen{@include flex_row()}
         }
     }
 }
@@ -64,16 +64,16 @@ $Topbar_Height : pxtoem(40px);
     .Notification_Container{
         position: absolute;
         top: calc($Topbar_Height + pxtoem(5px));
-        right: 30px;
-        width: 300px;
+        right: pxtoem(30px);
+        width: pxtoem(300px);
         background-color: white;
         height: 80vh;
         z-index: 1000;
-        border: 4px solid $seventh_color;
+        border: pxtoem(4px) solid;
         border-top: none;
         border-right: none;
         @include border(10px);
-        padding: 5px;
+        padding: pxtoem(5px);
         @include shadow(-2px, 3px);
     }
 }
@@ -85,61 +85,66 @@ $Topbar_Height : pxtoem(40px);
     justify-content: space-between;
     padding: 0px pxtoem(5px);
     @include shadow(1px , 1px);
-    @include Logo_Search();
+    @include Logo_And_Search();
     @include Main_Links();
     @include Left_Icons();
     @include Notification_Container();
+}
+//Responsive
+@media (max-width : 1145px) {
+    .Topbar_Component .Left_Icons{min-width: fit-content;}
 }
 @media (max-width : 900px) {
     .Topbar_Component{
         flex-direction: column;
         height: fit-content;
         gap: pxtoem(2px);
-        .Logo_Search{
+        .Logo_And_Search{
             width: 100%;
             justify-content: space-between;
             padding: pxtoem(5px) 0px 0px;
-            .brand {
+            .Logo {
                 p{display: block;
-                color: white;font-size: pxtoem(20px);
+                font-size: pxtoem(20px);
                 font-family: cursive;}
                 img{@include square(25px);}
             }}
         .Left_Icons{display: none;}
         .Main_Links{
             svg {font-size: pxtoem(20px);}
-            max-width: 500px;
+            max-width: pxtoem(500px);
             width: 100vw;
-            .icon{padding: 0px 0px pxtoem(3px);}
-            .icon.big_screen{display:  none !important;}
-            .icon.small_screen{display: flex !important;}
+            .Icon{padding: 0px 0px pxtoem(3px);}
+            .Icon.Big_screen{display:  none !important;}
+            .Icon.Small_screen{display: flex !important;}
         }
     }
 }
 @media (max-width :500px) {
     .Topbar_Component {
-        font-size: 13px;
-        .Logo_Search .brand {
+        font-size: pxtoem(13px);
+        .Logo_And_Search .Logo {
             p {font-size: pxtoem(17px);}
             img{@include square(23px);}
         }
-        .Main_Links {
-            max-width: 500px;
-        }
     }
 }
-
+// ColorsTheme
 body.ColorTheme_1 .Topbar_Component{
     background-color: $first_color;
-    .Logo_Search .brand p {
+    .Logo_And_Search .Logo p {
         color: $secound_color;
     }
-    .Left_Icons >div{
+    .Left_Icons > .Icon{
         background-color: $secound_color;
         svg{color:$fifth_color;}
     }
-    .Main_Links .icon {
-        &.active{border-color: $secound_color;}
+    .Main_Links .Icon {
+        &.Active{border-color: $secound_color;}
         svg{color: $secound_color;}
     }
+    .Notification_Container {border-color: $seventh_color;}
+}
+@media (max-width : 900px){
+    .Topbar_Component .Logo_And_Search .Logo {color:  white;}
 }

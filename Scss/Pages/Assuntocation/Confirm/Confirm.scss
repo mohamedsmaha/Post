@@ -1,28 +1,23 @@
 @import "../../../Helper/all.scss";
 @import "../Commen/Commen.scss";
 
-@mixin timer() {
-    div.timer {
+@mixin Timer() {
+    .Timer {
         $border : 50px;
         $diff : pxtoem(10px);
         @include border(50px);
         @include square(40px);
-
-        div.Bigcircle {
+        .Bigcircle {
             height: 100%;
             @include border(50px);
-            background-color: green;
             @include flex_row();
             @include flex_center();
-
-            div.Smallcircle {
-                background-color: white;
+            .Smallcircle {
                 height: calc(100% - $diff);
                 width: calc(100% - $diff);
                 @include flex_row();
                 @include flex_center();
                 @include border($border);
-
                 p {
                     font-size: pxtoem(18px);
                 }
@@ -30,65 +25,67 @@
         }
     }
 }
-
-
-
-.Confirm_Component {
-    height: 100%;
-    width: 100%;
-    background-color: white;
-    @include header();
-    @include flex_column();
-    @include timer();
-    @include button();
-    gap: pxtoem(20px);
-    align-items: center;
-
-    .buttons {
+@mixin Buttons(){
+    .Buttons {
+        @include button();
         button {
             font-size: pxtoem(12px);
         }
-
         @include flex_column();
         @include flex_center();
         gap: pxtoem(10px);
         margin-top: pxtoem(10px);
-    }
-
-    .firstlevelbuttons {
-        @include flex_row();
-    }
-
-    .header {
-        font-size: pxtoem(16px);
-    }
-
-    form .inputbox {
-        @include flex_column();
-        @include flex_center();
-        gap: pxtoem(10px);
-
-        .inputs {
+        .Firstlevelbuttons {
             @include flex_row();
+        }
+    }
+}
+@mixin InputBox(){
+    .Inputbox {
+            @include flex_column();
+            @include flex_center();
             gap: pxtoem(10px);
-
-            input {
-
-                &::-webkit-outer-spin-button,
-                &::-webkit-inner-spin-button {
-                    -webkit-appearance: none;
-                    margin: 0;
+            .Inputs {
+                @include flex_row();
+                gap: pxtoem(10px);
+                input {
+                    &::-webkit-outer-spin-button,
+                    &::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
+                    @include square(30px);
+                    text-align: center;
+                    border: pxtoem(1px) solid;
+                    outline: none;
                 }
-
-                @include square(30px);
-                text-align: center;
-                border: pxtoem(1px) solid $first_color;
-                outline: none;
+            }
+            .Label {
+                font-size: pxtoem(15px);
             }
         }
+}
 
-        .label {
-            font-size: pxtoem(15px);
-        }
+.Confirm_Component {
+    height: 100%;
+    width: 100%;
+    gap: pxtoem(20px);
+    align-items: center;
+    @include header();
+    @include flex_column();
+    @include Timer();
+    @include Buttons();
+    @include InputBox();
+    .Header {
+        font-size: pxtoem(16px);
     }
+}
+body.ColorTheme_1 .Confirm_Component {
+    background-color: $secound_color;
+    .Header{color: $seventh_color;}
+    .Timer{
+        .Bigcircle{background-color: green;}
+        .Smallcircle{background-color: $secound_color;}
+    }
+    .Inputbox .Inputs input{border-color: $first_color;}
 }

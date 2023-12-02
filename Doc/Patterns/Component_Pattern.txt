@@ -1,0 +1,56 @@
+// Component Guidelines
+    // Split every component into 5 categories:
+        1. DESIGN
+            A. The component must be responsive with a minimum width of 320px and a maximum of 1440px.
+            B. Include a CSS component to handle design changes when the language changes. The default language for design is English.
+            C. Integrate a CSS component for color design.
+            D. Ensure CSS code adheres to the following standards:
+                D.1 Use 'em' units instead of 'px'.
+                D.2 Utilize mixin functions.
+                D.3 Write concise and efficient code.
+                D.4 Split the code into components as much as possible.
+                D.5 Avoid placing anything related to color or language in the main code; use separate components.
+                D.6 Split the SCSS file into sections:
+                    D.6.1 Components
+                    D.6.2 Main_code
+                    D.6.3 Responsive
+                    D.6.4 Color
+                    D.6.5 Lang
+                    D.6.6 Keyframes
+            E. Class Name:
+                E.1 The main div should be named ${Component_Name}_Component.
+                E.2 Capitalize all class names.
+                E.3 Choose class names that are easy to understand.      
+        2. Types
+            A. Static Data Type: All the fixed information used in the component.
+            B. Helper Function Type: Every supporting function used in the component.
+            C. Props Type: Describes the necessary details that the component requires.
+            D. Hooks Type: The kinds of data associated with the hooks used.
+        3. Language:
+            A. Include all the words you need in language files.
+            B. Create a language component in language files if required.
+            C. Utilize the translate function to retrieve words; avoid accessing language files directly.
+            D. Create a variable named ${Component_name}OBJ for using the translate_object function to link and then apply it to utilize the translate function. Avoid direct access.
+        4. Code:
+            A. Break down the component into smaller parts whenever you can.
+            B. Add comments to explain your code.
+            C. Write code that is short and does the job well.
+            D. If necessary, directly use fixed information from the website.
+            E. Organize the component into sections:
+                E.1 _ Hooks => Make use of state and useRef.
+                E.2 _ UseEffect
+                E.3 _ Static Data 
+                E.4 _ Helper functions
+                E.5 _ Small components
+                E.6 _ Main component
+                E.7 _ constants
+                E.8 _ Languagh
+        5. Info:
+            A. Begin by writing a description of the code at the top.
+            B. Clearly state if there's anything missing in the code or if additional tasks need to be completed.
+    // Impact of Component on Other Elements
+        1. Include new words and objects in language files.
+        2. Retrieve data from the Redux store.
+        3. Incorporate the component name and its children into the component tree.
+    // How to Choose The Component Name
+        1. Choose specific names to avoid having the same name used elsewhere

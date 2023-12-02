@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import "@/Scss/Pages/Assuntocation/Forget/Forget.css"
-import Confirm from '../HelperComponents/Confirem/Confirm'
-import FinishProcess from '../HelperComponents/FinishProcess/FinishProcess'
-import { Shaps, propstype } from './ForgetTypes'
+import ConfiremData from '../ConfiremData/ConfiremData'
+import SuccessProcess from '../SuccessProcess/SuccessProcess'
+import { Shaps, propstype } from './ForgetPasswordTypes'
 import { Translate, Translate_Object } from '@/Helpers/Translate'
 import { AssuntocationElementsLangType } from '@/Lang/Types/Components/Assuntocation'
-function Forget(props : propstype) {
+function ForgetPassword(props : propstype) {
 // Lang 
     const AssuntocationLang = Translate_Object("Assuntocation") as AssuntocationElementsLangType
 // Hooks
@@ -66,7 +66,7 @@ function Forget(props : propstype) {
   }
   function SecoundShap(){
     return(
-        <Confirm ChangeEmail={() => {Helper_Functions.Handel_Shap("First")}} Sumbit={() => Helper_Functions.Handel_Shap("Third")}/>
+        <ConfiremData ChangeEmail={() => {Helper_Functions.Handel_Shap("First")}} Sumbit={() => Helper_Functions.Handel_Shap("Third")}/>
     )
   }
   function ThirdShap(){
@@ -92,7 +92,7 @@ function Forget(props : propstype) {
     )
   }
   function FourthShap(){
-      return(<FinishProcess Text={AssuntocationLang.Sentence['Password successfully changed']} Sumbit={Helper_Functions.Back}/>)
+      return(<SuccessProcess Text={AssuntocationLang.Sentence['Password successfully changed']} Sumbit={Helper_Functions.Back}/>)
   }
   return (
     <div className='Forget_Component'>
@@ -101,4 +101,4 @@ function Forget(props : propstype) {
   )
 }
 
-export default Forget
+export default ForgetPassword

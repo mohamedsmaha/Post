@@ -2,13 +2,12 @@
 import React from "react"
 import "@/Scss/Pages/Assuntocation/Register/Register.css"
 import { useState } from "react"
-import Confirm from "../HelperComponents/Confirem/Confirm"
-import FinishProcess from "../HelperComponents/FinishProcess/FinishProcess"
+import ConfiremData from "../ConfiremData/ConfiremData"
+import SuccessProcess from "../SuccessProcess/SuccessProcess"
 import { Translate, Translate_Object } from "@/Helpers/Translate"
 import { AssuntocationElementsLangType } from "@/Lang/Types/Components/Assuntocation"
-import { propstype } from "../Forget/ForgetTypes"
-import { Shaps, Static_Data } from "./Registertypes"
-function Register(props : propstype ) {
+import { Propstype, Shaps, Static_Data } from "./Registertypes"
+function Register(props : Propstype) {
 // Props
     const {state_functions} = props
 // Lang
@@ -73,11 +72,11 @@ function Register(props : propstype ) {
     }
     function SecoundShap(){
       return(
-          <Confirm ChangeEmail={() => {Helper_Functions.Handel_Shap("First")}} Sumbit={() => Helper_Functions.Handel_Shap("Third")}/>
+          <ConfiremData ChangeEmail={() => {Helper_Functions.Handel_Shap("First")}} Sumbit={() => Helper_Functions.Handel_Shap("Third")}/>
       )
     }
     function Thirdshap(){
-        return(<FinishProcess Text  ={RegisterLangObj.Sentence["Your account has been successfully created"]} 
+        return(<SuccessProcess Text  ={RegisterLangObj.Sentence["Your account has been successfully created"]} 
                               Sumbit={Helper_Functions.ThiredShapButtonSubmit}/>)
     }
     return (
