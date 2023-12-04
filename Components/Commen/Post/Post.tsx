@@ -42,9 +42,9 @@ function Post(props: PropsType) {
         Reactions_images(item , funn){
             switch(item){
                 case "Like" : 
-                    return <img src={`${Static_images.Reactions.like}`} alt="" className="likeicon" onClick={funn} />
+                    return <img src={`${Static_images.Reactions.like}`} alt="" className="Icon" onClick={funn} />
                 case "Love" : 
-                    return <img src={`${Static_images.Reactions.love}`} alt="" className="likeicon" onClick={funn} />
+                    return <img src={`${Static_images.Reactions.love}`} alt="" className="Icon" onClick={funn} />
                 default :
                     null
             }
@@ -124,7 +124,7 @@ function Post(props: PropsType) {
                         </> : null
                     }
                 </div>
-                <Reactions/>
+                <Analysis/>
                 <Actions/>
             </div>
             )
@@ -134,26 +134,67 @@ function Post(props: PropsType) {
         <div className="New">
             <UserInfo Post_data={Post.main_post}/>
             <Content  Post_data={Post.main_post}/>
-            <Reactions/>
+            <Analysis/>
             <Actions/>
         </div>
         )
     }
+    function CommentsBox(){
+        function Comment(){
+            return<>
+                <div className="Comment">
+                    <img src={`${APP_Folders.Users()}/${Post.main_post.User.img}`} alt="" />
+                    <div className="Info">
+                        <div className="Text">
+                                hey mohamed welcome to Post i hope to accept my friend request
+                        </div>
+                    </div>
+                </div>
+            </>
+        }
+        return <>
+            <div className="CommentsBox">
+                <div className="Header">
+                    <p className="Title">Comments</p>
+                    <div className="Order">
+                        <label htmlFor="CommentsOrder">Order By</label>
+                        <select name="" id="CommentsOrder">
+                            <option value="">Newest</option>
+                            <option value="">Important</option>
+                            <option value="">Friends</option>
+                        </select>
+                    </div>
+                </div>
+                <div className="Comments">
+                    <Comment/>
+                    <Comment/>
+                    <Comment/>
+                    <Comment/>
+                    <Comment/>
+
+                </div>
+                <div className="Opinion">
+                    <img src={`${APP_Folders.Users()}/${User_Model.GetMainImg()}`} alt="" />
+                    <input type="text" placeholder="Add Comment"/>
+                </div>
+            </div>
+        </>
+    }
     function UserInfo(props : UserInfo){
         const {Post_data} = props
         return(
-            <div className="top">
-                <div className="info">
+            <div className="UserInfo">
+                <div className="Info">
                     <Link href={`${App_links.Profile(Post_data.User.id)}`}>
                         <img src={`${APP_Folders.Users()}/${Post_data.User.img}`} alt="" />
                     </Link>
-                    <span className="username">{Post_data.User.Username}</span>
-                    <span className="time">
+                    <span className="Username">{Post_data.User.Username}</span>
+                    <span className="Time">
                         {  Static_Words.Time(Post_data.Data.number , Post_data.Data.unite)}
                     </span>
                 </div>
                 { Post.main_post.User.id == User_Model.GetId() ? // Check if this user own the post 
-                    <div className="posttopright">
+                    <div className="Setting">
                         <MoreVert />
                     </div> : null
                 }
@@ -163,23 +204,23 @@ function Post(props: PropsType) {
     function Content (props : Content){
         const {Post_data} = props
         return(
-            <div className="content">
-                <span className="text">{Post_data.info.text}</span>
+            <div className="Content">
+                <span className="Text">{Post_data.info.text}</span>
                 {Post_data.info.img   ? <img src={`${APP_Folders.Posts("images")}/${Post_data.info.img}`} alt="" /> : null }
                 {Post_data.info.vidoe ? <video src = {`${APP_Folders.Posts("videos")}/${Post_data.info.vidoe}`} /> : null}
             </div>
         )
     }
-    function Reactions(){
+    function Analysis(){
         return(
-            <div className="reactions">
-                <div className="likes">
-                    <div className="reactions">
+            <div className="Analysis">
+                <div className="Likes">
+                    <div className="Reactions">
                         {Helper_Functions.TopReactions()}
                     </div>
-                    <span className="reacts">{PostLangObj.Likes(Post.main_post.Reactions.numbers.total)}</span>
+                    <span className="ReactsNumber">{PostLangObj.Likes(Post.main_post.Reactions.numbers.total)}</span>
                 </div>
-                <span className="comments">
+                <span className="Comments">
                     {PostLangObj.Comments(1200)}
                 </span>
             </div>
@@ -189,8 +230,8 @@ function Post(props: PropsType) {
         
         function Like(){
             return(
-            <div className={`item Reacts ${User_React ? User_React : ''}`}  ref ={Like_Action_Box_Ref}>
-                    <div className="icons"  ref  ={Reacts_Box_Ref}
+            <div className={`Item Reacts ${User_React ? User_React : ''}`}  ref ={Like_Action_Box_Ref}>
+                    <div className="Icons"  ref  ={Reacts_Box_Ref}
                                             style={{display: (Reacts_Box ? "flex" : "none")}}>
                         {Avaliable_Reacts.map((item,index) => (
                             <React.Fragment key={index}>
@@ -203,16 +244,17 @@ function Post(props: PropsType) {
             )
         }
         return(
-            <div className="actions">
+            <div className="Actions">
                 <Like></Like>
-                <div className="item">{Translate("Comment")}</div>
-                <div className="item">{Translate("Share")}</div>
+                <div className="Item">{Translate("Comment")}</div>
+                <div className="Item">{Translate("Share")}</div>
             </div>
         )
     }
     return (
         <div className={`Post_Component`} ref={Post_div_Ref} onMouseMove={(e: any) => Helper_Functions.Post_Mouse_Move(e.nativeEvent)}>
             {Helper_Functions.SelectShap(Post.main_post.type)}
+            <CommentsBox/>
         </div>
     );
 }

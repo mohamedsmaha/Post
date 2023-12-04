@@ -103,22 +103,22 @@
 .Register_Component > .container .FirstShap::-webkit-scrollbar {
   width: 0px;
 }
-.Register_Component > .container .FinishProcess_Component {
+.Register_Component > .container .SuccessProcess_Component {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.625em;
 }
-.Register_Component > .container .FinishProcess_Component svg {
+.Register_Component > .container .SuccessProcess_Component svg {
   font-size: 6.25em;
   color: green;
 }
-.Register_Component > .container .FinishProcess_Component p {
+.Register_Component > .container .SuccessProcess_Component p {
   color: black;
   font-size: 0.875em;
 }
-.Register_Component > .container .FinishProcess_Component button {
+.Register_Component > .container .SuccessProcess_Component button {
   padding: 0.3125em 0.625em;
   border: none;
   background-color: rgba(194, 194, 194, 0.232);

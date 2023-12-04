@@ -1,37 +1,32 @@
 @import "../../Helper/all.scss";
-$padding : pxtoem(10px);
 @mixin Userinfo() {
-    .top {
+    .UserInfo {
         @include flex_row();
         align-items: center;
         justify-content: space-between;
-        .info {
+        .Info {
             @include flex_row();
             align-items: center;
             cursor: pointer;
-            img {@include person_pic(5px) }
-            .username {
-                font-size: pxtoem(14px);
-                font-weight: 500;
-                margin: pxtoem(0px) pxtoem(10px);
+            img {@include person_pic(5px)}
+            .Username {
+                font-size: pxtoem(14px); font-weight: 500;
+                margin: 0px pxtoem(10px);
             }
-            .time {
-                font-size: pxtoem(11px);
-            }
+            .Time {font-size: pxtoem(11px);}
         }
-        .posttopright {
+        .Setting {
             cursor: pointer; 
             svg{font-size: pxtoem(18px);}
         }
     }
 }
-@mixin content() {
-    .content {
-        .text {
-            margin: pxtoem(0px) pxtoem(10px);
+@mixin Content() {
+    .Content {
+        .Text {
+            margin: 0px pxtoem(10px);
             font-size: pxtoem(15px);
         }
-
         img {
             margin-top: pxtoem(10px);
             width: 100%;
@@ -40,60 +35,54 @@ $padding : pxtoem(10px);
         }
     }
 }
-
-@mixin reactions() {
-    .reactions {
+@mixin Analysis() {
+    .Analysis {
         @include flex_row();
         align-items: center;
         justify-content: space-between;
-        .likes {
+        .Likes {
             @include flex_row();
             align-items: center;
-            .likeicon {
-                @include square(17px);
-                margin-right: pxtoem(5px);
-                cursor: pointer;
+            .Reactions{
+                .Icon {
+                        @include square(17px);
+                        margin-right: pxtoem(5px);
+                        cursor: pointer;
+                    }
             }
-            .reacts {
-                font-size: pxtoem(13px);
-            }
+            .ReactsNumber {font-size: pxtoem(13px);}
         }
-        .comments {
-            cursor: pointer;
-            font-size: pxtoem(13px);
+        .Comments {cursor: pointer ; font-size: pxtoem(13px);}
+    }
+}
+@mixin Reacts(){
+    .Item.Reacts{
+        .Icons{
+                position: absolute;
+                img {@include square(27px)};
+                bottom: calc(100% + 5px);
+                padding: pxtoem(4px);
+                align-items: center;
+                gap: pxtoem(10px);
+                @include flex_row();
+                @include shadow(1px, 1px);
+                @include border(50px);
+                img:hover {
+                    @include square(35px)
+                }
+            }
+        &.Like , &.Love{
+            @include border(10px);
+            border-color: none;
         }
     }
 }
-    ///actions
-    @mixin Reacts(){
-        .item.Reacts{
-            .icons{
-                    position: absolute;
-                    img {@include square(27px)};
-                    bottom: calc(100% + 5px);
-                    padding: 2px 2px;
-                    @include flex_row();
-                    gap: pxtoem(10px);
-                    @include shadow(1px, 1px);
-                    @include border(50px);
-                    padding: pxtoem(4px);
-                    align-items: center;
-                    img:hover {
-                        @include square(35px)
-                    }
-                }
-            &.Like , &.Love{
-                @include border(10px);
-                border-color: none;
-            }
-        }
-    }
-@mixin actions() {
-    .actions {
+@mixin Actions() {
+    .Actions {
         @include flex_row();
         margin-top: pxtoem(5px);
         position: relative;
-        .item {
+        .Item {
             flex-basis: 33%;
             text-align: center;
             font-size: pxtoem(14px);
@@ -104,40 +93,116 @@ $padding : pxtoem(10px);
         @include Reacts();
     }
 }
+@mixin CommentsBox(){
+    .CommentsBox{
+        padding: pxtoem(10px);
+        height: pxtoem(250px);
+        border: pxtoem(1px) solid #0000006e;
+        border-top: none;
+        border-bottom-right-radius: pxtoem(10px);
+        border-bottom-left-radius: pxtoem(10px);
+        @include flex_column();
+        justify-content: space-between;
+        .Header{
+            padding-bottom: pxtoem(4px);
+            @include flex_row();
+            justify-content: space-between;
+            border-bottom: pxtoem(2px) solid rgba(0, 0, 0, 0.162);
+            p{font-size: pxtoem(12px)}
+            .Order{
+                @include flex_row();
+                gap: pxtoem(5px);
+                align-items: center;
+                label {font-size: pxtoem(12px);}
+                select{font-size: pxtoem(12px); border: none; outline: none;}
+            }
+        }
+        .Opinion{
+            @include flex_row();
+            align-items: center;
+            width: 100%;
+            gap: pxtoem(10px);
+            border-top: 1px solid #0000006e;
+            padding-top:5px ;
+            img{
+                @include square(30px);
+                object-fit: cover;
+                @include border(30px);
+            }
+            input{
+                flex: 1;
+                outline: none;
+                padding: pxtoem(4px) pxtoem(2px);
+                text-indent: pxtoem(6px);
+                border: pxtoem(1px) solid black;
+                @include border(10px);
+                font-size: pxtoem(12px);
+            }
+        }
+        .Comments{
+            overflow-y: scroll;
+            padding: 8px 0px;
+            &::-webkit-scrollbar{width: 2px}
+            @include flex_column();
+            gap: pxtoem(7px);
+            .Comment{
+                @include flex_row();
+                gap: pxtoem(5px);
+                border: 1px solid rgba(0, 0, 0, 0.137);
+                @include border(50px);  
+                width: 95%;
+                img{
+                    @include square(30px);
+                    @include border(50px);
+                    object-fit: cover;
+                }
+                .Info{
+                    @include flex_column();
+                    align-items:flex-start;
+                    justify-content: center;
+                    .Text{
+                        font-size: pxtoem(13px);
+                    }
+                }
+            }
+        }
+    }
+}
 @mixin Newtype(){
     .New {
         background-color: white;
-        padding: $padding;
+        padding: pxtoem(10px);
         gap: pxtoem(10px);
         @include shadow(2px, 2px);
         @include border(10px);
         @include flex_column();
+
         @include Userinfo();
-        @include content();
-        @include reactions();
-        @include actions();
+        @include Content();
+        @include Analysis();
+        @include Actions();
     }
 }
 @mixin Share(){
     .Share {
             @include Userinfo();
-            @include content();
-            @include reactions();
-            @include actions();
+            @include Content();
+            @include Analysis();
+            @include Actions();
 
             @include Newtype();
 
             @include shadow(2px, 2px);
             @include flex_column();
             gap: pxtoem(10px);
-            padding : $padding;
-            .New {
+            padding : pxtoem(10px);
+            > .New {
                 border: pxtoem(1px) solid ;
                 margin: 0px auto;
                 box-shadow: none;
-                font-size: pxtoem(12px);
-                width: calc(95% - (2 *$padding));
-                .top .info img{@include person_pic()}
+                font-size: pxtoem(13px);
+                width: 98%;
+                .UserInfo .Info img{@include person_pic()}
             }
         }
 }
@@ -146,24 +211,24 @@ $padding : pxtoem(10px);
     @include border(10px);
     @include Newtype();
     @include Share();
+    @include CommentsBox();
     width: 100%;
 }
-
 body.ColorTheme_1 .Post_Component{
     background-color: $secound_color;
-    .top{
-        .username{color: $fifth_color;}
-        .time{color: $fifth_color;}
-        .posttopright svg{color: $fifth_color;}
+    .UserInfo{
+        .Username{color: $fifth_color;}
+        .Time{color: $fifth_color;}
+        .Setting svg{color: $fifth_color;}
     }
-    .content .text {color: $fifth_color;}
-    .reactions {
-        .likes .reacts{color: $fifth_color;}
-        .comments {color: $fifth_color;}
+    .Content .Text {color: $fifth_color;}
+    .Analysis {
+        .Likes .ReactsNumber{color: $fifth_color;}
+        .Comments {color: $fifth_color;}
     }
-    .actions .item{
+    .Actions .Item{
         &.Reacts{
-            .icons{background-color: $secound_color;}
+            .Icons{background-color: $secound_color;}
             &.Like{color:$secound_color; background-color: $first_color;}
             &.Love{color:$secound_color; background-color: #d42828   ;}
         }

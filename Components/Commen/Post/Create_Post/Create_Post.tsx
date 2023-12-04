@@ -42,7 +42,6 @@ function CreatePost(props : Props_type) {
         )
     }
 // Main Create Form
-
     return (  
         <>
         

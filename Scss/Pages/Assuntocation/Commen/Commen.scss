@@ -73,7 +73,7 @@
         }
 }
 @mixin FinishProcess() {
-    .FinishProcess_Component{
+    .SuccessProcess_Component{
         @include flex_column();
         @include flex_center();
         gap: pxtoem(10px);
@@ -81,12 +81,11 @@
             font-size: pxtoem(100px);
             color: green
         }
-
         p {
             color: black;
             font-size: pxtoem(14px)
         }
-
         @include button();
     }
 }
+

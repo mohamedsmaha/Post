@@ -20,19 +20,19 @@
   display: flex;
   flex-direction: column;
 }
-.Post_Component .New .top {
+.Post_Component .New .UserInfo {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.Post_Component .New .top .info {
+.Post_Component .New .UserInfo .Info {
   display: flex;
   flex-direction: row;
   align-items: center;
   cursor: pointer;
 }
-.Post_Component .New .top .info img {
+.Post_Component .New .UserInfo .Info img {
   width: 2.5em;
   height: 2.5em;
   -o-object-fit: cover;
@@ -43,62 +43,62 @@
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
 }
-.Post_Component .New .top .info .username {
+.Post_Component .New .UserInfo .Info .Username {
   font-size: 0.875em;
   font-weight: 500;
-  margin: 0em 0.625em;
+  margin: 0px 0.625em;
 }
-.Post_Component .New .top .info .time {
+.Post_Component .New .UserInfo .Info .Time {
   font-size: 0.6875em;
 }
-.Post_Component .New .top .posttopright {
+.Post_Component .New .UserInfo .Setting {
   cursor: pointer;
 }
-.Post_Component .New .top .posttopright svg {
+.Post_Component .New .UserInfo .Setting svg {
   font-size: 1.125em;
 }
-.Post_Component .New .content .text {
-  margin: 0em 0.625em;
+.Post_Component .New .Content .Text {
+  margin: 0px 0.625em;
   font-size: 0.9375em;
 }
-.Post_Component .New .content img {
+.Post_Component .New .Content img {
   margin-top: 0.625em;
   width: 100%;
   max-height: 31.25em;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.Post_Component .New .reactions {
+.Post_Component .New .Analysis {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.Post_Component .New .reactions .likes {
+.Post_Component .New .Analysis .Likes {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.Post_Component .New .reactions .likes .likeicon {
+.Post_Component .New .Analysis .Likes .Reactions .Icon {
   width: 1.0625em;
   height: 1.0625em;
   margin-right: 0.3125em;
   cursor: pointer;
 }
-.Post_Component .New .reactions .likes .reacts {
+.Post_Component .New .Analysis .Likes .ReactsNumber {
   font-size: 0.8125em;
 }
-.Post_Component .New .reactions .comments {
+.Post_Component .New .Analysis .Comments {
   cursor: pointer;
   font-size: 0.8125em;
 }
-.Post_Component .New .actions {
+.Post_Component .New .Actions {
   display: flex;
   flex-direction: row;
   margin-top: 0.3125em;
   position: relative;
 }
-.Post_Component .New .actions .item {
+.Post_Component .New .Actions .Item {
   flex-basis: 33%;
   text-align: center;
   font-size: 0.875em;
@@ -106,31 +106,30 @@
   cursor: pointer;
   padding: 0.1875em 0px;
 }
-.Post_Component .New .actions .item.Reacts .icons {
+.Post_Component .New .Actions .Item.Reacts .Icons {
   position: absolute;
   bottom: calc(100% + 5px);
-  padding: 2px 2px;
+  padding: 0.25em;
+  align-items: center;
+  gap: 0.625em;
   display: flex;
   flex-direction: row;
-  gap: 0.625em;
   box-shadow: 1px 1px 16px -8px rgba(0, 0, 0, 0.68);
   border-radius: 3.125em;
   -webkit-border-radius: 3.125em;
   -moz-border-radius: 3.125em;
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
-  padding: 0.25em;
-  align-items: center;
 }
-.Post_Component .New .actions .item.Reacts .icons img {
+.Post_Component .New .Actions .Item.Reacts .Icons img {
   width: 1.6875em;
   height: 1.6875em;
 }
-.Post_Component .New .actions .item.Reacts .icons img:hover {
+.Post_Component .New .Actions .Item.Reacts .Icons img:hover {
   width: 2.1875em;
   height: 2.1875em;
 }
-.Post_Component .New .actions .item.Reacts.Like, .Post_Component .New .actions .item.Reacts.Love {
+.Post_Component .New .Actions .Item.Reacts.Like, .Post_Component .New .Actions .Item.Reacts.Love {
   border-radius: 0.625em;
   -webkit-border-radius: 0.625em;
   -moz-border-radius: 0.625em;
@@ -145,19 +144,19 @@
   gap: 0.625em;
   padding: 0.625em;
 }
-.Post_Component .Share .top {
+.Post_Component .Share .UserInfo {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.Post_Component .Share .top .info {
+.Post_Component .Share .UserInfo .Info {
   display: flex;
   flex-direction: row;
   align-items: center;
   cursor: pointer;
 }
-.Post_Component .Share .top .info img {
+.Post_Component .Share .UserInfo .Info img {
   width: 2.5em;
   height: 2.5em;
   -o-object-fit: cover;
@@ -168,62 +167,62 @@
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
 }
-.Post_Component .Share .top .info .username {
+.Post_Component .Share .UserInfo .Info .Username {
   font-size: 0.875em;
   font-weight: 500;
-  margin: 0em 0.625em;
+  margin: 0px 0.625em;
 }
-.Post_Component .Share .top .info .time {
+.Post_Component .Share .UserInfo .Info .Time {
   font-size: 0.6875em;
 }
-.Post_Component .Share .top .posttopright {
+.Post_Component .Share .UserInfo .Setting {
   cursor: pointer;
 }
-.Post_Component .Share .top .posttopright svg {
+.Post_Component .Share .UserInfo .Setting svg {
   font-size: 1.125em;
 }
-.Post_Component .Share .content .text {
-  margin: 0em 0.625em;
+.Post_Component .Share .Content .Text {
+  margin: 0px 0.625em;
   font-size: 0.9375em;
 }
-.Post_Component .Share .content img {
+.Post_Component .Share .Content img {
   margin-top: 0.625em;
   width: 100%;
   max-height: 31.25em;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.Post_Component .Share .reactions {
+.Post_Component .Share .Analysis {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.Post_Component .Share .reactions .likes {
+.Post_Component .Share .Analysis .Likes {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.Post_Component .Share .reactions .likes .likeicon {
+.Post_Component .Share .Analysis .Likes .Reactions .Icon {
   width: 1.0625em;
   height: 1.0625em;
   margin-right: 0.3125em;
   cursor: pointer;
 }
-.Post_Component .Share .reactions .likes .reacts {
+.Post_Component .Share .Analysis .Likes .ReactsNumber {
   font-size: 0.8125em;
 }
-.Post_Component .Share .reactions .comments {
+.Post_Component .Share .Analysis .Comments {
   cursor: pointer;
   font-size: 0.8125em;
 }
-.Post_Component .Share .actions {
+.Post_Component .Share .Actions {
   display: flex;
   flex-direction: row;
   margin-top: 0.3125em;
   position: relative;
 }
-.Post_Component .Share .actions .item {
+.Post_Component .Share .Actions .Item {
   flex-basis: 33%;
   text-align: center;
   font-size: 0.875em;
@@ -231,31 +230,30 @@
   cursor: pointer;
   padding: 0.1875em 0px;
 }
-.Post_Component .Share .actions .item.Reacts .icons {
+.Post_Component .Share .Actions .Item.Reacts .Icons {
   position: absolute;
   bottom: calc(100% + 5px);
-  padding: 2px 2px;
+  padding: 0.25em;
+  align-items: center;
+  gap: 0.625em;
   display: flex;
   flex-direction: row;
-  gap: 0.625em;
   box-shadow: 1px 1px 16px -8px rgba(0, 0, 0, 0.68);
   border-radius: 3.125em;
   -webkit-border-radius: 3.125em;
   -moz-border-radius: 3.125em;
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
-  padding: 0.25em;
-  align-items: center;
 }
-.Post_Component .Share .actions .item.Reacts .icons img {
+.Post_Component .Share .Actions .Item.Reacts .Icons img {
   width: 1.6875em;
   height: 1.6875em;
 }
-.Post_Component .Share .actions .item.Reacts .icons img:hover {
+.Post_Component .Share .Actions .Item.Reacts .Icons img:hover {
   width: 2.1875em;
   height: 2.1875em;
 }
-.Post_Component .Share .actions .item.Reacts.Like, .Post_Component .Share .actions .item.Reacts.Love {
+.Post_Component .Share .Actions .Item.Reacts.Like, .Post_Component .Share .Actions .Item.Reacts.Love {
   border-radius: 0.625em;
   -webkit-border-radius: 0.625em;
   -moz-border-radius: 0.625em;
@@ -276,19 +274,19 @@
   display: flex;
   flex-direction: column;
 }
-.Post_Component .Share .New .top {
+.Post_Component .Share .New .UserInfo {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.Post_Component .Share .New .top .info {
+.Post_Component .Share .New .UserInfo .Info {
   display: flex;
   flex-direction: row;
   align-items: center;
   cursor: pointer;
 }
-.Post_Component .Share .New .top .info img {
+.Post_Component .Share .New .UserInfo .Info img {
   width: 2.5em;
   height: 2.5em;
   -o-object-fit: cover;
@@ -299,62 +297,62 @@
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
 }
-.Post_Component .Share .New .top .info .username {
+.Post_Component .Share .New .UserInfo .Info .Username {
   font-size: 0.875em;
   font-weight: 500;
-  margin: 0em 0.625em;
+  margin: 0px 0.625em;
 }
-.Post_Component .Share .New .top .info .time {
+.Post_Component .Share .New .UserInfo .Info .Time {
   font-size: 0.6875em;
 }
-.Post_Component .Share .New .top .posttopright {
+.Post_Component .Share .New .UserInfo .Setting {
   cursor: pointer;
 }
-.Post_Component .Share .New .top .posttopright svg {
+.Post_Component .Share .New .UserInfo .Setting svg {
   font-size: 1.125em;
 }
-.Post_Component .Share .New .content .text {
-  margin: 0em 0.625em;
+.Post_Component .Share .New .Content .Text {
+  margin: 0px 0.625em;
   font-size: 0.9375em;
 }
-.Post_Component .Share .New .content img {
+.Post_Component .Share .New .Content img {
   margin-top: 0.625em;
   width: 100%;
   max-height: 31.25em;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.Post_Component .Share .New .reactions {
+.Post_Component .Share .New .Analysis {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.Post_Component .Share .New .reactions .likes {
+.Post_Component .Share .New .Analysis .Likes {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.Post_Component .Share .New .reactions .likes .likeicon {
+.Post_Component .Share .New .Analysis .Likes .Reactions .Icon {
   width: 1.0625em;
   height: 1.0625em;
   margin-right: 0.3125em;
   cursor: pointer;
 }
-.Post_Component .Share .New .reactions .likes .reacts {
+.Post_Component .Share .New .Analysis .Likes .ReactsNumber {
   font-size: 0.8125em;
 }
-.Post_Component .Share .New .reactions .comments {
+.Post_Component .Share .New .Analysis .Comments {
   cursor: pointer;
   font-size: 0.8125em;
 }
-.Post_Component .Share .New .actions {
+.Post_Component .Share .New .Actions {
   display: flex;
   flex-direction: row;
   margin-top: 0.3125em;
   position: relative;
 }
-.Post_Component .Share .New .actions .item {
+.Post_Component .Share .New .Actions .Item {
   flex-basis: 33%;
   text-align: center;
   font-size: 0.875em;
@@ -362,31 +360,30 @@
   cursor: pointer;
   padding: 0.1875em 0px;
 }
-.Post_Component .Share .New .actions .item.Reacts .icons {
+.Post_Component .Share .New .Actions .Item.Reacts .Icons {
   position: absolute;
   bottom: calc(100% + 5px);
-  padding: 2px 2px;
+  padding: 0.25em;
+  align-items: center;
+  gap: 0.625em;
   display: flex;
   flex-direction: row;
-  gap: 0.625em;
   box-shadow: 1px 1px 16px -8px rgba(0, 0, 0, 0.68);
   border-radius: 3.125em;
   -webkit-border-radius: 3.125em;
   -moz-border-radius: 3.125em;
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
-  padding: 0.25em;
-  align-items: center;
 }
-.Post_Component .Share .New .actions .item.Reacts .icons img {
+.Post_Component .Share .New .Actions .Item.Reacts .Icons img {
   width: 1.6875em;
   height: 1.6875em;
 }
-.Post_Component .Share .New .actions .item.Reacts .icons img:hover {
+.Post_Component .Share .New .Actions .Item.Reacts .Icons img:hover {
   width: 2.1875em;
   height: 2.1875em;
 }
-.Post_Component .Share .New .actions .item.Reacts.Like, .Post_Component .Share .New .actions .item.Reacts.Love {
+.Post_Component .Share .New .Actions .Item.Reacts.Like, .Post_Component .Share .New .Actions .Item.Reacts.Love {
   border-radius: 0.625em;
   -webkit-border-radius: 0.625em;
   -moz-border-radius: 0.625em;
@@ -394,14 +391,14 @@
   -o-border-radius: 0.625em;
   border-color: none;
 }
-.Post_Component .Share .New {
+.Post_Component .Share > .New {
   border: 0.0625em solid;
   margin: 0px auto;
   box-shadow: none;
-  font-size: 0.75em;
-  width: calc(95% - 2 * 0.625em);
+  font-size: 0.8125em;
+  width: 98%;
 }
-.Post_Component .Share .New .top .info img {
+.Post_Component .Share > .New .UserInfo .Info img {
   width: 2.1875em;
   height: 2.1875em;
   -o-object-fit: cover;
@@ -412,40 +409,150 @@
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
 }
+.Post_Component .CommentsBox {
+  padding: 0.625em;
+  height: 15.625em;
+  border: 0.0625em solid rgba(0, 0, 0, 0.431372549);
+  border-top: none;
+  border-bottom-right-radius: 0.625em;
+  border-bottom-left-radius: 0.625em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.Post_Component .CommentsBox .Header {
+  padding-bottom: 0.25em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 0.125em solid rgba(0, 0, 0, 0.162);
+}
+.Post_Component .CommentsBox .Header p {
+  font-size: 0.75em;
+}
+.Post_Component .CommentsBox .Header .Order {
+  display: flex;
+  flex-direction: row;
+  gap: 0.3125em;
+  align-items: center;
+}
+.Post_Component .CommentsBox .Header .Order label {
+  font-size: 0.75em;
+}
+.Post_Component .CommentsBox .Header .Order select {
+  font-size: 0.75em;
+  border: none;
+  outline: none;
+}
+.Post_Component .CommentsBox .Opinion {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap: 0.625em;
+  border-top: 1px solid rgba(0, 0, 0, 0.431372549);
+  padding-top: 5px;
+}
+.Post_Component .CommentsBox .Opinion img {
+  width: 1.875em;
+  height: 1.875em;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1.875em;
+  -webkit-border-radius: 1.875em;
+  -moz-border-radius: 1.875em;
+  -ms-border-radius: 1.875em;
+  -o-border-radius: 1.875em;
+}
+.Post_Component .CommentsBox .Opinion input {
+  flex: 1;
+  outline: none;
+  padding: 0.25em 0.125em;
+  text-indent: 0.375em;
+  border: 0.0625em solid black;
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+  font-size: 0.75em;
+}
+.Post_Component .CommentsBox .Comments {
+  overflow-y: scroll;
+  padding: 8px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4375em;
+}
+.Post_Component .CommentsBox .Comments::-webkit-scrollbar {
+  width: 2px;
+}
+.Post_Component .CommentsBox .Comments .Comment {
+  display: flex;
+  flex-direction: row;
+  gap: 0.3125em;
+  border: 1px solid rgba(0, 0, 0, 0.137);
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
+  width: 95%;
+}
+.Post_Component .CommentsBox .Comments .Comment img {
+  width: 1.875em;
+  height: 1.875em;
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.Post_Component .CommentsBox .Comments .Comment .Info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.Post_Component .CommentsBox .Comments .Comment .Info .Text {
+  font-size: 0.8125em;
+}
 
 body.ColorTheme_1 .Post_Component {
   background-color: white;
 }
-body.ColorTheme_1 .Post_Component .top .username {
+body.ColorTheme_1 .Post_Component .UserInfo .Username {
   color: black;
 }
-body.ColorTheme_1 .Post_Component .top .time {
+body.ColorTheme_1 .Post_Component .UserInfo .Time {
   color: black;
 }
-body.ColorTheme_1 .Post_Component .top .posttopright svg {
+body.ColorTheme_1 .Post_Component .UserInfo .Setting svg {
   color: black;
 }
-body.ColorTheme_1 .Post_Component .content .text {
+body.ColorTheme_1 .Post_Component .Content .Text {
   color: black;
 }
-body.ColorTheme_1 .Post_Component .reactions .likes .reacts {
+body.ColorTheme_1 .Post_Component .Analysis .Likes .ReactsNumber {
   color: black;
 }
-body.ColorTheme_1 .Post_Component .reactions .comments {
+body.ColorTheme_1 .Post_Component .Analysis .Comments {
   color: black;
 }
-body.ColorTheme_1 .Post_Component .actions .item {
+body.ColorTheme_1 .Post_Component .Actions .Item {
   color: black;
   border-color: rgba(0, 0, 0, 0.408);
 }
-body.ColorTheme_1 .Post_Component .actions .item.Reacts .icons {
+body.ColorTheme_1 .Post_Component .Actions .Item.Reacts .Icons {
   background-color: white;
 }
-body.ColorTheme_1 .Post_Component .actions .item.Reacts.Like {
+body.ColorTheme_1 .Post_Component .Actions .Item.Reacts.Like {
   color: white;
   background-color: #1877f2;
 }
-body.ColorTheme_1 .Post_Component .actions .item.Reacts.Love {
+body.ColorTheme_1 .Post_Component .Actions .Item.Reacts.Love {
   color: white;
   background-color: #d42828;
 }
