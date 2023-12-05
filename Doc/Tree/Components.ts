@@ -1,6 +1,6 @@
 export type Components_Name = C | F | L | M | N | P | R | S |T
     // C Components
-        type C = "CreatePost" | "ConfiremData"
+        type C = "CreatePost" | "ConfiremData" | "CommentsBox"
     // F Components
         type F = "FeedPosts" | "ForgetPassword"
     // L Components 

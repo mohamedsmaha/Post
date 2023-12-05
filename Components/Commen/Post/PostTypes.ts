@@ -13,4 +13,5 @@ export type Helper_Functions = {
     TopReactions:() => JSX.Element,
     Handel_React_onclick:(react : ReactsIcons)=>void,
     Post_Mouse_Move:(event :MouseEvent) => void,
+    Handel_CommentBox_ClassName:()=>void,
 }

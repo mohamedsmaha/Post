@@ -3,7 +3,7 @@ import { Components_Name } from "./Components";
 let Components_Tree : {[key in Components_Name] :  Components_Name[]|null }= {
     "Main_Search_Box" : null ,
     "Notification"    : null ,
-    "Post"            : null ,
+    "Post"            : ["CommentsBox" , "PostForm"] ,
     "CreatePost"      : ["PostForm"],
     "PostForm"        : null ,
     "Rightbar"        : null ,
@@ -15,5 +15,6 @@ let Components_Tree : {[key in Components_Name] :  Components_Name[]|null }= {
     "Register"        : ["SuccessProcess" , "ConfiremData"],
     "ForgetPassword"  : ["SuccessProcess" , "ConfiremData"],
     "ConfiremData"    : null ,
-    "SuccessProcess"  : null
+    "SuccessProcess"  : null ,
+    "CommentsBox"     : null
 }

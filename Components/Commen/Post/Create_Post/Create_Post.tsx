@@ -11,11 +11,6 @@ import { APP_Folders } from "@/Static_Data/APP_Folders"
 import PostForm from "./PostForm/PostForm"
 
 function CreatePost(props : Props_type) {
-// Models
-    const UserModel :() => User  = ()=>{
-        if(props.Page == "Profile"){return Profile_Model.GetUser()}
-        return User_Model
-    }
 // Lang
     const CreatePostObj= Translate_Object("CreatePost") as CreatePostElementsLangType;
 // Hooks 
@@ -47,13 +42,13 @@ function CreatePost(props : Props_type) {
         
         <div className={`Create_Component`} onClick={() => SetForm_Status(true)}>
                 <div className="Create_top">
-                    <img src={`${APP_Folders.Users()}/${UserModel().GetMainImg()}`} alt="" className="Createprofileimg" />
-                    <p className="text">{CreatePostObj.InputFiled(UserModel().GetName())}</p>
+                    <img src={`${APP_Folders.Users()}/${User_Model.GetMainImg()}`} alt="" className="Createprofileimg" />
+                    <p className="text">{CreatePostObj.InputFiled(User_Model.GetName())}</p>
                 </div>
                 <hr className="Createhr" />
                 {<Createoptions/>}
         </div>
-                {Form_Status ? <PostForm Close={() => SetForm_Status(false)}/> : null}
+        {Form_Status ? <PostForm Method="CreatePost" Close={() => SetForm_Status(false)}/> : null}
         </>  
     )
 }

@@ -1,0 +1,250 @@
+@import "../../../Helper/all.scss";
+@mixin CommentsBox() {
+    .CommentsBox {
+        $AnimationSpeed : 0.2s;
+        height: 0px;
+        overflow: hidden;
+
+        .Container {
+            padding: pxtoem(10px);
+            height: pxtoem(250px); // if you change the height change it also in Key Frams
+            border: pxtoem(1px) solid #0000006e;
+            border-top: none;
+            border-bottom-right-radius: pxtoem(10px);
+            border-bottom-left-radius: pxtoem(10px);
+            @include flex_column();
+            justify-content: space-between;
+
+            .Header {
+                padding-bottom: pxtoem(4px);
+                @include flex_row();
+                justify-content: space-between;
+                border-bottom: pxtoem(2px) solid rgba(0, 0, 0, 0.162);
+
+                p {
+                    font-size: pxtoem(12px)
+                }
+
+                .Order {
+                    @include flex_row();
+                    gap: pxtoem(5px);
+                    align-items: center;
+
+                    label {
+                        font-size: pxtoem(12px);
+                    }
+
+                    select {
+                        font-size: pxtoem(12px);
+                        border: none;
+                        outline: none;
+                    }
+                }
+            }
+
+            .Opinion {
+                @include flex_row();
+                align-items: center;
+                width: 100%;
+                gap: pxtoem(10px);
+                border-top: 1px solid #0000006e;
+                padding-top: 5px;
+
+                img {
+                    @include square(30px);
+                    object-fit: cover;
+                    @include border(30px);
+                }
+
+                input {
+                    flex: 1;
+                    outline: none;
+                    padding: pxtoem(4px) pxtoem(2px);
+                    text-indent: pxtoem(6px);
+                    border: pxtoem(1px) solid black;
+                    @include border(10px);
+                    font-size: pxtoem(12px);
+                }
+            }
+
+            .Comments {
+                overflow-y: scroll;
+                padding: 8px 0px;
+
+                @include flex_column();
+                gap: pxtoem(7px);
+
+                &::-webkit-scrollbar {
+                    width: 2px
+                }
+
+                .Comment {
+                    @include flex_row();
+                    gap: pxtoem(5px);
+                    border: 1px solid rgba(0, 0, 0, 0.137);
+                    @include border(50px);
+                    width: 95%;
+
+                    img {
+                        @include square(30px);
+                        @include border(50px);
+                        object-fit: cover;
+                    }
+
+                    .Info {
+                        @include flex_column();
+                        align-items: flex-start;
+                        justify-content: center;
+
+                        .Text {
+                            font-size: pxtoem(13px);
+                        }
+                    }
+                }
+            }
+        }
+
+        &.Show {
+            animation: Comment_Box_Show $AnimationSpeed forwards;
+            -webkit-animation: Comment_Box_Show $AnimationSpeed forwards;
+        }
+
+        &.Hide {
+            animation: Comment_Box_Hide $AnimationSpeed forwards;
+            -webkit-animation: Comment_Box_Hide $AnimationSpeed forwards;
+        }
+    }
+}
+        .CommentsBox {
+            $AnimationSpeed : 0.2s;
+            height: 0px;
+            overflow: hidden;
+    
+            .Container {
+                padding: pxtoem(10px);
+                height: pxtoem(250px); // if you change the height change it also in Key Frams
+                border: pxtoem(1px) solid #0000006e;
+                border-top: none;
+                border-bottom-right-radius: pxtoem(10px);
+                border-bottom-left-radius: pxtoem(10px);
+                @include flex_column();
+                justify-content: space-between;
+    
+                .Header {
+                    padding-bottom: pxtoem(4px);
+                    @include flex_row();
+                    justify-content: space-between;
+                    border-bottom: pxtoem(2px) solid rgba(0, 0, 0, 0.162);
+    
+                    p {
+                        font-size: pxtoem(12px)
+                    }
+    
+                    .Order {
+                        @include flex_row();
+                        gap: pxtoem(5px);
+                        align-items: center;
+    
+                        label {
+                            font-size: pxtoem(12px);
+                        }
+    
+                        select {
+                            font-size: pxtoem(12px);
+                            border: none;
+                            outline: none;
+                        }
+                    }
+                }
+    
+                .Opinion {
+                    @include flex_row();
+                    align-items: center;
+                    width: 100%;
+                    gap: pxtoem(10px);
+                    border-top: 1px solid #0000006e;
+                    padding-top: 5px;
+    
+                    img {
+                        @include square(30px);
+                        object-fit: cover;
+                        @include border(30px);
+                    }
+    
+                    input {
+                        flex: 1;
+                        outline: none;
+                        padding: pxtoem(4px) pxtoem(2px);
+                        text-indent: pxtoem(6px);
+                        border: pxtoem(1px) solid black;
+                        @include border(10px);
+                        font-size: pxtoem(12px);
+                    }
+                }
+    
+                .Comments {
+                    overflow-y: scroll;
+                    padding: 8px 0px;
+    
+                    @include flex_column();
+                    gap: pxtoem(7px);
+    
+                    &::-webkit-scrollbar {
+                        width: 2px
+                    }
+    
+                    .Comment {
+                        @include flex_row();
+                        gap: pxtoem(5px);
+                        border: 1px solid rgba(0, 0, 0, 0.137);
+                        @include border(50px);
+                        width: 95%;
+    
+                        img {
+                            @include square(30px);
+                            @include border(50px);
+                            object-fit: cover;
+                        }
+    
+                        .Info {
+                            @include flex_column();
+                            align-items: flex-start;
+                            justify-content: center;
+    
+                            .Text {
+                                font-size: pxtoem(13px);
+                            }
+                        }
+                    }
+                }
+            }
+    
+            &.Show {
+                animation: Comment_Box_Show $AnimationSpeed forwards;
+                -webkit-animation: Comment_Box_Show $AnimationSpeed forwards;
+            }
+    
+            &.Hide {
+                animation: Comment_Box_Hide $AnimationSpeed forwards;
+                -webkit-animation: Comment_Box_Hide $AnimationSpeed forwards;
+            }
+        }
+@keyframes Comment_Box_Show {
+    0% {
+        height: 0px;
+    }
+
+    100% {
+        height: pxtoem(250px);
+    }
+}
+
+@keyframes Comment_Box_Hide {
+    0% {
+        height: pxtoem(250px);
+    }
+
+    100% {
+        height: 0px;
+    }
+}

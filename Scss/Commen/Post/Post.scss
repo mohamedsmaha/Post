@@ -93,81 +93,6 @@
         @include Reacts();
     }
 }
-@mixin CommentsBox(){
-    .CommentsBox{
-        padding: pxtoem(10px);
-        height: pxtoem(250px);
-        border: pxtoem(1px) solid #0000006e;
-        border-top: none;
-        border-bottom-right-radius: pxtoem(10px);
-        border-bottom-left-radius: pxtoem(10px);
-        @include flex_column();
-        justify-content: space-between;
-        .Header{
-            padding-bottom: pxtoem(4px);
-            @include flex_row();
-            justify-content: space-between;
-            border-bottom: pxtoem(2px) solid rgba(0, 0, 0, 0.162);
-            p{font-size: pxtoem(12px)}
-            .Order{
-                @include flex_row();
-                gap: pxtoem(5px);
-                align-items: center;
-                label {font-size: pxtoem(12px);}
-                select{font-size: pxtoem(12px); border: none; outline: none;}
-            }
-        }
-        .Opinion{
-            @include flex_row();
-            align-items: center;
-            width: 100%;
-            gap: pxtoem(10px);
-            border-top: 1px solid #0000006e;
-            padding-top:5px ;
-            img{
-                @include square(30px);
-                object-fit: cover;
-                @include border(30px);
-            }
-            input{
-                flex: 1;
-                outline: none;
-                padding: pxtoem(4px) pxtoem(2px);
-                text-indent: pxtoem(6px);
-                border: pxtoem(1px) solid black;
-                @include border(10px);
-                font-size: pxtoem(12px);
-            }
-        }
-        .Comments{
-            overflow-y: scroll;
-            padding: 8px 0px;
-            &::-webkit-scrollbar{width: 2px}
-            @include flex_column();
-            gap: pxtoem(7px);
-            .Comment{
-                @include flex_row();
-                gap: pxtoem(5px);
-                border: 1px solid rgba(0, 0, 0, 0.137);
-                @include border(50px);  
-                width: 95%;
-                img{
-                    @include square(30px);
-                    @include border(50px);
-                    object-fit: cover;
-                }
-                .Info{
-                    @include flex_column();
-                    align-items:flex-start;
-                    justify-content: center;
-                    .Text{
-                        font-size: pxtoem(13px);
-                    }
-                }
-            }
-        }
-    }
-}
 @mixin Newtype(){
     .New {
         background-color: white;
@@ -211,9 +136,9 @@
     @include border(10px);
     @include Newtype();
     @include Share();
-    @include CommentsBox();
     width: 100%;
 }
+// Colors
 body.ColorTheme_1 .Post_Component{
     background-color: $secound_color;
     .UserInfo{
@@ -235,3 +160,5 @@ body.ColorTheme_1 .Post_Component{
         color: $fifth_color; border-color: $eight_color;}
     .Share .New {border-color: $eight_color;}
 }
+// Key Frames
+

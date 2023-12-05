@@ -1,5 +1,5 @@
 "use client"
-import { MoreVert } from "@mui/icons-material";
+import { Class, MoreVert } from "@mui/icons-material";
 import "@/Scss/Commen/Post/Post.css"
 import { Static_images } from "@/Static_Data/Images";
 import { APP_Folders } from "@/Static_Data/APP_Folders";
@@ -13,6 +13,9 @@ import { StaticWordsElementsLangType } from "@/Lang/Types/Static_Words";
 import { User_Model } from "@/Helpers/Redux_models/Users/Users_Class";
 import { App_links } from "@/Static_Data/Links";
 import Link from "next/link";
+import PostForm from "./Create_Post/PostForm/PostForm";
+import { MemoCommentBox } from "./CommentsBox/CommentsBox";
+import { CommentsBox_Vaisablity } from "./CommentsBox/CommentBoxTypes";
 
 // Description 
     // This component manages and handles the interactions related to posting.
@@ -21,16 +24,18 @@ import Link from "next/link";
     // Need to deal with every scenario in the post data if it exist or not 
     // Deleting or updating 
     // when Clicking on the image must be show the post in big screen
-    // Comment and Share
 function Post(props: PropsType) {
 // constants 
     const {Post}    = props
     const Avaliable_Reacts: ReactsIcons[] = ["Like", "Love"];
     const Default_React   : ReactsIcons   = "Like"
 // Hooks
-    const [Like_action_Box_Text    , SetReactsBoxText] = useState<ReactsIcons>(Post.user_interaction.React ? Post.user_interaction.React : Default_React)
-    const [User_React              , SetUserReact    ] = useState<ReactsIcons | null>(Post.user_interaction.React)
-    const [Reacts_Box              , SetReactsBox    ] = useState<boolean>(false)
+    const [Like_action_Box_Text    , SetReactsBoxText]       = useState<ReactsIcons>(Post.user_interaction.React ? Post.user_interaction.React : Default_React)
+    const [User_React              , SetUserReact    ]       = useState<ReactsIcons | null>(Post.user_interaction.React)
+    const [Reacts_Box              , SetReactsBox    ]       = useState<boolean>(false)
+    const [CommentBox_ClassName    , SetCommentBoxClassName] = useState<CommentsBox_Vaisablity>(null)
+    const [SharePostForm           , SetSharePostForm      ] = useState<Boolean>(false)
+    
     const Reacts_Box_Ref     :HTMLDivElementRef        = useRef(null)
     const Like_Action_Box_Ref:HTMLDivElementRef        = useRef(null)
     const Post_div_Ref       :HTMLDivElementRef        = useRef(null)
@@ -107,7 +112,12 @@ function Post(props: PropsType) {
                     return false;
                 }
             }
-        }
+        },
+        Handel_CommentBox_ClassName(){
+            if(CommentBox_ClassName == "Show"){SetCommentBoxClassName("Hide");}
+            else{SetCommentBoxClassName("Show")}
+            return
+        },
     }
 // Small Component
     function Share_type(){
@@ -138,47 +148,6 @@ function Post(props: PropsType) {
             <Actions/>
         </div>
         )
-    }
-    function CommentsBox(){
-        function Comment(){
-            return<>
-                <div className="Comment">
-                    <img src={`${APP_Folders.Users()}/${Post.main_post.User.img}`} alt="" />
-                    <div className="Info">
-                        <div className="Text">
-                                hey mohamed welcome to Post i hope to accept my friend request
-                        </div>
-                    </div>
-                </div>
-            </>
-        }
-        return <>
-            <div className="CommentsBox">
-                <div className="Header">
-                    <p className="Title">Comments</p>
-                    <div className="Order">
-                        <label htmlFor="CommentsOrder">Order By</label>
-                        <select name="" id="CommentsOrder">
-                            <option value="">Newest</option>
-                            <option value="">Important</option>
-                            <option value="">Friends</option>
-                        </select>
-                    </div>
-                </div>
-                <div className="Comments">
-                    <Comment/>
-                    <Comment/>
-                    <Comment/>
-                    <Comment/>
-                    <Comment/>
-
-                </div>
-                <div className="Opinion">
-                    <img src={`${APP_Folders.Users()}/${User_Model.GetMainImg()}`} alt="" />
-                    <input type="text" placeholder="Add Comment"/>
-                </div>
-            </div>
-        </>
     }
     function UserInfo(props : UserInfo){
         const {Post_data} = props
@@ -246,16 +215,20 @@ function Post(props: PropsType) {
         return(
             <div className="Actions">
                 <Like></Like>
-                <div className="Item">{Translate("Comment")}</div>
-                <div className="Item">{Translate("Share")}</div>
+                <div className="Item" onClick={() => Helper_Functions.Handel_CommentBox_ClassName()}>{Translate("Comment")}</div>
+                <div className="Item" onClick={() => SetSharePostForm(!SharePostForm)}>{Translate("Share")}</div>
             </div>
         )
     }
     return (
+        
+        <>
         <div className={`Post_Component`} ref={Post_div_Ref} onMouseMove={(e: any) => Helper_Functions.Post_Mouse_Move(e.nativeEvent)}>
             {Helper_Functions.SelectShap(Post.main_post.type)}
-            <CommentsBox/>
+            <MemoCommentBox Vaisablity={CommentBox_ClassName}/>
         </div>
+        {SharePostForm ? <PostForm key="res" Data={Post} Method="SharePost" Close = {() => SetSharePostForm(false)} /> : null}
+        </>
     );
 }
 
