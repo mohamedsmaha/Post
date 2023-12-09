@@ -8,7 +8,7 @@
             @include flex_row();
             align-items: center;
             cursor: pointer;
-            img {@include person_pic(5px)}
+            img {@include person_pic(40px)}
             .Username {
                 font-size: pxtoem(14px); font-weight: 500;
                 margin: 0px pxtoem(10px);

@@ -1,43 +1,404 @@
-.PostForm_Component {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1000;
-  background-color: rgba(128, 128, 128, 0.1098039216);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.Post_Component {
+  margin: 0.625em 0px;
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+  width: 100%;
 }
-.PostForm_Component .container {
-  width: 50vw;
-  height: 80vh;
-  padding: 15px 20px;
+.Post_Component .New {
   background-color: white;
+  padding: 0.625em;
+  gap: 0.625em;
+  box-shadow: 2px 2px 16px -8px rgba(0, 0, 0, 0.68);
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+  display: flex;
+  flex-direction: column;
+}
+.Post_Component .New .UserInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.Post_Component .New .UserInfo .Info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+.Post_Component .New .UserInfo .Info img {
+  width: 2.5em;
+  height: 2.5em;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 3.125em;
   -webkit-border-radius: 3.125em;
   -moz-border-radius: 3.125em;
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
 }
-.PostForm_Component .container .Main_Form {
+.Post_Component .New .UserInfo .Info .Username {
+  font-size: 0.875em;
+  font-weight: 500;
+  margin: 0px 0.625em;
+}
+.Post_Component .New .UserInfo .Info .Time {
+  font-size: 0.6875em;
+}
+.Post_Component .New .UserInfo .Setting {
+  cursor: pointer;
+}
+.Post_Component .New .UserInfo .Setting svg {
+  font-size: 1.125em;
+}
+.Post_Component .New .Content .Text {
+  margin: 0px 0.625em;
+  font-size: 0.9375em;
+}
+.Post_Component .New .Content img {
+  margin-top: 0.625em;
   width: 100%;
-  height: 100%;
-  overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
+  max-height: 31.25em;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
-.PostForm_Component .container .Main_Form::-webkit-scrollbar {
-  width: 0px;
-}
-.PostForm_Component .container .Main_Form .top {
+.Post_Component .New .Analysis {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.625em;
+  justify-content: space-between;
 }
-.PostForm_Component .container .Main_Form .top img {
+.Post_Component .New .Analysis .Likes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.Post_Component .New .Analysis .Likes .Reactions .Icon {
+  width: 1.0625em;
+  height: 1.0625em;
+  margin-right: 0.3125em;
+  cursor: pointer;
+}
+.Post_Component .New .Analysis .Likes .ReactsNumber {
+  font-size: 0.8125em;
+}
+.Post_Component .New .Analysis .Comments {
+  cursor: pointer;
+  font-size: 0.8125em;
+}
+.Post_Component .New .Actions {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.3125em;
+  position: relative;
+}
+.Post_Component .New .Actions .Item {
+  flex-basis: 33%;
+  text-align: center;
+  font-size: 0.875em;
+  border-right: 0.03125em solid;
+  cursor: pointer;
+  padding: 0.1875em 0px;
+}
+.Post_Component .New .Actions .Item.Reacts .Icons {
+  position: absolute;
+  bottom: calc(100% + 5px);
+  padding: 0.25em;
+  align-items: center;
+  gap: 0.625em;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 1px 1px 16px -8px rgba(0, 0, 0, 0.68);
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
+}
+.Post_Component .New .Actions .Item.Reacts .Icons img {
+  width: 1.6875em;
+  height: 1.6875em;
+}
+.Post_Component .New .Actions .Item.Reacts .Icons img:hover {
+  width: 2.1875em;
+  height: 2.1875em;
+}
+.Post_Component .New .Actions .Item.Reacts.Like, .Post_Component .New .Actions .Item.Reacts.Love {
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+  border-color: none;
+}
+.Post_Component .Share {
+  box-shadow: 2px 2px 16px -8px rgba(0, 0, 0, 0.68);
+  display: flex;
+  flex-direction: column;
+  gap: 0.625em;
+  padding: 0.625em;
+}
+.Post_Component .Share .UserInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.Post_Component .Share .UserInfo .Info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+.Post_Component .Share .UserInfo .Info img {
+  width: 2.5em;
+  height: 2.5em;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
+}
+.Post_Component .Share .UserInfo .Info .Username {
+  font-size: 0.875em;
+  font-weight: 500;
+  margin: 0px 0.625em;
+}
+.Post_Component .Share .UserInfo .Info .Time {
+  font-size: 0.6875em;
+}
+.Post_Component .Share .UserInfo .Setting {
+  cursor: pointer;
+}
+.Post_Component .Share .UserInfo .Setting svg {
+  font-size: 1.125em;
+}
+.Post_Component .Share .Content .Text {
+  margin: 0px 0.625em;
+  font-size: 0.9375em;
+}
+.Post_Component .Share .Content img {
+  margin-top: 0.625em;
+  width: 100%;
+  max-height: 31.25em;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.Post_Component .Share .Analysis {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.Post_Component .Share .Analysis .Likes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.Post_Component .Share .Analysis .Likes .Reactions .Icon {
+  width: 1.0625em;
+  height: 1.0625em;
+  margin-right: 0.3125em;
+  cursor: pointer;
+}
+.Post_Component .Share .Analysis .Likes .ReactsNumber {
+  font-size: 0.8125em;
+}
+.Post_Component .Share .Analysis .Comments {
+  cursor: pointer;
+  font-size: 0.8125em;
+}
+.Post_Component .Share .Actions {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.3125em;
+  position: relative;
+}
+.Post_Component .Share .Actions .Item {
+  flex-basis: 33%;
+  text-align: center;
+  font-size: 0.875em;
+  border-right: 0.03125em solid;
+  cursor: pointer;
+  padding: 0.1875em 0px;
+}
+.Post_Component .Share .Actions .Item.Reacts .Icons {
+  position: absolute;
+  bottom: calc(100% + 5px);
+  padding: 0.25em;
+  align-items: center;
+  gap: 0.625em;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 1px 1px 16px -8px rgba(0, 0, 0, 0.68);
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
+}
+.Post_Component .Share .Actions .Item.Reacts .Icons img {
+  width: 1.6875em;
+  height: 1.6875em;
+}
+.Post_Component .Share .Actions .Item.Reacts .Icons img:hover {
+  width: 2.1875em;
+  height: 2.1875em;
+}
+.Post_Component .Share .Actions .Item.Reacts.Like, .Post_Component .Share .Actions .Item.Reacts.Love {
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+  border-color: none;
+}
+.Post_Component .Share .New {
+  background-color: white;
+  padding: 0.625em;
+  gap: 0.625em;
+  box-shadow: 2px 2px 16px -8px rgba(0, 0, 0, 0.68);
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+  display: flex;
+  flex-direction: column;
+}
+.Post_Component .Share .New .UserInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.Post_Component .Share .New .UserInfo .Info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+.Post_Component .Share .New .UserInfo .Info img {
+  width: 2.5em;
+  height: 2.5em;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
+}
+.Post_Component .Share .New .UserInfo .Info .Username {
+  font-size: 0.875em;
+  font-weight: 500;
+  margin: 0px 0.625em;
+}
+.Post_Component .Share .New .UserInfo .Info .Time {
+  font-size: 0.6875em;
+}
+.Post_Component .Share .New .UserInfo .Setting {
+  cursor: pointer;
+}
+.Post_Component .Share .New .UserInfo .Setting svg {
+  font-size: 1.125em;
+}
+.Post_Component .Share .New .Content .Text {
+  margin: 0px 0.625em;
+  font-size: 0.9375em;
+}
+.Post_Component .Share .New .Content img {
+  margin-top: 0.625em;
+  width: 100%;
+  max-height: 31.25em;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.Post_Component .Share .New .Analysis {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.Post_Component .Share .New .Analysis .Likes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.Post_Component .Share .New .Analysis .Likes .Reactions .Icon {
+  width: 1.0625em;
+  height: 1.0625em;
+  margin-right: 0.3125em;
+  cursor: pointer;
+}
+.Post_Component .Share .New .Analysis .Likes .ReactsNumber {
+  font-size: 0.8125em;
+}
+.Post_Component .Share .New .Analysis .Comments {
+  cursor: pointer;
+  font-size: 0.8125em;
+}
+.Post_Component .Share .New .Actions {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.3125em;
+  position: relative;
+}
+.Post_Component .Share .New .Actions .Item {
+  flex-basis: 33%;
+  text-align: center;
+  font-size: 0.875em;
+  border-right: 0.03125em solid;
+  cursor: pointer;
+  padding: 0.1875em 0px;
+}
+.Post_Component .Share .New .Actions .Item.Reacts .Icons {
+  position: absolute;
+  bottom: calc(100% + 5px);
+  padding: 0.25em;
+  align-items: center;
+  gap: 0.625em;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 1px 1px 16px -8px rgba(0, 0, 0, 0.68);
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
+}
+.Post_Component .Share .New .Actions .Item.Reacts .Icons img {
+  width: 1.6875em;
+  height: 1.6875em;
+}
+.Post_Component .Share .New .Actions .Item.Reacts .Icons img:hover {
+  width: 2.1875em;
+  height: 2.1875em;
+}
+.Post_Component .Share .New .Actions .Item.Reacts.Like, .Post_Component .Share .New .Actions .Item.Reacts.Love {
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+  border-color: none;
+}
+.Post_Component .Share > .New {
+  border: 0.0625em solid;
+  margin: 0px auto;
+  box-shadow: none;
+  font-size: 0.8125em;
+  width: 98%;
+}
+.Post_Component .Share > .New .UserInfo .Info img {
   width: 2.1875em;
   height: 2.1875em;
   -o-object-fit: cover;
@@ -48,79 +409,367 @@
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
 }
-.PostForm_Component .container .Main_Form .top p {
+
+body.ColorTheme_1 .Post_Component {
+  background-color: white;
+}
+body.ColorTheme_1 .Post_Component .UserInfo .Username {
+  color: black;
+}
+body.ColorTheme_1 .Post_Component .UserInfo .Time {
+  color: black;
+}
+body.ColorTheme_1 .Post_Component .UserInfo .Setting svg {
+  color: black;
+}
+body.ColorTheme_1 .Post_Component .Content .Text {
+  color: black;
+}
+body.ColorTheme_1 .Post_Component .Analysis .Likes .ReactsNumber {
+  color: black;
+}
+body.ColorTheme_1 .Post_Component .Analysis .Comments {
+  color: black;
+}
+body.ColorTheme_1 .Post_Component .Actions .Item {
+  color: black;
+  border-color: rgba(0, 0, 0, 0.408);
+}
+body.ColorTheme_1 .Post_Component .Actions .Item.Reacts .Icons {
+  background-color: white;
+}
+body.ColorTheme_1 .Post_Component .Actions .Item.Reacts.Like {
+  color: white;
+  background-color: #1877f2;
+}
+body.ColorTheme_1 .Post_Component .Actions .Item.Reacts.Love {
+  color: white;
+  background-color: #d42828;
+}
+body.ColorTheme_1 .Post_Component .Share .New {
+  border-color: rgba(0, 0, 0, 0.408);
+}
+
+.PostForm_Component {
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.PostForm_Component .Container {
+  width: 50vw;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 15.625em;
+  padding: 0.9375em 1.25em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
+}
+.PostForm_Component .Container .Main_Form {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+.PostForm_Component .Container .Main_Form > .Top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.PostForm_Component .Container .Main_Form > .Top .Userinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.625em;
+}
+.PostForm_Component .Container .Main_Form > .Top .Userinfo img {
+  width: 2.5em;
+  height: 2.5em;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
+}
+.PostForm_Component .Container .Main_Form > .Top .Userinfo p.Text {
   font-size: 1em;
 }
-.PostForm_Component .container .Main_Form > .bottom {
-  display: flex;
-  flex-grow: 1;
-  padding: 10px;
-  width: 100%;
+.PostForm_Component .Container .Main_Form > .Top svg {
+  font-size: 1.375em;
 }
-.PostForm_Component .container .Main_Form > .bottom form.Content_info_Post {
+.PostForm_Component .Container .Main_Form > .Bottom {
+  flex-grow: 1;
+  padding: 0.625em;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 10px;
+  gap: 0.625em;
 }
-.PostForm_Component .container .Main_Form > .bottom form.Content_info_Post .info {
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info {
+  justify-content: center;
+  gap: 0.625em;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 10px;
 }
-.PostForm_Component .container .Main_Form > .bottom form.Content_info_Post .info textarea {
-  min-height: 80px;
-  width: 99%;
-  padding: 5px;
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .ShowMedia {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 0.5625em;
+  width: 100%;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .ShowMedia img {
+  width: 31.25em;
+  height: 31.25em;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0em;
+  -webkit-border-radius: 0em;
+  -moz-border-radius: 0em;
+  -ms-border-radius: 0em;
+  -o-border-radius: 0em;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info textarea {
+  min-height: 5em;
+  max-height: 18.75em;
+  font-size: 1.125em;
+  padding: 0.3125em;
+  box-shadow: 1px 1px 6px -3px rgba(0, 0, 0, 0.68);
+  width: 98%;
   border: none;
   outline: none;
   resize: none;
-  max-height: 18.75em;
-  box-shadow: 1px 1px 16px -8px rgba(0, 0, 0, 0.68);
+  margin: 0px auto;
 }
-.PostForm_Component .container .Main_Form > .bottom form.Content_info_Post .info textarea::-webkit-scrollbar {
-  width: 4px;
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info textarea::-webkit-scrollbar {
+  width: 0.25em;
 }
-.PostForm_Component .container .Main_Form > .bottom form.Content_info_Post .info .media {
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .Media {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 0.625em;
 }
-.PostForm_Component .container .Main_Form > .bottom form.Content_info_Post .info .media .box input {
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .Media .Box input {
   display: none;
 }
-.PostForm_Component .container .Main_Form > .bottom form.Content_info_Post .info .media .box label {
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .Media .Box label {
   cursor: pointer;
 }
-.PostForm_Component .container .Main_Form > .bottom form.Content_info_Post .info .ShowMedia {
-  width: 100%;
-  font-size: 9px;
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New {
+  background-color: white;
+  padding: 0.625em;
+  gap: 0.625em;
+  box-shadow: 2px 2px 16px -8px rgba(0, 0, 0, 0.68);
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+  display: flex;
+  flex-direction: column;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .UserInfo {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
 }
-.PostForm_Component .container .Main_Form > .bottom form.Content_info_Post .info .ShowMedia img {
-  width: 31.25em;
-  height: 31.25em;
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .UserInfo .Info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .UserInfo .Info img {
+  width: 2.5em;
+  height: 2.5em;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .UserInfo .Info .Username {
+  font-size: 0.875em;
+  font-weight: 500;
+  margin: 0px 0.625em;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .UserInfo .Info .Time {
+  font-size: 0.6875em;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .UserInfo .Setting {
+  cursor: pointer;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .UserInfo .Setting svg {
+  font-size: 1.125em;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .Content .Text {
+  margin: 0px 0.625em;
+  font-size: 0.9375em;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .Content img {
+  margin-top: 0.625em;
+  width: 100%;
+  max-height: 31.25em;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.PostForm_Component .container .Main_Form > .bottom form.Content_info_Post > button {
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .Analysis {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .Analysis .Likes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .Analysis .Likes .Reactions .Icon {
+  width: 1.0625em;
+  height: 1.0625em;
+  margin-right: 0.3125em;
+  cursor: pointer;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .Analysis .Likes .ReactsNumber {
+  font-size: 0.8125em;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .Analysis .Comments {
+  cursor: pointer;
+  font-size: 0.8125em;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .Actions {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.3125em;
+  position: relative;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .Actions .Item {
+  flex-basis: 33%;
+  text-align: center;
+  font-size: 0.875em;
+  border-right: 0.03125em solid;
+  cursor: pointer;
+  padding: 0.1875em 0px;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .Actions .Item.Reacts .Icons {
+  position: absolute;
+  bottom: calc(100% + 5px);
+  padding: 0.25em;
+  align-items: center;
+  gap: 0.625em;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 1px 1px 16px -8px rgba(0, 0, 0, 0.68);
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .Actions .Item.Reacts .Icons img {
+  width: 1.6875em;
+  height: 1.6875em;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .Actions .Item.Reacts .Icons img:hover {
+  width: 2.1875em;
+  height: 2.1875em;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .Actions .Item.Reacts.Like, .PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .Actions .Item.Reacts.Love {
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+  border-color: none;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New {
+  width: 80%;
+  margin: 0px auto;
+  font-size: 0.75em;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post > button {
   width: -moz-fit-content;
   width: fit-content;
-  padding: 5px 10px;
+  padding: 0.3125em 0.625em;
   border: none;
   outline: none;
-  background-color: #1877f2;
-  font-size: 16px;
-  color: white;
+  font-size: 1em;
   font-weight: 500;
   border-radius: 0.625em;
   -webkit-border-radius: 0.625em;
   -moz-border-radius: 0.625em;
   -ms-border-radius: 0.625em;
   -o-border-radius: 0.625em;
+}
+.PostForm_Component .Container .Main_Form::-webkit-scrollbar {
+  width: 0px;
+}
+
+@media (max-width: 1024px) {
+  .PostForm_Component .Container {
+    width: 70vw;
+  }
+}
+@media (max-width: 770px) {
+  .PostForm_Component .Container {
+    width: 90vw;
+    font-size: 0.75em;
+  }
+}
+@media (max-width: 500px) {
+  .PostForm_Component .Container {
+    width: 95vw;
+    height: 80vh;
+    border-radius: 0.625em;
+    -webkit-border-radius: 0.625em;
+    -moz-border-radius: 0.625em;
+    -ms-border-radius: 0.625em;
+    -o-border-radius: 0.625em;
+    font-size: 0.75em;
+  }
+  .PostForm_Component .Container .Main_Form .Bottom .Content_info_Post .Info .ShowMedia {
+    margin: 1.25em 0px;
+  }
+  .PostForm_Component .Container .Main_Form .Bottom .Content_info_Post .Info .New {
+    font-size: 1em !important;
+  }
+}
+body.ColorTheme_1 .PostForm_Component {
+  background-color: rgba(128, 128, 128, 0.1098039216);
+}
+body.ColorTheme_1 .PostForm_Component .Container {
+  background-color: white;
+}
+body.ColorTheme_1 .PostForm_Component .Container .Main_Form .Content_info_Post button {
+  color: white;
+  background-color: #1877f2;
 }/*# sourceMappingURL=Form.css.map */

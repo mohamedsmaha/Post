@@ -1,48 +1,66 @@
 @import "../../../../Helper/all.scss";
+@import "../../Post.scss";
 
+@mixin ShowMedia(){
+    .ShowMedia {
+            @include flex_row();
+            justify-content: center;
+            font-size: pxtoem(9px);
+            width: 100%;
+            img {@include person_pic(500px , 0px)}
+        }
+}
+@mixin Textarea(){
+    textarea {
+            min-height: pxtoem(80px);
+            max-height: pxtoem(300px);
+            font-size: pxtoem(18px);
+            padding: pxtoem(5px);
+            @include shadow(1px, 1px , 6px ,-3px);
+            width: 98%;
+            border: none;outline: none;resize: none;
+            margin: 0px auto;
+            &::-webkit-scrollbar {
+                width: pxtoem(4px);
+            }
+        }
+}
+@mixin MediaInputs(){
+    .Media {
+            @include flex_row();
+            gap: pxtoem(10px);
+            .Box {
+                input {display: none;}
+                label {cursor: pointer;}
+            }
+        }
+}
 @mixin Content_info_Post(){
     form.Content_info_Post{
         width: 100%;
         height: 100%;
         @include flex_column();
         justify-content: space-between;
-        gap: 10px;
-        .info{
-            @include flex_column();
+        gap: pxtoem(10px);
+        .Info{
             justify-content: center;
-            gap: 10px;
-            textarea {
-                    min-height: 80px;
-                    width: 99%;
-                    padding: 5px;
-                    border: none;
-                    outline: none;
-                    resize: none;
-                    max-height: pxtoem(300px);
-                    &::-webkit-scrollbar{width: 4px;}
-                    @include shadow(1px , 1px);
-                }
-            .media{
-                @include flex_row();
-                gap: 10px;
-                .box{
-                    input {
-                        display: none;
-                    }
-                    label {cursor: pointer;}
-                }
-            }
-            .ShowMedia{
-                width: 100%;
-                font-size: 9px;
-                @include flex_row();
-                justify-content: center;
-                img{@include square(500px); object-fit: contain;}
+            gap: pxtoem(10px);
+            @include flex_column();
+            @include ShowMedia();
+            @include Textarea();
+            @include MediaInputs();
+            @include Newtype();
+            .New{
+                width: 80%;
+                margin: 0px auto ;
+                font-size: pxtoem(12px);
             }
         }
-        >button{width: fit-content; padding: 5px 10px; border: none; outline: none;
-                background-color: $first_color; font-size: 16px;
-                color: $secound_color;
+        >button{
+                width: fit-content;
+                padding: pxtoem(5px) pxtoem(10px);
+                border: none;outline: none;
+                font-size: pxtoem(16px);
                 font-weight: 500;
                 @include border(10px);
         }
@@ -53,50 +71,88 @@
         width: 100%;
         height: 100%;
         overflow-y: scroll;
-        display: flex;
-        flex-direction: column;
+        @include flex_column();
+        >.Top{
+            @include flex_row();
+            justify-content: space-between;
+            align-items: center;
+            .Userinfo{
+            @include flex_row();
+                align-items: center;
+                gap: pxtoem(10px);
+                img {@include person_pic(40px);}
+                p.Text {font-size: pxtoem(16px);}
+            }
+            svg{font-size: pxtoem(22px);}
+        }
+        >.Bottom{
+            flex-grow: 1;
+            padding: pxtoem(10px);
+            width: 100%;
+            @include flex_row();
+            @include Content_info_Post();
+        }
         &::-webkit-scrollbar {
                 width: 0px;
-            }
-        .top{
-            @include flex_row();   
-            align-items: center;
-            gap: pxtoem(10px); 
-            img{
-                @include square(35px);
-                object-fit: cover;
-                @include border(50px);
-            }
-            p{
-                font-size: pxtoem(16px);
-            }
-        }
-        >.bottom{
-            display: flex;
-            flex-grow: 1;
-            padding: 10px;
-            width: 100%;
-            @include Content_info_Post();
         }
     }
 }
 .PostForm_Component{
+    backdrop-filter: blur(2px);
     position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100vw;
-    height: 100vh;
+    top: 0px;left: 0px;
+    width: 100vw;height: 100vh;
     z-index: 1000;
-    background-color: #8080801c;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .container{
-        width: 50vw;
-        height: 80vh;
-        padding: 15px 20px;
-        background-color: white;
+    @include flex_row();
+    @include flex_center();
+    .Container{
+        width: 50vw;height: fit-content;
+        min-height: pxtoem(250px);
+        padding: pxtoem(15px) pxtoem(20px);
+        @include flex_row();@include flex_center();
         @include border(50px);
         @include Main_Form();
+    }
+}
+
+// Media
+@media (max-width:1024px) {
+    .PostForm_Component{
+        .Container{width: 70vw;}
+    }
+}
+@media (max-width:770px) {
+    .PostForm_Component {
+        .Container {
+            width: 90vw;
+            font-size: pxtoem(12px);
+        }
+    }
+}
+@media (max-width:500px) {
+    .PostForm_Component {
+        .Container {
+            width: 95vw;
+            height: 80vh;
+            @include border(10px);   
+            font-size: pxtoem(12px);
+
+        .Main_Form .Bottom .Content_info_Post .Info {
+            .ShowMedia{margin: pxtoem(20px) 0px;}
+            .New{font-size: pxtoem(16px) !important; }
+            }
+
+        }
+    }
+}
+// Colors 
+body.ColorTheme_1 .PostForm_Component{
+    background-color: #8080801c;
+    .Container {
+        background-color: $secound_color;
+        .Main_Form .Content_info_Post button{
+            color: $secound_color;
+            background-color: $first_color;
+        }
     }
 }

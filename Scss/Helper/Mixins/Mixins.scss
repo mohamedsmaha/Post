@@ -30,15 +30,14 @@
     width: pxtoem($value);
     height: pxtoem($value);
 }
-@mixin shadow($x , $y){
-    box-shadow: $x $y $blur_radius $spread_radius $shadow_color;
+@mixin shadow($x , $y , $blur : $blur_radius , $spread : $spread_radius){
+    box-shadow: $x $y $blur $spread $shadow_color;
 }
 // compontens 
-@mixin person_pic($value: 0px)
+@mixin person_pic($value: 35px , $border:50px )
 {
-    width : pxtoem(($value + 35px));
-    height: pxtoem(($value + 35px));
+    @include square(($value));
     object-fit: cover;
-    @include border(50px)
+    @include border($border)
 }
 

@@ -220,6 +220,14 @@ function Post(props: PropsType) {
             </div>
         )
     }
+    function SharePostImage(){
+        return(
+        <div className="New">
+            <UserInfo Post_data={Post.Share_post ? Post.Share_post: Post.main_post}/>
+            <Content  Post_data={Post.Share_post ? Post.Share_post: Post.main_post}/>
+        </div>
+        )
+    }
     return (
         
         <>
@@ -227,7 +235,11 @@ function Post(props: PropsType) {
             {Helper_Functions.SelectShap(Post.main_post.type)}
             <MemoCommentBox Vaisablity={CommentBox_ClassName}/>
         </div>
-        {SharePostForm ? <PostForm key="res" Data={Post} Method="SharePost" Close = {() => SetSharePostForm(false)} /> : null}
+        {SharePostForm ? <PostForm 
+                                    key="res" 
+                                    Close = {() => SetSharePostForm(false)} 
+                                    Method="SharePost"
+                                    SharePost={{"Data" : Post , "Image" : SharePostImage()}}/> : null}
         </>
     );
 }
