@@ -16,6 +16,7 @@ import Link from "next/link";
 import PostForm from "./Create_Post/PostForm/PostForm";
 import { MemoCommentBox } from "./CommentsBox/CommentsBox";
 import { CommentsBox_Vaisablity } from "./CommentsBox/CommentBoxTypes";
+import { PostFormMethod } from "./Create_Post/PostForm/PostFormTypes";
 
 // Description 
     // This component manages and handles the interactions related to posting.
@@ -34,8 +35,9 @@ function Post(props: PropsType) {
     const [User_React              , SetUserReact    ]       = useState<ReactsIcons | null>(Post.user_interaction.React)
     const [Reacts_Box              , SetReactsBox    ]       = useState<boolean>(false)
     const [CommentBox_ClassName    , SetCommentBoxClassName] = useState<CommentsBox_Vaisablity>(null)
-    const [SharePostForm           , SetSharePostForm      ] = useState<Boolean>(false)
-    
+    const [ShowPostForm            , SetShowPostForm     ] = useState<Boolean>(false)
+    const [Show_Post_Setting       , Set_PostSetting       ] = useState<Boolean>(false)
+    const [PostFormMethod          , SetPostFormMethod     ] = useState<PostFormMethod>("SharePost")
     const Reacts_Box_Ref     :HTMLDivElementRef        = useRef(null)
     const Like_Action_Box_Ref:HTMLDivElementRef        = useRef(null)
     const Post_div_Ref       :HTMLDivElementRef        = useRef(null)
@@ -118,6 +120,26 @@ function Post(props: PropsType) {
             else{SetCommentBoxClassName("Show")}
             return
         },
+        PostFormImage() {
+            switch (PostFormMethod){
+                case "SharePost" :
+                    return(
+                        <div className="New">
+                            <UserInfo Post_data={Post.Share_post ? Post.Share_post: Post.main_post}/>
+                            <Content  Post_data={Post.Share_post ? Post.Share_post: Post.main_post}/>
+                        </div>
+                        )
+                case "Updata" : 
+                    return(
+                        <div className="New">
+                            <Content  Post_data={Post.Share_post ? Post.Share_post: Post.main_post}/>
+                        </div>
+                        )
+                default :
+                        <></>
+                    
+            }
+        },
     }
 // Small Component
     function Share_type(){
@@ -164,7 +186,8 @@ function Post(props: PropsType) {
                 </div>
                 { Post.main_post.User.id == User_Model.GetId() ? // Check if this user own the post 
                     <div className="Setting">
-                        <MoreVert />
+                        <span onClick={() => Set_PostSetting(!Show_Post_Setting)}><MoreVert /></span>
+                        {Show_Post_Setting ? <Post_Setting/> : null}
                     </div> : null
                 }
             </div>
@@ -216,17 +239,29 @@ function Post(props: PropsType) {
             <div className="Actions">
                 <Like></Like>
                 <div className="Item" onClick={() => Helper_Functions.Handel_CommentBox_ClassName()}>{Translate("Comment")}</div>
-                <div className="Item" onClick={() => SetSharePostForm(!SharePostForm)}>{Translate("Share")}</div>
+                <div className="Item" onClick={() => 
+                                    {SetShowPostForm(true)  , SetPostFormMethod("SharePost") }}
+                                    >
+                                    {Translate("Share")}
+                </div>
             </div>
         )
     }
-    function SharePostImage(){
-        return(
-        <div className="New">
-            <UserInfo Post_data={Post.Share_post ? Post.Share_post: Post.main_post}/>
-            <Content  Post_data={Post.Share_post ? Post.Share_post: Post.main_post}/>
-        </div>
-        )
+    function Post_Setting(){
+        return <>
+            <div className="Setting_Box">
+                <div className="container">
+                    <ul>
+                        <li onClick={()=>{
+                            SetPostFormMethod("Updata")
+                            SetShowPostForm(true)
+                            Set_PostSetting(false)
+                        }}>Updata</li>
+                        <li>Delete</li>
+                    </ul>
+                </div>
+            </div>
+        </>
     }
     return (
         
@@ -235,11 +270,11 @@ function Post(props: PropsType) {
             {Helper_Functions.SelectShap(Post.main_post.type)}
             <MemoCommentBox Vaisablity={CommentBox_ClassName}/>
         </div>
-        {SharePostForm ? <PostForm 
+        {ShowPostForm? <PostForm 
                                     key="res" 
-                                    Close = {() => SetSharePostForm(false)} 
-                                    Method="SharePost"
-                                    SharePost={{"Data" : Post , "Image" : SharePostImage()}}/> : null}
+                                    Close = {() => SetShowPostForm(false)} 
+                                    Method= {PostFormMethod}
+                                    SharePost={{"Data" : Post , "Image" :Helper_Functions.PostFormImage()}}/> : null}
         </>
     );
 }

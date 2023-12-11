@@ -52,10 +52,14 @@
   font-size: 0.6875em;
 }
 .Post_Component .New .UserInfo .Setting {
-  cursor: pointer;
+  position: relative;
 }
 .Post_Component .New .UserInfo .Setting svg {
   font-size: 1.125em;
+  cursor: pointer;
+}
+.Post_Component .New .UserInfo .Setting .Setting_Box {
+  position: absolute;
 }
 .Post_Component .New .Content .Text {
   margin: 0px 0.625em;
@@ -176,10 +180,14 @@
   font-size: 0.6875em;
 }
 .Post_Component .Share .UserInfo .Setting {
-  cursor: pointer;
+  position: relative;
 }
 .Post_Component .Share .UserInfo .Setting svg {
   font-size: 1.125em;
+  cursor: pointer;
+}
+.Post_Component .Share .UserInfo .Setting .Setting_Box {
+  position: absolute;
 }
 .Post_Component .Share .Content .Text {
   margin: 0px 0.625em;
@@ -306,10 +314,14 @@
   font-size: 0.6875em;
 }
 .Post_Component .Share .New .UserInfo .Setting {
-  cursor: pointer;
+  position: relative;
 }
 .Post_Component .Share .New .UserInfo .Setting svg {
   font-size: 1.125em;
+  cursor: pointer;
+}
+.Post_Component .Share .New .UserInfo .Setting .Setting_Box {
+  position: absolute;
 }
 .Post_Component .Share .New .Content .Text {
   margin: 0px 0.625em;
@@ -626,10 +638,14 @@ body.ColorTheme_1 .Post_Component .Share .New {
   font-size: 0.6875em;
 }
 .PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .UserInfo .Setting {
-  cursor: pointer;
+  position: relative;
 }
 .PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .UserInfo .Setting svg {
   font-size: 1.125em;
+  cursor: pointer;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .UserInfo .Setting .Setting_Box {
+  position: absolute;
 }
 .PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .Content .Text {
   margin: 0px 0.625em;

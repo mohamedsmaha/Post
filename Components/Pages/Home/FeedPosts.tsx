@@ -6,10 +6,10 @@ import { PostData } from '@/Redux/Modules/Post/PostTypes'
 const arr : PostData[]= [
     { 
         "main_post" :{
-            "id"    : 3,
+            "id"    : 1,
             "Data" : {"number" : 10 , "unite" : "Days"} ,
             "Reactions":{"Details" : [] , "numbers" : {"order" : {"first" : "Like" , "Third" : null , "secound" : null} , "total" : 1200}},
-            "User" : {"Username" : "mohamed" , "id" : 1 , "img" : "2.jpeg"},
+            "User" : {"Username" : "mohamed" , "id" : 4 , "img" : "2.jpeg"},
             "info" : {"text" : "hey my name is mohamed"},
             "kind" : "Content" ,
             "type" : "New"

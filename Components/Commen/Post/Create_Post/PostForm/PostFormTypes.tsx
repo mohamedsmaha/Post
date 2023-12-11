@@ -1,5 +1,6 @@
 import { PostData } from "@/Redux/Modules/Post/PostTypes"
 
+export type PostFormMethod   = "SharePost" | "CreatePost" | "Updata"
 export type Helper_Functions = {
     adjustTextareaHeight    : (element : HTMLTextAreaElement) => void , 
     Show_Contentinfo_image  : (element : HTMLInputElement ) => void ,
@@ -9,6 +10,6 @@ export type Helper_Functions = {
 }
 export type Props_type = {
     Close     :  () => void , 
-    Method    : "SharePost" | "CreatePost",
+    Method    : PostFormMethod,
     SharePost ?: {Data : PostData , Image : React.ReactNode}
 }
