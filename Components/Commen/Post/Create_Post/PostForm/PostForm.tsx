@@ -29,6 +29,11 @@ function PostForm(props : Props_type) {
         textarea.focus();
       }
     }, [Textare_content]);
+    useEffect(() => {
+      if(props.Method == "Updata"){
+          SetTextareaContent(props.SharePost?.Data.main_post.info.text);
+      }
+    }, [])
 // Helper Functions
     const Helper_Functions : Helper_Functions = {
         adjustTextareaHeight: (element) => {
@@ -79,8 +84,11 @@ function PostForm(props : Props_type) {
               </div>
         </>
       }
+      function Share(){
+        return props.SharePost?.Image
+      }
       return <>
-        {props.Method == "CreatePost" ? CreatePostImage() : props.SharePost?.Image  }
+        {props.Method == "CreatePost" ? CreatePostImage() : Share() }
       </>
   }
   function MediaInputs(){

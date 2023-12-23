@@ -5,7 +5,7 @@
   height: 2.5em;
   justify-content: space-between;
   padding: 0px 0.3125em;
-  box-shadow: 1px 1px 16px -8px rgba(0, 0, 0, 0.68);
+  box-shadow: 0.0625em 0.0625em 1em -0.5em rgba(0, 0, 0, 0.68);
 }
 .Topbar_Component .Logo_And_Search {
   min-width: 250px;
@@ -107,7 +107,7 @@
   -ms-border-radius: 0.625em;
   -o-border-radius: 0.625em;
   padding: 0.3125em;
-  box-shadow: -2px 3px 16px -8px rgba(0, 0, 0, 0.68);
+  box-shadow: -0.125em 0.1875em 1em -0.5em rgba(0, 0, 0, 0.68);
 }
 
 @media (max-width: 1145px) {

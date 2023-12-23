@@ -31,7 +31,7 @@
     height: pxtoem($value);
 }
 @mixin shadow($x , $y , $blur : $blur_radius , $spread : $spread_radius){
-    box-shadow: $x $y $blur $spread $shadow_color;
+    box-shadow: pxtoem($x) pxtoem($y) pxtoem($blur) pxtoem($spread) $shadow_color;
 }
 // compontens 
 @mixin person_pic($value: 35px , $border:50px )
@@ -39,5 +39,21 @@
     @include square(($value));
     object-fit: cover;
     @include border($border)
+}
+@mixin Cards_Filter(){
+    backdrop-filter: blur(2px);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    @include flex_row();
+    @include flex_center();
+}
+@mixin Normal_button{
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
 

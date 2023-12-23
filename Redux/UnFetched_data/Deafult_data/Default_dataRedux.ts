@@ -5,8 +5,8 @@ import { DefaultDataReduxType } from "./Default_data_type";
 const initialState : DefaultDataReduxType = 
 {
     ColorTheme : 1 ,
-    Lang       : "En",
-    Login      : false
+    Lang       : "Ar",
+    Login      : true
 }
 
 const DefaultData = createSlice({

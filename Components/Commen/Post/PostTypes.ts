@@ -6,8 +6,8 @@ export type PropsType = {
 } 
 export type Post_Setting = "Delete" | "Updata"
 export type HTMLDivElementRef = React.RefObject<HTMLDivElement>;
-export type UserInfo         = {Post_data : Post_info}
-export type Content          = {Post_data : Post_info}
+export type UserInfo         = {Post_data : Post_info , Static? : Boolean}
+export type Content          = {Post_data : Post_info , Updata? : Boolean}
 export type Helper_Functions = {
     Reactions_images:(item : ReactsIcons | null , Onclick?:() => void) => JSX.Element | undefined,
     SelectShap:(type : Post_Type)=> React.ReactNode,

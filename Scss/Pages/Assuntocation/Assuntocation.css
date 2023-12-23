@@ -39,7 +39,7 @@
   -moz-border-radius: 3.125em;
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
-  box-shadow: 5px 5px 16px -8px rgba(0, 0, 0, 0.68);
+  box-shadow: 0.3125em 0.3125em 1em -0.5em rgba(0, 0, 0, 0.68);
 }
 .AssuntocationPage > .Box > .container {
   display: flex;
@@ -58,7 +58,7 @@
   -o-border-radius: 3.125em;
   display: flex;
   flex-direction: column;
-  box-shadow: 3px 3px 16px -8px rgba(0, 0, 0, 0.68);
+  box-shadow: 0.1875em 0.1875em 1em -0.5em rgba(0, 0, 0, 0.68);
   align-items: center;
   justify-content: center;
   height: 100%;
@@ -90,12 +90,12 @@
 
 @media (min-width: 700px) {
   .Appcontent.right {
-    box-shadow: -3px 0px 16px -8px rgba(0, 0, 0, 0.68);
+    box-shadow: -0.1875em 0em 1em -0.5em rgba(0, 0, 0, 0.68);
     animation: Appcontent_positionto_right 0.5s ease-in-out forwards;
     -webkit-animation: Appcontent_positionto_right 0.5s ease-in-out forwards;
   }
   .Appcontent.left {
-    box-shadow: 3px 3px 16px -8px rgba(0, 0, 0, 0.68);
+    box-shadow: 0.1875em 0.1875em 1em -0.5em rgba(0, 0, 0, 0.68);
     animation: Appcontent_positionto_left 0.5s ease-in-out forwards;
     -webkit-animation: Appcontent_positionto_left 0.5s ease-in-out forwards;
   }

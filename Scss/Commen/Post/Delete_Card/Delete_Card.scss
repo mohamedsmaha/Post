@@ -1,0 +1,46 @@
+@import "../../../Helper/all.scss";
+
+.Delete_Card_Component{
+    @include Cards_Filter();
+    .Container{
+        @include border(10px);
+        min-height: pxtoem(150px);
+        background-color: white;
+        padding: pxtoem(15px) pxtoem(20px);
+        @include shadow(10px , 10px , 10px , -8px);
+        @include flex_column();
+        .top{
+            direction: rtl;
+            svg{font-size: pxtoem(18px);}
+        }
+        .bottom{   
+            flex-grow: 1;
+            @include flex_column;
+            justify-content: center;
+            gap: pxtoem(15px);
+            p {
+                font-size: pxtoem(17px);
+            }
+            .buttons{
+                @include flex_row();
+                justify-content: space-around;
+                button{
+                    flex-basis: 48%;
+                    @include Normal_button();
+                    padding: pxtoem(5px) pxtoem(10px);
+                    font-size: pxtoem(14px);
+                    background-color: white;
+                    color: $first_color;
+                    @include border(10px);
+                    &:hover{
+                        background-color: $first_color;
+                        color: white;
+                        
+                    }
+                }
+            
+            }
+        }
+        
+    }
+}       

@@ -98,13 +98,7 @@
     }
 }
 .PostForm_Component{
-    backdrop-filter: blur(2px);
-    position: absolute;
-    top: 0px;left: 0px;
-    width: 100vw;height: 100vh;
-    z-index: 1000;
-    @include flex_row();
-    @include flex_center();
+    @include Cards_Filter();
     .Container{
         width: 50vw;height: fit-content;
         min-height: pxtoem(250px);

@@ -1,4 +1,6 @@
-export type Components_Name = C | F | L | M | N | P | R | S |T
+export type Components_Name = C | D | F | L | M | N | P | R | S |T
+    // D Components
+        type D = 'Delete_Card'
     // C Components
         type C = "CreatePost" | "ConfiremData" | "CommentsBox"
     // F Components

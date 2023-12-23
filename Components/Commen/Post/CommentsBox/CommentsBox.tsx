@@ -4,6 +4,7 @@ import { APP_Folders } from '@/Static_Data/APP_Folders'
 import React from 'react'
 import { Props_Type } from './CommentBoxTypes'
 import "@/Scss/Commen/Post/CommentsBox/CommentsBox.css"
+import { Translate } from '@/Helpers/Translate'
     function CommentsBox(props : Props_Type){
         function Comment(){
             // We use Fake Data Here
@@ -24,13 +25,13 @@ import "@/Scss/Commen/Post/CommentsBox/CommentsBox.css"
             <div className={`CommentsBox ${props.Vaisablity}`}>
                 <div className="Container">
                     <div className="Header">
-                        <p className="Title">Comments</p>
+                        <p className="Title">{Translate("Comments")}</p>
                         <div className="Order">
-                            <label htmlFor="CommentsOrder">Order By</label>
+                            <label htmlFor="CommentsOrder">{Translate("Order By")}</label>
                             <select name="" id="CommentsOrder">
-                                <option value="">Newest</option>
-                                <option value="">Important</option>
-                                <option value="">Friends</option>
+                                <option value="">{Translate("Newest")}</option>
+                                <option value="">{Translate("Importance")}</option>
+                                <option value="">{Translate("Friends")}</option>
                             </select>
                         </div>
                     </div>
@@ -43,7 +44,7 @@ import "@/Scss/Commen/Post/CommentsBox/CommentsBox.css"
                     </div>
                     <div className="Opinion">
                         <img src={`${APP_Folders.Users()}/${User_Model.GetMainImg()}`} alt="" />
-                        <input type="text" placeholder="Add Comment"/>
+                        <input type="text" placeholder={`${Translate("Add Comment")}`}/>
                     </div>
                 </div>
             </div>

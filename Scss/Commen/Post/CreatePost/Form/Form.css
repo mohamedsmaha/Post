@@ -11,7 +11,7 @@
   background-color: white;
   padding: 0.625em;
   gap: 0.625em;
-  box-shadow: 2px 2px 16px -8px rgba(0, 0, 0, 0.68);
+  box-shadow: 0.125em 0.125em 1em -0.5em rgba(0, 0, 0, 0.68);
   border-radius: 0.625em;
   -webkit-border-radius: 0.625em;
   -moz-border-radius: 0.625em;
@@ -53,13 +53,55 @@
 }
 .Post_Component .New .UserInfo .Setting {
   position: relative;
+  height: 100%;
 }
 .Post_Component .New .UserInfo .Setting svg {
   font-size: 1.125em;
   cursor: pointer;
 }
 .Post_Component .New .UserInfo .Setting .Setting_Box {
+  z-index: 9000;
   position: absolute;
+  right: 0px;
+  top: 0.625em;
+  background-color: rgb(255, 255, 255);
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px;
+  box-shadow: 0.1875em 0.1875em 0.8125em -0.5em rgba(0, 0, 0, 0.68);
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+}
+.Post_Component .New .UserInfo .Setting .Setting_Box .container {
+  min-width: 12.5em;
+}
+.Post_Component .New .UserInfo .Setting .Setting_Box .container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625em;
+  text-transform: capitalize;
+}
+.Post_Component .New .UserInfo .Setting .Setting_Box .container ul li {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.299);
+  cursor: pointer;
+  padding: 5px 3px 10px;
+  font-size: 0.8125em;
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+}
+.Post_Component .New .UserInfo .Setting .Setting_Box .container ul li:hover {
+  background-color: rgba(128, 128, 128, 0.051);
+}
+.Post_Component .New .UserInfo .Setting .Setting_Box .container ul li:last-child {
+  border-bottom: none;
 }
 .Post_Component .New .Content .Text {
   margin: 0px 0.625em;
@@ -118,7 +160,7 @@
   gap: 0.625em;
   display: flex;
   flex-direction: row;
-  box-shadow: 1px 1px 16px -8px rgba(0, 0, 0, 0.68);
+  box-shadow: 0.0625em 0.0625em 1em -0.5em rgba(0, 0, 0, 0.68);
   border-radius: 3.125em;
   -webkit-border-radius: 3.125em;
   -moz-border-radius: 3.125em;
@@ -142,7 +184,7 @@
   border-color: none;
 }
 .Post_Component .Share {
-  box-shadow: 2px 2px 16px -8px rgba(0, 0, 0, 0.68);
+  box-shadow: 0.125em 0.125em 1em -0.5em rgba(0, 0, 0, 0.68);
   display: flex;
   flex-direction: column;
   gap: 0.625em;
@@ -181,13 +223,55 @@
 }
 .Post_Component .Share .UserInfo .Setting {
   position: relative;
+  height: 100%;
 }
 .Post_Component .Share .UserInfo .Setting svg {
   font-size: 1.125em;
   cursor: pointer;
 }
 .Post_Component .Share .UserInfo .Setting .Setting_Box {
+  z-index: 9000;
   position: absolute;
+  right: 0px;
+  top: 0.625em;
+  background-color: rgb(255, 255, 255);
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px;
+  box-shadow: 0.1875em 0.1875em 0.8125em -0.5em rgba(0, 0, 0, 0.68);
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+}
+.Post_Component .Share .UserInfo .Setting .Setting_Box .container {
+  min-width: 12.5em;
+}
+.Post_Component .Share .UserInfo .Setting .Setting_Box .container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625em;
+  text-transform: capitalize;
+}
+.Post_Component .Share .UserInfo .Setting .Setting_Box .container ul li {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.299);
+  cursor: pointer;
+  padding: 5px 3px 10px;
+  font-size: 0.8125em;
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+}
+.Post_Component .Share .UserInfo .Setting .Setting_Box .container ul li:hover {
+  background-color: rgba(128, 128, 128, 0.051);
+}
+.Post_Component .Share .UserInfo .Setting .Setting_Box .container ul li:last-child {
+  border-bottom: none;
 }
 .Post_Component .Share .Content .Text {
   margin: 0px 0.625em;
@@ -246,7 +330,7 @@
   gap: 0.625em;
   display: flex;
   flex-direction: row;
-  box-shadow: 1px 1px 16px -8px rgba(0, 0, 0, 0.68);
+  box-shadow: 0.0625em 0.0625em 1em -0.5em rgba(0, 0, 0, 0.68);
   border-radius: 3.125em;
   -webkit-border-radius: 3.125em;
   -moz-border-radius: 3.125em;
@@ -273,7 +357,7 @@
   background-color: white;
   padding: 0.625em;
   gap: 0.625em;
-  box-shadow: 2px 2px 16px -8px rgba(0, 0, 0, 0.68);
+  box-shadow: 0.125em 0.125em 1em -0.5em rgba(0, 0, 0, 0.68);
   border-radius: 0.625em;
   -webkit-border-radius: 0.625em;
   -moz-border-radius: 0.625em;
@@ -315,13 +399,55 @@
 }
 .Post_Component .Share .New .UserInfo .Setting {
   position: relative;
+  height: 100%;
 }
 .Post_Component .Share .New .UserInfo .Setting svg {
   font-size: 1.125em;
   cursor: pointer;
 }
 .Post_Component .Share .New .UserInfo .Setting .Setting_Box {
+  z-index: 9000;
   position: absolute;
+  right: 0px;
+  top: 0.625em;
+  background-color: rgb(255, 255, 255);
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px;
+  box-shadow: 0.1875em 0.1875em 0.8125em -0.5em rgba(0, 0, 0, 0.68);
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+}
+.Post_Component .Share .New .UserInfo .Setting .Setting_Box .container {
+  min-width: 12.5em;
+}
+.Post_Component .Share .New .UserInfo .Setting .Setting_Box .container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625em;
+  text-transform: capitalize;
+}
+.Post_Component .Share .New .UserInfo .Setting .Setting_Box .container ul li {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.299);
+  cursor: pointer;
+  padding: 5px 3px 10px;
+  font-size: 0.8125em;
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+}
+.Post_Component .Share .New .UserInfo .Setting .Setting_Box .container ul li:hover {
+  background-color: rgba(128, 128, 128, 0.051);
+}
+.Post_Component .Share .New .UserInfo .Setting .Setting_Box .container ul li:last-child {
+  border-bottom: none;
 }
 .Post_Component .Share .New .Content .Text {
   margin: 0px 0.625em;
@@ -380,7 +506,7 @@
   gap: 0.625em;
   display: flex;
   flex-direction: row;
-  box-shadow: 1px 1px 16px -8px rgba(0, 0, 0, 0.68);
+  box-shadow: 0.0625em 0.0625em 1em -0.5em rgba(0, 0, 0, 0.68);
   border-radius: 3.125em;
   -webkit-border-radius: 3.125em;
   -moz-border-radius: 3.125em;
@@ -572,7 +698,7 @@ body.ColorTheme_1 .Post_Component .Share .New {
   max-height: 18.75em;
   font-size: 1.125em;
   padding: 0.3125em;
-  box-shadow: 1px 1px 6px -3px rgba(0, 0, 0, 0.68);
+  box-shadow: 0.0625em 0.0625em 0.375em -0.1875em rgba(0, 0, 0, 0.68);
   width: 98%;
   border: none;
   outline: none;
@@ -597,7 +723,7 @@ body.ColorTheme_1 .Post_Component .Share .New {
   background-color: white;
   padding: 0.625em;
   gap: 0.625em;
-  box-shadow: 2px 2px 16px -8px rgba(0, 0, 0, 0.68);
+  box-shadow: 0.125em 0.125em 1em -0.5em rgba(0, 0, 0, 0.68);
   border-radius: 0.625em;
   -webkit-border-radius: 0.625em;
   -moz-border-radius: 0.625em;
@@ -639,13 +765,55 @@ body.ColorTheme_1 .Post_Component .Share .New {
 }
 .PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .UserInfo .Setting {
   position: relative;
+  height: 100%;
 }
 .PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .UserInfo .Setting svg {
   font-size: 1.125em;
   cursor: pointer;
 }
 .PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .UserInfo .Setting .Setting_Box {
+  z-index: 9000;
   position: absolute;
+  right: 0px;
+  top: 0.625em;
+  background-color: rgb(255, 255, 255);
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px;
+  box-shadow: 0.1875em 0.1875em 0.8125em -0.5em rgba(0, 0, 0, 0.68);
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .UserInfo .Setting .Setting_Box .container {
+  min-width: 12.5em;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .UserInfo .Setting .Setting_Box .container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625em;
+  text-transform: capitalize;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .UserInfo .Setting .Setting_Box .container ul li {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.299);
+  cursor: pointer;
+  padding: 5px 3px 10px;
+  font-size: 0.8125em;
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .UserInfo .Setting .Setting_Box .container ul li:hover {
+  background-color: rgba(128, 128, 128, 0.051);
+}
+.PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .UserInfo .Setting .Setting_Box .container ul li:last-child {
+  border-bottom: none;
 }
 .PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .New .Content .Text {
   margin: 0px 0.625em;
@@ -704,7 +872,7 @@ body.ColorTheme_1 .Post_Component .Share .New {
   gap: 0.625em;
   display: flex;
   flex-direction: row;
-  box-shadow: 1px 1px 16px -8px rgba(0, 0, 0, 0.68);
+  box-shadow: 0.0625em 0.0625em 1em -0.5em rgba(0, 0, 0, 0.68);
   border-radius: 3.125em;
   -webkit-border-radius: 3.125em;
   -moz-border-radius: 3.125em;

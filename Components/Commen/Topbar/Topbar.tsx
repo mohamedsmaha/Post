@@ -11,6 +11,7 @@ import Notification from "../Notification/Notification"
 import { useEffect, useRef, useState } from "react"
 import { APP_Folders } from "@/Static_Data/APP_Folders"
 import { User_Model } from "@/Helpers/Redux_models/Users/Users_Class"
+import { Handel_click_outside_thetarget } from "@/Helpers/Helper Functions/Handel_click_outside_TheTarget"
 // Descreption
     // The Topbar of the Website
 // Missing
@@ -58,13 +59,8 @@ function Topbar(props : Props_Types) {
     };
 // // UseEffect
     useEffect(() => {
-        const HandleClickOutside = (event: MouseEvent) => {
-            if (Notification_Box_Ref.current && Notification_Box_Status &&
-                !Notification_Box_Ref.current.contains(event.target as Node)) 
-            {
-                SetNotificationBox(false)
-            }
-        };// Close the Notification Box if the click is not on it
+        const HandleClickOutside = 
+            Handel_click_outside_thetarget(Notification_Box_Ref , [Notification_Box_Status , () => SetNotificationBox(false)])
         document.addEventListener("click", HandleClickOutside);
         return () => {
             document.removeEventListener("click", HandleClickOutside);

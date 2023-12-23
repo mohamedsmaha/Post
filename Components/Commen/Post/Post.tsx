@@ -6,7 +6,7 @@ import { APP_Folders } from "@/Static_Data/APP_Folders";
 import { Translate, Translate_Object } from "@/Helpers/Translate";
 import { PostElementsLangType } from "@/Lang/Types/Components/Post";
 import { Content, HTMLDivElementRef, Helper_Functions, PropsType, UserInfo } from "./PostTypes";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ReactsIcons } from "@/Redux/Modules/Post/PostTypes";
 import React from "react";
 import { StaticWordsElementsLangType } from "@/Lang/Types/Static_Words";
@@ -17,13 +17,14 @@ import PostForm from "./Create_Post/PostForm/PostForm";
 import { MemoCommentBox } from "./CommentsBox/CommentsBox";
 import { CommentsBox_Vaisablity } from "./CommentsBox/CommentBoxTypes";
 import { PostFormMethod } from "./Create_Post/PostForm/PostFormTypes";
+import { Handel_click_outside_thetarget } from "@/Helpers/Helper Functions/Handel_click_outside_TheTarget";
+import Delete_Card from "./DeleteCard/Delete_Card";
 
 // Description 
     // This component manages and handles the interactions related to posting.
     // deal with Post Data Redux
 // Missing
     // Need to deal with every scenario in the post data if it exist or not 
-    // Deleting or updating 
     // when Clicking on the image must be show the post in big screen
 function Post(props: PropsType) {
 // constants 
@@ -35,12 +36,23 @@ function Post(props: PropsType) {
     const [User_React              , SetUserReact    ]       = useState<ReactsIcons | null>(Post.user_interaction.React)
     const [Reacts_Box              , SetReactsBox    ]       = useState<boolean>(false)
     const [CommentBox_ClassName    , SetCommentBoxClassName] = useState<CommentsBox_Vaisablity>(null)
-    const [ShowPostForm            , SetShowPostForm     ] = useState<Boolean>(false)
+    const [ShowPostForm            , SetShowPostForm     ]   = useState<Boolean>(false)
     const [Show_Post_Setting       , Set_PostSetting       ] = useState<Boolean>(false)
     const [PostFormMethod          , SetPostFormMethod     ] = useState<PostFormMethod>("SharePost")
+    const [Show_Delete_post_Card   , SetDeleteCard         ] = useState<Boolean>(false)
     const Reacts_Box_Ref     :HTMLDivElementRef        = useRef(null)
     const Like_Action_Box_Ref:HTMLDivElementRef        = useRef(null)
     const Post_div_Ref       :HTMLDivElementRef        = useRef(null)
+    const Post_Setting_div_Ref:HTMLDivElementRef       = useRef(null)   
+    useEffect(() => {
+        const HandleClickOutsideTheSetting = 
+        Handel_click_outside_thetarget(Post_Setting_div_Ref , [Show_Post_Setting , () => Set_PostSetting(false)])
+        // Close the post setting box if the click is not on it
+        document.addEventListener("click", HandleClickOutsideTheSetting);
+        return () => {
+            document.removeEventListener("click", HandleClickOutsideTheSetting);
+        };
+    }, [Show_Post_Setting]);
 // Languagh
     const PostLangObj   = Translate_Object("Post") as PostElementsLangType;
     const Static_Words  = Translate_Object("StaticWords") as StaticWordsElementsLangType;
@@ -125,14 +137,15 @@ function Post(props: PropsType) {
                 case "SharePost" :
                     return(
                         <div className="New">
-                            <UserInfo Post_data={Post.Share_post ? Post.Share_post: Post.main_post}/>
+                            <UserInfo Static={true} Post_data={Post.Share_post ? Post.Share_post: Post.main_post}/>
                             <Content  Post_data={Post.Share_post ? Post.Share_post: Post.main_post}/>
                         </div>
                         )
                 case "Updata" : 
                     return(
                         <div className="New">
-                            <Content  Post_data={Post.Share_post ? Post.Share_post: Post.main_post}/>
+                            {Post.Share_post ? <UserInfo Post_data={Post.Share_post} /> : null}
+                            <Content  Updata={true} Post_data={Post.Share_post ? Post.Share_post: Post.main_post}/>
                         </div>
                         )
                 default :
@@ -184,7 +197,7 @@ function Post(props: PropsType) {
                         {  Static_Words.Time(Post_data.Data.number , Post_data.Data.unite)}
                     </span>
                 </div>
-                { Post.main_post.User.id == User_Model.GetId() ? // Check if this user own the post 
+                {  ( props.Static != true && Post_data.User.id == User_Model.GetId() ) ? // Check if this user own the post 
                     <div className="Setting">
                         <span onClick={() => Set_PostSetting(!Show_Post_Setting)}><MoreVert /></span>
                         {Show_Post_Setting ? <Post_Setting/> : null}
@@ -197,7 +210,7 @@ function Post(props: PropsType) {
         const {Post_data} = props
         return(
             <div className="Content">
-                <span className="Text">{Post_data.info.text}</span>
+                {props.Updata != true ? <span className="Text">{Post_data.info.text}</span> : null}
                 {Post_data.info.img   ? <img src={`${APP_Folders.Posts("images")}/${Post_data.info.img}`} alt="" /> : null }
                 {Post_data.info.vidoe ? <video src = {`${APP_Folders.Posts("videos")}/${Post_data.info.vidoe}`} /> : null}
             </div>
@@ -249,7 +262,7 @@ function Post(props: PropsType) {
     }
     function Post_Setting(){
         return <>
-            <div className="Setting_Box">
+            <div className="Setting_Box" ref={Post_Setting_div_Ref}>
                 <div className="container">
                     <ul>
                         <li onClick={()=>{
@@ -257,7 +270,12 @@ function Post(props: PropsType) {
                             SetShowPostForm(true)
                             Set_PostSetting(false)
                         }}>Updata</li>
-                        <li>Delete</li>
+                        <li
+                            onClick={() => {
+                                Set_PostSetting(false)
+                                SetDeleteCard(true)
+                            }}
+                        >Delete</li>
                     </ul>
                 </div>
             </div>
@@ -275,6 +293,12 @@ function Post(props: PropsType) {
                                     Close = {() => SetShowPostForm(false)} 
                                     Method= {PostFormMethod}
                                     SharePost={{"Data" : Post , "Image" :Helper_Functions.PostFormImage()}}/> : null}
+        {
+            Show_Delete_post_Card ? 
+                <Delete_Card Close_Function={() => SetDeleteCard(false)} 
+                            User = {Post.main_post.User}/> :
+                null
+        }
         </>
     );
 }
