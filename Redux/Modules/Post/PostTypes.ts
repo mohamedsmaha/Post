@@ -40,3 +40,11 @@ export type PostData = {
     Share_post      ?: Post_info  , 
     user_interaction : {React : ReactsIcons | null}
 }
+export type Loading_post = {
+    Loading_image : string
+    
+}
+
+// Filters 
+export type Post_Filter = {
+}

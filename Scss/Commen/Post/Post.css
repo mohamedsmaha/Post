@@ -1,11 +1,130 @@
-.Post_Component {
+.Null_Post_Component {
+  font-size: 1em;
+  font-weight: 500;
+  text-align: center;
+  margin: 1.875em 0px;
+  text-transform: capitalize;
+}
+
+.Loading_Post_Component {
   margin: 0.625em 0px;
+  width: 100%;
   border-radius: 0.625em;
   -webkit-border-radius: 0.625em;
   -moz-border-radius: 0.625em;
   -ms-border-radius: 0.625em;
   -o-border-radius: 0.625em;
+}
+.Loading_Post_Component .UserInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.Loading_Post_Component .UserInfo .Info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+.Loading_Post_Component .UserInfo .Info img {
+  width: 2.5em;
+  height: 2.5em;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 3.125em;
+  -webkit-border-radius: 3.125em;
+  -moz-border-radius: 3.125em;
+  -ms-border-radius: 3.125em;
+  -o-border-radius: 3.125em;
+}
+.Loading_Post_Component .UserInfo .Info .Username {
+  font-size: 0.875em;
+  font-weight: 500;
+  margin: 0px 0.625em;
+}
+.Loading_Post_Component .UserInfo .Info .Time {
+  font-size: 0.6875em;
+}
+.Loading_Post_Component .UserInfo .Setting {
+  position: relative;
+  height: 100%;
+}
+.Loading_Post_Component .UserInfo .Setting svg {
+  font-size: 1.125em;
+  cursor: pointer;
+}
+.Loading_Post_Component .UserInfo .Setting .Setting_Box {
+  z-index: 9000;
+  position: absolute;
+  right: 0px;
+  top: 0.625em;
+  background-color: rgb(255, 255, 255);
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px;
+  box-shadow: 0.1875em 0.1875em 0.8125em -0.5em rgba(0, 0, 0, 0.68);
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+}
+.Loading_Post_Component .UserInfo .Setting .Setting_Box .container {
+  min-width: 12.5em;
+}
+.Loading_Post_Component .UserInfo .Setting .Setting_Box .container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625em;
+  text-transform: capitalize;
+}
+.Loading_Post_Component .UserInfo .Setting .Setting_Box .container ul li {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.299);
+  cursor: pointer;
+  padding: 5px 3px 10px;
+  font-size: 0.8125em;
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+}
+.Loading_Post_Component .UserInfo .Setting .Setting_Box .container ul li:hover {
+  background-color: rgba(128, 128, 128, 0.051);
+}
+.Loading_Post_Component .UserInfo .Setting .Setting_Box .container ul li:last-child {
+  border-bottom: none;
+}
+.Loading_Post_Component .Content {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  animation: Loading_animation 2s infinite forwards;
+  -webkit-animation: Loading_animation 2s infinite forwards;
+}
+.Loading_Post_Component .Content .background {
+  margin: 0.625em 0px;
+  width: 95%;
+  height: 12.5em;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.Post_Component {
+  margin: 0.625em 0px;
+  width: 100%;
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
 }
 .Post_Component .New {
   background-color: white;
@@ -548,6 +667,35 @@
   -o-border-radius: 3.125em;
 }
 
+body.ColorTheme_1 .Null_Post_Component {
+  color: #1877f2;
+}
+
+body.ColorTheme_1 .Loading_Post_Component {
+  background-color: white;
+}
+body.ColorTheme_1 .Loading_Post_Component .Content .background {
+  background-color: rgba(128, 128, 128, 0.2392156863);
+}
+body.ColorTheme_1 .Loading_Post_Component .Content .background .loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #1877f2;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 body.ColorTheme_1 .Post_Component {
   background-color: white;
 }
@@ -586,4 +734,16 @@ body.ColorTheme_1 .Post_Component .Actions .Item.Reacts.Love {
 }
 body.ColorTheme_1 .Post_Component .Share .New {
   border-color: rgba(0, 0, 0, 0.408);
+}
+
+@keyframes Loading_animation {
+  0% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 50%;
+  }
+  100% {
+    opacity: 100%;
+  }
 }/*# sourceMappingURL=Post.css.map */

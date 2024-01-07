@@ -1,5 +1,5 @@
 import { TimeUnites } from "@/Ts/Time"
-import { anyUser } from "../User/UserTypes"
+import { anyUser_Type} from "../User/UserTypes"
 
 
 export type NotificationRedux = {
@@ -11,12 +11,12 @@ export type Notification_Type            = "Friend_Request"
 export type Notification_element         = Friend_Request 
 export type Friend_Request = {
         "id"   : number  ,
-        "To"   : anyUser ,
-        "From" : anyUser ,
+        "To"   : anyUser_Type ,
+        "From" : anyUser_Type ,
         "Time" : {"duration" : number , "Unite" : TimeUnites},
-        "Seen" : boolean  ,
-        "Accepted" : boolean,
-        "Refused"  : boolean, 
+        "Seen"     : boolean  ,
+        "Accepted" : boolean  ,
+        "Refused"  : boolean  , 
         "Type"     : "Friend_Request"
 }
 export type Notifications = (Notification_element)[];

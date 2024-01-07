@@ -4,7 +4,7 @@
 // L => Lang   4 points
 // T => Types  4 points
 export type ComponentPattern_Check = {
-    Design  : 0 | 1 | 2 | 3 | 4 | 5
+    Design  : 0 | 1 | 2 | 3 | 4 | 5 | 6
     Code    : 0 | 1 | 2 | 3 | 4 | 5
     Info    : 0 | 1 | 2 ,
     Lang    : 0 | 1 | 2 | 3 | 4 ,

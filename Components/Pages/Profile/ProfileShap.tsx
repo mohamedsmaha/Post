@@ -4,10 +4,10 @@ import { Profile_Model } from '@/Helpers/Redux_models/Profile/Profile_Class'
 import { APP_Folders } from '@/Static_Data/APP_Folders'
 import "@/Scss/Pages/Profile/ProfileShap/ProfileShap.css"
 import { Cake, Favorite, Home, MoreHoriz, PersonAdd, PersonRemove, Phone } from '@mui/icons-material'
-import FeedPosts from '../Home/FeedPosts'
 import { Box_info_keys, anyUser_Type } from '@/Redux/Modules/User/UserTypes'
 import { Translate } from '@/Helpers/Translate'
 import CreatePost from '@/Components/Commen/Post/Create_Post/Create_Post'
+import FeedPosts from '@/Components/Commen/Feed_Posts/FeedPosts'
 const arr = [
     { id: 5, Username: 'Emily Brown', img: '6.jpeg' },
     { id: 9, Username: 'Isaac Moore', img: '10.jpeg' },

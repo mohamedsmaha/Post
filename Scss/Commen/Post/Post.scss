@@ -170,14 +170,55 @@
         
     }
 }
-.Post_Component {
+@mixin Component{
     margin: pxtoem(10px) 0px;
+    width: 100%;
     @include border(10px);
+}
+// Components 
+.Null_Post_Component{
+    font-size: pxtoem(16px);
+    font-weight: 500;
+    text-align: center;
+    margin: pxtoem(30px) 0px ;
+    text-transform: capitalize;
+    
+}
+.Loading_Post_Component{
+    @include Userinfo();
+    @include Component();
+    .Content{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        .background{
+            margin: pxtoem(10px) 0px;
+            width: 95%;
+            height: pxtoem(200px);
+            object-fit: contain;
+            @include flex_row();
+            @include flex_center();
+
+        }
+        animation: Loading_animation 2s infinite forwards    ;
+        -webkit-animation: Loading_animation 2s infinite forwards    ;
+}    
+
+}
+.Post_Component {
     @include Newtype();
     @include Share();
-    width: 100%;
+    @include Component();
 }
 // Colors
+body.ColorTheme_1 .Null_Post_Component{color: $first_color;}
+body.ColorTheme_1 .Loading_Post_Component{
+    background-color: $secound_color;
+    .Content .background{
+        background-color: #8080803d;
+        @include Loader($first_color)
+    }
+}
 body.ColorTheme_1 .Post_Component{
     background-color: $secound_color;
     .UserInfo{
@@ -200,4 +241,8 @@ body.ColorTheme_1 .Post_Component{
     .Share .New {border-color: $eight_color;}
 }
 // Key Frames
-
+@keyframes Loading_animation{
+    0%{opacity: 100%;}
+    50%{opacity: 50%;}
+    100%{opacity: 100%;}
+}

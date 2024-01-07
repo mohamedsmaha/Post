@@ -9,7 +9,7 @@ let Components_Tree : {[key in Components_Name] :  Components_Name[]|null }= {
     "Rightbar"        : null ,
     "Sidebar"         : null ,
     "Topbar"          : ["Main_Search_Box" , "Notification"],
-    "FeedPosts"        : ["Post"],
+    "FeedPosts"       : ["Post"],
     "ProfileShap"     : ["CreatePost" , "FeedPosts"],
     "Login"           : null ,
     "Register"        : ["SuccessProcess" , "ConfiremData"],

@@ -1,9 +1,6 @@
-"use client"
-import React from 'react'
-import Post from '@/Components/Commen/Post/Post'
-import "@/Scss/Pages/Home/FeedPost/FeedPost.css"
-import { PostData } from '@/Redux/Modules/Post/PostTypes'
-const arr : PostData[]= [
+import { NextResponse } from "next/server"
+
+const Friends  =[
     { 
         "main_post" :{
             "id"    : 1,
@@ -51,14 +48,6 @@ const arr : PostData[]= [
     },
 ]
 
-function FeedPosts() {
-    return (
-        <div className='FeedPosts'>
-            {arr.map(item=>(
-                <Post key={item.main_post.id} Post={item}/>
-            ))}
-        </div>
-    )
+export  async function POST(){
+    return NextResponse.json(Friends)
 }
-
-export default FeedPosts

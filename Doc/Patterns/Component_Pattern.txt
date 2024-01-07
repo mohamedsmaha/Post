@@ -17,6 +17,7 @@
                     D.6.4 Color
                     D.6.5 Lang
                     D.6.6 Keyframes
+            F. Handel Loading 
             E. Class Name:
                 E.1 The main div should be named ${Component_Name}_Component.
                 E.2 Capitalize all class names.

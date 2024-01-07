@@ -1,5 +1,5 @@
 "use client"
-import { Class, MoreVert } from "@mui/icons-material";
+import { Class, LocalDiningOutlined, MoreVert } from "@mui/icons-material";
 import "@/Scss/Commen/Post/Post.css"
 import { Static_images } from "@/Static_Data/Images";
 import { APP_Folders } from "@/Static_Data/APP_Folders";
@@ -153,6 +153,16 @@ function Post(props: PropsType) {
                     
             }
         },
+        Select_Option(Kind) {
+            switch(Kind){
+                case("Normal"):
+                    return Normal_post()
+                case("Loading"):
+                    return Loading_Post()
+                case ("Null"):
+                    return Null_post()
+            }
+        },
     }
 // Small Component
     function Share_type(){
@@ -281,25 +291,53 @@ function Post(props: PropsType) {
             </div>
         </>
     }
-    return (
-        
-        <>
-        <div className={`Post_Component`} ref={Post_div_Ref} onMouseMove={(e: any) => Helper_Functions.Post_Mouse_Move(e.nativeEvent)}>
-            {Helper_Functions.SelectShap(Post.main_post.type)}
-            <MemoCommentBox Vaisablity={CommentBox_ClassName}/>
-        </div>
-        {ShowPostForm? <PostForm 
-                                    key="res" 
-                                    Close = {() => SetShowPostForm(false)} 
-                                    Method= {PostFormMethod}
-                                    SharePost={{"Data" : Post , "Image" :Helper_Functions.PostFormImage()}}/> : null}
-        {
-            Show_Delete_post_Card ? 
-                <Delete_Card Close_Function={() => SetDeleteCard(false)} 
-                            User = {Post.main_post.User}/> :
-                null
+    // Kinds or Options
+        function Normal_post(){
+        return <>
+            <div className={`Post_Component`} ref={Post_div_Ref} onMouseMove={(e: any) => Helper_Functions.Post_Mouse_Move(e.nativeEvent)}>
+                {Helper_Functions.SelectShap(Post.main_post.type)}
+                <MemoCommentBox Vaisablity={CommentBox_ClassName}/>
+            </div>
+            {ShowPostForm? <PostForm 
+                                        key="res" 
+                                        Close = {() => SetShowPostForm(false)} 
+                                        Method= {PostFormMethod}
+                                        SharePost={{"Data" : Post , "Image" :Helper_Functions.PostFormImage()}}/> : null}
+            {
+                Show_Delete_post_Card ? 
+                    <Delete_Card Close_Function={() => SetDeleteCard(false)} 
+                                User = {Post.main_post.User}/> :
+                    null
+            }
+            </>
         }
-        </>
+        function Loading_Post(){
+            return <>
+                <div className="Loading_Post_Component">
+                    <div className="UserInfo">
+                        <div className="Info">
+                            <img src= {`${Static_images.unknown}`}></img>
+                        </div>
+                    </div>
+                    <div className="Content">
+                        <div className="background">
+                            <span className="loader"></span>
+                        </div>
+                    </div>
+                </div>
+            </>
+        }
+        function Null_post(){
+            return <>
+                <div className="Null_Post_Component">
+                    . Sorry there is no more posts for you today .
+                </div>
+            </>
+        }
+    return (
+    <>
+        {Helper_Functions.Select_Option(props.Kind)}
+    </>
     );
 }
 
