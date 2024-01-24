@@ -1,4 +1,4 @@
-import { PostData } from "@/Redux/Modules/Post/PostTypes"
+import { Create_Post, PostData, Post_Type } from "@/Redux/Modules/Post/PostTypes"
 
 export type PostFormMethod   = "SharePost" | "CreatePost" | "Updata"
 export type Helper_Functions = {
@@ -7,6 +7,9 @@ export type Helper_Functions = {
     Show_Contentinfo_Videos : (element : HTMLInputElement)  => void ,
     Handel_Hide_Click       : (element : React.MouseEvent<HTMLDivElement, MouseEvent>) => void,
     Handel_Textarea_onchange: (element : HTMLTextAreaElement)=> void ,
+    Handel_Post_Click       : () => void,
+    Get_Data_Ready          : () => Create_Post,
+    Type                    : () => Post_Type
 }
 export type Props_type = {
     Close     :  () => void , 

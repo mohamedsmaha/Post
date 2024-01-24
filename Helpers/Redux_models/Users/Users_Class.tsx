@@ -1,6 +1,6 @@
 import { useAppSelector } from "@/Redux/Hooks"
-import { info } from "@/Redux/Modules/Profile/ProfileTypes"
-import { User_Type } from "@/Redux/Modules/User/UserTypes"
+
+import { Box_info_type, UserAction, User_Type } from "@/Redux/Modules/User/UserTypes"
 type options = "default_Redux" | "profile"
 export class User{
     public defualt :options = "default_Redux"
@@ -31,7 +31,7 @@ export class User{
         return this.find().Username
     }
     GetBoxinfo(){
-        let info : info = {
+        let info : Box_info_type = {
             "Status" : this.find().Status ,
             "Born"   : this.find().birthday,
             "From"   : this.find().From ,
@@ -39,6 +39,15 @@ export class User{
         }
         info = Object.fromEntries(Object.entries(info).filter(([_, v]) => v !== undefined));
         return info
+    }
+    Get_User_Action():UserAction | undefined{
+        if(this.find().ApiToken == undefined){return undefined}
+        else{
+            return {
+                "UserID"    : this.find().id         ,
+                "UserToken" : this.find().ApiToken as string
+            }
+        }
     }
 }
 export const User_Model = new User

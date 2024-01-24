@@ -1,3 +1,11 @@
+.Null_Post_Component {
+  font-size: 1em;
+  font-weight: 500;
+  text-align: center;
+  margin: 1.875em 0px;
+  text-transform: capitalize;
+}
+
 .Loading_Post_Component {
   margin: 0.625em 0px;
   width: 100%;
@@ -94,32 +102,19 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  animation: Loading_animation 2s infinite forwards;
+  -webkit-animation: Loading_animation 2s infinite forwards;
 }
 .Loading_Post_Component .Content .background {
   margin: 0.625em 0px;
   width: 95%;
-  height: 500px;
+  height: 12.5em;
   -o-object-fit: contain;
      object-fit: contain;
-  background-color: red;
-}
-.Loading_Post_Component .Content .background .loader {
-  width: 48px;
-  height: 48px;
-  border: 5px solid white;
-  border-bottom-color: transparent;
-  border-radius: 50%;
-  display: inline-block;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
-}
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .Post_Component {
@@ -672,12 +667,35 @@
   -o-border-radius: 3.125em;
 }
 
+body.ColorTheme_1 .Null_Post_Component {
+  color: #1877f2;
+}
+
 body.ColorTheme_1 .Loading_Post_Component {
   background-color: white;
 }
 body.ColorTheme_1 .Loading_Post_Component .Content .background {
-  background-color: rgba(128, 128, 128, 0.2588235294);
+  background-color: rgba(128, 128, 128, 0.2392156863);
 }
+body.ColorTheme_1 .Loading_Post_Component .Content .background .loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #1877f2;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 body.ColorTheme_1 .Post_Component {
   background-color: white;
 }
@@ -718,6 +736,17 @@ body.ColorTheme_1 .Post_Component .Share .New {
   border-color: rgba(0, 0, 0, 0.408);
 }
 
+@keyframes Loading_animation {
+  0% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 50%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
 .PostForm_Component {
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
@@ -813,15 +842,10 @@ body.ColorTheme_1 .Post_Component .Share .New {
   width: 100%;
 }
 .PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info .ShowMedia img {
-  width: 31.25em;
-  height: 31.25em;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 0em;
-  -webkit-border-radius: 0em;
-  -moz-border-radius: 0em;
-  -ms-border-radius: 0em;
-  -o-border-radius: 0em;
+  max-width: 100%;
+  min-width: 31.25em;
+  min-height: 31.25em;
+  max-height: 37.5em;
 }
 .PostForm_Component .Container .Main_Form > .Bottom form.Content_info_Post .Info textarea {
   min-height: 5em;
@@ -1062,7 +1086,7 @@ body.ColorTheme_1 .Post_Component .Share .New {
 @media (max-width: 500px) {
   .PostForm_Component .Container {
     width: 95vw;
-    height: 80vh;
+    height: 50vh;
     border-radius: 0.625em;
     -webkit-border-radius: 0.625em;
     -moz-border-radius: 0.625em;

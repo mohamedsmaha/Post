@@ -9,7 +9,7 @@ const initialState : UserRedux = {
     loading : false ,
     error   : null  ,
     data    : { // initial data for testing
-        "ApiToken"    : 12 ,
+        "ApiToken"    : "12" ,
         "Email"       : "mohamedsabrymohamedahmed@gmail.com",
         "Phonenumber" : "01015556737" , 
         "Username"    : "Mohamed" ,

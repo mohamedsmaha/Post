@@ -14,7 +14,8 @@ export const Fetch_Posts = createAsyncThunk('FetchPosts', async (filter?: Post_F
     body: JSON.stringify({ filter }),
     };
 
-    const results = await fetch(`${API_URL.Posts.GET_Posts}`, requestOptions);
+    const results = await fetch(`${API_URL.Posts.GET_Posts()}`, requestOptions);
     const data = await results.json();
     return data;
 });
+export const Send_Post_Action = createAsyncThunk('Send_Post_Action' , async () => {})

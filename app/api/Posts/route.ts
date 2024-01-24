@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 
-const Friends  =[
+const Posts  =[
     { 
         "main_post" :{
             "id"    : 1,
@@ -36,7 +36,7 @@ const Friends  =[
     },
     {
         "main_post" :{
-            "id"   : 1,
+            "id"   : 3,
             "Data" : {"number" : 3 , "unite" : "Weeks"} ,
             "Reactions":{"Details" : [] , "numbers" : {"order" : {"first" : "Like" , "Third" : null , "secound" : null} , "total" : 1200}},
             "User"     : {"Username" : "Ali Ahemd" , "id" : 1 , "img" : "6.jpeg"},
@@ -49,5 +49,5 @@ const Friends  =[
 ]
 
 export  async function POST(){
-    return NextResponse.json(Friends)
+    return NextResponse.json(Posts)
 }

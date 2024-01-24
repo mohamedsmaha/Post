@@ -7,7 +7,12 @@
             justify-content: center;
             font-size: pxtoem(9px);
             width: 100%;
-            img {@include person_pic(500px , 0px)}
+            img {
+                max-width: 100%;
+                min-width : pxtoem(500px);
+                min-height: pxtoem(500px);
+                max-height: pxtoem(600px);
+            }
         }
 }
 @mixin Textarea(){
@@ -127,7 +132,7 @@
     .PostForm_Component {
         .Container {
             width: 95vw;
-            height: 80vh;
+            height: 50vh;
             @include border(10px);   
             font-size: pxtoem(12px);
 

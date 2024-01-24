@@ -6,14 +6,14 @@ export type PostRedux = {
     error   : Error | null | string ,
     data    : PostData[]
 }
-export type Post_Type    = "Share" | "New"
+export type Post_Type    = "Share" | "New" | "Update"
 export type Post_kind    = "Content"
 export type ReactsIcons  = "Like" | "Love" 
 export type time_unite   = "Day" | "Year" | "Month" | "Week"
 export type sum          = 's'|''
 export type time         = {"number" : number , "unite" : TimeUnites }
 export type Content_info = {
-    text  : string ,
+    text ?: string ,
     img  ?: string | null,
     vidoe?: string | null
 }
@@ -46,5 +46,22 @@ export type Loading_post = {
 }
 
 // Filters 
+export type Create_Box  = {
+    Data      : Create_Box ,
+    User_Id   : Number
+    Post_Type : Post_Type    ,
+    User_Token: String
+}
+export type Create_Post = {
+    Post_Kind : Post_kind 
+    Time      : Date         ,
+    info      : Content_info ,
+}
+export type Share_post = {
+    Post_Kind : Post_kind 
+    Time      : Date      ,
+    info      : Content_info,
+    Post_Id   : Number    , 
+}
 export type Post_Filter = {
 }

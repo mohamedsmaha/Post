@@ -11,7 +11,7 @@ export type User_Type = {
     secound_img:string
     lang       :avaliable_lang,
     colortheme :number,
-    ApiToken   :number,
+    ApiToken   ?:string,
     Status     ?:"Married" | "Single" 
     From       ?: string
 }
@@ -24,6 +24,10 @@ export type UserRedux = {
     loading : boolean ,
     error   : Error | string | null
     data    : User_Type
+}
+export type UserAction = {
+    UserID   :number ,
+    UserToken:string
 }
 export type Box_info_keys = "Status" | "From" | "Born" | "Phone"
 export type Box_info_type = {

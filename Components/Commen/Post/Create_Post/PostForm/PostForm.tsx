@@ -6,6 +6,7 @@ import { CreatePostElementsLangType } from '@/Lang/Types/Components/CreatePost';
 import { Translate_Object } from '@/Helpers/Translate';
 import { Helper_Functions, Props_type } from './PostFormTypes';
 import { Close } from '@mui/icons-material';
+import { Create_Post, Post_Type, Post_kind } from '@/Redux/Modules/Post/PostTypes';
 // Description 
   // Component Deal with Updata or Share or insert new  Post
 // Massions
@@ -14,8 +15,9 @@ function PostForm(props : Props_type) {
 // Lang
     const CreatePostObj= Translate_Object("CreatePost") as CreatePostElementsLangType;
 // Hooks 
-    const [imageUrl, setImageUrl] = useState<string | null>(null);
-    const [videoUrl, setVideoUrl] = useState<string | null>(null);
+    const [Kind     , SetKind    ] = useState<Post_kind>    ("Content")
+    const [imageUrl , setImageUrl] = useState<string | null>(null);
+    const [videoUrl , setVideoUrl] = useState<string | null>(null);
     const [Textare_content , SetTextareaContent] = useState<string | undefined>("")
     const text_ref:React.RefObject<HTMLTextAreaElement> = useRef(null)
     const Form_Ref :React.RefObject<HTMLDivElement>   = useRef(null)
@@ -59,6 +61,31 @@ function PostForm(props : Props_type) {
         },
         Handel_Textarea_onchange(element) {
           SetTextareaContent(element.value)
+        },
+        Type : ()=> {
+          
+          if(props.Method == "CreatePost"){return "New"}
+          if(props.Method == "Updata"){return "Update"}
+          else{return "Share"}
+        }
+        ,
+        Get_Data_Ready : () => {
+          let data_Box : Create_Post = {
+            Post_Kind : Kind  ,
+            Time      : new Date() ,
+            info      : 
+            {
+              img   : imageUrl ,
+              vidoe : videoUrl ,
+              text  : Textare_content 
+            }
+          }
+          return data_Box
+        },
+        Handel_Post_Click: ()=>{
+          let data_Box : Create_Post = Helper_Functions.Get_Data_Ready()
+          console.log(data_Box)
+          props.Close()
         },
     }
   function Textarea(){
@@ -115,7 +142,7 @@ function PostForm(props : Props_type) {
             <ShowMedia/>
             {props.Method == "CreatePost" ? <MediaInputs/> : null}
         </div>
-        <button>Post</button>
+        <button onClick={Helper_Functions.Handel_Post_Click}>{Helper_Functions.Type()}</button>
       </form>)
   }
   return (
