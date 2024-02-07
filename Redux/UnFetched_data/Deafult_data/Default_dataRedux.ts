@@ -5,7 +5,7 @@ import { DefaultDataReduxType } from "./Default_data_type";
 const initialState : DefaultDataReduxType = 
 {
     ColorTheme : 1 ,
-    Lang       : "Ar",
+    Lang       : "En",
     Login      : true
 }
 

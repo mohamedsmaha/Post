@@ -20,6 +20,9 @@ export type anyUser_Type= {
     Username : string ,
     img      : string 
 }
+export type User_API_Actions = {
+    
+}
 export type UserRedux = {
     loading : boolean ,
     error   : Error | string | null

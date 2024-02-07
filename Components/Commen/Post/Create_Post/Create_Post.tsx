@@ -48,7 +48,7 @@ function CreatePost(props : Props_type) {
                 <hr className="Createhr" />
                 {<Createoptions/>}
         </div>
-        {Form_Status ? <PostForm Method="CreatePost" Close={() => SetForm_Status(false)}/> : null}
+        {Form_Status ? <PostForm Method="New" Close={() => SetForm_Status(false)}/> : null}
         </>  
     )
 }

@@ -1,8 +1,8 @@
-import { PostData, Post_Type, Post_info,  ReactsIcons } from "@/Redux/Modules/Post/PostTypes"
+import { PostShap, Post_Type, Post_info,  ReactsIcons } from "@/Redux/Modules/Post/PostTypes"
 import {JSX } from "@emotion/react/jsx-runtime";
 import React, { MouseEvent } from "react";
 export type PropsType = {
-    Post : PostData ,
+    Post : PostShap ,
     Kind : Kind
 } 
 export type Kind         = "Loading"| 'Normal' | "Null"

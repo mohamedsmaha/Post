@@ -2,10 +2,10 @@
 import React, { useEffect } from 'react'
 import Post from '@/Components/Commen/Post/Post'
 import "@/Scss/Commen/FeedPosts/FeedPosts.css"
-import { PostData } from '@/Redux/Modules/Post/PostTypes'
+import { PostShap} from '@/Redux/Modules/Post/PostTypes'
 import { Posts_Model } from '@/Helpers/Redux_models/Posts/Posts.Class'
-import { Fetch_Posts } from '@/Redux/Modules/Post/PostFetch'
 import { useAppDispatch, useAppSelector } from '@/Redux/Hooks'
+import { useDispatch } from 'react-redux'
 // const arr : PostData[]= [
 //     { 
 //         "main_post" :{
@@ -53,10 +53,10 @@ import { useAppDispatch, useAppSelector } from '@/Redux/Hooks'
 //         "user_interaction" : {"React" : "Love"}
 //     },
 // ]
-const emptypost : PostData=     {
+const emptypost : PostShap=     {
         "main_post" :{
             "id"   : -1 ,
-            "Data" : {"number" : 0 , "unite" : "Weeks"} ,
+            "Date" : {"number" : 0 , "unite" : "Weeks"} ,
             "Reactions": {"Details" : [] , "numbers" : {"order" : {"first" : null , "Third" : null , "secound" : null} , "total" :0}},
             "User"     : {"Username" : "NUll" , "id" : 1 , "img" : "Null"},
             "info"     : {"text" : 'Loading'},
@@ -68,14 +68,17 @@ const emptypost : PostData=     {
 function FeedPosts() {
 
     const { loading, error, data } = Posts_Model.Get_Data();
-    Posts_Model.call_data()
+    const dispatch = useAppDispatch()
+    useEffect(() => {
+        Posts_Model.Action_ON_Post(dispatch , {} , "Select")
+    },[])
     return (
         <div className='FeedPosts'>
             {                data.map((item) => (
                 <Post key={item.main_post.id} Post={item} Kind="Normal" />
                 ))}
-        {loading ? <Post key={"loading"} Post={emptypost} Kind="Loading" /> : null}
-        {!loading && (
+        {loading.Select ? <Post key={"loading"} Post={emptypost} Kind="Loading" /> : null}
+        {!loading.Select && (
             <>
             {error !== null ? (
                 <Post key={emptypost.main_post.id} Post={emptypost} Kind="Null" />

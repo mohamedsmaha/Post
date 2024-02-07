@@ -41,7 +41,7 @@
         }
 }
 @mixin Content_info_Post(){
-    form.Content_info_Post{
+    div.Content_info_Post{
         width: 100%;
         height: 100%;
         @include flex_column();

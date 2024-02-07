@@ -1,13 +1,17 @@
 const initial = "http://localhost:3000/api"
 export const API_URL : API_URL= {
     "Posts" : {
-        "GET_Posts"   : () => {return `${initial}/Posts`} , 
-        "Post_Action" : () => {return `${API_URL.Posts.GET_Posts()}/edit`}
+        "Select"           : () => {return `${initial}/Posts`} , 
+        "Create"           : () => {return `${API_URL.Posts.Select()}/Create`} ,
+        "Update"           : () => {return `${API_URL.Posts.Select()}/Update`} ,
+        "Delete"           : () => {return `${API_URL.Posts.Select()}/Delete`}
     }
 }
 type API_URL = {
     "Posts" : {
-        "GET_Posts"  : () => string ,
-        "Post_Action": () => string,
+        "Select"     : () => string ,
+        "Create"     : () => string ,
+        "Update"     : () => string ,
+        "Delete"     : () => string
     }
 }

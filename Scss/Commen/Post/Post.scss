@@ -20,6 +20,8 @@
 }
 @mixin Content() {
     .Content {
+        @include flex_column();
+        justify-content: center;
         .Text {
             margin: 0px pxtoem(10px);
             font-size: pxtoem(15px);

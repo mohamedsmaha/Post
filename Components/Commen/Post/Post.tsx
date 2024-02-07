@@ -7,7 +7,7 @@ import { Translate, Translate_Object } from "@/Helpers/Translate";
 import { PostElementsLangType } from "@/Lang/Types/Components/Post";
 import { Content, HTMLDivElementRef, Helper_Functions, PropsType, UserInfo } from "./PostTypes";
 import { useEffect, useRef, useState } from "react";
-import { ReactsIcons } from "@/Redux/Modules/Post/PostTypes";
+import { Post_Type, ReactsIcons } from "@/Redux/Modules/Post/PostTypes";
 import React from "react";
 import { StaticWordsElementsLangType } from "@/Lang/Types/Static_Words";
 import { User_Model } from "@/Helpers/Redux_models/Users/Users_Class";
@@ -16,7 +16,6 @@ import Link from "next/link";
 import PostForm from "./Create_Post/PostForm/PostForm";
 import { MemoCommentBox } from "./CommentsBox/CommentsBox";
 import { CommentsBox_Vaisablity } from "./CommentsBox/CommentBoxTypes";
-import { PostFormMethod } from "./Create_Post/PostForm/PostFormTypes";
 import { Handel_click_outside_thetarget } from "@/Helpers/Helper Functions/Handel_click_outside_TheTarget";
 import Delete_Card from "./DeleteCard/Delete_Card";
 
@@ -38,7 +37,7 @@ function Post(props: PropsType) {
     const [CommentBox_ClassName    , SetCommentBoxClassName] = useState<CommentsBox_Vaisablity>(null)
     const [ShowPostForm            , SetShowPostForm     ]   = useState<Boolean>(false)
     const [Show_Post_Setting       , Set_PostSetting       ] = useState<Boolean>(false)
-    const [PostFormMethod          , SetPostFormMethod     ] = useState<PostFormMethod>("SharePost")
+    const [PostFormMethod          , SetPostFormMethod     ] = useState<Post_Type>("Share")
     const [Show_Delete_post_Card   , SetDeleteCard         ] = useState<Boolean>(false)
     const Reacts_Box_Ref     :HTMLDivElementRef        = useRef(null)
     const Like_Action_Box_Ref:HTMLDivElementRef        = useRef(null)
@@ -134,14 +133,14 @@ function Post(props: PropsType) {
         },
         PostFormImage() {
             switch (PostFormMethod){
-                case "SharePost" :
+                case "Share" :
                     return(
                         <div className="New">
                             <UserInfo Static={true} Post_data={Post.Share_post ? Post.Share_post: Post.main_post}/>
                             <Content  Post_data={Post.Share_post ? Post.Share_post: Post.main_post}/>
                         </div>
                         )
-                case "Updata" : 
+                case "Update" : 
                     return(
                         <div className="New">
                             {Post.Share_post ? <UserInfo Post_data={Post.Share_post} /> : null}
@@ -204,7 +203,7 @@ function Post(props: PropsType) {
                     </Link>
                     <span className="Username">{Post_data.User.Username}</span>
                     <span className="Time">
-                        {  Static_Words.Time(Post_data.Data.number , Post_data.Data.unite)}
+                        {  Static_Words.Time(Post_data.Date.number , Post_data.Date.unite)}
                     </span>
                 </div>
                 {  ( props.Static != true && Post_data.User.id == User_Model.GetId() ) ? // Check if this user own the post 
@@ -221,7 +220,7 @@ function Post(props: PropsType) {
         return(
             <div className="Content">
                 {props.Updata != true ? <span className="Text">{Post_data.info.text}</span> : null}
-                {Post_data.info.img   ? <img src={`${APP_Folders.Posts("images")}/${Post_data.info.img}`} alt="" /> : null }
+                {Post_data.info.img   ? <img src={`${Post_data.info.img}`} alt="" /> : null }
                 {Post_data.info.vidoe ? <video src = {`${APP_Folders.Posts("videos")}/${Post_data.info.vidoe}`} /> : null}
             </div>
         )
@@ -235,7 +234,7 @@ function Post(props: PropsType) {
                     </div>
                     <span className="ReactsNumber">{PostLangObj.Likes(Post.main_post.Reactions.numbers.total)}</span>
                 </div>
-                <span className="Comments">
+                <span className="Comments" onClick={() => {Helper_Functions.Handel_CommentBox_ClassName()}}>
                     {PostLangObj.Comments(1200)}
                 </span>
             </div>
@@ -263,7 +262,7 @@ function Post(props: PropsType) {
                 <Like></Like>
                 <div className="Item" onClick={() => Helper_Functions.Handel_CommentBox_ClassName()}>{Translate("Comment")}</div>
                 <div className="Item" onClick={() => 
-                                    {SetShowPostForm(true)  , SetPostFormMethod("SharePost") }}
+                                    {SetShowPostForm(true)  , SetPostFormMethod("Share") }}
                                     >
                                     {Translate("Share")}
                 </div>
@@ -276,7 +275,7 @@ function Post(props: PropsType) {
                 <div className="container">
                     <ul>
                         <li onClick={()=>{
-                            SetPostFormMethod("Updata")
+                            SetPostFormMethod("Update")
                             SetShowPostForm(true)
                             Set_PostSetting(false)
                         }}>Updata</li>
@@ -306,7 +305,7 @@ function Post(props: PropsType) {
             {
                 Show_Delete_post_Card ? 
                     <Delete_Card Close_Function={() => SetDeleteCard(false)} 
-                                User = {Post.main_post.User}/> :
+                                User = {Post.main_post.User} Post_id={props.Post.main_post.id}/> :
                     null
             }
             </>
