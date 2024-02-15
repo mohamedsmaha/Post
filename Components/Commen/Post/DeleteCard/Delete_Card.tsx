@@ -13,7 +13,7 @@ function Delete_Card(props : Props) {
         DELETE: () => {
             let Data : Delete_Post = {
                 User    : UserAction , 
-                Post_id : 1
+                Post_id : props.Post_id
             }
             Posts_Model.Action_ON_Post(dispatch , Data , "Delete")
             props.Close_Function()

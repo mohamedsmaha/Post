@@ -17,7 +17,7 @@ export default function Home() {
         <Sidebar/>
         <div className="Feed">
           <CreatePost Page="Home" />
-          <FeedPosts/>
+          <FeedPosts Page="Home"/>
         </div>
         <Rightbar/>
       </div>

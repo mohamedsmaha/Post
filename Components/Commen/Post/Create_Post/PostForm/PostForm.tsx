@@ -6,11 +6,12 @@ import { CreatePostElementsLangType } from '@/Lang/Types/Components/CreatePost';
 import { Translate_Object } from '@/Helpers/Translate';
 import { Content_HelperFunction, Helper_Functions, Props_type } from './PostFormTypes';
 import { Close } from '@mui/icons-material';
-import { Content_info, Create_Post, Post_Type, Post_info, Post_kind } from '@/Redux/Modules/Post/PostTypes';
+import { Content_info, Create_Post, Post_Type, Post_info, Post_kind, Update_Post } from '@/Redux/Modules/Post/PostTypes';
 import { UserAction } from '@/Redux/Modules/User/UserTypes';
 import { Posts_Model } from '@/Helpers/Redux_models/Posts/Posts.Class';
 import { create } from 'domain';
 import { useAppDispatch } from '@/Redux/Hooks';
+import { UploadedFile } from '@/Ts/File';
 // Description 
   // Component Deal with Updata or Share or insert new  Post
 // Massions
@@ -51,9 +52,15 @@ function PostForm(props : Props_type) {
           // Helper Functions
           const Content_HelperFunction : Content_HelperFunction= {
               Show_Contentinfo_image(element) {
-              const file = element.files?.[0];
-              const url = file ? URL.createObjectURL(file) : null;
-              setImageUrl(url);
+              const file = element.files ? element.files[0] : null;
+              if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                  const imageUrl = event.target?.result as string | null
+                  setImageUrl(imageUrl);
+                };
+                reader.readAsDataURL(file);
+              }
               setVideoUrl(null)
               },
               Show_Contentinfo_Videos(element) {
@@ -65,8 +72,9 @@ function PostForm(props : Props_type) {
               Handel_Textarea_onchange(element) {
                 SetTextareaContent(element.value)
               },
-              GetReady:()=>{
-              const info = (): Content_info => {
+              Update  : () => {} ,
+              New_Share: () => {              
+                const info = (): Content_info => {
                   let array: { [Key:string] : string | null } = {
                       "img": imageUrl,
                       "video": videoUrl,
@@ -83,23 +91,20 @@ function PostForm(props : Props_type) {
               const SharePostId = () : number => {
                   return props.SharePost?.Data.main_post.id as number
               }
-              const Create : Create_Post = {
+              const Create : Create_Post= {
                   User   : UserAction   , 
                   Data   : new Date     ,
                   info   : info()       ,
                   kind   : "Content"    ,
                   type   : props.Method ,
                 }
-                if(props.Method == "Share"){Create["SharePostId"] = SharePostId()}
-                // Posts_Model.Action_ON_Post(Create)
+              if(props.Method == "Share"){Create["SharePostId"] = SharePostId()}
+              Posts_Model.Action_ON_Post(dispatch , Create , "Insert")
+              },
+              GetReady:()=>{
                 props.Close();
-                if(Create["type"] == "New" || Create["type"] == "Share")
-                {
-                  Posts_Model.Action_ON_Post(dispatch , Create , "Insert")
-                }
-                else{
-                  Posts_Model.Action_ON_Post(dispatch , Create , "Update")
-                } 
+                if(props.Method == "New" || props.Method == "Share"){Content_HelperFunction.New_Share()}
+                if(props.Method == "Update"){Content_HelperFunction.Update}
                 return;
               }
           }

@@ -26,6 +26,7 @@ import Delete_Card from "./DeleteCard/Delete_Card";
     // Need to deal with every scenario in the post data if it exist or not 
     // when Clicking on the image must be show the post in big screen
 function Post(props: PropsType) {
+
 // constants 
     const {Post}    = props
     const Avaliable_Reacts: ReactsIcons[] = ["Like", "Love"];
@@ -77,9 +78,9 @@ function Post(props: PropsType) {
         },
         TopReactions(){
             return <>
-                {Helper_Functions.Reactions_images(Post.main_post.Reactions.numbers.order.first)}
-                {Helper_Functions.Reactions_images(Post.main_post.Reactions.numbers.order.secound)}
-                {Helper_Functions.Reactions_images(Post.main_post.Reactions.numbers.order.Third)}
+                {Helper_Functions.Reactions_images(Post.main_post.Public_Interactions.numbers.order.first)}
+                {Helper_Functions.Reactions_images(Post.main_post.Public_Interactions.numbers.order.secound)}
+                {Helper_Functions.Reactions_images(Post.main_post.Public_Interactions.numbers.order.Third)}
             </>
         },
         Handel_React_onclick(React){
@@ -173,7 +174,7 @@ function Post(props: PropsType) {
                     {
                         Post.Share_post ?
                         <>
-                        <UserInfo Post_data={Post.Share_post}/>
+                        <UserInfo Static={true} Post_data={Post.Share_post}/>
                         <Content  Post_data={Post.Share_post}/>
                         </> : null
                     }
@@ -228,15 +229,19 @@ function Post(props: PropsType) {
     function Analysis(){
         return(
             <div className="Analysis">
-                <div className="Likes">
-                    <div className="Reactions">
-                        {Helper_Functions.TopReactions()}
-                    </div>
-                    <span className="ReactsNumber">{PostLangObj.Likes(Post.main_post.Reactions.numbers.total)}</span>
-                </div>
-                <span className="Comments" onClick={() => {Helper_Functions.Handel_CommentBox_ClassName()}}>
-                    {PostLangObj.Comments(1200)}
-                </span>
+                {Post.main_post.Public_Interactions.numbers.total > 0 ?                 
+                    <div className="Likes">
+                        <div className="Reactions">
+                            {Helper_Functions.TopReactions()}
+                        </div>
+                        <span className="ReactsNumber">{PostLangObj.Likes(Post.main_post.Public_Interactions.numbers.total)}</span>
+                    </div>:null
+                }
+                {Post.main_post.Public_Interactions.Comments > 0 ?                 
+                    <span className="Comments" onClick={() => {Helper_Functions.Handel_CommentBox_ClassName()}}>
+                        {PostLangObj.Comments(Post.main_post.Public_Interactions.Comments)}
+                    </span> : null
+                }
             </div>
         )
     }

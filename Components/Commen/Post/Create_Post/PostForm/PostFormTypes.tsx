@@ -11,6 +11,8 @@ export type Content_HelperFunction ={
         Show_Contentinfo_Videos : (element : HTMLInputElement)  => void ,
         Handel_Textarea_onchange: (element : HTMLTextAreaElement)=> void ,
         GetReady                : () => void ,
+        New_Share               : () => void ,
+        Update                  : () => void
 }
 export type Props_type = {
     Close     :  () => void , 

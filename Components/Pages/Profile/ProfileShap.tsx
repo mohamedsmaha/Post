@@ -155,7 +155,7 @@ function ProfileShap(props : Props) {
                     </div>
                     <div className="right">
                         <CreatePost Page="Profile" />
-                        <FeedPosts/>
+                        <FeedPosts Page="Profile"/>
                     </div>
                 </div>
             )

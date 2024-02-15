@@ -24,15 +24,15 @@ export type Top_Three_Reacts = {
     secound : ReactsIcons | null ,
     Third   : ReactsIcons | null
 }
-export type Reactions    ={
-    numbers : {order : Top_Three_Reacts , total : number } ,
-    Details : {user : anyUser_Type   , React : ReactsIcons}[]
+export type Public_Interactions   ={
+    numbers  : {order : Top_Three_Reacts , total : number } ,
+    Comments : number 
 }
 export type Post_info = {
     id          : number,
     kind        : Post_kind,
     info        : Post_Data  ,
-    Reactions   : Reactions     ,
+    Public_Interactions   : Public_Interactions      ,
     User        : anyUser_Type ,
     Date        : time,
     type        : Post_Type
@@ -57,9 +57,19 @@ export type Create_Post = {
     type : Post_Type        ,
     SharePostId ?: number 
 }
+export type Update_Post = {
+    User : UserAction       ,
+    kind : Post_kind        ,
+    info : Content_info     ,
+    Data : Date             ,
+    type : Post_Type        ,
+    SharePostId ?: number   
+}
 export type Delete_Post = {
     User    : UserAction     ,
     Post_id : Number
 }
 export type Post_Filter = {
+    User_Id ?: number
+    Post_Id ?: number
 }
