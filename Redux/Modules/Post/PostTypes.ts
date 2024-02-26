@@ -1,18 +1,17 @@
-import { TimeUnites } from "@/Ts/Time"
+import { time } from "@/Ts/Time"
 import { UserAction, anyUser_Type } from "../User/UserTypes"
 import { Loading_Action } from "@/Ts/LodingAction"
+import { ReactsIcons } from "@/Ts/ReactsIcons"
+import { CommentRedux } from "../Comments/CommentTypes"
 
 export type PostRedux = {
-    loading        : Loading_Action ,
+    loading        : Loading_Action        ,
     error          : Error | null | string ,
     data           : PostShap[]
 }
 export type Post_Type    = "Share" | "New" | "Update"
 export type Post_kind    = "Content"
-export type ReactsIcons  = "Like" | "Love" 
-export type time_unite   = "Day" | "Year" | "Month" | "Week"
 export type sum          = 's'|''
-export type time         = {"number" : number , "unite" : TimeUnites }
 export type Post_Data    = Content_info
 export type Content_info = {
     text ?: string ,
@@ -40,7 +39,8 @@ export type Post_info = {
 export type PostShap = {    
     main_post        : Post_info  ,
     Share_post      ?: Post_info  , 
-    user_interaction : {React : ReactsIcons | null}
+    user_interaction : {React : ReactsIcons | null} ,
+    Comments         : CommentRedux
 }
 export type Loading_post = {
     Loading_image : string
@@ -48,7 +48,7 @@ export type Loading_post = {
 }
 
 // Helpers
-// Create_post same as UpdatePost
+// Action on PostComponent
 export type Create_Post = {
     User : UserAction       ,
     kind : Post_kind        ,

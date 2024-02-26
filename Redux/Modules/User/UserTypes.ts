@@ -10,11 +10,12 @@ export type User_Type = {
     img        :string,
     secound_img:string
     lang       :avaliable_lang,
-    colortheme :number,
+    colortheme :colortheme_option,
     ApiToken   ?:string,
     Status     ?:"Married" | "Single" 
     From       ?: string
 }
+export type colortheme_option = 1
 export type anyUser_Type= {
     id       : number ,
     Username : string ,

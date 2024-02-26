@@ -4,7 +4,7 @@ import { Create_Post, Delete_Post, PostRedux, Post_Filter } from "@/Redux/Module
 import { Action_Keys } from "@/Ts/LodingAction";
 
 class Posts {
-    public Call_Fetch(fun1 : Function , fun2 : Function , Data : any ){
+    private Call_Fetch(fun1 : Function , fun2 : Function , Data : any ){
         fun1(fun2(Data))
     }
     private redux() {

@@ -1,0 +1,93 @@
+@import "../../Helper/all.scss";
+// Post Option
+@mixin info(){
+    >.info {
+            @include flex_column();
+            min-width: 50%;
+            max-width: 90%;
+            gap: pxtoem(3px);
+            .Up {
+                @include border(10px);
+                background-color: rgb(172 170 170 / 12%);
+                padding: pxtoem(6px);
+                gap: pxtoem(2px);
+                @include flex_column();
+                .NameAndTime {
+                    @include flex_row();
+                    gap: pxtoem(4px);
+                    align-items: center;
+        
+                    .Name {
+                        font-size: pxtoem(15px);
+                        font-weight: 500;
+                    }
+        
+                    .Time {
+                        font-size: pxtoem(12px);
+                    }
+                }
+            }
+            .Content {
+                margin-left: pxtoem(7px);
+                font-size: pxtoem(17px);
+                @include flex_column();
+                gap: pxtoem(5px);
+    
+                img {
+                    @include border(10px);
+                    @include square(300px);
+                    object-fit: cover;
+                }
+            }
+            .Actions {
+                background-color: white;
+    
+                .Reacts {
+                    @include flex_row();
+                    gap: pxtoem(12px);
+                    font-size: pxtoem(13px);
+    
+                    div {
+                        SVG {
+                            font-size: 13px;
+                            color: $seventh_color;
+                            cursor: pointer;
+                        }
+    
+                        @include flex_row();
+                        align-items: center;
+                        gap: pxtoem(2px);
+                    }
+    
+                }
+            }
+        }
+}
+@mixin Post_Comment(){
+    .Post_Comment{
+        @include flex_row();
+            gap: pxtoem(5px);
+            align-items: center;
+        
+            >img {
+                @include square(30px);
+                object-fit: cover;
+                @include border_pre(50%);
+                margin: 3px 0px;
+            }
+            >.Edit {
+                SVG {
+                    font-size: pxtoem(18px);
+                }
+            }
+            @include info();
+    }
+}
+// Main
+.Comment {
+    font-size: pxtoem(13px);
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 2px;
+    @include Post_Comment();
+}

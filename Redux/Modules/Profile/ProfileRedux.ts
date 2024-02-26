@@ -10,7 +10,7 @@ const initialState : ProfileRedux= {
     error   : null  ,
     data    : {
         user : {
-            "ApiToken"    : 12 ,
+            "ApiToken"    : "12" ,
             "Email"       : "mohamedsabrymohamedahmed@gmail.com",
             "Phonenumber" : "01015556737" , 
             "Username"    : "mohamed sabry" ,

@@ -1,17 +1,26 @@
 const initial = "http://localhost:3000/api"
+type Action   = "Select" | "Create" | "Update" | "Delete"  
+
 export const API_URL : API_URL= {
     "Posts" : {
-        "Select"           : () => {return `${initial}/Posts`} , 
-        "Create"           : () => {return `${API_URL.Posts.Select()}/Create`} ,
-        "Update"           : () => {return `${API_URL.Posts.Select()}/Update`} ,
-        "Delete"           : () => {return `${API_URL.Posts.Select()}/Delete`}
+        "Main"             : () => {return `${initial}/Posts`},
+    },
+    "Comments" : {
+        "Main"             : () => {return `${initial}/Comments`},
+    },
+    "Helper_Function" : {
+        "Normal_Action" : (key , Action ) => {return `${API_URL[key].Main()}/${Action}`}
     }
 }
-type API_URL = {
-    "Posts" : {
-        "Select"     : () => string ,
-        "Create"     : () => string ,
-        "Update"     : () => string ,
-        "Delete"     : () => string
+type Date_Structure = {     
+        "Main"       : () => string
     }
+type Helper_Function = {
+    Normal_Action : (Key : API_Sections , Action : Action) => string
+}
+type API_Sections = "Posts" | "Comments"
+type API_URL = {
+    "Posts"    : Date_Structure,
+    "Comments" : Date_Structure,
+    "Helper_Function" : Helper_Function 
 }

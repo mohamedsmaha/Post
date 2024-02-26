@@ -13,7 +13,12 @@ class Posts_DataBase_Class{
                             "kind" : "Content" ,
                             "type" : "New"
                         } ,
-                        "user_interaction" : {"React" : "Like"}
+                        "user_interaction" : {"React" : "Like"},
+                        "Comments" : {
+        "loading": {"Delete" : false , "Insert" : false , "Select" : false , "Update" : false} ,
+        "error": null,
+        "data" : [] ,
+                                        }
                     },
                     {
                         "main_post" :{
@@ -34,7 +39,12 @@ class Posts_DataBase_Class{
                             "kind"     : "Content",
                             "type"     : "New" 
                         } ,
-                        "user_interaction" : {"React" : null}
+                        "user_interaction" : {"React" : null},
+                        "Comments" : {
+        "loading": {"Delete" : false , "Insert" : false , "Select" : false , "Update" : false} ,
+        "error": null,
+        "data" : [] ,
+                                        }
                     },
                     {
                         "main_post" :{
@@ -46,7 +56,12 @@ class Posts_DataBase_Class{
                             "kind"     : "Content",
                             "type"     : "New" 
                         } ,
-                        "user_interaction" : {"React" : "Love"}
+                        "user_interaction" : {"React" : "Love"},
+                        "Comments": {
+        "loading": {"Delete" : false , "Insert" : false , "Select" : false , "Update" : false} ,
+        "error": null,
+        "data" : [] ,
+                            }
                     },
                 ]
     public Get(Data ?: Post_Filter): PostShap[] {
@@ -88,7 +103,12 @@ class Posts_DataBase_Class{
                 "kind" : "Content" ,
                 "type" : "New"
             } ,
-            "user_interaction" : {"React" : null}
+            "user_interaction" : {"React" : null},
+            "Comments" : {
+        "loading": {"Delete" : false , "Insert" : false , "Select" : false , "Update" : false} ,
+        "error": null,
+        "data" : [] ,
+                        }
         }
         new_post['main_post']['User']['id'] = data['User']['UserID']
         new_post['main_post']['info']       = data['info']

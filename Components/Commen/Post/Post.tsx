@@ -7,17 +7,18 @@ import { Translate, Translate_Object } from "@/Helpers/Translate";
 import { PostElementsLangType } from "@/Lang/Types/Components/Post";
 import { Content, HTMLDivElementRef, Helper_Functions, PropsType, UserInfo } from "./PostTypes";
 import { useEffect, useRef, useState } from "react";
-import { Post_Type, ReactsIcons } from "@/Redux/Modules/Post/PostTypes";
+import { Post_Type } from "@/Redux/Modules/Post/PostTypes";
 import React from "react";
 import { StaticWordsElementsLangType } from "@/Lang/Types/Static_Words";
 import { User_Model } from "@/Helpers/Redux_models/Users/Users_Class";
 import { App_links } from "@/Static_Data/Links";
 import Link from "next/link";
 import PostForm from "./Create_Post/PostForm/PostForm";
-import { MemoCommentBox } from "./CommentsBox/CommentsBox";
-import { CommentsBox_Vaisablity } from "./CommentsBox/CommentBoxTypes";
+import { MemoCommentBox } from "./PostCommentsBox/PostCommentsBox";
+import { PostCommentsBox_Vaisablity } from "./PostCommentsBox/PostCommentBoxTypes";
 import { Handel_click_outside_thetarget } from "@/Helpers/Helper Functions/Handel_click_outside_TheTarget";
 import Delete_Card from "./DeleteCard/Delete_Card";
+import { ReactsIcons } from "@/Ts/ReactsIcons";
 
 // Description 
     // This component manages and handles the interactions related to posting.
@@ -35,7 +36,7 @@ function Post(props: PropsType) {
     const [Like_action_Box_Text    , SetReactsBoxText]       = useState<ReactsIcons>(Post.user_interaction.React ? Post.user_interaction.React : Default_React)
     const [User_React              , SetUserReact    ]       = useState<ReactsIcons | null>(Post.user_interaction.React)
     const [Reacts_Box              , SetReactsBox    ]       = useState<boolean>(false)
-    const [CommentBox_ClassName    , SetCommentBoxClassName] = useState<CommentsBox_Vaisablity>(null)
+    const [CommentBox_ClassName    , SetCommentBoxClassName] = useState<PostCommentsBox_Vaisablity>(null)
     const [ShowPostForm            , SetShowPostForm     ]   = useState<Boolean>(false)
     const [Show_Post_Setting       , Set_PostSetting       ] = useState<Boolean>(false)
     const [PostFormMethod          , SetPostFormMethod     ] = useState<Post_Type>("Share")
@@ -300,7 +301,11 @@ function Post(props: PropsType) {
         return <>
             <div className={`Post_Component`} ref={Post_div_Ref} onMouseMove={(e: any) => Helper_Functions.Post_Mouse_Move(e.nativeEvent)}>
                 {Helper_Functions.SelectShap(Post.main_post.type)}
-                <MemoCommentBox Vaisablity={CommentBox_ClassName}/>
+                <MemoCommentBox Vaisablity={CommentBox_ClassName}
+                                Comments  ={Post.Comments}
+                                Post_Date ={{"User" : Post.main_post.User  , "id" : Post.main_post.id}}
+                                
+                                />
             </div>
             {ShowPostForm? <PostForm 
                                         key="res" 

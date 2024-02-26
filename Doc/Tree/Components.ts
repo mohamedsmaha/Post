@@ -2,7 +2,7 @@ export type Components_Name = C | D | F | L | M | N | P | R | S |T
     // D Components
         type D = 'Delete_Card'
     // C Components
-        type C = "CreatePost" | "ConfiremData" | "CommentsBox"
+        type C = "CreatePost" | "ConfiremData" | "PostCommentsBox" | "Comment"
     // F Components
         type F = "FeedPosts" | "ForgetPassword"
     // L Components 

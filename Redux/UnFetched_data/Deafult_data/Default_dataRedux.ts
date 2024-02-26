@@ -6,7 +6,7 @@ const initialState : DefaultDataReduxType =
 {
     ColorTheme : 1 ,
     Lang       : "En",
-    Login      : false
+    Login      : true
 }
 
 const DefaultData = createSlice({

@@ -75,36 +75,36 @@ function PostForm(props : Props_type) {
               Update  : () => {} ,
               New_Share: () => {              
                 const info = (): Content_info => {
-                  let array: { [Key:string] : string | null } = {
-                      "img": imageUrl,
-                      "video": videoUrl,
-                      "text": Textare_content
-                  };
-                  let data : {[key:string] : string} = {} ; // Type assertion
-                  for(const item in array){
-                    if(array[item] != null){
-                      data[item] = array[item] as string
+                    let array: { [Key:string] : string | null } = {
+                        "img": imageUrl,
+                        "video": videoUrl,
+                        "text": Textare_content
+                    };
+                    let data : {[key:string] : string} = {} ; // Type assertion
+                    for(const item in array){
+                      if(array[item] != null){
+                        data[item] = array[item] as string
+                      }
                     }
-                  }
-                  return data as Content_info;
-              };
-              const SharePostId = () : number => {
-                  return props.SharePost?.Data.main_post.id as number
-              }
-              const Create : Create_Post= {
-                  User   : UserAction   , 
-                  Data   : new Date     ,
-                  info   : info()       ,
-                  kind   : "Content"    ,
-                  type   : props.Method ,
+                    return data as Content_info;
+                };
+                const SharePostId = () : number => {
+                    return props.SharePost?.Data.main_post.id as number
                 }
-              if(props.Method == "Share"){Create["SharePostId"] = SharePostId()}
-              Posts_Model.Action_ON_Post(dispatch , Create , "Insert")
+                const Create : Create_Post= {
+                    User   : UserAction   , 
+                    Data   : new Date     ,
+                    info   : info()       ,
+                    kind   : "Content"    ,
+                    type   : props.Method ,
+                  }
+                if(props.Method == "Share"){Create["SharePostId"] = SharePostId()}
+                Posts_Model.Action_ON_Post(dispatch , Create , "Insert")
               },
               GetReady:()=>{
                 props.Close();
                 if(props.Method == "New" || props.Method == "Share"){Content_HelperFunction.New_Share()}
-                if(props.Method == "Update"){Content_HelperFunction.Update}
+                if(props.Method == "Update"){Content_HelperFunction.Update()}
                 return;
               }
           }
