@@ -1,0 +1,52 @@
+@mixin Setting() {
+    .Setting {
+        position: relative;
+        height: 100%;
+
+        svg {
+            font-size: pxtoem(18px);
+            cursor: pointer;
+        }
+
+        .Setting_Box {
+            z-index: 9000;
+            position: absolute;
+            right: 0px;
+            top: pxtoem(10px);
+            background-color: rgb(255, 255, 255);
+            height: fit-content;
+            width: fit-content;
+            padding: 5px;
+            @include shadow(3px, 3px, 13px, -8px);
+            @include border(10px);
+
+            .container {
+                min-width: pxtoem(200px);
+
+                ul {
+                    @include flex_column();
+                    gap: pxtoem(10px);
+                    text-transform: capitalize;
+
+                    li {
+                        border-bottom: 1px solid rgba(128, 128, 128, 0.299);
+                        cursor: pointer;
+                        padding: 5px 3px 10px;
+                        font-size: pxtoem(13px);
+                        @include border(10px);
+
+                        &:hover {
+                            background-color: rgba(128, 128, 128, 0.051);
+                        }
+
+                        &:last-child {
+                            border-bottom: none;
+                        }
+                    }
+
+                }
+            }
+        }
+
+    }
+}

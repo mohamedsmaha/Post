@@ -51,7 +51,7 @@ class Posts_DataBase_Class{
                             "id"   : 3,
                             "Date" : {"number" : 3 , "unite" : "Weeks"} ,
                             "Public_Interactions" :{ "Comments" : 10 ,"numbers" : {"order" : {"first" : "Like" , "Third" : null , "secound" : null} , "total" : 1200}},
-                            "User"     : {"Username" : "Ali Ahemd" , "id" : 1 , "img" : `6.jpeg`},
+                            "User"     : {"Username" : "Ali Ahemd" , "id" : 100 , "img" : `6.jpeg`},
                             "info"     : {"text" : "What a wonderfull world" , "img" : `${APP_Folders.Posts("images")}/1.jpeg`},
                             "kind"     : "Content",
                             "type"     : "New" 

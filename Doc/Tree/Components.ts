@@ -1,6 +1,5 @@
-export type Components_Name = C | D | F | L | M | N | P | R | S |T
+export type Components_Name = C | F | L | M | N | P | R | S |T
     // D Components
-        type D = 'Delete_Card'
     // C Components
         type C = "CreatePost" | "ConfiremData" | "PostCommentsBox" | "Comment"
     // F Components
@@ -19,5 +18,5 @@ export type Components_Name = C | D | F | L | M | N | P | R | S |T
         type S = "Sidebar" | "SuccessProcess"
     // T Components 
         type T = "Topbar"
-    
+
 

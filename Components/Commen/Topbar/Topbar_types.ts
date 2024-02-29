@@ -2,7 +2,6 @@ import { DefaultDataReduxType } from "@/Redux/UnFetched_data/Deafult_data/Defaul
 import { Pages_Name } from "@/Doc/Tree/page";
 export type icon_screen = 'Big_screen' | "Small_screen" | "Both"
 export type main_icons  = 'Home'       | "Chat"         | "Notifications"
-export type HTMLDivElementRef = React.RefObject<HTMLDivElement>;
 export type Props_Types = {
     Page : Pages_Name
 }

@@ -11,7 +11,7 @@ import { UserAction } from '@/Redux/Modules/User/UserTypes';
 import { Posts_Model } from '@/Helpers/Redux_models/Posts/Posts.Class';
 import { create } from 'domain';
 import { useAppDispatch } from '@/Redux/Hooks';
-import { UploadedFile } from '@/Ts/File';
+
 // Description 
   // Component Deal with Updata or Share or insert new  Post
 // Massions

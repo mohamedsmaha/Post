@@ -1,6 +1,5 @@
 
 import { Posts_DataBase_Model } from "@/Imaginary Databases/Posts";
-import { Delete_Post } from "@/Redux/Modules/Post/PostTypes";
 import { NextRequest, NextResponse } from "next/server";
 
 export  async function POST(req: NextRequest){

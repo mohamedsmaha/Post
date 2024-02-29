@@ -1,4 +1,4 @@
-import { Loading_Action } from "@/Ts/LodingAction"
+import { Delete_item, Loading_Action } from "@/Ts/Action"
 import { UserAction, anyUser_Type } from "../User/UserTypes"
 import { time } from "@/Ts/Time"
 
@@ -41,3 +41,9 @@ export type Create_Comment_Api_Response ={
     type : Comment_Types ,
     Data : CommentShap
 }
+export type Delete_Comment_APi_Response = {
+    type      : Comment_Types ,
+    id        : number ,
+    Search_Id : number
+}
+export type Delete_Comment = {type : Comment_Types , Search_ID : number   } & Delete_item

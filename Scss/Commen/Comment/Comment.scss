@@ -1,4 +1,5 @@
 @import "../../Helper/all.scss";
+@import "../../Small_Helper_Components/Setting/Setting.scss";
 // Post Option
 @mixin info(){
     >.info {
@@ -75,11 +76,7 @@
                 @include border_pre(50%);
                 margin: 3px 0px;
             }
-            >.Edit {
-                SVG {
-                    font-size: pxtoem(18px);
-                }
-            }
+            @include Setting();
             @include info();
     }
 }

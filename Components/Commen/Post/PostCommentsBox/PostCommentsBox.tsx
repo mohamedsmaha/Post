@@ -11,17 +11,6 @@ import { useAppDispatch } from '@/Redux/Hooks'
 import { Comments_Model } from '@/Helpers/Redux_models/Comments/Comments_Class'
 import { UserAction } from '@/Redux/Modules/User/UserTypes'
 import { Send } from '@mui/icons-material'
-let Fake_Date: CommentShap[] = [
-    {
-        "Search_ID" : 1 ,
-        "Data"      : {"number" : 1 , "unite" : "Minute"} ,
-        "User"      : {"id" : 4 , "Username" : "mohamed sabry" , "img" :"1.jpeg" },
-        "id"        : 1 ,
-        "info"      : {"Text" : "lol hey my name is mohamed and i love you"},
-        "user_Interaction" : false,
-        "Reacts"           : {"Likes": 12 , "Replays" : 100}
-    }
-]
 function PostCommentsBox(props : Props_Type){
     const UserAction      = User_Model.Get_User_Action() as UserAction
     const Dispatch        = useAppDispatch()
@@ -46,6 +35,7 @@ function PostCommentsBox(props : Props_Type){
 
             }
             Comments_Model.GetActions(Dispatch , "Insert" , Data)
+            settext("")
             return ;
         }
     }

@@ -1,6 +1,6 @@
 import { time } from "@/Ts/Time"
 import { UserAction, anyUser_Type } from "../User/UserTypes"
-import { Loading_Action } from "@/Ts/LodingAction"
+import { Loading_Action } from "@/Ts/Action"
 import { ReactsIcons } from "@/Ts/ReactsIcons"
 import { CommentRedux } from "../Comments/CommentTypes"
 
@@ -65,10 +65,7 @@ export type Update_Post = {
     type : Post_Type        ,
     SharePostId ?: number   
 }
-export type Delete_Post = {
-    User    : UserAction     ,
-    Post_id : Number
-}
+
 export type Post_Filter = {
     User_Id ?: number
     Post_Id ?: number

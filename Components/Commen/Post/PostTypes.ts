@@ -1,4 +1,5 @@
-import { PostShap, Post_Type, Post_info,  ReactsIcons } from "@/Redux/Modules/Post/PostTypes"
+import { PostShap, Post_Type, Post_info } from "@/Redux/Modules/Post/PostTypes"
+import { ReactsIcons } from "@/Ts/ReactsIcons";
 import {JSX } from "@emotion/react/jsx-runtime";
 import React, { MouseEvent } from "react";
 export type PropsType = {
@@ -7,7 +8,6 @@ export type PropsType = {
 } 
 export type Kind         = "Loading"| 'Normal' | "Null"
 export type Post_Setting = "Delete" | "Updata"
-export type HTMLDivElementRef = React.RefObject<HTMLDivElement>;
 export type UserInfo         = {Post_data : Post_info , Static? : Boolean}
 export type Content          = {Post_data : Post_info , Updata? : Boolean}
 export type Helper_Functions = {

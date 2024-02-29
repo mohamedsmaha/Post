@@ -1,8 +1,7 @@
-import { CommentShap, Comment_Types, Comments_Filter, Create_Comment, Create_Comment_Api_Response, Select_Comments_Api_Response } from "@/Redux/Modules/Comments/CommentTypes";
-import { Search } from "@mui/icons-material";
-
+import { CommentShap, Comment_Types, Comments_Filter, Create_Comment, Create_Comment_Api_Response, Delete_Comment, Delete_Comment_APi_Response, Select_Comments_Api_Response } from "@/Redux/Modules/Comments/CommentTypes";
+type DataBaseType = {[key in Comment_Types] : CommentShap[] }
 class Comments_DateBase_Class{
-    date : {[key in Comment_Types] : CommentShap[] } = {
+    private data  : DataBaseType = {
         "Post" : [
                 {
                         "Search_ID" : 1 ,
@@ -24,9 +23,9 @@ class Comments_DateBase_Class{
                 }
         ]
     }
-    private Get( Filter : Comments_Filter) : CommentShap[]{
+    private Get( Filter : {"type" : Comment_Types , "Search_Id" : number} ) : CommentShap[]{
         let Date : CommentShap[]= []
-        this.date[Filter.type].map(item => {
+        this.data[Filter.type].map(item => {
             if(item.Search_ID == Filter.Search_Id){
                 Date.push(item)
             }
@@ -46,16 +45,27 @@ class Comments_DateBase_Class{
             "Data"      : {"number" : 1 , "unite" : "Day"} ,
             "Reacts"    : {"Likes" : 0 , "Replays" : 0} ,
             "Search_ID" : info.Search_ID ,
-            "User"      : {"id" :  1 , "Username" : "moahmed sabry" , "img" : '1.jpeg'},
-            "id"        : this.date[info.type].length + 1 ,
+            "User"      : {"id" :  4 , "Username" : "moahmed sabry" , "img" : '1.jpeg'},
+            "id"        : this.data[info.type].length + 1 ,
             "info"      : info.info ,
             "user_Interaction" : false
         }
-        this.date[info.type].push(Date)
+        this.data[info.type].push(Date)
         return {
             "type" : info.type ,
             "Data" : Date
         }
     }
+    public Delete(info:Delete_Comment) : Delete_Comment_APi_Response{
+        let newData :CommentShap[]= []
+            const index = this.Get({"type" : info.type , "Search_Id" : info.Search_ID} ).findIndex(item => item.id == info.item_id);
+        for(let i = 0 , n = this.data[info.type].length ; i < n ; i++){
+            if(i== index){continue}
+            newData.push(this.data[info.type][i])
+        }
+        this.data[info.type]   = newData; 
+        return {id : info.item_id , type : info.type , Search_Id : info.Search_ID}
+    }
+        
 }
 export const Comments_DateBase_Model = new Comments_DateBase_Class

@@ -1,9 +1,10 @@
 import { Components_Name } from "./Components";
+import { Small_Components_Name } from "./Small_Components";
 
-let Components_Tree : {[key in Components_Name] :  Components_Name[]|null }= {
+let Components_Tree : {[key in Components_Name] :  (Components_Name | Small_Components_Name)[]|null }= {
     "Main_Search_Box" : null ,
     "Notification"    : null ,
-    "Post"            : ["PostCommentsBox" , "PostForm" , "Delete_Card"] ,
+    "Post"            : ["PostCommentsBox" , "PostForm" , "Delete_Card" , "Setting_Box"] ,
     "CreatePost"      : ["PostForm"],
     "PostForm"        : null ,
     "Rightbar"        : null ,
@@ -17,6 +18,5 @@ let Components_Tree : {[key in Components_Name] :  Components_Name[]|null }= {
     "ConfiremData"    : null ,
     "SuccessProcess"  : null ,
     "PostCommentsBox" : ["Comment"] , 
-    'Delete_Card'     : null  ,
-    "Comment"         : null
+    "Comment"         : ["Setting_Box" , "Delete_Card"]
 }

@@ -5,7 +5,7 @@ import { Static_images } from "@/Static_Data/Images";
 import { APP_Folders } from "@/Static_Data/APP_Folders";
 import { Translate, Translate_Object } from "@/Helpers/Translate";
 import { PostElementsLangType } from "@/Lang/Types/Components/Post";
-import { Content, HTMLDivElementRef, Helper_Functions, PropsType, UserInfo } from "./PostTypes";
+import { Content, Helper_Functions, PropsType, UserInfo } from "./PostTypes";
 import { useEffect, useRef, useState } from "react";
 import { Post_Type } from "@/Redux/Modules/Post/PostTypes";
 import React from "react";
@@ -16,9 +16,10 @@ import Link from "next/link";
 import PostForm from "./Create_Post/PostForm/PostForm";
 import { MemoCommentBox } from "./PostCommentsBox/PostCommentsBox";
 import { PostCommentsBox_Vaisablity } from "./PostCommentsBox/PostCommentBoxTypes";
-import { Handel_click_outside_thetarget } from "@/Helpers/Helper Functions/Handel_click_outside_TheTarget";
-import Delete_Card from "./DeleteCard/Delete_Card";
+import Delete_Card from "../../../Helpers/Small_Helper_Components/DeleteCard/Delete_Card";
 import { ReactsIcons } from "@/Ts/ReactsIcons";
+import Setting_Box ,{ Setting_element } from "@/Helpers/Small_Helper_Components/Setting_Box/Setting_Box";
+import { HTMLDivElementRef } from "@/Ts/Hooks_Types";
 
 // Description 
     // This component manages and handles the interactions related to posting.
@@ -37,23 +38,13 @@ function Post(props: PropsType) {
     const [User_React              , SetUserReact    ]       = useState<ReactsIcons | null>(Post.user_interaction.React)
     const [Reacts_Box              , SetReactsBox    ]       = useState<boolean>(false)
     const [CommentBox_ClassName    , SetCommentBoxClassName] = useState<PostCommentsBox_Vaisablity>(null)
-    const [ShowPostForm            , SetShowPostForm     ]   = useState<Boolean>(false)
-    const [Show_Post_Setting       , Set_PostSetting       ] = useState<Boolean>(false)
+    const [ShowPostForm            , SetShowPostForm     ]   = useState<boolean>(false)
+    const [Show_Post_Setting       , Set_PostSetting       ] = useState<boolean>(false)
     const [PostFormMethod          , SetPostFormMethod     ] = useState<Post_Type>("Share")
     const [Show_Delete_post_Card   , SetDeleteCard         ] = useState<Boolean>(false)
     const Reacts_Box_Ref     :HTMLDivElementRef        = useRef(null)
     const Like_Action_Box_Ref:HTMLDivElementRef        = useRef(null)
     const Post_div_Ref       :HTMLDivElementRef        = useRef(null)
-    const Post_Setting_div_Ref:HTMLDivElementRef       = useRef(null)   
-    useEffect(() => {
-        const HandleClickOutsideTheSetting = 
-        Handel_click_outside_thetarget(Post_Setting_div_Ref , [Show_Post_Setting , () => Set_PostSetting(false)])
-        // Close the post setting box if the click is not on it
-        document.addEventListener("click", HandleClickOutsideTheSetting);
-        return () => {
-            document.removeEventListener("click", HandleClickOutsideTheSetting);
-        };
-    }, [Show_Post_Setting]);
 // Languagh
     const PostLangObj   = Translate_Object("Post") as PostElementsLangType;
     const Static_Words  = Translate_Object("StaticWords") as StaticWordsElementsLangType;
@@ -209,11 +200,7 @@ function Post(props: PropsType) {
                     </span>
                 </div>
                 {  ( props.Static != true && Post_data.User.id == User_Model.GetId() ) ? // Check if this user own the post 
-                    <div className="Setting">
-                        <span onClick={() => Set_PostSetting(!Show_Post_Setting)}><MoreVert /></span>
-                        {Show_Post_Setting ? <Post_Setting/> : null}
-                    </div> : null
-                }
+                        <Post_Setting/> : null}
             </div>
         )
     }
@@ -276,25 +263,19 @@ function Post(props: PropsType) {
         )
     }
     function Post_Setting(){
-        return <>
-            <div className="Setting_Box" ref={Post_Setting_div_Ref}>
-                <div className="container">
-                    <ul>
-                        <li onClick={()=>{
-                            SetPostFormMethod("Update")
-                            SetShowPostForm(true)
-                            Set_PostSetting(false)
-                        }}>Updata</li>
-                        <li
-                            onClick={() => {
-                                Set_PostSetting(false)
-                                SetDeleteCard(true)
-                            }}
-                        >Delete</li>
-                    </ul>
-                </div>
-            </div>
-        </>
+        let date : Setting_element[]=[
+            {"name" : "update" , "onclick" : () => {
+                SetPostFormMethod("Update")
+                SetShowPostForm(true)
+                Set_PostSetting(false)
+            }},
+            {"name" : "delete" , "onclick" : () => {
+                Set_PostSetting(false)
+                SetDeleteCard(true)
+            }}
+        ] 
+        return <Setting_Box elements={date} 
+        Control_ref={{"value" : Show_Post_Setting , "State_Function" : Set_PostSetting }}/>
     }
     // Kinds or Options
         function Normal_post(){
@@ -315,7 +296,9 @@ function Post(props: PropsType) {
             {
                 Show_Delete_post_Card ? 
                     <Delete_Card Close_Function={() => SetDeleteCard(false)} 
-                                User = {Post.main_post.User} Post_id={props.Post.main_post.id}/> :
+                                item_id = {props.Post.main_post.id}
+                                Option={{"Data" : {} , "text" : "Post"}}
+                                /> :
                     null
             }
             </>
