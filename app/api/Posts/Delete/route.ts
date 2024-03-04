@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export  async function POST(req: NextRequest){
     const data = await req.json()
-    const index = Posts_DataBase_Model.Get().findIndex(item => item.main_post.id === data['Data']['Post_id']);
+    const index = Posts_DataBase_Model.Get().findIndex(item => item.main_post.id === data['Data']['item_id']);
     Posts_DataBase_Model.Delete(index)
-    return NextResponse.json(data['Data']['Post_id'])
+    return NextResponse.json(data['Data']['item_id'])
 }

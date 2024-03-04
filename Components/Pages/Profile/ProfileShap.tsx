@@ -109,7 +109,7 @@ function ProfileShap(props : Props) {
     // bottoms options
         function Main(){
             function InfoBox(){
-                let info_box = Profile_Model.Getinfo()
+                let info_box = Profile_Model.GetUser().GetBoxinfo()
                 if(!info_box){return <></>}
                 return (
                     <div className="info_box">

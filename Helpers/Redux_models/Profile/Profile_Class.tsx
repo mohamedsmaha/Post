@@ -1,11 +1,9 @@
 import { useAppSelector } from "@/Redux/Hooks"
-import { User } from "../Users/Users_Class"
+import { NormaL_User } from "../Users/Users_Class"
 
 class Profile {
-    private User_Model = new User
-    constructor(){
-        this.User_Model.defualt = "profile" 
-    }
+    private User_Model = new NormaL_User
+
     private redux() {
         let redux = {
             default_data : useAppSelector((state) => state.Profile)
@@ -21,9 +19,5 @@ class Profile {
     GetUser(){
         return this.User_Model
     }
-    Getinfo(){
-        return this.User_Model.GetBoxinfo()
-    }
-
 }
 export  const Profile_Model = new Profile

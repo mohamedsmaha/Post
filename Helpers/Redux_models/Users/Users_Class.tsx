@@ -1,17 +1,20 @@
 import { useAppSelector } from "@/Redux/Hooks"
+import { Check_User_Login } from "@/Redux/Modules/User/UserFetch";
 
-import { Box_info_type, UserAction, User_Type } from "@/Redux/Modules/User/UserTypes"
-type options = "default_Redux" | "profile"
-export class User{
-    public defualt :options = "default_Redux"
-
-    private find(): User_Type{
+import { Box_info_type, NormaL_User_Type, UserAction, UserRedux, User_Login_Request, User_Type } from "@/Redux/Modules/User/UserTypes"
+type options = "Main_User" | "Profile_User"
+class Commen_Functions{
+    private defualt :options ;
+    constructor(data : options){
+        this.defualt = data
+    }
+    public find(): NormaL_User_Type | User_Type{
         return this.redux()[this.defualt]
     }
-    private redux(){
+    public redux(){
         let redux : {[key in options] : any }= {
-            default_Redux : useAppSelector((state) => state.User.data) ,
-            profile       : useAppSelector((state) => state.Profile.data.user)
+            Main_User     : useAppSelector((state) => state.User.data) ,
+            Profile_User       : useAppSelector((state) => state.Profile.data.User)
         }
         return redux
     }
@@ -40,14 +43,31 @@ export class User{
         info = Object.fromEntries(Object.entries(info).filter(([_, v]) => v !== undefined));
         return info
     }
-    Get_User_Action():UserAction | undefined{
-        if(this.find().ApiToken == undefined){return undefined}
-        else{
-            return {
+}
+// For Main User
+export class User extends Commen_Functions{
+    constructor(){
+        super("Main_User")
+    }
+    private Call_Fetch(fun1 : Function , fun2 : Function , Data : any ){
+        fun1(fun2(Data))
+    }
+    Get_User_Action():UserAction{
+        console.log(this.redux())
+        return {
                 "UserID"    : this.find().id         ,
-                "UserToken" : this.find().ApiToken as string
+                "UserToken" : this.redux().Main_User.ApiToken 
             }
-        }
+        
+    }
+    Check_Login(fun1:Function , Data: User_Login_Request){
+        this.Call_Fetch(fun1 , Check_User_Login , Data)
+    }  
+}
+// For Any User Expect include the Main one
+export class NormaL_User extends Commen_Functions {
+    constructor(){
+        super("Profile_User")
     }
 }
 export const User_Model = new User

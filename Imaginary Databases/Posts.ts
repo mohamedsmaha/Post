@@ -1,5 +1,6 @@
 import { Create_Post, PostShap, Post_Filter } from "@/Redux/Modules/Post/PostTypes";
 import { APP_Folders } from "@/Static_Data/APP_Folders"
+import { User_DataBase_Model } from "./Users";
 
 class Posts_DataBase_Class{
     Posts_DataBase  : PostShap[] = [
@@ -8,7 +9,7 @@ class Posts_DataBase_Class{
                             "id"    : 1,
                             "Date" : {"number" : 10 , "unite" : "Days"} ,
                             "Public_Interactions" :{ "Comments" : 10 ,"numbers" : {"order" : {"first" : "Like" , "Third" : null , "secound" : null} , "total" : 1200}},
-                            "User" : {"Username" : "mohamed" , "id" : 4 , "img" : "2.jpeg"},
+                            "User" : User_DataBase_Model.Get_User(2),
                             "info" : {"text" : "hey my name is mohamed"},
                             "kind" : "Content" ,
                             "type" : "New"
@@ -25,7 +26,7 @@ class Posts_DataBase_Class{
                             "id"   : 2,
                             "Date" : {"number" : 10 , "unite" : "Days"} ,
                             "Public_Interactions" :{ "Comments" : 10 ,"numbers" : {"order" : {"first" : "Like" , "Third" : null , "secound" : "Love"} , "total" : 1200}},
-                            "User" : {"Username" : "mohamed" , "id" : 4 , "img" : `1.jpeg`},
+                            "User" : User_DataBase_Model.Get_User(5),
                             "info" : {"text" : "i love this man"},
                             "kind" : "Content" ,
                             "type" : "Share"
@@ -34,7 +35,7 @@ class Posts_DataBase_Class{
                             "id"   : 3,
                             "Date" : {"number" : 3 , "unite" : "Weeks"} ,
                             "Public_Interactions" :{ "Comments" : 10 ,"numbers" : {"order" : {"first" : "Like" , "Third" : null , "secound" : null} , "total" : 1200}},
-                            "User"     : {"Username" : "Ali Ahemd" , "id" : 1 , "img" : `6.jpeg`},
+                            "User"     : User_DataBase_Model.Get_User(3),
                             "info"     : {"text" : "What a wonderfull world" , "img" : `${APP_Folders.Posts("images")}/1.jpeg`},
                             "kind"     : "Content",
                             "type"     : "New" 
@@ -51,7 +52,7 @@ class Posts_DataBase_Class{
                             "id"   : 3,
                             "Date" : {"number" : 3 , "unite" : "Weeks"} ,
                             "Public_Interactions" :{ "Comments" : 10 ,"numbers" : {"order" : {"first" : "Like" , "Third" : null , "secound" : null} , "total" : 1200}},
-                            "User"     : {"Username" : "Ali Ahemd" , "id" : 100 , "img" : `6.jpeg`},
+                            "User"     : User_DataBase_Model.Get_User(3),
                             "info"     : {"text" : "What a wonderfull world" , "img" : `${APP_Folders.Posts("images")}/1.jpeg`},
                             "kind"     : "Content",
                             "type"     : "New" 
@@ -98,7 +99,7 @@ class Posts_DataBase_Class{
                 "id"    : Posts_DataBase_Model.Get({}).length + 1  ,
                 "Date" : {"number" : 1 , "unite" : "Hour" } ,
                 "Public_Interactions" :{ "Comments" : 0 , "numbers" : {"order" : {"first" : null , "Third" : null , "secound" : null} , "total" : 0}},
-                "User" : {"Username" : "mohamed" , "id" : 10 , "img" : "mohamed.jpg"},
+                "User" : User_DataBase_Model.Get_User(data.User.UserID),
                 "info" : {"text" : "This is New Post here i hope to see it okay"},
                 "kind" : "Content" ,
                 "type" : "New"

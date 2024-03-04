@@ -1,4 +1,5 @@
 import { CommentShap, Comment_Types, Comments_Filter, Create_Comment, Create_Comment_Api_Response, Delete_Comment, Delete_Comment_APi_Response, Select_Comments_Api_Response } from "@/Redux/Modules/Comments/CommentTypes";
+import { User_DataBase_Model } from "./Users";
 type DataBaseType = {[key in Comment_Types] : CommentShap[] }
 class Comments_DateBase_Class{
     private data  : DataBaseType = {
@@ -6,7 +7,7 @@ class Comments_DateBase_Class{
                 {
                         "Search_ID" : 1 ,
                         "Data" : {"number" : 1 , "unite" : "Minute"} ,
-                        "User" : {"id" : 4 , "Username" : "mohamed sabry" , "img" :"1.jpeg" },
+                        "User" : User_DataBase_Model.Get_User(4),
                         "id"   : 1,
                         "info" : {"Text" : "hey mohamed sabry nice to meet you"},
                         "user_Interaction" : false,
@@ -15,7 +16,7 @@ class Comments_DateBase_Class{
                 {
                         "Search_ID" : 2 ,
                         "Data" : {"number" : 1 , "unite" : "Hour"} ,
-                        "User" : {"id" : 4 , "Username" : "mohamed sabry" , "img" :"2.jpeg" },
+                        "User" : User_DataBase_Model.Get_User(3),
                         "id"   : 2,
                         "info" : {"Text" : "what a wonderfull pic"},
                         "user_Interaction" : false,
@@ -45,7 +46,7 @@ class Comments_DateBase_Class{
             "Data"      : {"number" : 1 , "unite" : "Day"} ,
             "Reacts"    : {"Likes" : 0 , "Replays" : 0} ,
             "Search_ID" : info.Search_ID ,
-            "User"      : {"id" :  4 , "Username" : "moahmed sabry" , "img" : '1.jpeg'},
+            "User"      : User_DataBase_Model.Get_User(info.User.UserID),
             "id"        : this.data[info.type].length + 1 ,
             "info"      : info.info ,
             "user_Interaction" : false

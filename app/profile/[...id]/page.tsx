@@ -5,6 +5,7 @@ import { default_data_model } from '@/Helpers/Redux_models/Deafult_data/Deafult_
 import "@/Scss/Pages/Profile/Profile.css"
 function Profilepage(props : any) {
     const id = parseInt(props.params.id)
+    console.log(id)
     return (
         
         <div className='ProfilePage'>

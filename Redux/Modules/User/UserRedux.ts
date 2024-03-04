@@ -1,6 +1,7 @@
 
-import { createAsyncThunk, createSlice  } from "@reduxjs/toolkit"
-import { UserRedux } from "./UserTypes"
+import { PayloadAction, createAsyncThunk, createSlice  } from "@reduxjs/toolkit"
+import { UserRedux, User_Login_Response, User_Type } from "./UserTypes"
+import { Check_User_Login } from "./UserFetch"
 
 
 
@@ -19,15 +20,10 @@ const initialState : UserRedux = {
         "img"         : "mohamed.jpg"   ,
         "secound_img" : ""   , 
         "lang"        : "En" ,
-        "password"    : "lol",
         
     }
 }
-export const FetchUser = createAsyncThunk("FetchUser" , async () => {
-    const results = await fetch('')
-    const data    = await results.json()
-    return data
-})
+
 
 
 const UserSlice = createSlice({
@@ -35,7 +31,12 @@ const UserSlice = createSlice({
     initialState     ,
     reducers : {
     }    ,
-    extraReducers: builder => {
+    extraReducers : bulider => {
+        bulider.addCase(Check_User_Login.fulfilled , (state , action :PayloadAction<User_Login_Response> ) => {
+            if(action.payload.Login == true){
+                state.data = action.payload.data as User_Type
+            }
+        })
     }
 })
 export default UserSlice.reducer

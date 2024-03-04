@@ -7,16 +7,19 @@ import { redirect } from 'next/navigation'
 import { useAppDispatch} from '@/Redux/Hooks'
 import { default_data_model } from '@/Helpers/Redux_models/Deafult_data/Deafult_data_class'
 import { Login_change } from '@/Redux/UnFetched_data/Deafult_data/Default_dataRedux'
+import { User_Login_Request } from '@/Redux/Modules/User/UserTypes'
+import { User_Model } from '@/Helpers/Redux_models/Users/Users_Class'
 function Login(props : propstype) {
 // Props
     const {state_functions} = props
 // Redux 
     let Redux = {
-        default_data : default_data_model
+        default_data : default_data_model ,
+        User_Model   : User_Model
     }
     const dispatch = useAppDispatch();
 // Hooks 
-    const [Inputs_Filed , setInputsFiled ]=useState({Username : '' , Password : ''})
+    const [Inputs_Filed , setInputsFiled ]=useState<User_Login_Request>({UserName : '' , Password : ''})
     const [passwordType , setpasswordtype] = useState<"Text" | "Password">("Password")
 // Helper Functions
     const Helper_Functions = {
@@ -32,7 +35,7 @@ function Login(props : propstype) {
             const target = event.target as HTMLInputElement;
             const value = target.value;
             if(type  == "UserName"){
-                setInputsFiled({...Inputs_Filed , Username : value})
+                setInputsFiled({...Inputs_Filed , UserName : value})
             }
             else if(type == "Password"){
                 setInputsFiled({...Inputs_Filed , Password : value})
@@ -42,8 +45,9 @@ function Login(props : propstype) {
             if(passwordType == "Password"){setpasswordtype("Text")}
             else{setpasswordtype("Password")}
         } ,
-        Handel_LoginButton(){
-            dispatch(Login_change(true));
+        Handel_LoginButton : ()=>{
+            Redux.User_Model.Check_Login( dispatch ,Inputs_Filed)
+            // dispatch(Login_change(true));
         }
     }
 
@@ -57,7 +61,7 @@ function Login(props : propstype) {
                         <label htmlFor="UsernameInput"> {Translate("UserName")} </label>
                     </div>
                     <input type="text" id="UsernameInput" placeholder={`${Translate("UserName")} / ${Translate("Email")} / ${Translate("Phone")}`}  
-                            autoComplete="current-username" value={Inputs_Filed.Username} 
+                            autoComplete="current-username" value={Inputs_Filed.UserName} 
                             onChange={(e) => Helper_Functions.Handel_Inputs_Filed(e , "UserName")}/>
                 </div>
                 <div className="inputbox">

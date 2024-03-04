@@ -1,6 +1,7 @@
 import { avaliable_lang } from "@/Lang/Main_file";
 
-export type User_Type = {
+// we use it only in User imaginary Database, just remeber you about what data we have
+export type All_User_Data = {
     id         :number ,
     Email      :string ,
     Phonenumber:string,
@@ -11,18 +12,34 @@ export type User_Type = {
     secound_img:string
     lang       :avaliable_lang,
     colortheme :colortheme_option,
-    ApiToken   ?:string,
+    ApiToken   :string,
+    Status     :"Married" | "Single" 
+    From       : string
+}
+
+export type User_Type =NormaL_User_Type & {
+    lang       :avaliable_lang,
+    colortheme :colortheme_option,
+    ApiToken   :string,
+}
+
+export type NormaL_User_Type  = {
+    id         :number ,
+    Email      ?:string ,
+    Phonenumber?:string,
+    Username   :string,
+    birthday   ?:string,
+    img        :string,
+    secound_img:string
     Status     ?:"Married" | "Single" 
     From       ?: string
 }
+
 export type colortheme_option = 1
 export type anyUser_Type= {
     id       : number ,
     Username : string ,
     img      : string 
-}
-export type User_API_Actions = {
-    
 }
 export type UserRedux = {
     loading : boolean ,
@@ -40,3 +57,14 @@ export type Box_info_type = {
     "Born"      ?: string ,
     "Phone"     ?: string
 }
+
+// Helper Types
+    // Login
+        export type User_Login_Request = {
+            "Password" : string ,
+            "UserName" : string 
+        }
+        export type User_Login_Response={
+            Login : boolean
+            data  : User_Type | null
+        }
