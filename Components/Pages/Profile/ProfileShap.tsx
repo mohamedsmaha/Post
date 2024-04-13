@@ -192,4 +192,4 @@ function ProfileShap(props : Props) {
     )
 }
 
-export default ProfileShap
+export const Profile_memo = React.memo(ProfileShap)

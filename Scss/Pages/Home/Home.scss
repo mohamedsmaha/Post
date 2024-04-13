@@ -7,6 +7,7 @@
         flex-grow: 1;
         overflow-y: scroll;
         justify-content: space-between;
+        scroll-snap-align: center;
         .Feed{
             flex: 1;
             align-items: center;

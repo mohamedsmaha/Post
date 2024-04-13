@@ -20,7 +20,7 @@ const emptypost : PostShap=     {
             "type"     : "New" 
         } ,
         "user_interaction" : {"React" : null},
-    }
+    } as PostShap
 function FeedPosts(props : PropsType) {
 
     const { loading, error, data } = Posts_Model.Get_Data();
@@ -36,12 +36,9 @@ function FeedPosts(props : PropsType) {
     useEffect(() => {
         Posts_Model.Action_ON_Post(dispatch , Helper_Functions.Filter() , "Select")
     },[])
-
     return (
         <div className='FeedPosts'>
-            {                data.map((item) => (
-                <Post key={item.main_post.id} Post={item} Kind="Normal" />
-                ))}
+
         {loading.Select ? <Post key={"loading"} Post={emptypost} Kind="Loading" /> : null}
         {!loading.Select && (
             <>
@@ -49,7 +46,9 @@ function FeedPosts(props : PropsType) {
                 <Post key={emptypost.main_post.id} Post={emptypost} Kind="Null" />
             ) : data.length === 0 ? (
                 <Post key={emptypost.main_post.id} Post={emptypost} Kind="Null" />
-            ) :null}
+            ) :  data.map((item) => <Post key={item.main_post.id} Post={item} Kind="Normal" /> )
+            
+            }
             </>
         )}
         </div>

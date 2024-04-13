@@ -86,7 +86,7 @@ function Topbar(props : Props_Types) {
                     <Link href={`${item.link}`} className={`Icon ${item.find}
                                                 ${Helper_Functions.Is_that_Actice(item.name) ? "Active" :''}`}
                                                 key = {item.id}
-                                                prefetch={false}>{item.icon}</Link>
+                                                >{item.icon}</Link>
                                                 
                 ))}
             </div>

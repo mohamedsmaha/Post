@@ -8,6 +8,7 @@
   flex-grow: 1;
   overflow-y: scroll;
   justify-content: space-between;
+  scroll-snap-align: center;
 }
 .HomePage > .bottom .Feed {
   flex: 1;

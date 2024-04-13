@@ -53,7 +53,6 @@ export class User extends Commen_Functions{
         fun1(fun2(Data))
     }
     Get_User_Action():UserAction{
-        console.log(this.redux())
         return {
                 "UserID"    : this.find().id         ,
                 "UserToken" : this.redux().Main_User.ApiToken 

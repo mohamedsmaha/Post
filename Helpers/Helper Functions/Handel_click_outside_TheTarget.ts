@@ -1,4 +1,5 @@
-import { HTMLDivElementRef } from "@/Components/Commen/Post/PostTypes";
+import { HTMLDivElementRef } from "@/Ts/Hooks_Types";
+
 
 export function Handel_click_outside_thetarget(ref : HTMLDivElementRef , method : [Boolean , () => void]){
     return (event: MouseEvent) => {

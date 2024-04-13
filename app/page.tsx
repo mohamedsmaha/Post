@@ -7,13 +7,25 @@ import "@/Scss/Pages/Home/Home.css"
 import { redirect } from 'next/navigation'
 import CreatePost from '@/Components/Commen/Post/Create_Post/Create_Post'
 import FeedPosts from '@/Components/Commen/Feed_Posts/FeedPosts'
+import { useEffect, useRef } from 'react'
+import { Posts_Model } from '@/Helpers/Redux_models/Posts/Posts.Class'
+
 export default function Home() {
+  let ref1 = useRef<HTMLDivElement>(null)
+  const { loading } = Posts_Model.Get_Data();
+
+
+  useEffect(() => {
+    // Solving Scroll Jump Problem
+        if(loading.Select == false){
+        ref1.current?.scrollTo(0 , 0 )
+  } }, [loading.Select] )
   // Redux  
   return (
     <div className='HomePage'>
       {default_data_model.GetLogin() ?  null : redirect("./assuntocation")}
       <Topbar Page='Home'/>
-      <div className="bottom">
+      <div ref = {ref1}className="bottom">
         <Sidebar/>
         <div className="Feed">
           <CreatePost Page="Home" />

@@ -62,7 +62,7 @@ const PostSlice = createSlice({
                 }  ),
                 builder.addCase(Select_Post_Action.fulfilled, (state , action:PayloadAction<PostShap[]>) =>{
                     state.loading.Select = false
-                    state.data    = action.payload
+                    state.data    = action.payload  
                     state.error   = null
                 }  ),
             // Create
