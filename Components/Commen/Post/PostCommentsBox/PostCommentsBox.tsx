@@ -11,6 +11,7 @@ import { useAppDispatch } from '@/Redux/Hooks'
 import { Comments_Model } from '@/Helpers/Redux_models/Comments/Comments_Class'
 import { UserAction } from '@/Redux/Modules/User/UserTypes'
 import { Send } from '@mui/icons-material'
+import Loading from '@/Helpers/Small_Helper_Components/Loading/Loading'
 function PostCommentsBox(props : Props_Type){
     const UserAction      = User_Model.Get_User_Action() as UserAction
     const Dispatch        = useAppDispatch()
@@ -54,6 +55,7 @@ function PostCommentsBox(props : Props_Type){
             Comments_Model.GetActions(Dispatch , "Select" , Helepr_Function.Comments_Filter())
         }
     } , [props.Vaisablity])
+    // Small Components
     function Header(){
         return <>
             <div className="Header">
@@ -82,12 +84,12 @@ function PostCommentsBox(props : Props_Type){
         </div>
     }
     function Comments(){
-        // console.log(props.Comments)
+
         return <div className="Comments">
-                
-                {props.Comments.data.map(item => 
-                    <Comment option='Post' key={item.id} Post_Date={props.Post_Date} Date={item}/>
-                    )}
+            {props.Comments.loading.Select ? <Loading/>
+                : props.Comments.data.map(item => <Comment option='Post' key={item.id} Post_Date={props.Post_Date} Date={item}/>)
+            }  
+        
         </div>
     }
     return <>

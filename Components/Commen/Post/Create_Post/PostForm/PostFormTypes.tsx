@@ -12,10 +12,11 @@ export type Content_HelperFunction ={
         Handel_Textarea_onchange: (element : HTMLTextAreaElement)=> void ,
         GetReady                : () => void ,
         New_Share               : () => void ,
-        Update                  : () => void
+        Update                  : () => void ,
+        Choose_Media_Inputs     : () => React.ReactNode
 }
 export type Props_type = {
-    Close     :  () => void , 
-    Method    : Post_Type,
-    SharePost ?: {Data : PostShap , Image : React.ReactNode}
+    Close      :  () => void , 
+    Method     : Post_Type,
+    Source_Post ?: { Data : PostShap , Image : React.ReactNode} // need it only in Share and update not create
 }

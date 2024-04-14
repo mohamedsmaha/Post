@@ -44,9 +44,9 @@ function PostForm(props : Props_type) {
     }
 // Options
     function Content_Info_Post(){
-          const [imageUrl , setImageUrl] = useState<string | null>(null);
-          const [videoUrl , setVideoUrl] = useState<string | null>(null);
-          const [Textare_content , SetTextareaContent] = useState<string | null>(null)
+          const [imageUrl , setImageUrl] = useState<string | undefined>(undefined);
+          const [videoUrl , setVideoUrl] = useState<string | undefined>(undefined);
+          const [Textare_content , SetTextareaContent] = useState<string | undefined>(undefined)
           const text_ref:React.RefObject<HTMLTextAreaElement> = useRef(null)
           const dispatch = useAppDispatch()
           // Helper Functions
@@ -56,40 +56,63 @@ function PostForm(props : Props_type) {
               if (file) {
                 const reader = new FileReader();
                 reader.onload = function(event) {
-                  const imageUrl = event.target?.result as string | null
+                  const imageUrl = event.target?.result as string | undefined
                   setImageUrl(imageUrl);
                 };
                 reader.readAsDataURL(file);
               }
-              setVideoUrl(null)
+              setVideoUrl(undefined)
               },
               Show_Contentinfo_Videos(element) {
                   const file = element.files?.[0];
-                  const url = file ? URL.createObjectURL(file) : null;
+                  const url = file ? URL.createObjectURL(file) : undefined;
                   setVideoUrl(url);
-                  setImageUrl(null)
+                  setImageUrl(undefined)
               },
               Handel_Textarea_onchange(element) {
                 SetTextareaContent(element.value)
               },
-              Update  : () => {} ,
-              New_Share: () => {              
+              Update  : () => {
                 const info = (): Content_info => {
-                    let array: { [Key:string] : string | null } = {
+                    let array: { [Key:string] : string | undefined } = {
                         "img": imageUrl,
                         "video": videoUrl,
                         "text": Textare_content
                     };
                     let data : {[key:string] : string} = {} ; // Type assertion
                     for(const item in array){
-                      if(array[item] != null){
+                      if(array[item] != undefined){
+                        data[item] = array[item] as string
+                      }
+                    }
+                    return data as Content_info;
+                };
+                const Update : Update_Post = {
+                    Id     : props.Source_Post?.Data.main_post.id as number,
+                    User   : UserAction   , 
+                    Data   : new Date     ,
+                    info   : info()       ,
+                    kind   : "Content"    ,
+                }
+                Posts_Model.Action_ON_Post(dispatch , Update , "Update")
+              } ,
+              New_Share: () => {              
+                const info = (): Content_info => {
+                    let array: { [Key:string] : string | undefined } = {
+                        "img": imageUrl,
+                        "video": videoUrl,
+                        "text": Textare_content
+                    };
+                    let data : {[key:string] : string} = {} ; // Type assertion
+                    for(const item in array){
+                      if(array[item] != undefined){
                         data[item] = array[item] as string
                       }
                     }
                     return data as Content_info;
                 };
                 const SharePostId = () : number => {
-                    return props.SharePost?.Data.main_post.id as number
+                    return props.Source_Post?.Data.main_post.id as number
                 }
                 const Create : Create_Post= {
                     User   : UserAction   , 
@@ -106,7 +129,13 @@ function PostForm(props : Props_type) {
                 if(props.Method == "New" || props.Method == "Share"){Content_HelperFunction.New_Share()}
                 if(props.Method == "Update"){Content_HelperFunction.Update()}
                 return;
-              }
+              },
+              Choose_Media_Inputs : () => {
+                if(props.Method == 'New' || (props.Method == "Update" && props.Source_Post?.Data.Share_post == undefined)){
+                  return <MediaInputs/>
+                }
+                return <></>
+              },
           }
           // Useeffect
               useEffect(() => {
@@ -120,8 +149,8 @@ function PostForm(props : Props_type) {
                   }
               }, [Textare_content]);
               useEffect(() => {
-                    if(props.Method == "Update" && props.SharePost?.Data.main_post.info.text  != undefined  ){
-                        SetTextareaContent(props.SharePost.Data.main_post.info.text);
+                    if(props.Method == "Update" && props.Source_Post?.Data.main_post.info.text  != undefined  ){
+                        SetTextareaContent(props.Source_Post.Data.main_post.info.text);
                     }
               }, [])
           // Helepr
@@ -149,7 +178,19 @@ function PostForm(props : Props_type) {
                   </>
                 }
                 function Share(){
-                  return props.SharePost?.Image
+                  if( props.Method == "Share" || props.Source_Post?.Data.Share_post){
+                      return props.Source_Post?.Image
+                  }else{
+                    const image = props.Source_Post?.Data.main_post.info.img  ;
+                    const video = props.Source_Post?.Data.main_post.info.vidoe;
+                    if(imageUrl == undefined && image != undefined && videoUrl == undefined){
+                      setImageUrl(image)
+                    }
+                    if(videoUrl == undefined && video != undefined){
+                      setImageUrl(video)
+                    }
+                      return CreatePostImage()
+                  }
                 }
                 return <>
                   {props.Method == "New" ? CreatePostImage() : Share() }
@@ -178,7 +219,7 @@ function PostForm(props : Props_type) {
                 <div className="Info">
                     <Textarea/>
                     <ShowMedia/>
-                    {props.Method == "New" ? <MediaInputs/> : null}
+                    {Content_HelperFunction.Choose_Media_Inputs()}
                 </div>
                 <button  onClick={() => {Content_HelperFunction.GetReady()}}>{props.Method}</button>
               </div>

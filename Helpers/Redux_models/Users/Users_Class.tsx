@@ -38,7 +38,9 @@ class Commen_Functions{
             "Status" : this.find().Status ,
             "Born"   : this.find().birthday,
             "From"   : this.find().From ,
-            "Phone"  : this.find().Phonenumber
+            "Phone"  : this.find().Phonenumber ,
+            "Email"  : this.find().Email
+            
         }
         info = Object.fromEntries(Object.entries(info).filter(([_, v]) => v !== undefined));
         return info

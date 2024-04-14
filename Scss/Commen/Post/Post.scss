@@ -28,6 +28,7 @@
         .Text {
             margin: 0px pxtoem(10px);
             font-size: pxtoem(15px);
+            overflow-wrap: break-word;
         }
         img {
             margin-top: pxtoem(10px);
@@ -150,7 +151,7 @@
 .Loading_Post_Component{
     @include Userinfo();
     @include Component();
-    .Content{
+    .Loading_Content{
         width: 100%;
         display: flex;
         justify-content: center;
@@ -161,7 +162,6 @@
             object-fit: contain;
             @include flex_row();
             @include flex_center();
-
         }
         animation: Loading_animation 2s infinite forwards    ;
         -webkit-animation: Loading_animation 2s infinite forwards    ;
@@ -177,7 +177,7 @@
 body.ColorTheme_1 .Null_Post_Component{color: $first_color;}
 body.ColorTheme_1 .Loading_Post_Component{
     background-color: $secound_color;
-    .Content .background{
+    .Loading_Content .background{
         background-color: #8080803d;
         @include Loader($first_color)
     }

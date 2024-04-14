@@ -182,6 +182,19 @@ $AnimationSpeed : 0.2s;
 }
 @mixin Comments_Section{
     .Comments {
+        .Loading_Content {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                height:99%;
+                .background {
+                    margin: pxtoem(10px) 0px;
+                    width: 95%;
+                    object-fit: contain;
+                    @include flex_row();
+                    @include flex_center();
+                }
+            }
             width: 100%;
             display: flex;
             flex-grow: 1;
@@ -220,6 +233,10 @@ $AnimationSpeed : 0.2s;
         animation: Comment_Box_Hide $AnimationSpeed forwards;
         -webkit-animation: Comment_Box_Hide $AnimationSpeed forwards;
     }
+}
+// Colors 
+body.ColorTheme_1 .Comments .Loading_Content .background {
+        @include Loader($first_color)
 }
 @keyframes Comment_Box_Show {
     0% {

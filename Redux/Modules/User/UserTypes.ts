@@ -1,4 +1,5 @@
 import { avaliable_lang } from "@/Lang/Main_file";
+import { Key } from "@mui/icons-material";
 
 // we use it only in User imaginary Database, just remeber you about what data we have
 export type All_User_Data = {
@@ -50,12 +51,13 @@ export type UserAction = {
     UserID   :number ,
     UserToken:string
 }
-export type Box_info_keys = "Status" | "From" | "Born" | "Phone"
-export type Box_info_type = {
+export type Box_info_keys  = "Status" | "From" | "Born" | "Phone" | "Email"
+export type Box_info_type  = {
     "Status"    ?: "Married" | "Single" ,
     "From"      ?: string ,
     "Born"      ?: string ,
-    "Phone"     ?: string
+    "Phone"     ?: string ,
+    "Email"     ?: string 
 }
 
 // Helper Types

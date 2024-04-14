@@ -236,6 +236,22 @@
   display: flex;
   flex-direction: column;
 }
+.CommentsBox > .Container .Comments .Loading_Content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 99%;
+}
+.CommentsBox > .Container .Comments .Loading_Content .background {
+  margin: 0.625em 0px;
+  width: 95%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 .CommentsBox > .Container .Comments::-webkit-scrollbar {
   width: 0.125em;
 }
@@ -246,6 +262,25 @@
 .CommentsBox.Hide {
   animation: Comment_Box_Hide 0.2s forwards;
   -webkit-animation: Comment_Box_Hide 0.2s forwards;
+}
+
+body.ColorTheme_1 .Comments .Loading_Content .background .loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #1877f2;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes Comment_Box_Show {

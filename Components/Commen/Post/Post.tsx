@@ -20,6 +20,7 @@ import Delete_Card from "../../../Helpers/Small_Helper_Components/DeleteCard/Del
 import { ReactsIcons } from "@/Ts/ReactsIcons";
 import Setting_Box ,{ Setting_element } from "@/Helpers/Small_Helper_Components/Setting_Box/Setting_Box";
 import { HTMLDivElementRef } from "@/Ts/Hooks_Types";
+import Loading from "@/Helpers/Small_Helper_Components/Loading/Loading";
 
 // Description 
     // This component manages and handles the interactions related to posting.
@@ -134,12 +135,15 @@ function Post(props: PropsType) {
                         </div>
                         )
                 case "Update" : 
-                    return(
-                        <div className="New">
-                            {Post.Share_post ? <UserInfo Post_data={Post.Share_post} /> : null}
-                            <Content  Updata={true} Post_data={Post.Share_post ? Post.Share_post: Post.main_post}/>
-                        </div>
-                        )
+                    if(Post.Share_post){
+                        return(
+                                <div className="New">
+                                    <UserInfo Post_data={Post.Share_post}/>
+                                    <Content  Updata={true} Post_data={Post.Share_post ? Post.Share_post: Post.main_post}/>
+                                </div>
+                                )
+                    }
+                    else{return <></>}
                 default :
                         <></>
                     
@@ -290,16 +294,16 @@ function Post(props: PropsType) {
             </div>
             {ShowPostForm? <PostForm 
                                         key="res" 
-                                        Close = {() => SetShowPostForm(false)} 
-                                        Method= {PostFormMethod}
-                                        SharePost={{"Data" : Post , "Image" :Helper_Functions.PostFormImage()}}/> : null}
+                                        Close      = {() => SetShowPostForm(false)} 
+                                        Method     = {PostFormMethod}
+                                        Source_Post= {{"Data" : Post , "Image" :Helper_Functions.PostFormImage()}}/> : null}
             {
-                Show_Delete_post_Card ? 
-                    <Delete_Card Close_Function={() => SetDeleteCard(false)} 
-                                item_id = {props.Post.main_post.id}
-                                Option={{"Data" : {} , "text" : "Post"}}
-                                /> :
-                    null
+            Show_Delete_post_Card ? 
+                <Delete_Card Close_Function={() => SetDeleteCard(false)} 
+                            item_id = {props.Post.main_post.id}
+                            Option={{"Data" : {} , "text" : "Post"}}
+                            /> :
+                null
             }
             </>
         }
@@ -311,11 +315,7 @@ function Post(props: PropsType) {
                             <img src= {`${Static_images.unknown}`}></img>
                         </div>
                     </div>
-                    <div className="Content">
-                        <div className="background">
-                            <span className="loader"></span>
-                        </div>
-                    </div>
+                    <Loading/>
                 </div>
             </>
         }

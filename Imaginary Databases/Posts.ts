@@ -1,6 +1,7 @@
-import { Create_Post, PostShap, Post_Filter } from "@/Redux/Modules/Post/PostTypes";
+import { Create_Post, PostShap, Post_Filter, Update_Post, Update_Response } from "@/Redux/Modules/Post/PostTypes";
 import { APP_Folders } from "@/Static_Data/APP_Folders"
 import { User_DataBase_Model } from "./Users";
+import { Update } from "@reduxjs/toolkit";
 
 class Posts_DataBase_Class{
     Posts_DataBase  : PostShap[] = [
@@ -16,7 +17,7 @@ class Posts_DataBase_Class{
                         } ,
                         "user_interaction" : {"React" : "Like"},
                         "Comments" : {
-        "loading": {"Delete" : false , "Insert" : false , "Select" : false , "Update" : false} ,
+        "loading": {"Delete" : false , "Insert" : false , "Select" : true , "Update" : false} ,
         "error": null,
         "data" : [] ,
                                         }
@@ -42,7 +43,7 @@ class Posts_DataBase_Class{
                         } ,
                         "user_interaction" : {"React" : null},
                         "Comments" : {
-        "loading": {"Delete" : false , "Insert" : false , "Select" : false , "Update" : false} ,
+        "loading": {"Delete" : false , "Insert" : false , "Select" : true , "Update" : false} ,
         "error": null,
         "data" : [] ,
                                         }
@@ -59,7 +60,7 @@ class Posts_DataBase_Class{
                         } ,
                         "user_interaction" : {"React" : "Love"},
                         "Comments": {
-        "loading": {"Delete" : false , "Insert" : false , "Select" : false , "Update" : false} ,
+        "loading": {"Delete" : false , "Insert" : false , "Select" : true , "Update" : false} ,
         "error": null,
         "data" : [] ,
                             }
@@ -106,7 +107,7 @@ class Posts_DataBase_Class{
             } ,
             "user_interaction" : {"React" : null},
             "Comments" : {
-        "loading": {"Delete" : false , "Insert" : false , "Select" : false , "Update" : false} ,
+        "loading": {"Delete" : false , "Insert" : false , "Select" : true , "Update" : false} ,
         "error": null,
         "data" : [] ,
                         }
@@ -124,8 +125,10 @@ class Posts_DataBase_Class{
         this.Posts_DataBase.unshift(new_post)
         return new_post
     }
-    public Update(data : Create_Post){
-        const index = this.Posts_DataBase.findIndex(item => item.main_post.id)
+    public Update(data : Update_Post):Update_Response{
+        const index = this.Posts_DataBase.findIndex(item => item.main_post.id == data.Id)
+        this.Posts_DataBase[index].main_post.info = data['info']
+        return {info : data.info , Id : data.Id , Done : true}
     }  
 }
 export const  Posts_DataBase_Model = new Posts_DataBase_Class

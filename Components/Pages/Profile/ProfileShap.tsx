@@ -3,7 +3,7 @@ import { Bottom_Components_type, Helper_Functions, Props, Static_data } from './
 import { Profile_Model } from '@/Helpers/Redux_models/Profile/Profile_Class'
 import { APP_Folders } from '@/Static_Data/APP_Folders'
 import "@/Scss/Pages/Profile/ProfileShap/ProfileShap.css"
-import { Cake, Favorite, Home, MoreHoriz, PersonAdd, PersonRemove, Phone } from '@mui/icons-material'
+import { Cake, Email, Favorite, Home, MoreHoriz, PersonAdd, PersonRemove, Phone } from '@mui/icons-material'
 import { Box_info_keys, anyUser_Type } from '@/Redux/Modules/User/UserTypes'
 import { Translate } from '@/Helpers/Translate'
 import CreatePost from '@/Components/Commen/Post/Create_Post/Create_Post'
@@ -31,9 +31,11 @@ function ProfileShap(props : Props) {
         ],
         info_box :{
             "Status" : {text : "Status" , icon : <Favorite/> } ,
-            "From"   : {text : "From"   , icon : <Home/> } ,
-            "Born"   : {text : "Born"   , icon : <Cake/> },
-            "Phone"  : {text : "Phone"  , icon : <Phone/>}
+            "From"   : {text : "From"   , icon : <Home/>     } ,
+            "Born"   : {text : "Born"   , icon : <Cake/>     } , 
+            "Phone"  : {text : "Phone"  , icon : <Phone/>    } , 
+            "Email"  : {text : "Email"  , icon : <Email/>    }
+            
         }
     }
     const Helper_functions : Helper_Functions = {
@@ -44,6 +46,7 @@ function ProfileShap(props : Props) {
                 <div className='info_item' key={item}>
                     <p className='title'>
                         {Static_Data.info_box[item as Box_info_keys].icon}
+                        &nbsp;
                         {Static_Data.info_box[item as Box_info_keys].text}
                     </p>
                     <p className='sparate'>:</p>

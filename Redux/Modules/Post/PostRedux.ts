@@ -1,11 +1,12 @@
 "use"
 import { PayloadAction,  createSlice  } from "@reduxjs/toolkit"
-import {  PostRedux, PostShap } from "./PostTypes"
+import {  PostRedux, PostShap, Update_Response } from "./PostTypes"
 import {  Create_Post_Action, Delete_Post_Action, Select_Post_Action, Update_Post_Action } from "./PostFetch"
 import { Delete, Update } from "@mui/icons-material"
 import build from "next/dist/build"
 import { CommentRedux, Create_Comment_Api_Response, Delete_Comment_APi_Response, Select_Comments_Api_Response } from "../Comments/CommentTypes"
 import { Create_Comment_Action, Delete_Comment_Action, Select_Comments_Action } from "../Comments/CommentFetch"
+import { act } from "react-dom/test-utils"
 const initialState : PostRedux= {
     loading        : {"Delete" : false , "Insert" : false , "Select" : true , "Update" : false}     ,
     error          : null     ,
@@ -23,6 +24,7 @@ const PostSlice = createSlice({
                     if(action.payload.type == "Post"){
                         for(let i =0 ; i < state.data.length ; i++){
                             if(state.data[i].main_post.id == action.payload.Search_Id){
+                                state.data[i].Comments.loading.Select = false
                                 state.data[i].Comments.data= action.payload.Date
                                 break
                             }
@@ -87,7 +89,13 @@ const PostSlice = createSlice({
             // Update
                 builder.addCase(Update_Post_Action.rejected , (state) => {})
                 builder.addCase(Update_Post_Action.pending  , (state) => {})
-                builder.addCase(Update_Post_Action.fulfilled, (state , action: PayloadAction<PostShap> ) => {})
+                builder.addCase(Update_Post_Action.fulfilled, (state , action: PayloadAction<Update_Response> ) => {
+                    if(action.payload.Done){
+                        const index = state.data.findIndex(item => item.main_post.id == action.payload.Id)
+                        state.data[index].main_post.info = action.payload.info
+                    }
+
+                })
 
     }
 })

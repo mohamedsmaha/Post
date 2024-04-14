@@ -98,14 +98,14 @@
 .Loading_Post_Component .UserInfo .Setting .Setting_Box .container ul li:last-child {
   border-bottom: none;
 }
-.Loading_Post_Component .Content {
+.Loading_Post_Component .Loading_Content {
   width: 100%;
   display: flex;
   justify-content: center;
   animation: Loading_animation 2s infinite forwards;
   -webkit-animation: Loading_animation 2s infinite forwards;
 }
-.Loading_Post_Component .Content .background {
+.Loading_Post_Component .Loading_Content .background {
   margin: 0.625em 0px;
   width: 95%;
   height: 12.5em;
@@ -230,6 +230,7 @@
 .Post_Component .New .Content .Text {
   margin: 0px 0.625em;
   font-size: 0.9375em;
+  overflow-wrap: break-word;
 }
 .Post_Component .New .Content img {
   margin-top: 0.625em;
@@ -405,6 +406,7 @@
 .Post_Component .Share .Content .Text {
   margin: 0px 0.625em;
   font-size: 0.9375em;
+  overflow-wrap: break-word;
 }
 .Post_Component .Share .Content img {
   margin-top: 0.625em;
@@ -586,6 +588,7 @@
 .Post_Component .Share .New .Content .Text {
   margin: 0px 0.625em;
   font-size: 0.9375em;
+  overflow-wrap: break-word;
 }
 .Post_Component .Share .New .Content img {
   margin-top: 0.625em;
@@ -689,10 +692,10 @@ body.ColorTheme_1 .Null_Post_Component {
 body.ColorTheme_1 .Loading_Post_Component {
   background-color: white;
 }
-body.ColorTheme_1 .Loading_Post_Component .Content .background {
+body.ColorTheme_1 .Loading_Post_Component .Loading_Content .background {
   background-color: rgba(128, 128, 128, 0.2392156863);
 }
-body.ColorTheme_1 .Loading_Post_Component .Content .background .loader {
+body.ColorTheme_1 .Loading_Post_Component .Loading_Content .background .loader {
   width: 48px;
   height: 48px;
   border: 5px solid #1877f2;
@@ -992,6 +995,7 @@ body.ColorTheme_1 .Post_Component .Share .New {
 .PostForm_Component .Container .Main_Form > .Bottom div.Content_info_Post .Info .New .Content .Text {
   margin: 0px 0.625em;
   font-size: 0.9375em;
+  overflow-wrap: break-word;
 }
 .PostForm_Component .Container .Main_Form > .Bottom div.Content_info_Post .Info .New .Content img {
   margin-top: 0.625em;
