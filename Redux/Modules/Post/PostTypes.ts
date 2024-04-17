@@ -10,18 +10,20 @@ export type PostRedux = {
     data           : PostShap[]
 }
 export type Post_Type    = "Share"    | "New" | "Update"
-export type Post_kind    = "Content"  
+export type Post_kind    = "Content"  | "Voting" 
 export type sum          = 's'|''
-export type Post_Data    = Content_info
+export type Post_Data    = Content_info | Voting_info
+export type Voting_info  = {
+    Question   : string , 
+    Options    :  {id : number  , text : string ,  Number_Of_Votes : number}[]
+    MultiValue : Boolean ,
+    UserInterAction:{UserChoice : number[]},
+    Number_Of_Votes : number
+}
 export type Content_info = {
     text ?: string ,
     img  ?: string ,
     vidoe?: string 
-}
-export type Vote_Info    = {
-    Question : string , 
-    Options  : {[key in number] : {Number_OF_Vots : number , img : string , text : string}},
-
 }
 export type Top_Three_Reacts = {
     first   : ReactsIcons | null ,
@@ -30,7 +32,8 @@ export type Top_Three_Reacts = {
 }
 export type Public_Interactions   ={
     numbers  : {order : Top_Three_Reacts , total : number } ,
-    Comments : number 
+    Comments : number ,
+    share    : number
 }
 export type Post_info = {
     id          : number,

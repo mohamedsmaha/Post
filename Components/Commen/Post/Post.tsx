@@ -5,9 +5,9 @@ import { Static_images } from "@/Static_Data/Images";
 import { APP_Folders } from "@/Static_Data/APP_Folders";
 import { Translate, Translate_Object } from "@/Helpers/Translate";
 import { PostElementsLangType } from "@/Lang/Types/Components/Post";
-import { Content, Helper_Functions, PropsType, UserInfo } from "./PostTypes";
+import { For_Voting, Helper_Functions, Main_Kind_Data, PropsType, UserInfo } from "./PostTypes";
 import { useEffect, useRef, useState } from "react";
-import { Post_Type } from "@/Redux/Modules/Post/PostTypes";
+import { Content_info, Post_Type, Voting_info } from "@/Redux/Modules/Post/PostTypes";
 import React from "react";
 import { StaticWordsElementsLangType } from "@/Lang/Types/Static_Words";
 import { User_Model } from "@/Helpers/Redux_models/Users/Users_Class";
@@ -21,6 +21,7 @@ import { ReactsIcons } from "@/Ts/ReactsIcons";
 import Setting_Box ,{ Setting_element } from "@/Helpers/Small_Helper_Components/Setting_Box/Setting_Box";
 import { HTMLDivElementRef } from "@/Ts/Hooks_Types";
 import Loading from "@/Helpers/Small_Helper_Components/Loading/Loading";
+import { Switch } from "@mui/material";
 
 // Description 
     // This component manages and handles the interactions related to posting.
@@ -128,10 +129,11 @@ function Post(props: PropsType) {
         PostFormImage() {
             switch (PostFormMethod){
                 case "Share" :
+                    let post  = Post.Share_post ? Post.Share_post: Post.main_post
                     return(
                         <div className="New">
-                            <UserInfo Static={true} Post_data={Post.Share_post ? Post.Share_post: Post.main_post}/>
-                            <Content  Post_data={Post.Share_post ? Post.Share_post: Post.main_post}/>
+                            <UserInfo Static={true} Post_data={post}/>
+                            {Helper_Functions.DeterMine_Post_Kind(post.kind , {"Post_data" : post})}
                         </div>
                         )
                 case "Update" : 
@@ -139,7 +141,7 @@ function Post(props: PropsType) {
                         return(
                                 <div className="New">
                                     <UserInfo Post_data={Post.Share_post}/>
-                                    <Content  Updata={true} Post_data={Post.Share_post ? Post.Share_post: Post.main_post}/>
+                                    {Helper_Functions.DeterMine_Post_Kind(Post.Share_post.kind , {"Post_data" : Post.Share_post})}
                                 </div>
                                 )
                     }
@@ -159,19 +161,42 @@ function Post(props: PropsType) {
                     return Null_post()
             }
         },
+        DeterMine_Post_Kind : (Kind , Data) =>{
+            console.log(Data , Kind)
+            switch(Kind){
+                case "Content" :
+                    return <Content {...Data} />  
+                case "Voting" :
+                    return <Voting {...Data}/>
+                default :
+                    return <></>
+            }
+            return <></>
+        },
+        InterAction(Action){
+                const Vote = (Data : For_Voting) => {
+                        Data.Data.input.defaultChecked = true;
+                        console.log(Data.Data.input.value)
+                    }
+                switch (Action.kind){
+                    case "Vote" : 
+                        Vote(Action)
+                }
+                
+        }
     }
 // Small Component
     function Share_type(){
         return(
             <div className="Share">
                 <UserInfo Post_data={Post.main_post}/>
-                <Content  Post_data={Post.main_post}/>
+                {Helper_Functions.DeterMine_Post_Kind(Post.main_post.kind  , {"Post_data" :  Post.main_post} )}
                 <div className="New">
                     {
                         Post.Share_post ?
                         <>
                         <UserInfo Static={true} Post_data={Post.Share_post}/>
-                        <Content  Post_data={Post.Share_post}/>
+                        {Helper_Functions.DeterMine_Post_Kind(Post.Share_post.kind , {"Post_data" :  Post.Share_post} )}
                         </> : null
                     }
                 </div>
@@ -184,7 +209,7 @@ function Post(props: PropsType) {
         return(
         <div className="New">
             <UserInfo Post_data={Post.main_post}/>
-            <Content  Post_data={Post.main_post}/>
+            {Helper_Functions.DeterMine_Post_Kind( Post.main_post.kind , {"Post_data" :  Post.main_post} )}
             <Analysis/>
             <Actions/>
         </div>
@@ -203,22 +228,19 @@ function Post(props: PropsType) {
                         {  Static_Words.Time(Post_data.Date.number , Post_data.Date.unite)}
                     </span>
                 </div>
-                {  ( props.Static != true && Post_data.User.id == User_Model.GetId() ) ? // Check if this user own the post 
+                {  ( true && props.Static != true && Post_data.User.id == User_Model.GetId() ) ? // Check if this user own the post 
                         <Post_Setting/> : null}
             </div>
         )
     }
-    function Content (props : Content){
-        const {Post_data} = props
-        return(
-            <div className="Content">
-                {props.Updata != true ? <span className="Text">{Post_data.info.text}</span> : null}
-                {Post_data.info.img   ? <img src={`${Post_data.info.img}`} alt="" /> : null }
-                {Post_data.info.vidoe ? <video src = {`${APP_Folders.Posts("videos")}/${Post_data.info.vidoe}`} /> : null}
-            </div>
-        )
-    }
     function Analysis(){
+        const Votes = ()=>{
+            let info = Post.main_post.info as Voting_info 
+            if(Post.main_post.kind != "Voting" || info.Number_Of_Votes < 0){return <></>}
+            return <span className="Vote">
+                        {info.Number_Of_Votes} vote
+                    </span>
+        }
         return(
             <div className="Analysis">
                 {Post.main_post.Public_Interactions.numbers.total > 0 ?                 
@@ -229,11 +251,19 @@ function Post(props: PropsType) {
                         <span className="ReactsNumber">{PostLangObj.Likes(Post.main_post.Public_Interactions.numbers.total)}</span>
                     </div>:null
                 }
-                {Post.main_post.Public_Interactions.Comments > 0 ?                 
-                    <span className="Comments" onClick={() => {Helper_Functions.Handel_CommentBox_ClassName()}}>
-                        {PostLangObj.Comments(Post.main_post.Public_Interactions.Comments)}
-                    </span> : null
-                }
+                <div className="Left">
+                    {Post.main_post.Public_Interactions.Comments > 0 ?                 
+                        <span className="Comments" onClick={() => {Helper_Functions.Handel_CommentBox_ClassName()}}>
+                            {PostLangObj.Comments(Post.main_post.Public_Interactions.Comments)}
+                        </span> : null
+                    }
+                    {Post.main_post.Public_Interactions.share > 0 ?                 
+                        <span className="Shares" onClick={() => {Helper_Functions.Handel_CommentBox_ClassName()}}>
+                            {Post.main_post.Public_Interactions.share} share 
+                        </span> : null
+                    }
+                    <Votes/>
+                </div>
             </div>
         )
     }
@@ -281,7 +311,52 @@ function Post(props: PropsType) {
         return <Setting_Box elements={date} 
         Control_ref={{"value" : Show_Post_Setting , "State_Function" : Set_PostSetting }}/>
     }
-    // Kinds or Options
+    // Post Kinds 
+        function Content (props : Main_Kind_Data){
+            const {Post_data} = props;
+            let info  = Post_data.info as Content_info
+            return(
+                <div className="Content">
+                    {props.Updata != true ? <span className="Text">{info.text}</span> : null}
+                    {info.img   ? <img src={`${info.img}`} alt="" /> : null }
+                    {info.vidoe ? <video src = {`${APP_Folders.Posts("videos")}/${info.vidoe}`} /> : null}
+                </div>
+            )
+        }
+        function Voting(  props:Main_Kind_Data){
+            const {Post_data} = props;
+            let info  = Post_data.info as Voting_info
+            return <>
+                <div className="Voting">
+                    <div className="Question">{info.Question}</div>
+                    <div className="Options">
+                        {info.Options.map((item,index) => ( 
+                            <div key={item.id} className="Option">
+                            <input 
+                            type="radio"  value={`${item.id}`}  defaultChecked={false} name={`choose_${Post.main_post.id}`}  id={`${item.id}${index}"choice"`} 
+                            onClick={(e: React.MouseEvent<HTMLInputElement, MouseEvent>) => { 
+                                const target = e.currentTarget as HTMLInputElement;
+                                Helper_Functions.InterAction({ 
+                                kind: 'Vote', 
+                                Data: { 
+                                    input: target
+                                } 
+                                }); 
+                            }} 
+                            />
+
+
+                                <label className="info" htmlFor={`${item.id}${index}"choice"`}>
+                                    <span className="text">{item.text}</span>
+                                    <span className="Number_of_Vots">{item.Number_Of_Votes}</span>
+                                </label>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </>
+        }
+    // Options
         function Normal_post(){
         return <>
             <div className={`Post_Component`} ref={Post_div_Ref} onMouseMove={(e: any) => Helper_Functions.Post_Mouse_Move(e.nativeEvent)}>
@@ -328,7 +403,7 @@ function Post(props: PropsType) {
         }
     return (
     <>
-        {Helper_Functions.Select_Option(props.Kind)}
+        {Helper_Functions.Select_Option(props.Options)}
     </>
     );
 }

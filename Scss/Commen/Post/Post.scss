@@ -21,23 +21,6 @@
         @include Setting();
     }
 }
-@mixin Content() {
-    .Content {
-        @include flex_column();
-        justify-content: center;
-        .Text {
-            margin: 0px pxtoem(10px);
-            font-size: pxtoem(15px);
-            overflow-wrap: break-word;
-        }
-        img {
-            margin-top: pxtoem(10px);
-            width: 100%;
-            max-height: pxtoem(500px);
-            object-fit: contain;
-        }
-    }
-}
 @mixin Analysis() {
     .Analysis {
         @include flex_row();
@@ -55,7 +38,15 @@
             }
             .ReactsNumber {font-size: pxtoem(13px);}
         }
-        .Comments {cursor: pointer ; font-size: pxtoem(13px);}
+        .Left{
+            @include flex_row();
+            align-items: center;
+            gap: pxtoem(5px);
+            span {
+                    cursor: pointer;
+                    font-size: pxtoem(13px);
+                }
+        }
     }
 }
 @mixin Reacts(){
@@ -106,7 +97,6 @@
         @include flex_column();
 
         @include Userinfo();
-        @include Content();
         @include Analysis();
         @include Actions();
     }
@@ -114,7 +104,6 @@
 @mixin Share(){
     .Share {
             @include Userinfo();
-            @include Content();
             @include Analysis();
             @include Actions();
 
@@ -139,7 +128,58 @@
     width: 100%;
     @include border(10px);
 }
-// Components 
+// Post Kind
+@mixin Content() {
+    .Content {
+        @include flex_column();
+        justify-content: center;
+
+        .Text {
+            margin: 0px pxtoem(10px);
+            font-size: pxtoem(15px);
+            overflow-wrap: break-word;
+        }
+
+        img {
+            margin-top: pxtoem(10px);
+            width: 100%;
+            max-height: pxtoem(500px);
+            object-fit: contain;
+        }
+    }
+}
+@mixin Voting(){
+    .Voting{
+        .Question{
+            font-size: pxtoem(16px);
+            padding: pxtoem(5px) pxtoem(0px);
+        }
+        .Options{
+            display: flex;
+            flex-direction: column;
+            margin: 0px pxtoem(10px);
+            gap: pxtoem(10px);
+            .Option{
+                display: flex;
+                align-items: center;
+                gap: pxtoem(10px);
+                padding: pxtoem(5px) pxtoem(10px);
+                @include border(10px);
+                .info{
+                    display: flex;
+                    justify-content: space-between;
+                    flex: 1;
+                    .text{
+                        font-size: pxtoem(15px);
+                    
+                    }
+                    .Number_of_Vots{font-size: pxtoem(14px);}
+                }
+            }
+        }
+    }
+}
+// Options
 .Null_Post_Component{
     font-size: pxtoem(16px);
     font-weight: 500;
@@ -171,6 +211,8 @@
 .Post_Component {
     @include Newtype();
     @include Share();
+    @include Content();
+    @include Voting();
     @include Component();
 }
 // Colors
@@ -189,10 +231,11 @@ body.ColorTheme_1 .Post_Component{
         .Time{color: $fifth_color;}
         .Setting svg{color: $fifth_color;}
     }
+    .Voting  .Options .Option{background-color: rgb(112 75 8 / 8%);}
     .Content .Text {color: $fifth_color;}
     .Analysis {
         .Likes .ReactsNumber{color: $fifth_color;}
-        .Comments {color: $fifth_color;}
+        .Left span {color: $fifth_color;}
     }
     .Actions .Item{
         &.Reacts{

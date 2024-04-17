@@ -20,8 +20,9 @@ function PostForm(props : Props_type) {
 // Lang
     const CreatePostObj= Translate_Object("CreatePost") as CreatePostElementsLangType;
 // Hooks 
-    const [Kind     , SetKind    ] = useState<Post_kind>("Content")
-    const UserAction : UserAction  = User_Model.Get_User_Action() as UserAction
+    const [Kind     , SetKind    ]   = useState<Post_kind>("Content")
+    const arr_Post_Kind :Post_kind[] = ["Content" , "Voting"] 
+    const UserAction : UserAction    = User_Model.Get_User_Action() as UserAction
     const Form_Ref :React.RefObject<HTMLDivElement>   = useRef(null)
   // UseEffect
 // Helper Functions
@@ -38,12 +39,14 @@ function PostForm(props : Props_type) {
         Select_Kind() {
           switch(Kind){
             case "Content" : return <Content_Info_Post/>
+            case "Voting"  : return <Voting_Info_Post/>
           }
         },
         // Content Type Functions 
     }
 // Options
     function Content_Info_Post(){
+          let Main_info  = props.Source_Post?.Data.main_post.info  as Content_info
           const [imageUrl , setImageUrl] = useState<string | undefined>(undefined);
           const [videoUrl , setVideoUrl] = useState<string | undefined>(undefined);
           const [Textare_content , SetTextareaContent] = useState<string | undefined>(undefined)
@@ -149,8 +152,8 @@ function PostForm(props : Props_type) {
                   }
               }, [Textare_content]);
               useEffect(() => {
-                    if(props.Method == "Update" && props.Source_Post?.Data.main_post.info.text  != undefined  ){
-                        SetTextareaContent(props.Source_Post.Data.main_post.info.text);
+                    if(props.Method == "Update" && Main_info?.text  != undefined  ){
+                        SetTextareaContent(Main_info?.text);
                     }
               }, [])
           // Helepr
@@ -181,8 +184,8 @@ function PostForm(props : Props_type) {
                   if( props.Method == "Share" || props.Source_Post?.Data.Share_post){
                       return props.Source_Post?.Image
                   }else{
-                    const image = props.Source_Post?.Data.main_post.info.img  ;
-                    const video = props.Source_Post?.Data.main_post.info.vidoe;
+                    const image = Main_info?.img  ;
+                    const video = Main_info?.vidoe;
                     if(imageUrl == undefined && image != undefined && videoUrl == undefined){
                       setImageUrl(image)
                     }
@@ -228,6 +231,22 @@ function PostForm(props : Props_type) {
 
               )
     }
+    function Voting_Info_Post(){
+          const [Textare_content , SetTextareaContent] = useState<string | undefined>(undefined)
+          const text_ref:React.RefObject<HTMLTextAreaElement> = useRef(null)
+          function Textarea(){
+              return <textarea name="" autoCorrect= 'off'  spellCheck="false"  value={Textare_content ? Textare_content : ""}   
+                                  placeholder={`${CreatePostObj.InputFiled(User_Model.GetName())}`}>
+                </textarea>
+            }
+      return <>
+        <div className="Voting_Info_Post">
+          <div className="Info">
+            </div>
+          <button>click me daddy</button>
+        </div>
+      </>
+    }
   return (
     <div className='PostForm_Component' onClick={(e) => Helper_Functions.Handel_Hide_Click(e)} >
       <div className="Container" ref={Form_Ref}>
@@ -238,6 +257,15 @@ function PostForm(props : Props_type) {
                     <p className="Text">mohamed sabry</p>
               </div>
               <span onClick={props.Close}><Close/></span>
+          </div>
+          <div className="Middel">
+            <div className="Container">
+              {arr_Post_Kind.map((item , index) => (
+                <div 
+                  onClick={()=>{SetKind(item)}}
+                  className={`option ${item == Kind ?'active' : null}`} key = {index}>{item}</div>
+              ))}
+            </div>
           </div>
           <div className="Bottom">
               {Helper_Functions.Select_Kind()}

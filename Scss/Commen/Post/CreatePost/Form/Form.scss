@@ -90,6 +90,26 @@
             }
             svg{font-size: pxtoem(22px);}
         }
+        >.Middel{
+            padding: pxtoem(10px);
+            width: 100%;
+            >.Container{
+                @include shadow(1px, 1px, 6px, -3px);
+                width: 98%;
+                margin: 0px auto;
+                @include flex_row();
+                gap: pxtoem(5px);
+                >.option{
+                    padding: pxtoem(5px) pxtoem(4px);
+                    font-size: pxtoem(13px);
+                    width: fit-content;
+                    cursor: pointer;
+                    &.active{
+                        border-bottom:2px solid $first_color;
+                    }
+                }
+            }
+            }
         >.Bottom{
             flex-grow: 1;
             padding: pxtoem(10px);
@@ -104,7 +124,7 @@
 }
 .PostForm_Component{
     @include Cards_Filter();
-    .Container{
+    >.Container{
         width: 50vw;height: fit-content;
         min-height: pxtoem(250px);
         padding: pxtoem(15px) pxtoem(20px);
@@ -117,12 +137,12 @@
 // Media
 @media (max-width:1024px) {
     .PostForm_Component{
-        .Container{width: 70vw;}
+        >.Container{width: 70vw;}
     }
 }
 @media (max-width:770px) {
     .PostForm_Component {
-        .Container {
+        >.Container {
             width: 90vw;
             font-size: pxtoem(12px);
         }
@@ -130,7 +150,7 @@
 }
 @media (max-width:500px) {
     .PostForm_Component {
-        .Container {
+        >.Container {
             width: 95vw;
             height: 50vh;
             @include border(10px);   
@@ -147,7 +167,7 @@
 // Colors 
 body.ColorTheme_1 .PostForm_Component{
     background-color: #8080801c;
-    .Container {
+    >.Container {
         background-color: $secound_color;
         .Main_Form .Content_info_Post button{
             color: $secound_color;

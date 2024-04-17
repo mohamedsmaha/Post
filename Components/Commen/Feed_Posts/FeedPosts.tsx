@@ -39,14 +39,14 @@ function FeedPosts(props : PropsType) {
     return (
         <div className='FeedPosts'>
 
-        {loading.Select ? <Post key={"loading"} Post={emptypost} Kind="Loading" /> : null}
+        {loading.Select ? <Post key={"loading"} Post={emptypost} Options="Loading" /> : null}
         {!loading.Select && (
             <>
             {error !== null ? (
-                <Post key={emptypost.main_post.id} Post={emptypost} Kind="Null" />
+                <Post key={emptypost.main_post.id} Post={emptypost} Options="Null" />
             ) : data.length === 0 ? (
-                <Post key={emptypost.main_post.id} Post={emptypost} Kind="Null" />
-            ) :  data.map((item) => <Post key={item.main_post.id} Post={item} Kind="Normal" /> )
+                <Post key={emptypost.main_post.id} Post={emptypost} Options="Null" />
+            ) :  data.map((item) => <Post key={item.main_post.id} Post={item} Options="Normal" /> )
             
             }
             </>

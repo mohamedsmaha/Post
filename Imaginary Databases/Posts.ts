@@ -5,11 +5,47 @@ import { Update } from "@reduxjs/toolkit";
 
 class Posts_DataBase_Class{
     Posts_DataBase  : PostShap[] = [
+                    {
+                        "main_post" :{
+                            "id"   : 4 ,
+                            "Date" : {"number" : 3 , "unite" : "Weeks"} ,
+                            "Public_Interactions" :{
+                                    "share"      : 20 ,
+                                    "Comments"   : 10 ,
+                                    "numbers" : {"order" : {"first" : "Like" , "Third" : null , "secound" : "Love"} , "total" : 1200}},
+                            "User"     : User_DataBase_Model.Get_User(1),
+                            "info"     : 
+                                    {
+  "Question": "Who is known as the 'God of Mischief' in the Marvel Cinematic Universe?",
+  "Options": [
+    { "Number_Of_Votes": 15000, "id": 1, "text": "Thor" },
+    { "Number_Of_Votes": 2200, "id": 2, "text": "Hulk" },
+    { "Number_Of_Votes": 400, "id": 3, "text": "Loki" },
+    { "Number_Of_Votes": 600, "id": 4, "text": "Captain America" },
+    { "Number_Of_Votes": 300, "id": 5, "text": "Iron Man" }
+  ],
+  "MultiValue": false,
+  "UserInterAction": { "UserChoice": [3] },
+  "Number_Of_Votes": 18300
+}
+,
+                            "kind"     : "Voting",
+                            "type"     : "New" 
+                        } ,
+                        "user_interaction" : {"React" : null},
+                        "Comments": {
+                            "loading": {"Delete" : false , "Insert" : false , "Select" : true , "Update" : false} ,
+                            "error": null,
+                            "data" : [] ,
+                            }
+                    },      
                     { 
                         "main_post" :{
                             "id"    : 1,
                             "Date" : {"number" : 10 , "unite" : "Days"} ,
-                            "Public_Interactions" :{ "Comments" : 10 ,"numbers" : {"order" : {"first" : "Like" , "Third" : null , "secound" : null} , "total" : 1200}},
+                            "Public_Interactions" :{ 
+                                "share" :  0 ,
+                                "Comments" : 10 ,"numbers" : {"order" : {"first" : "Like" , "Third" : null , "secound" : null} , "total" : 1200}},
                             "User" : User_DataBase_Model.Get_User(2),
                             "info" : {"text" : "hey my name is mohamed"},
                             "kind" : "Content" ,
@@ -26,7 +62,9 @@ class Posts_DataBase_Class{
                         "main_post" :{
                             "id"   : 2,
                             "Date" : {"number" : 10 , "unite" : "Days"} ,
-                            "Public_Interactions" :{ "Comments" : 10 ,"numbers" : {"order" : {"first" : "Like" , "Third" : null , "secound" : "Love"} , "total" : 1200}},
+                            "Public_Interactions" :{ 
+                                "share" : 0 ,
+                                "Comments" : 10 ,"numbers" : {"order" : {"first" : "Like" , "Third" : null , "secound" : "Love"} , "total" : 1200}},
                             "User" : User_DataBase_Model.Get_User(5),
                             "info" : {"text" : "i love this man"},
                             "kind" : "Content" ,
@@ -35,7 +73,7 @@ class Posts_DataBase_Class{
                         "Share_post" :{
                             "id"   : 3,
                             "Date" : {"number" : 3 , "unite" : "Weeks"} ,
-                            "Public_Interactions" :{ "Comments" : 10 ,"numbers" : {"order" : {"first" : "Like" , "Third" : null , "secound" : null} , "total" : 1200}},
+                            "Public_Interactions" :{ "share" : 10 , "Comments" : 10 ,"numbers" : {"order" : {"first" : "Like" , "Third" : null , "secound" : null} , "total" : 1200}},
                             "User"     : User_DataBase_Model.Get_User(3),
                             "info"     : {"text" : "What a wonderfull world" , "img" : `${APP_Folders.Posts("images")}/1.jpeg`},
                             "kind"     : "Content",
@@ -52,7 +90,7 @@ class Posts_DataBase_Class{
                         "main_post" :{
                             "id"   : 3,
                             "Date" : {"number" : 3 , "unite" : "Weeks"} ,
-                            "Public_Interactions" :{ "Comments" : 10 ,"numbers" : {"order" : {"first" : "Like" , "Third" : null , "secound" : null} , "total" : 1200}},
+                            "Public_Interactions" :{"share" : 0 , "Comments" : 10 ,"numbers" : {"order" : {"first" : "Like" , "Third" : null , "secound" : null} , "total" : 1200}},
                             "User"     : User_DataBase_Model.Get_User(3),
                             "info"     : {"text" : "What a wonderfull world" , "img" : `${APP_Folders.Posts("images")}/1.jpeg`},
                             "kind"     : "Content",
@@ -60,9 +98,9 @@ class Posts_DataBase_Class{
                         } ,
                         "user_interaction" : {"React" : "Love"},
                         "Comments": {
-        "loading": {"Delete" : false , "Insert" : false , "Select" : true , "Update" : false} ,
-        "error": null,
-        "data" : [] ,
+                            "loading": {"Delete" : false , "Insert" : false , "Select" : true , "Update" : false} ,
+                            "error": null,
+                            "data" : [] ,
                             }
                     },
                 ]
@@ -99,7 +137,7 @@ class Posts_DataBase_Class{
             "main_post" :{
                 "id"    : Posts_DataBase_Model.Get({}).length + 1  ,
                 "Date" : {"number" : 1 , "unite" : "Hour" } ,
-                "Public_Interactions" :{ "Comments" : 0 , "numbers" : {"order" : {"first" : null , "Third" : null , "secound" : null} , "total" : 0}},
+                "Public_Interactions" :{ "share" : 0 ,  "Comments" : 0 , "numbers" : {"order" : {"first" : null , "Third" : null , "secound" : null} , "total" : 0}},
                 "User" : User_DataBase_Model.Get_User(data.User.UserID),
                 "info" : {"text" : "This is New Post here i hope to see it okay"},
                 "kind" : "Content" ,

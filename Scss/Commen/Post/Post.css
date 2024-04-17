@@ -222,23 +222,6 @@
 .Post_Component .New .UserInfo .Setting .Setting_Box .container ul li:last-child {
   border-bottom: none;
 }
-.Post_Component .New .Content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.Post_Component .New .Content .Text {
-  margin: 0px 0.625em;
-  font-size: 0.9375em;
-  overflow-wrap: break-word;
-}
-.Post_Component .New .Content img {
-  margin-top: 0.625em;
-  width: 100%;
-  max-height: 31.25em;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
 .Post_Component .New .Analysis {
   display: flex;
   flex-direction: row;
@@ -259,7 +242,13 @@
 .Post_Component .New .Analysis .Likes .ReactsNumber {
   font-size: 0.8125em;
 }
-.Post_Component .New .Analysis .Comments {
+.Post_Component .New .Analysis .Left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.3125em;
+}
+.Post_Component .New .Analysis .Left span {
   cursor: pointer;
   font-size: 0.8125em;
 }
@@ -398,23 +387,6 @@
 .Post_Component .Share .UserInfo .Setting .Setting_Box .container ul li:last-child {
   border-bottom: none;
 }
-.Post_Component .Share .Content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.Post_Component .Share .Content .Text {
-  margin: 0px 0.625em;
-  font-size: 0.9375em;
-  overflow-wrap: break-word;
-}
-.Post_Component .Share .Content img {
-  margin-top: 0.625em;
-  width: 100%;
-  max-height: 31.25em;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
 .Post_Component .Share .Analysis {
   display: flex;
   flex-direction: row;
@@ -435,7 +407,13 @@
 .Post_Component .Share .Analysis .Likes .ReactsNumber {
   font-size: 0.8125em;
 }
-.Post_Component .Share .Analysis .Comments {
+.Post_Component .Share .Analysis .Left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.3125em;
+}
+.Post_Component .Share .Analysis .Left span {
   cursor: pointer;
   font-size: 0.8125em;
 }
@@ -580,23 +558,6 @@
 .Post_Component .Share .New .UserInfo .Setting .Setting_Box .container ul li:last-child {
   border-bottom: none;
 }
-.Post_Component .Share .New .Content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.Post_Component .Share .New .Content .Text {
-  margin: 0px 0.625em;
-  font-size: 0.9375em;
-  overflow-wrap: break-word;
-}
-.Post_Component .Share .New .Content img {
-  margin-top: 0.625em;
-  width: 100%;
-  max-height: 31.25em;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
 .Post_Component .Share .New .Analysis {
   display: flex;
   flex-direction: row;
@@ -617,7 +578,13 @@
 .Post_Component .Share .New .Analysis .Likes .ReactsNumber {
   font-size: 0.8125em;
 }
-.Post_Component .Share .New .Analysis .Comments {
+.Post_Component .Share .New .Analysis .Left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.3125em;
+}
+.Post_Component .Share .New .Analysis .Left span {
   cursor: pointer;
   font-size: 0.8125em;
 }
@@ -684,6 +651,55 @@
   -ms-border-radius: 3.125em;
   -o-border-radius: 3.125em;
 }
+.Post_Component .Content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.Post_Component .Content .Text {
+  margin: 0px 0.625em;
+  font-size: 0.9375em;
+  overflow-wrap: break-word;
+}
+.Post_Component .Content img {
+  margin-top: 0.625em;
+  width: 100%;
+  max-height: 31.25em;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.Post_Component .Voting .Question {
+  font-size: 1em;
+  padding: 0.3125em 0em;
+}
+.Post_Component .Voting .Options {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 0.625em;
+  gap: 0.625em;
+}
+.Post_Component .Voting .Options .Option {
+  display: flex;
+  align-items: center;
+  gap: 0.625em;
+  padding: 0.3125em 0.625em;
+  border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  -moz-border-radius: 0.625em;
+  -ms-border-radius: 0.625em;
+  -o-border-radius: 0.625em;
+}
+.Post_Component .Voting .Options .Option .info {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+.Post_Component .Voting .Options .Option .info .text {
+  font-size: 0.9375em;
+}
+.Post_Component .Voting .Options .Option .info .Number_of_Vots {
+  font-size: 0.875em;
+}
 
 body.ColorTheme_1 .Null_Post_Component {
   color: #1877f2;
@@ -726,13 +742,16 @@ body.ColorTheme_1 .Post_Component .UserInfo .Time {
 body.ColorTheme_1 .Post_Component .UserInfo .Setting svg {
   color: black;
 }
+body.ColorTheme_1 .Post_Component .Voting .Options .Option {
+  background-color: rgba(112, 75, 8, 0.08);
+}
 body.ColorTheme_1 .Post_Component .Content .Text {
   color: black;
 }
 body.ColorTheme_1 .Post_Component .Analysis .Likes .ReactsNumber {
   color: black;
 }
-body.ColorTheme_1 .Post_Component .Analysis .Comments {
+body.ColorTheme_1 .Post_Component .Analysis .Left span {
   color: black;
 }
 body.ColorTheme_1 .Post_Component .Actions .Item {
