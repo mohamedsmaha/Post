@@ -63,8 +63,11 @@ export const Arbic : Languagh_model = {
     "Year"             : "سنة",
     "Years"            : "سنوات",
     CreatePostObject :{
-        InputFiled:(name : string)=>{
+        Content_InputFiled:(name : string)=>{
             return `؟ ${name} ماذا في بالك يا `
+        },
+        Voting_InputFiled:(name : string) => {
+            return ` ؟ ${name} ما هو سؤالك يا `
         }
     },
     PostObject : {

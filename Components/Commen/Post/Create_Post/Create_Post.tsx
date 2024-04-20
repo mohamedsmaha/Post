@@ -43,7 +43,7 @@ function CreatePost(props : Props_type) {
         <div className={`Create_Component`} onClick={() => SetForm_Status(true)}>
                 <div className="Create_top">
                     <img src={`${APP_Folders.Users()}/${User_Model.GetMainImg()}`} alt="" className="Createprofileimg" />
-                    <p className="text">{CreatePostObj.InputFiled(User_Model.GetName())}</p>
+                    <p className="text">{CreatePostObj.Content_InputFiled(User_Model.GetName())}</p>
                 </div>
                 <hr className="Createhr" />
                 {<Createoptions/>}

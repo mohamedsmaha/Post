@@ -13,18 +13,26 @@ export type Post_Type    = "Share"    | "New" | "Update"
 export type Post_kind    = "Content"  | "Voting" 
 export type sum          = 's'|''
 export type Post_Data    = Content_info | Voting_info
+
+export type Option_For_Voting = {id : number  , text : string ,  Number_Of_Votes : number} 
 export type Voting_info  = {
     Question   : string , 
     Options    :  {id : number  , text : string ,  Number_Of_Votes : number}[]
-    MultiValue : Boolean ,
     UserInterAction:{UserChoice : number[]},
-    Number_Of_Votes : number
+    Number_Of_Votes : number ,
+    Setting    : Voting_Setting
 }
+export type Voting_Setting ={
+    "Ability to add more options" : boolean ,
+    "Multiple choice"             : boolean
+}
+
 export type Content_info = {
     text ?: string ,
     img  ?: string ,
     vidoe?: string 
 }
+
 export type Top_Three_Reacts = {
     first   : ReactsIcons | null ,
     secound : ReactsIcons | null ,
@@ -60,7 +68,7 @@ export type Loading_post = {
 export type Create_Post = {
     User : UserAction       ,
     kind : Post_kind        ,
-    info : Content_info     ,
+    info : Post_Data    ,
     Data : Date             ,
     type : Post_Type        ,
     SharePostId ?: number 
@@ -68,7 +76,7 @@ export type Create_Post = {
 export type Update_Post = {
     User    : UserAction       ,
     kind    : Post_kind        ,
-    info    : Content_info     ,
+    info    : Post_Data        ,
     Data    : Date             ,
     Id      : number  
 }

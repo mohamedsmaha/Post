@@ -236,7 +236,7 @@ function Post(props: PropsType) {
     function Analysis(){
         const Votes = ()=>{
             let info = Post.main_post.info as Voting_info 
-            if(Post.main_post.kind != "Voting" || info.Number_Of_Votes < 0){return <></>}
+            if(Post.main_post.kind != "Voting" || info.Number_Of_Votes <= 0){return <></>}
             return <span className="Vote">
                         {info.Number_Of_Votes} vote
                     </span>

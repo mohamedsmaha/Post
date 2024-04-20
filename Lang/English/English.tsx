@@ -62,8 +62,11 @@ export const English : Languagh_model={
     "Year": "Year",
     "Years": "Years",
     CreatePostObject :{
-        InputFiled:(name : string)=>{
-            return `What is your mind , ${name} ? `
+        Content_InputFiled:(name : string)=>{
+            return `What is in your mind , ${name} ? `
+        },
+        Voting_InputFiled:(name : string) => {
+            return `What is your Question , ${name} ?`
         }
     },
     PostObject : {

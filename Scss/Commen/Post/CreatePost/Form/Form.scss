@@ -40,6 +40,7 @@
             }
         }
 }
+// Post_Kinds
 @mixin Content_info_Post(){
     div.Content_info_Post{
         width: 100%;
@@ -68,6 +69,79 @@
                 font-size: pxtoem(16px);
                 font-weight: 500;
                 @include border(10px);
+        }
+    }
+}
+@mixin Voting_info_Post(){
+    .Voting_Info_Post{
+        width: 100%;
+        height: 100%;
+        @include flex_column();
+        justify-content: space-between;
+        gap: pxtoem(10px);
+        .Info{
+            @include flex_column();
+            justify-content: center;
+            gap: pxtoem(10px);
+            @include Textarea();
+            .Setting{
+                @include flex_row();
+                justify-content: space-between;
+                font-size: pxtoem(13px);
+                width: 98%;
+                padding: 0px pxtoem(10px);
+                .item{
+                    @include flex_row();
+                    align-items: center;
+                    gap: pxtoem(5px);
+                }
+            }
+            .Options_Container{
+                @include flex_column();
+                max-height: 27vh;
+                overflow-y: scroll; 
+                gap: pxtoem(10px);
+                @include shadow(0px , 1px , 1px , -1px);
+                .option{
+                    background-color: rgb(112 75 8 / 1%);
+                    @include shadow(1px , 1px , 6px , -1px);
+                    max-width  : 80%;
+                    padding    : pxtoem(5px) pxtoem(5px);
+                    margin-left: pxtoem(5px);
+                    @include border(5px);
+                    @include flex_row();
+                    justify-content: space-between;
+                    align-items: center;
+                    .Vote_info{
+                        flex : 1;
+                        word-break: break-all;
+                        textarea{
+                            min-height: fit-content;
+                            word-break: break-all;
+
+                        }
+                    }
+                    SVG{font-size: pxtoem(18px);}
+                    &:nth-child(1){margin-top: pxtoem(10px);}
+                    &:last-child{margin-bottom: pxtoem(10px);}
+                }
+                &::-webkit-scrollbar{width: pxtoem(2px);}
+            }
+            .Low_Level{
+                @include flex_row();
+                justify-content: space-between;
+                align-items: center;
+                .Counter{color: gray; font-size: pxtoem(14px); font-weight: 500;}
+            }
+        }
+        button {
+            width: fit-content;
+            padding: pxtoem(5px) pxtoem(10px);
+            border: none;
+            outline: none;
+            font-size: pxtoem(16px);
+            font-weight: 500;
+            @include border(10px);
         }
     }
 }
@@ -116,6 +190,7 @@
             width: 100%;
             @include flex_row();
             @include Content_info_Post();
+            @include Voting_info_Post();
         }
         &::-webkit-scrollbar {
                 width: 0px;
@@ -169,7 +244,8 @@ body.ColorTheme_1 .PostForm_Component{
     background-color: #8080801c;
     >.Container {
         background-color: $secound_color;
-        .Main_Form .Content_info_Post button{
+        .Main_Form .Content_info_Post button , .Main_Form .Voting_Info_Post > button
+        {
             color: $secound_color;
             background-color: $first_color;
         }

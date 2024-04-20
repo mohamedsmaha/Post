@@ -1,0 +1,49 @@
+@import "../../Helper/all.scss";
+$Ball_Radius : 13px;
+$Speed       : 0.2s  ;
+.Space{
+    background-color: rgb(241 241 241);
+    @include shadow(1px , 1px , 2px , -1px);
+    @include border_pre(50px);
+    width: pxtoem(50px);
+    height: pxtoem(13px);
+    position: relative;
+    cursor: pointer;
+    .Ball{
+        position: absolute;
+        left: 0%;
+        @include square($Ball_Radius);
+        @include border_pre(50%);
+        background-color: $first_color;
+        &.Active{
+            animation: "Acitve_Ball" $Speed forwards;
+            -webkit-animation: "Acitve_Ball" $Speed forwards;
+}
+        &.UnActive {
+            animation: "UnAcitve_Ball" $Speed forwards;
+            -webkit-animation: "UnAcitve_Ball" $Speed forwards;
+}
+    }
+    &.Active{background-color: $first_color;}
+}
+@keyframes Acitve_Ball{
+    0%  {
+        left: 0%;
+        background-color: $first_color;
+    }
+    100%{
+        left: calc(100% - pxtoem($Ball_Radius));
+        background-color: rgb(241 241 241);
+    }
+}
+@keyframes UnAcitve_Ball {
+    
+    0% {
+        background-color: rgb(241 241 241);
+        left: calc(100% - pxtoem($Ball_Radius));
+    }
+    100% {
+        left: 0%;
+        background-color: $first_color;
+    }
+}

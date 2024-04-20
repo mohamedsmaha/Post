@@ -1,0 +1,57 @@
+.Space {
+  background-color: rgb(241, 241, 241);
+  box-shadow: 0.0625em 0.0625em 0.125em -0.0625em rgba(0, 0, 0, 0.68);
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  width: 3.125em;
+  height: 0.8125em;
+  position: relative;
+  cursor: pointer;
+}
+.Space .Ball {
+  position: absolute;
+  left: 0%;
+  width: 0.8125em;
+  height: 0.8125em;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-color: #1877f2;
+}
+.Space .Ball.Active {
+  animation: "Acitve_Ball" 0.2s forwards;
+  -webkit-animation: "Acitve_Ball" 0.2s forwards;
+}
+.Space .Ball.UnActive {
+  animation: "UnAcitve_Ball" 0.2s forwards;
+  -webkit-animation: "UnAcitve_Ball" 0.2s forwards;
+}
+.Space.Active {
+  background-color: #1877f2;
+}
+
+@keyframes Acitve_Ball {
+  0% {
+    left: 0%;
+    background-color: #1877f2;
+  }
+  100% {
+    left: calc(100% - 0.8125em);
+    background-color: rgb(241, 241, 241);
+  }
+}
+@keyframes UnAcitve_Ball {
+  0% {
+    background-color: rgb(241, 241, 241);
+    left: calc(100% - 0.8125em);
+  }
+  100% {
+    left: 0%;
+    background-color: #1877f2;
+  }
+}/*# sourceMappingURL=Avaliablebox.css.map */

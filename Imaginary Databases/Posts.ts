@@ -24,9 +24,12 @@ class Posts_DataBase_Class{
     { "Number_Of_Votes": 600, "id": 4, "text": "Captain America" },
     { "Number_Of_Votes": 300, "id": 5, "text": "Iron Man" }
   ],
-  "MultiValue": false,
   "UserInterAction": { "UserChoice": [3] },
-  "Number_Of_Votes": 18300
+  "Number_Of_Votes": 18300,
+  "Setting" : {
+    "Ability to add more options" : false ,
+    "Multiple choice"             : false
+  }
 }
 ,
                             "kind"     : "Voting",
